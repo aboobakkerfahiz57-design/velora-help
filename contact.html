@@ -1,1 +1,2831 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#071a3d">
+
+<meta
+name="description"
+content="VELORA HELP — Your Problem. Our Direction. Submit healthcare, housing, education, jobs, government, transport, waste, water, road, safety and other local enquiries."
+>
+
+<title>Contact & Help Desk | VELORA HELP</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f6f8fb;
+    color:#17243d;
+}
+
+a{
+    text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+.vh-container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.vh-header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #e5e9f0;
+}
+
+.vh-nav{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.vh-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#071a3d;
+}
+
+.vh-brand img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.vh-brand-name{
+    font-size:1.15rem;
+    font-weight:800;
+}
+
+.vh-brand-sub{
+    font-size:.7rem;
+    opacity:.7;
+    margin-top:3px;
+}
+
+.vh-nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.vh-nav-links a{
+    color:#17243d;
+    padding:10px 11px;
+    border-radius:9px;
+    font-size:.88rem;
+    font-weight:600;
+}
+
+.vh-nav-links a:hover{
+    background:#eef2f8;
+}
+
+.vh-menu{
+    display:none;
+    background:#071a3d;
+    color:white;
+    border:0;
+    padding:10px 13px;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    padding:90px 0;
+    color:white;
+
+    background:
+    linear-gradient(
+        105deg,
+        #071a3d 0%,
+        #12315e 58%,
+        #8a172d 100%
+    );
+}
+
+.hero small{
+    color:#e8b7bf;
+    font-weight:800;
+    letter-spacing:.14em;
+}
+
+.hero h1{
+    font-size:clamp(2.7rem,6vw,5rem);
+    line-height:1;
+    margin:12px 0 20px;
+    letter-spacing:-.045em;
+}
+
+.hero p{
+    max-width:800px;
+    line-height:1.75;
+    color:rgba(255,255,255,.88);
+    font-size:1.06rem;
+}
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:28px;
+}
+
+.btn{
+    min-height:46px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:11px 17px;
+    border-radius:11px;
+    border:0;
+    cursor:pointer;
+    font-weight:750;
+}
+
+.btn-white{
+    background:white;
+    color:#071a3d;
+}
+
+.btn-red{
+    background:#a3132d;
+    color:white;
+}
+
+.btn-blue{
+    background:#071a3d;
+    color:white;
+}
+
+.btn-light{
+    background:#eef2f8;
+    color:#071a3d;
+}
+
+
+/* =====================================================
+   QUICK CONTACT
+===================================================== */
+
+.quick-section{
+    margin-top:-38px;
+    position:relative;
+    z-index:5;
+}
+
+.quick-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.quick-card{
+    background:white;
+    border:1px solid #e1e6ee;
+    border-radius:18px;
+    padding:24px;
+    box-shadow:0 18px 50px rgba(7,26,61,.09);
+}
+
+.quick-icon{
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+.quick-card h3{
+    margin:0 0 7px;
+    color:#071a3d;
+}
+
+.quick-card p{
+    color:#667085;
+    font-size:.88rem;
+    line-height:1.6;
+    margin:0 0 16px;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section{
+    padding:72px 0;
+}
+
+.alt{
+    background:#eef2f7;
+}
+
+.heading{
+    max-width:790px;
+    margin-bottom:30px;
+}
+
+.heading small{
+    color:#a3132d;
+    font-weight:800;
+    letter-spacing:.12em;
+}
+
+.heading h2{
+    margin:8px 0 12px;
+    color:#071a3d;
+    font-size:clamp(2rem,4vw,3.1rem);
+}
+
+.heading p{
+    color:#667085;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-box{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:22px;
+    padding:30px;
+    box-shadow:0 8px 28px rgba(7,26,61,.04);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:17px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    display:block;
+    margin-bottom:7px;
+    color:#071a3d;
+    font-size:.9rem;
+    font-weight:700;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #d7deea;
+    border-radius:10px;
+    background:white;
+    color:#17243d;
+}
+
+textarea{
+    resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#a3132d;
+    box-shadow:0 0 0 3px rgba(163,19,45,.08);
+}
+
+.required{
+    color:#a3132d;
+}
+
+.form-note{
+    background:#fff8e6;
+    border:1px solid #f1dfa9;
+    color:#624f18;
+    border-radius:13px;
+    padding:15px;
+    font-size:.86rem;
+    line-height:1.65;
+}
+
+
+/* =====================================================
+   PROBLEM CATEGORIES
+===================================================== */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.category-card{
+    background:white;
+    border:1px solid #e0e6ee;
+    border-radius:17px;
+    padding:21px;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.category-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(7,26,61,.09);
+}
+
+.category-icon{
+    font-size:29px;
+    margin-bottom:11px;
+}
+
+.category-card h3{
+    margin:0 0 7px;
+    color:#071a3d;
+}
+
+.category-card p{
+    margin:0;
+    color:#667085;
+    font-size:.86rem;
+    line-height:1.55;
+}
+
+
+/* =====================================================
+   CONTACT INFORMATION
+===================================================== */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.info-card{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:18px;
+    padding:25px;
+}
+
+.info-card h3{
+    color:#071a3d;
+    margin:0 0 10px;
+}
+
+.info-card p{
+    color:#667085;
+    line-height:1.65;
+    font-size:.9rem;
+}
+
+.info-card a{
+    color:#a3132d;
+    font-weight:750;
+}
+
+
+/* =====================================================
+   PROCESS
+===================================================== */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.step{
+    background:white;
+    border:1px solid #e1e6ee;
+    border-radius:17px;
+    padding:22px;
+}
+
+.step-number{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#071a3d;
+    color:white;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.step h3{
+    color:#071a3d;
+    margin:0 0 8px;
+}
+
+.step p{
+    color:#667085;
+    line-height:1.6;
+    font-size:.89rem;
+}
+
+
+/* =====================================================
+   LEADER / AUTHORITY CONTACT
+===================================================== */
+
+.authority-box{
+    background:
+    linear-gradient(
+        115deg,
+        #071a3d,
+        #12315e
+    );
+    color:white;
+    border-radius:23px;
+    padding:38px;
+}
+
+.authority-box h2{
+    margin:8px 0 12px;
+    font-size:clamp(2rem,4vw,3rem);
+}
+
+.authority-box p{
+    max-width:800px;
+    color:rgba(255,255,255,.82);
+    line-height:1.7;
+}
+
+.authority-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:25px;
+}
+
+.authority-item{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.13);
+    padding:17px;
+    border-radius:13px;
+}
+
+.authority-item strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.authority-item span{
+    color:rgba(255,255,255,.72);
+    font-size:.82rem;
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   SAFETY
+===================================================== */
+
+.safety-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
+}
+
+.safety-card{
+    background:white;
+    border:1px solid #e1e6ee;
+    border-radius:17px;
+    padding:23px;
+}
+
+.safety-icon{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.safety-card h3{
+    margin:0 0 8px;
+    color:#071a3d;
+}
+
+.safety-card p{
+    color:#667085;
+    line-height:1.65;
+    font-size:.89rem;
+}
+
+
+/* =====================================================
+   SUCCESS MESSAGE
+===================================================== */
+
+.success-box{
+    display:none;
+    margin-top:20px;
+    background:#eaf7ef;
+    border:1px solid #b9dfc5;
+    color:#155d2f;
+    border-radius:14px;
+    padding:17px;
+    line-height:1.6;
+}
+
+.success-box.active{
+    display:block;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.message{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:9999;
+    display:none;
+    max-width:390px;
+    background:white;
+    color:#071a3d;
+    padding:17px 20px;
+    border-radius:13px;
+    box-shadow:0 15px 50px rgba(0,0,0,.2);
+    border-left:5px solid #a3132d;
+}
+
+.message.active{
+    display:block;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#06152f;
+    color:white;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:35px;
+}
+
+footer a{
+    display:block;
+    color:rgba(255,255,255,.72);
+    margin:9px 0;
+}
+
+footer a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:35px;
+    padding-top:20px;
+    color:rgba(255,255,255,.55);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1050px){
+
+    .vh-nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:4%;
+        right:4%;
+        padding:12px;
+        background:white;
+        border-radius:14px;
+        box-shadow:0 20px 50px rgba(0,0,0,.15);
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .vh-nav-links.active{
+        display:flex;
+    }
+
+    .vh-menu{
+        display:block;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .quick-grid{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .authority-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .safety-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .hero{
+        padding:65px 0;
+    }
+
+    .quick-section{
+        margin-top:-25px;
+    }
+
+    .quick-grid,
+    .category-grid,
+    .steps,
+    .authority-grid,
+    .safety-grid,
+    .info-grid,
+    .form-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .form-box,
+    .authority-box{
+        padding:24px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="vh-header">
+
+<div class="vh-container vh-nav">
+
+<a href="index.html" class="vh-brand">
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo"
+>
+
+<div>
+
+<div class="vh-brand-name">
+VELORA HELP
+</div>
+
+<div class="vh-brand-sub">
+Your Problem. Our Direction.
+</div>
+
+</div>
+
+</a>
+
+
+<button
+id="menuButton"
+class="vh-menu"
+type="button"
+aria-label="Open navigation"
+>
+☰
+</button>
+
+
+<nav
+id="navigation"
+class="vh-nav-links"
+>
+
+<a href="index.html">Home</a>
+
+<a href="healthcare.html">Healthcare</a>
+
+<a href="admissions.html">Admissions</a>
+
+<a href="government.html">Government</a>
+
+<a href="students.html">Students</a>
+
+<a href="jobs.html">Jobs</a>
+
+<a href="property.html">Housing</a>
+
+<a href="businesses.html">Local Services</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="vh-container">
+
+<small>
+VELORA HELP • HELP DESK
+</small>
+
+<h1>
+Your problem.<br>
+Our direction.
+</h1>
+
+<p>
+Don't know where to go or whom to contact?
+Tell VELORA HELP what you need. Whether it is healthcare,
+housing, education, jobs, government services, local
+workers, transport, waste, water, roads, public safety
+or another local problem, submit your requirement and
+we will review it and guide you toward the appropriate
+next step.
+</p>
+
+
+<div class="actions">
+
+<a
+href="#help-form"
+class="btn btn-white"
+>
+📝 Submit a Problem
+</a>
+
+<a
+href="https://wa.me/918088590273"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-white"
+>
+💬 WhatsApp Us
+</a>
+
+<a
+href="tel:+918088590273"
+class="btn btn-red"
+>
+📞 Call VELORA HELP
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     QUICK CONTACT
+===================================================== -->
+
+<section class="quick-section">
+
+<div class="vh-container">
+
+<div class="quick-grid">
+
+
+<div class="quick-card">
+
+<div class="quick-icon">
+📞
+</div>
+
+<h3>
+Call VELORA HELP
+</h3>
+
+<p>
+For direct enquiries and general guidance.
+</p>
+
+<a
+href="tel:+918088590273"
+class="btn btn-blue"
+>
+Call +91 8088590273
+</a>
+
+</div>
+
+
+<div class="quick-card">
+
+<div class="quick-icon">
+💬
+</div>
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+Send your problem or enquiry directly to our
+VELORA HELP number.
+</p>
+
+<a
+href="https://wa.me/918088590273"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-blue"
+>
+Open WhatsApp
+</a>
+
+</div>
+
+
+<div class="quick-card">
+
+<div class="quick-icon">
+📋
+</div>
+
+<h3>
+Submit a Request
+</h3>
+
+<p>
+Give us the details of your problem so we can
+understand your requirement.
+</p>
+
+<a
+href="#help-form"
+class="btn btn-blue"
+>
+Submit Request
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT INFORMATION
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+VELORA HELP DESK
+</small>
+
+<h2>
+One place for many problems.
+</h2>
+
+<p>
+VELORA HELP is designed as a local direction and
+information platform. The purpose is to understand
+the problem first and then help identify the appropriate
+next step.
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<h3>
+📞 Phone
+</h3>
+
+<p>
+VELORA HELP enquiry number
+</p>
+
+<a href="tel:+918088590273">
++91 8088590273
+</a>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+💬 WhatsApp
+</h3>
+
+<p>
+Send your enquiry and supporting details through
+WhatsApp.
+</p>
+
+<a
+href="https://wa.me/918088590273"
+target="_blank"
+rel="noopener noreferrer"
+>
+Start WhatsApp
+</a>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+📍 Service Area
+</h3>
+
+<p>
+Initial focus:
+</p>
+
+<strong>
+Dakshina Kannada
+</strong>
+
+<p>
+The platform can expand to other Karnataka districts
+after the service is established.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROBLEM CATEGORIES
+===================================================== -->
+
+<section
+class="section alt"
+id="categories"
+>
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+WHAT DO YOU NEED HELP WITH?
+</small>
+
+<h2>
+Choose your problem.
+</h2>
+
+<p>
+Select a category to automatically prepare the help
+request form for you.
+</p>
+
+</div>
+
+
+<div class="category-grid">
+
+
+<div
+class="category-card category-button"
+data-category="Healthcare"
+>
+
+<div class="category-icon">
+🏥
+</div>
+
+<h3>
+Healthcare
+</h3>
+
+<p>
+Hospital, doctor, appointment, emergency and
+healthcare direction.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Housing"
+>
+
+<div class="category-icon">
+🏠
+</div>
+
+<h3>
+Housing & Rentals
+</h3>
+
+<p>
+Rental houses, property enquiries and housing
+direction.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Education"
+>
+
+<div class="category-icon">
+🎓
+</div>
+
+<h3>
+Education
+</h3>
+
+<p>
+Admissions, scholarships, courses and student
+opportunities.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Jobs"
+>
+
+<div class="category-icon">
+💼
+</div>
+
+<h3>
+Jobs
+</h3>
+
+<p>
+Employment, internships, part-time and local work.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Government"
+>
+
+<div class="category-icon">
+🏛️
+</div>
+
+<h3>
+Government Services
+</h3>
+
+<p>
+Government schemes, services, documents and
+application guidance.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Transport"
+>
+
+<div class="category-icon">
+🚌
+</div>
+
+<h3>
+Transport
+</h3>
+
+<p>
+Transport-related problems and local direction.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Waste"
+>
+
+<div class="category-icon">
+🗑️
+</div>
+
+<h3>
+Waste & Garbage
+</h3>
+
+<p>
+Garbage collection and local waste-related problems.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Water"
+>
+
+<div class="category-icon">
+💧
+</div>
+
+<h3>
+Water
+</h3>
+
+<p>
+Water supply and local water-related problems.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Roads"
+>
+
+<div class="category-icon">
+🛣️
+</div>
+
+<h3>
+Roads
+</h3>
+
+<p>
+Road damage, maintenance and public infrastructure
+concerns.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Public Safety"
+>
+
+<div class="category-icon">
+🛡️
+</div>
+
+<h3>
+Public Safety
+</h3>
+
+<p>
+Local safety concerns and direction toward the
+appropriate authority.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Local Workers"
+>
+
+<div class="category-icon">
+🔧
+</div>
+
+<h3>
+Local Workers
+</h3>
+
+<p>
+Plumbers, electricians, AC technicians, mechanics
+and other services.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Digital Service"
+>
+
+<div class="category-icon">
+📱
+</div>
+
+<h3>
+Digital Services
+</h3>
+
+<p>
+Help understanding online services and digital
+processes.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Cost of Living"
+>
+
+<div class="category-icon">
+💰
+</div>
+
+<h3>
+Cost of Living
+</h3>
+
+<p>
+Local information and support related to everyday
+living costs.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Elderly Help"
+>
+
+<div class="category-icon">
+👴
+</div>
+
+<h3>
+Elderly Help
+</h3>
+
+<p>
+Help identifying local services and support for
+elderly people.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Business"
+>
+
+<div class="category-icon">
+🏪
+</div>
+
+<h3>
+Local Business
+</h3>
+
+<p>
+Business-related enquiries, local services and
+opportunities.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Other"
+>
+
+<div class="category-icon">
+➕
+</div>
+
+<h3>
+Other Problem
+</h3>
+
+<p>
+Something else? Tell us about it.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN HELP FORM
+===================================================== -->
+
+<section
+class="section"
+id="help-form"
+>
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+MAIN HELP REQUEST
+</small>
+
+<h2>
+Tell us your problem.
+</h2>
+
+<p>
+The more useful information you provide, the easier it
+is for the VELORA HELP team to understand the situation
+and identify the appropriate direction.
+</p>
+
+</div>
+
+
+<div class="form-box">
+
+<form id="helpForm">
+
+<div class="form-grid">
+
+
+<!-- NAME -->
+
+<div>
+
+<label for="fullName">
+Full Name <span class="required">*</span>
+</label>
+
+<input
+id="fullName"
+type="text"
+required
+maxlength="100"
+placeholder="Enter your full name"
+>
+
+</div>
+
+
+<!-- PHONE -->
+
+<div>
+
+<label for="phone">
+Phone Number <span class="required">*</span>
+</label>
+
+<input
+id="phone"
+type="tel"
+required
+maxlength="20"
+placeholder="+91..."
+>
+
+</div>
+
+
+<!-- EMAIL -->
+
+<div>
+
+<label for="email">
+Email
+</label>
+
+<input
+id="email"
+type="email"
+maxlength="150"
+placeholder="you@example.com"
+>
+
+</div>
+
+
+<!-- CATEGORY -->
+
+<div>
+
+<label for="problemCategory">
+Problem Category <span class="required">*</span>
+</label>
+
+<select
+id="problemCategory"
+required
+>
+
+<option value="">
+Select category
+</option>
+
+<option>
+Healthcare
+</option>
+
+<option>
+Housing
+</option>
+
+<option>
+Education
+</option>
+
+<option>
+Jobs
+</option>
+
+<option>
+Government
+</option>
+
+<option>
+Transport
+</option>
+
+<option>
+Waste
+</option>
+
+<option>
+Water
+</option>
+
+<option>
+Roads
+</option>
+
+<option>
+Public Safety
+</option>
+
+<option>
+Local Workers
+</option>
+
+<option>
+Digital Service
+</option>
+
+<option>
+Cost of Living
+</option>
+
+<option>
+Elderly Help
+</option>
+
+<option>
+Business
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<!-- TALUK -->
+
+<div>
+
+<label for="taluk">
+Taluk <span class="required">*</span>
+</label>
+
+<select
+id="taluk"
+required
+>
+
+<option value="">
+Select Taluk
+</option>
+
+<option>
+Mangaluru
+</option>
+
+<option>
+Bantwal
+</option>
+
+<option>
+Belthangady
+</option>
+
+<option>
+Puttur
+</option>
+
+<option>
+Sullia
+</option>
+
+<option>
+Moodbidri
+</option>
+
+<option>
+Kadaba
+</option>
+
+<option>
+Mulki
+</option>
+
+</select>
+
+</div>
+
+
+<!-- AREA -->
+
+<div>
+
+<label for="area">
+Town / Village / Area <span class="required">*</span>
+</label>
+
+<input
+id="area"
+type="text"
+required
+maxlength="150"
+placeholder="Where did this happen?"
+>
+
+</div>
+
+
+<!-- EXACT LOCATION -->
+
+<div class="full">
+
+<label for="locationDetails">
+Location Details
+</label>
+
+<input
+id="locationDetails"
+type="text"
+maxlength="300"
+placeholder="Landmark, road name, locality, etc."
+>
+
+</div>
+
+
+<!-- PROBLEM -->
+
+<div class="full">
+
+<label for="problem">
+What is the problem? <span class="required">*</span>
+</label>
+
+<textarea
+id="problem"
+rows="6"
+required
+maxlength="3000"
+placeholder="Explain the problem clearly..."
+></textarea>
+
+</div>
+
+
+<!-- HOW OFTEN -->
+
+<div>
+
+<label for="frequency">
+How often does it happen?
+</label>
+
+<select id="frequency">
+
+<option>
+One-time
+</option>
+
+<option>
+Occasionally
+</option>
+
+<option>
+Frequently
+</option>
+
+<option>
+Daily
+</option>
+
+<option>
+Every week
+</option>
+
+<option>
+Ongoing
+</option>
+
+<option>
+Not sure
+</option>
+
+</select>
+
+</div>
+
+
+<!-- IMPACT -->
+
+<div>
+
+<label for="impact">
+How does it affect you?
+</label>
+
+<select id="impact">
+
+<option>
+Low impact
+</option>
+
+<option>
+Moderate impact
+</option>
+
+<option>
+High impact
+</option>
+
+<option>
+Severe / urgent
+</option>
+
+</select>
+
+</div>
+
+
+<!-- DESIRED SOLUTION -->
+
+<div class="full">
+
+<label for="desiredSolution">
+What solution would you like?
+</label>
+
+<textarea
+id="desiredSolution"
+rows="5"
+maxlength="2000"
+placeholder="Tell us what you would like to happen..."
+></textarea>
+
+</div>
+
+
+<!-- PREVIOUS ACTION -->
+
+<div class="full">
+
+<label for="previousAction">
+Have you already contacted anyone?
+</label>
+
+<select id="previousAction">
+
+<option>
+No
+</option>
+
+<option>
+Yes — local authority
+</option>
+
+<option>
+Yes — government office
+</option>
+
+<option>
+Yes — hospital / institution
+</option>
+
+<option>
+Yes — business / service provider
+</option>
+
+<option>
+Yes — another person / organisation
+</option>
+
+</select>
+
+</div>
+
+
+<!-- URGENCY -->
+
+<div>
+
+<label for="urgency">
+Urgency
+</label>
+
+<select id="urgency">
+
+<option>
+Normal
+</option>
+
+<option>
+Important
+</option>
+
+<option>
+Urgent
+</option>
+
+</select>
+
+</div>
+
+
+<!-- BEST CONTACT -->
+
+<div>
+
+<label for="contactPreference">
+Preferred Contact
+</label>
+
+<select id="contactPreference">
+
+<option>
+WhatsApp
+</option>
+
+<option>
+Phone Call
+</option>
+
+<option>
+Either
+</option>
+
+</select>
+
+</div>
+
+
+<!-- CONSENT -->
+
+<div class="full">
+
+<div class="form-note">
+
+<strong>
+Please note:
+</strong>
+
+VELORA HELP is a direction and information service.
+Submitting a request does not guarantee that a hospital,
+government department, authority, business or other
+organisation will take action. For immediate emergencies,
+contact the appropriate emergency service directly.
+
+Do not submit OTPs, passwords, bank PINs, Aadhaar numbers,
+medical records or other highly sensitive information
+unless specifically necessary and handled through an
+appropriate secure process.
+
+</div>
+
+</div>
+
+
+<!-- BUTTON -->
+
+<div class="full">
+
+<button
+type="submit"
+class="btn btn-blue"
+style="width:100%;"
+>
+💬 Send Problem to VELORA HELP
+</button>
+
+</div>
+
+
+</div>
+
+</form>
+
+
+<div
+id="formSuccess"
+class="success-box"
+>
+
+<strong>
+Request prepared successfully.
+</strong>
+
+<br>
+
+WhatsApp should open with your enquiry details.
+Please review the message before sending it.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section class="section alt">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+OUR DIRECTION MODEL
+</small>
+
+<h2>
+What happens after you contact us?
+</h2>
+
+<p>
+The initial VELORA HELP model is simple: understand the
+problem, identify the relevant direction, communicate
+with the requester and, where appropriate, help connect
+them with the relevant service or authority.
+</p>
+
+</div>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+You report
+</h3>
+
+<p>
+Tell us what happened, where it happened and what
+kind of help you need.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+We understand
+</h3>
+
+<p>
+Our team reviews the information and contacts you
+when additional details are needed.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+We guide
+</h3>
+
+<p>
+We identify the appropriate hospital, service,
+office, authority, organisation or next step where
+possible.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>
+Follow-up
+</h3>
+
+<p>
+For suitable cases, the team can follow up and
+record the outcome.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LEADERS / AUTHORITIES
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="authority-box">
+
+<small>
+PUBLIC PROBLEM ESCALATION
+</small>
+
+<h2>
+Need to raise a local issue?
+</h2>
+
+<p>
+For suitable public-interest problems, VELORA HELP can
+help organise the information so that the issue can be
+directed toward the appropriate local authority,
+municipality, government department or public representative.
+</p>
+
+
+<div class="authority-grid">
+
+
+<div class="authority-item">
+
+<strong>
+🏛️ Government Department
+</strong>
+
+<span>
+Relevant department or office depending on the issue.
+</span>
+
+</div>
+
+
+<div class="authority-item">
+
+<strong>
+🏙️ Municipality / Local Body
+</strong>
+
+<span>
+Local civic issues such as waste, roads, water and
+public infrastructure.
+</span>
+
+</div>
+
+
+<div class="authority-item">
+
+<strong>
+👥 Public Representatives
+</strong>
+
+<span>
+For appropriate public-interest matters, information
+may be prepared for discussion with relevant representatives.
+</span>
+
+</div>
+
+
+</div>
+
+
+<div
+class="actions"
+style="margin-top:25px;"
+>
+
+<a
+href="#help-form"
+class="btn btn-white"
+>
+📝 Report a Public Problem
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SAFETY / RESPONSIBILITY
+===================================================== -->
+
+<section class="section alt">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+RESPONSIBLE HELP
+</small>
+
+<h2>
+Important before submitting.
+</h2>
+
+</div>
+
+
+<div class="safety-grid">
+
+
+<div class="safety-card">
+
+<div class="safety-icon">
+🚨
+</div>
+
+<h3>
+Emergency situations
+</h3>
+
+<p>
+VELORA HELP should not replace emergency services.
+If someone is in immediate danger or needs urgent
+medical assistance, contact the appropriate emergency
+service directly.
+</p>
+
+</div>
+
+
+<div class="safety-card">
+
+<div class="safety-icon">
+🔐
+</div>
+
+<h3>
+Protect your information
+</h3>
+
+<p>
+Never share OTPs, passwords, banking PINs or other
+security credentials through a general enquiry form.
+</p>
+
+</div>
+
+
+<div class="safety-card">
+
+<div class="safety-icon">
+🔎
+</div>
+
+<h3>
+Verify information
+</h3>
+
+<p>
+Hospitals, doctors, businesses, workers, properties,
+jobs and other listings should be checked before being
+described as verified.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="vh-container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP"
+style="
+width:90px;
+height:90px;
+object-fit:contain;
+background:white;
+border-radius:50%;
+padding:5px;
+"
+>
+
+<h3>
+VELORA HELP
+</h3>
+
+<p>
+Your Problem. Our Direction.
+</p>
+
+<p>
+Powered by VELORA DIGITAL.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Services
+</h4>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="students.html">
+Students
+</a>
+
+<a href="jobs.html">
+Jobs
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Local Help
+</h4>
+
+<a href="property.html">
+Housing
+</a>
+
+<a href="businesses.html">
+Local Services
+</a>
+
+<a href="contact.html#categories">
+Report a Problem
+</a>
+
+<a href="contact.html#help-form">
+Help Desk
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Information
+</h4>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="privacy.html">
+Privacy
+</a>
+
+<a href="terms.html">
+Terms
+</a>
+
+<a href="disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span id="year"></span>
+VELORA HELP
+</span>
+
+<span>
+📞 +91 8088590273
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     TOAST MESSAGE
+===================================================== -->
+
+<div
+id="message"
+class="message"
+role="status"
+aria-live="polite"
+></div>
+
+
+
+<!-- =====================================================
+     PROJECT JAVASCRIPT
+===================================================== -->
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
+
+
+
+<!-- =====================================================
+     CONTACT PAGE JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const navigation =
+document.getElementById("navigation");
+
+
+if(menuButton && navigation){
+
+menuButton.addEventListener(
+"click",
+function(){
+
+navigation.classList.toggle("active");
+
+}
+);
+
+}
+
+
+/* =====================================================
+   YEAR
+===================================================== */
+
+const year =
+document.getElementById("year");
+
+if(year){
+
+year.textContent =
+new Date().getFullYear();
+
+}
+
+
+/* =====================================================
+   CATEGORY BUTTONS
+===================================================== */
+
+document
+.querySelectorAll(".category-button")
+.forEach(
+function(button){
+
+button.addEventListener(
+"click",
+function(){
+
+const category =
+button.getAttribute(
+"data-category"
+);
+
+
+const select =
+document.getElementById(
+"problemCategory"
+);
+
+
+if(select){
+
+const option =
+Array.from(
+select.options
+).find(
+function(item){
+
+return item.value === category;
+
+}
+);
+
+
+if(option){
+
+select.value =
+option.value;
+
+}
+
+}
+
+
+document
+.getElementById(
+"help-form"
+)
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+);
+
+}
+);
+
+
+/* =====================================================
+   HELP FORM
+===================================================== */
+
+const helpForm =
+document.getElementById(
+"helpForm"
+);
+
+
+if(helpForm){
+
+helpForm.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const name =
+document.getElementById(
+"fullName"
+).value.trim();
+
+
+const phone =
+document.getElementById(
+"phone"
+).value.trim();
+
+
+const email =
+document.getElementById(
+"email"
+).value.trim();
+
+
+const category =
+document.getElementById(
+"problemCategory"
+).value;
+
+
+const taluk =
+document.getElementById(
+"taluk"
+).value;
+
+
+const area =
+document.getElementById(
+"area"
+).value.trim();
+
+
+const locationDetails =
+document.getElementById(
+"locationDetails"
+).value.trim();
+
+
+const problem =
+document.getElementById(
+"problem"
+).value.trim();
+
+
+const frequency =
+document.getElementById(
+"frequency"
+).value;
+
+
+const impact =
+document.getElementById(
+"impact"
+).value;
+
+
+const desiredSolution =
+document.getElementById(
+"desiredSolution"
+).value.trim();
+
+
+const previousAction =
+document.getElementById(
+"previousAction"
+).value;
+
+
+const urgency =
+document.getElementById(
+"urgency"
+).value;
+
+
+const contactPreference =
+document.getElementById(
+"contactPreference"
+).value;
+
+
+/* =====================================================
+   WHATSAPP MESSAGE
+===================================================== */
+
+const whatsappMessage =
+`Hello VELORA HELP,
+
+I want to report a PROBLEM / REQUEST.
+
+━━━━━━━━━━━━━━━━━━
+PERSON DETAILS
+━━━━━━━━━━━━━━━━━━
+
+Name: ${name}
+Phone: ${phone}
+Email: ${email || "Not provided"}
+
+━━━━━━━━━━━━━━━━━━
+PROBLEM DETAILS
+━━━━━━━━━━━━━━━━━━
+
+Category: ${category}
+
+Taluk: ${taluk}
+
+Town / Village / Area:
+${area}
+
+Location Details:
+${locationDetails || "Not provided"}
+
+What is the problem?
+${problem}
+
+How often does it happen?
+${frequency}
+
+How does it affect me?
+${impact}
+
+What solution would I like?
+${desiredSolution || "Not specified"}
+
+Have I contacted anyone already?
+${previousAction}
+
+Urgency:
+${urgency}
+
+Preferred Contact:
+${contactPreference}
+
+━━━━━━━━━━━━━━━━━━
+
+Please review my request and guide me regarding the appropriate next step.
+
+Thank you.
+
+VELORA HELP
+Your Problem. Our Direction.
+
+Powered by VELORA DIGITAL.`;
+
+
+/* =====================================================
+   OPEN WHATSAPP
+===================================================== */
+
+const whatsappURL =
+"https://wa.me/918088590273?text=" +
+encodeURIComponent(
+whatsappMessage
+);
+
+
+const success =
+document.getElementById(
+"formSuccess"
+);
+
+
+if(success){
+
+success.classList.add(
+"active"
+);
+
+}
+
+
+showMessage(
+"Your enquiry is ready. WhatsApp is opening now."
+);
+
+
+/*
+   Small delay makes the success message visible
+   before the external WhatsApp page opens.
+*/
+
+setTimeout(
+function(){
+
+window.open(
+whatsappURL,
+"_blank",
+"noopener,noreferrer"
+);
+
+},
+300
+);
+
+}
+);
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showMessage(text){
+
+const message =
+document.getElementById(
+"message"
+);
+
+
+if(!message){
+
+return;
+
+}
+
+
+message.textContent =
+text;
+
+
+message.classList.add(
+"active"
+);
+
+
+setTimeout(
+function(){
+
+message.classList.remove(
+"active"
+);
+
+},
+5000
+);
+
+}
+
+});
+
+</script>
+
+
+</body>
+
+</html>
