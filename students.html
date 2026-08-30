@@ -11,13 +11,12 @@
 
 <meta
 name="description"
-content="VELORA HELP Property — Find verified rental and sale properties across Dakshina Kannada."
+content="VELORA HELP Students — scholarships, internships, free courses, admissions, jobs and student opportunities across Dakshina Kannada."
 >
 
-<title>Property & Rentals | VELORA HELP</title>
+<title>Students & Opportunities | VELORA HELP</title>
 
 <link rel="stylesheet" href="css/style.css">
-
 
 <style>
 
@@ -164,7 +163,7 @@ textarea{
 }
 
 .hero p{
-    max-width:760px;
+    max-width:790px;
     line-height:1.75;
     color:rgba(255,255,255,.88);
     font-size:1.06rem;
@@ -205,12 +204,6 @@ textarea{
     color:white;
 }
 
-.btn-outline{
-    background:transparent;
-    color:#071a3d;
-    border:1px solid #d4dce8;
-}
-
 .btn-light{
     background:#eef2f8;
     color:#071a3d;
@@ -218,7 +211,7 @@ textarea{
 
 
 /* =====================================================
-   SEARCH
+   QUICK SEARCH
 ===================================================== */
 
 .search-section{
@@ -236,7 +229,7 @@ textarea{
 
 .search-grid{
     display:grid;
-    grid-template-columns:1.4fr 1fr 1fr 1fr auto;
+    grid-template-columns:1.4fr 1fr 1fr auto;
     gap:12px;
 }
 
@@ -273,7 +266,7 @@ textarea:focus{
 }
 
 .heading{
-    max-width:780px;
+    max-width:790px;
     margin-bottom:30px;
 }
 
@@ -296,16 +289,16 @@ textarea:focus{
 
 
 /* =====================================================
-   PROPERTY TYPES
+   OPPORTUNITY CATEGORIES
 ===================================================== */
 
-.type-grid{
+.category-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:15px;
 }
 
-.type-card{
+.category-card{
     background:white;
     border:1px solid #e0e6ee;
     border-radius:17px;
@@ -314,22 +307,22 @@ textarea:focus{
     transition:.2s ease;
 }
 
-.type-card:hover{
+.category-card:hover{
     transform:translateY(-3px);
     box-shadow:0 15px 35px rgba(7,26,61,.09);
 }
 
-.type-icon{
+.category-icon{
     font-size:30px;
     margin-bottom:12px;
 }
 
-.type-card h3{
+.category-card h3{
     margin:0 0 7px;
     color:#071a3d;
 }
 
-.type-card p{
+.category-card p{
     margin:0;
     color:#667085;
     font-size:.88rem;
@@ -338,111 +331,92 @@ textarea:focus{
 
 
 /* =====================================================
-   PROPERTY GRID
+   OPPORTUNITY CARDS
 ===================================================== */
 
-.property-grid{
+.opportunity-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.property-card{
+.opportunity-card{
     background:white;
     border:1px solid #e0e5ed;
     border-radius:19px;
-    overflow:hidden;
+    padding:23px;
     box-shadow:0 7px 24px rgba(7,26,61,.04);
 }
 
-.property-image{
-    height:210px;
-    background:
-    linear-gradient(
-        135deg,
-        #dfe6f0,
-        #f8fafc
-    );
-
+.opportunity-top{
     display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#667085;
-    font-size:3rem;
-}
-
-.property-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.property-content{
-    padding:22px;
-}
-
-.property-top{
-    display:flex;
-    align-items:flex-start;
     justify-content:space-between;
-    gap:10px;
+    align-items:flex-start;
+    gap:12px;
 }
 
-.property-content h3{
-    margin:0 0 7px;
-    color:#071a3d;
+.opportunity-icon{
+    width:56px;
+    height:56px;
+    display:grid;
+    place-items:center;
+    background:#eef2f8;
+    border-radius:15px;
+    font-size:27px;
 }
 
-.property-location{
-    color:#667085;
-    font-size:.84rem;
-}
-
-.property-tag{
-    background:#f7e8eb;
-    color:#8a172d;
+.status{
     padding:6px 9px;
     border-radius:20px;
     font-size:.7rem;
     font-weight:800;
-    white-space:nowrap;
 }
 
-.property-description{
+.open{
+    background:#eaf7ef;
+    color:#19723a;
+}
+
+.soon{
+    background:#fff4da;
+    color:#735a12;
+}
+
+.opportunity-card h3{
+    margin:18px 0 7px;
+    color:#071a3d;
+}
+
+.opportunity-card p{
     color:#667085;
     line-height:1.6;
     font-size:.9rem;
-    margin:15px 0;
 }
 
-.property-meta{
+.meta{
+    margin-top:17px;
+    padding-top:15px;
     border-top:1px solid #edf0f4;
-    border-bottom:1px solid #edf0f4;
-    padding:13px 0;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
 }
 
-.meta-item{
+.meta-line{
+    margin:8px 0;
     color:#667085;
-    font-size:.82rem;
+    font-size:.83rem;
 }
 
-.meta-item strong{
-    display:block;
+.meta-line strong{
     color:#071a3d;
-    margin-bottom:3px;
 }
 
-.property-buttons{
+.card-actions{
     display:flex;
     flex-wrap:wrap;
     gap:8px;
-    margin-top:17px;
+    margin-top:18px;
 }
 
-.property-buttons .btn{
+.card-actions .btn{
     min-height:40px;
     padding:9px 12px;
     font-size:.8rem;
@@ -450,7 +424,7 @@ textarea:focus{
 
 
 /* =====================================================
-   SEARCH RESULTS
+   FILTER RESULTS
 ===================================================== */
 
 .results{
@@ -489,7 +463,7 @@ textarea:focus{
 
 
 /* =====================================================
-   HOW IT WORKS
+   STEPS
 ===================================================== */
 
 .steps{
@@ -530,7 +504,7 @@ textarea:focus{
 
 
 /* =====================================================
-   PROPERTY SUBMISSION
+   FORM
 ===================================================== */
 
 .form-box{
@@ -570,53 +544,52 @@ label{
 
 
 /* =====================================================
-   PARTNER BOX
+   FEATURE BOX
 ===================================================== */
 
-.partner-box{
+.feature-box{
     background:
     linear-gradient(
         115deg,
         #071a3d,
         #12315e
     );
-
     color:white;
     border-radius:23px;
     padding:38px;
 }
 
-.partner-box h2{
+.feature-box h2{
     margin:8px 0 12px;
     font-size:clamp(2rem,4vw,3rem);
 }
 
-.partner-box p{
-    max-width:780px;
+.feature-box p{
+    max-width:790px;
     color:rgba(255,255,255,.83);
     line-height:1.7;
 }
 
-.partner-benefits{
+.feature-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:12px;
     margin-top:25px;
 }
 
-.benefit{
+.feature-item{
     background:rgba(255,255,255,.08);
     border:1px solid rgba(255,255,255,.13);
     padding:17px;
     border-radius:13px;
 }
 
-.benefit strong{
+.feature-item strong{
     display:block;
     margin-bottom:5px;
 }
 
-.benefit span{
+.feature-item span{
     color:rgba(255,255,255,.7);
     font-size:.82rem;
     line-height:1.5;
@@ -624,7 +597,7 @@ label{
 
 
 /* =====================================================
-   VERIFICATION
+   TRUST
 ===================================================== */
 
 .trust-grid{
@@ -747,11 +720,11 @@ footer a:hover{
         grid-template-columns:1fr 1fr;
     }
 
-    .type-grid{
+    .category-grid{
         grid-template-columns:1fr 1fr;
     }
 
-    .property-grid{
+    .opportunity-grid{
         grid-template-columns:1fr 1fr;
     }
 
@@ -759,7 +732,7 @@ footer a:hover{
         grid-template-columns:1fr 1fr;
     }
 
-    .partner-benefits{
+    .feature-grid{
         grid-template-columns:1fr 1fr;
     }
 
@@ -785,10 +758,10 @@ footer a:hover{
     }
 
     .search-grid,
-    .type-grid,
-    .property-grid,
+    .category-grid,
+    .opportunity-grid,
     .steps,
-    .partner-benefits,
+    .feature-grid,
     .trust-grid,
     .form-grid,
     .footer-grid{
@@ -799,7 +772,7 @@ footer a:hover{
         grid-column:auto;
     }
 
-    .partner-box,
+    .feature-box,
     .form-box{
         padding:24px;
     }
@@ -894,44 +867,44 @@ class="vh-nav-links"
 <div class="vh-container">
 
 <small>
-VELORA HELP • PROPERTY
+VELORA HELP • STUDENTS
 </small>
 
 <h1>
-Find a place<br>
-with confidence.
+Your opportunity.<br>
+Our direction.
 </h1>
 
 <p>
-Looking for a house, apartment, room, land or commercial
-property in Dakshina Kannada? Search according to your
-requirement, location and budget. Property enquiries are
-handled through VELORA HELP so we can guide you to the
-appropriate owner or agent.
+Find scholarships, internships, free courses, admissions
+guidance, student jobs, competitions, government
+opportunities and other useful resources in one place.
+VELORA HELP helps students understand what is available
+and what to do next.
 </p>
 
 
 <div class="actions">
 
 <a
-href="#property-search"
+href="#opportunity-search"
 class="btn btn-white"
 >
-🔎 Find Property
+🔎 Find Opportunity
 </a>
 
 <a
-href="#list-property"
+href="#student-request"
 class="btn btn-white"
 >
-🏠 List Your Property
+🎓 Student Help
 </a>
 
 <a
-href="#property-enquiry"
+href="#submit-opportunity"
 class="btn btn-red"
 >
-💬 Ask VELORA HELP
+📢 Submit Opportunity
 </a>
 
 </div>
@@ -948,7 +921,7 @@ class="btn btn-red"
 
 <section
 class="search-section"
-id="property-search"
+id="opportunity-search"
 >
 
 <div class="vh-container">
@@ -958,7 +931,7 @@ id="property-search"
 <div class="heading">
 
 <small>
-PROPERTY FINDER
+OPPORTUNITY FINDER
 </small>
 
 <h2>
@@ -966,68 +939,67 @@ What are you looking for?
 </h2>
 
 <p>
-Search by purpose, property type, location and budget.
+Search according to your opportunity type and
+preferred location.
 </p>
 
 </div>
 
 
-<form id="propertySearchForm">
+<form id="opportunitySearchForm">
 
 <div class="search-grid">
 
 
-<select id="listingPurpose">
+<input
+id="opportunityKeyword"
+type="search"
+placeholder="Example: scholarship, internship, course..."
+>
+
+
+<select id="opportunityCategory">
 
 <option value="">
-Rent or Buy?
+All Opportunities
 </option>
 
-<option value="Rent">
-Rent
+<option value="Scholarship">
+Scholarships
 </option>
 
-<option value="Sale">
-Buy / Sale
+<option value="Internship">
+Internships
+</option>
+
+<option value="Course">
+Free Courses
+</option>
+
+<option value="Admission">
+Admissions
+</option>
+
+<option value="Job">
+Student Jobs
+</option>
+
+<option value="Competition">
+Competitions
+</option>
+
+<option value="Government">
+Government Schemes
+</option>
+
+<option value="Training">
+Training
 </option>
 
 </select>
 
 
-<select id="propertyType">
-
-<option value="">
-Property Type
-</option>
-
-<option value="House">
-House
-</option>
-
-<option value="Apartment">
-Apartment
-</option>
-
-<option value="Room">
-Room
-</option>
-
-<option value="Villa">
-Villa
-</option>
-
-<option value="Land">
-Land
-</option>
-
-<option value="Commercial">
-Commercial
-</option>
-
-</select>
-
-
-<select id="propertyLocation">
+<select id="opportunityLocation">
 
 <option value="">
 Location
@@ -1065,29 +1037,12 @@ Kadaba
 Mulki
 </option>
 
-</select>
-
-
-<select id="propertyBudget">
-
-<option value="">
-Budget
+<option>
+Karnataka
 </option>
 
-<option value="low">
-Below ₹10,000
-</option>
-
-<option value="medium">
-₹10,000 – ₹25,000
-</option>
-
-<option value="high">
-₹25,000+
-</option>
-
-<option value="sale">
-For Sale
+<option>
+India
 </option>
 
 </select>
@@ -1111,7 +1066,7 @@ class="results"
 >
 
 <h3>
-Property Results
+Opportunity Results
 </h3>
 
 <div id="resultContent"></div>
@@ -1127,7 +1082,7 @@ Property Results
 
 
 <!-- =====================================================
-     PROPERTY TYPES
+     CATEGORIES
 ===================================================== -->
 
 <section class="section">
@@ -1137,179 +1092,187 @@ Property Results
 <div class="heading">
 
 <small>
-PROPERTY CATEGORIES
+STUDENT SUPPORT
 </small>
 
 <h2>
-Choose your requirement
+Everything students need.
 </h2>
 
 <p>
-Select a property type and VELORA HELP will guide
-you toward available listings.
+Select an area and VELORA HELP can guide you toward
+the relevant information or opportunity.
 </p>
 
 </div>
 
 
-<div class="type-grid">
+<div class="category-grid">
 
 
 <div
-class="type-card type-button"
-data-type="House"
+class="category-card category-button"
+data-category="Scholarship"
 >
 
-<div class="type-icon">
-🏠
+<div class="category-icon">
+🎓
 </div>
 
 <h3>
-House
+Scholarships
 </h3>
 
 <p>
-Independent houses for rent or sale.
-</p>
-
-</div>
-
-
-<div
-class="type-card type-button"
-data-type="Apartment"
->
-
-<div class="type-icon">
-🏢
-</div>
-
-<h3>
-Apartment
-</h3>
-
-<p>
-Apartments and flats in different locations.
+Scholarship opportunities, eligibility, documents
+and application guidance.
 </p>
 
 </div>
 
 
 <div
-class="type-card type-button"
-data-type="Room"
+class="category-card category-button"
+data-category="Internship"
 >
 
-<div class="type-icon">
-🛏️
+<div class="category-icon">
+💼
 </div>
 
 <h3>
-Room
+Internships
 </h3>
 
 <p>
-Rooms and accommodation for students and workers.
+Internships, practical experience and
+student opportunities.
 </p>
 
 </div>
 
 
 <div
-class="type-card type-button"
-data-type="Villa"
+class="category-card category-button"
+data-category="Course"
 >
 
-<div class="type-icon">
-🏡
+<div class="category-icon">
+📚
 </div>
 
 <h3>
-Villa
+Free Courses
 </h3>
 
 <p>
-Premium homes and villas.
+Free learning opportunities and useful
+skill-development courses.
 </p>
 
 </div>
 
 
 <div
-class="type-card type-button"
-data-type="Land"
+class="category-card category-button"
+data-category="Admission"
 >
 
-<div class="type-icon">
-🌳
+<div class="category-icon">
+🏫
 </div>
 
 <h3>
-Land
+Admissions
 </h3>
 
 <p>
-Residential, agricultural and other land listings.
+PUC, degree and other course admission
+guidance.
 </p>
 
 </div>
 
 
 <div
-class="type-card type-button"
-data-type="Commercial"
+class="category-card category-button"
+data-category="Job"
 >
 
-<div class="type-icon">
-🏬
+<div class="category-icon">
+💰
 </div>
 
 <h3>
-Commercial
+Student Jobs
 </h3>
 
 <p>
-Shops, offices, buildings and commercial spaces.
+Part-time jobs, internships and entry-level
+opportunities.
 </p>
 
 </div>
 
 
 <div
-class="type-card type-button"
-data-type="PG"
+class="category-card category-button"
+data-category="Competition"
 >
 
-<div class="type-icon">
-🛏️
+<div class="category-icon">
+🏆
 </div>
 
 <h3>
-PG / Hostel
+Competitions
 </h3>
 
 <p>
-Student and working-professional accommodation.
+Competitions, hackathons, sports and
+student challenges.
 </p>
 
 </div>
 
 
 <div
-class="type-card type-button"
-data-type="Other"
+class="category-card category-button"
+data-category="Government"
 >
 
-<div class="type-icon">
-➕
+<div class="category-icon">
+🏛️
 </div>
 
 <h3>
-Other
+Government Schemes
 </h3>
 
 <p>
-Tell VELORA HELP exactly what you need.
+Student-related government schemes and
+application guidance.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Training"
+>
+
+<div class="category-icon">
+🧠
+</div>
+
+<h3>
+Training
+</h3>
+
+<p>
+Skill development, workshops and practical
+training opportunities.
 </p>
 
 </div>
@@ -1324,12 +1287,12 @@ Tell VELORA HELP exactly what you need.
 
 
 <!-- =====================================================
-     SAMPLE PROPERTY DIRECTORY
+     OPPORTUNITIES
 ===================================================== -->
 
 <section
 class="section alt"
-id="listings"
+id="opportunities"
 >
 
 <div class="vh-container">
@@ -1337,450 +1300,150 @@ id="listings"
 <div class="heading">
 
 <small>
-PROPERTY DIRECTORY
+OPPORTUNITY BOARD
 </small>
 
 <h2>
-Available listings
+Current opportunity categories
 </h2>
 
 <p>
-These are demonstration listings showing how the
-future VELORA HELP property directory will work.
-Replace them with real verified listings before launch.
+These sample cards show the structure. Before public
+launch, replace demonstration information with verified,
+current opportunities and official application sources.
 </p>
 
 </div>
 
 
-<div class="property-grid">
+<div class="opportunity-grid">
 
 
-<!-- PROPERTY 1 -->
+<!-- SCHOLARSHIP -->
 
 <article
-class="property-card"
-data-purpose="Rent"
-data-type="Apartment"
+class="opportunity-card"
+data-category="Scholarship"
+data-location="Karnataka"
+data-keywords="scholarship student financial education government"
+>
+
+<div class="opportunity-top">
+
+<div class="opportunity-icon">
+🎓
+</div>
+
+<span class="status open">
+OPEN
+</span>
+
+</div>
+
+<h3>
+Student Scholarship
+</h3>
+
+<p>
+Scholarship opportunity for eligible students.
+Check official eligibility and application requirements.
+</p>
+
+<div class="meta">
+
+<div class="meta-line">
+<strong>Category:</strong>
+Scholarship
+</div>
+
+<div class="meta-line">
+<strong>Location:</strong>
+Karnataka
+</div>
+
+<div class="meta-line">
+<strong>Documents:</strong>
+Depends on scheme
+</div>
+
+</div>
+
+<div class="card-actions">
+
+<button
+type="button"
+class="btn btn-blue opportunity-enquiry"
+data-opportunity="Student Scholarship"
+data-category="Scholarship"
+>
+Ask VELORA HELP
+</button>
+
+</div>
+
+</article>
+
+
+
+<!-- INTERNSHIP -->
+
+<article
+class="opportunity-card"
+data-category="Internship"
 data-location="Mangaluru"
-data-budget="medium"
-data-keywords="apartment flat rent mangaluru 2bhk"
+data-keywords="internship company student training practical experience mangalore"
 >
 
-<div class="property-image">
-🏢
+<div class="opportunity-top">
+
+<div class="opportunity-icon">
+💼
 </div>
 
-<div class="property-content">
-
-<div class="property-top">
-
-<div>
-
-<h3>
-2 BHK Apartment
-</h3>
-
-<div class="property-location">
-📍 Mangaluru
-</div>
-
-</div>
-
-<span class="property-tag">
-RENT
+<span class="status open">
+OPEN
 </span>
 
 </div>
 
-
-<p class="property-description">
-A sample 2 BHK apartment listing suitable for
-families or working professionals.
-</p>
-
-
-<div class="property-meta">
-
-<div class="meta-item">
-
-<strong>
-Type
-</strong>
-
-Apartment
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Bedrooms
-</strong>
-
-2 BHK
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Purpose
-</strong>
-
-Rent
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Status
-</strong>
-
-Available
-
-</div>
-
-</div>
-
-
-<div class="property-buttons">
-
-<button
-class="btn btn-blue property-enquiry"
-data-property="2 BHK Apartment"
-data-location="Mangaluru"
-type="button"
->
-Enquire
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-
-
-<!-- PROPERTY 2 -->
-
-<article
-class="property-card"
-data-purpose="Rent"
-data-type="House"
-data-location="Bantwal"
-data-budget="medium"
-data-keywords="house rent bantwal family"
->
-
-<div class="property-image">
-🏠
-</div>
-
-<div class="property-content">
-
-<div class="property-top">
-
-<div>
-
 <h3>
-Independent House
+Local Internship
 </h3>
 
-<div class="property-location">
-📍 Bantwal
-</div>
-
-</div>
-
-<span class="property-tag">
-RENT
-</span>
-
-</div>
-
-
-<p class="property-description">
-A sample independent house listing for a
-family looking around Bantwal.
+<p>
+Practical internship opportunities with local
+businesses and organisations.
 </p>
 
+<div class="meta">
 
-<div class="property-meta">
-
-<div class="meta-item">
-
-<strong>
-Type
-</strong>
-
-House
-
+<div class="meta-line">
+<strong>Category:</strong>
+Internship
 </div>
 
-<div class="meta-item">
-
-<strong>
-Bedrooms
-</strong>
-
-3 BHK
-
+<div class="meta-line">
+<strong>Location:</strong>
+Mangaluru
 </div>
 
-<div class="meta-item">
-
-<strong>
-Purpose
-</strong>
-
-Rent
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Status
-</strong>
-
-Available
-
-</div>
-
-</div>
-
-
-<div class="property-buttons">
-
-<button
-class="btn btn-blue property-enquiry"
-data-property="Independent House"
-data-location="Bantwal"
-type="button"
->
-Enquire
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-
-
-<!-- PROPERTY 3 -->
-
-<article
-class="property-card"
-data-purpose="Sale"
-data-type="Land"
-data-location="Puttur"
-data-budget="sale"
-data-keywords="land sale puttur property plot"
->
-
-<div class="property-image">
-🌳
-</div>
-
-<div class="property-content">
-
-<div class="property-top">
-
-<div>
-
-<h3>
-Residential Land
-</h3>
-
-<div class="property-location">
-📍 Puttur
-</div>
-
-</div>
-
-<span class="property-tag">
-SALE
-</span>
-
-</div>
-
-
-<p class="property-description">
-A sample land listing demonstrating the future
-property-sale directory.
-</p>
-
-
-<div class="property-meta">
-
-<div class="meta-item">
-
-<strong>
-Type
-</strong>
-
-Land
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Location
-</strong>
-
-Puttur
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Purpose
-</strong>
-
-Sale
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Status
-</strong>
-
-Available
-
-</div>
-
-</div>
-
-
-<div class="property-buttons">
-
-<button
-class="btn btn-blue property-enquiry"
-data-property="Residential Land"
-data-location="Puttur"
-type="button"
->
-Enquire
-</button>
-
-</div>
-
-</div>
-
-</article>
-
-
-
-<!-- PROPERTY 4 -->
-
-<article
-class="property-card"
-data-purpose="Rent"
-data-type="Room"
-data-location="Sullia"
-data-budget="low"
-data-keywords="room rent sullia student working"
->
-
-<div class="property-image">
-🛏️
-</div>
-
-<div class="property-content">
-
-<div class="property-top">
-
-<div>
-
-<h3>
-Single Room
-</h3>
-
-<div class="property-location">
-📍 Sullia
-</div>
-
-</div>
-
-<span class="property-tag">
-RENT
-</span>
-
-</div>
-
-
-<p class="property-description">
-A sample room listing for students and
-working professionals.
-</p>
-
-
-<div class="property-meta">
-
-<div class="meta-item">
-
-<strong>
-Type
-</strong>
-
-Room
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Suitable For
-</strong>
-
+<div class="meta-line">
+<strong>Suitable For:</strong>
 Students
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Purpose
-</strong>
-
-Rent
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Status
-</strong>
-
-Available
-
 </div>
 
 </div>
 
-
-<div class="property-buttons">
+<div class="card-actions">
 
 <button
-class="btn btn-blue property-enquiry"
-data-property="Single Room"
-data-location="Sullia"
 type="button"
+class="btn btn-blue opportunity-enquiry"
+data-opportunity="Local Internship"
+data-category="Internship"
 >
-Enquire
+Ask VELORA HELP
 </button>
-
-</div>
 
 </div>
 
@@ -1788,107 +1451,65 @@ Enquire
 
 
 
-<!-- PROPERTY 5 -->
+<!-- FREE COURSE -->
 
 <article
-class="property-card"
-data-purpose="Rent"
-data-type="Commercial"
-data-location="Moodbidri"
-data-budget="high"
-data-keywords="shop office commercial rent moodbidri"
+class="opportunity-card"
+data-category="Course"
+data-location="India"
+data-keywords="free course online skill digital certification"
 >
 
-<div class="property-image">
-🏬
+<div class="opportunity-top">
+
+<div class="opportunity-icon">
+📚
 </div>
 
-<div class="property-content">
-
-<div class="property-top">
-
-<div>
-
-<h3>
-Commercial Space
-</h3>
-
-<div class="property-location">
-📍 Moodbidri
-</div>
-
-</div>
-
-<span class="property-tag">
-RENT
+<span class="status open">
+OPEN
 </span>
 
 </div>
 
+<h3>
+Free Skill Course
+</h3>
 
-<p class="property-description">
-A sample commercial property for a shop,
-office or business requirement.
+<p>
+Free learning opportunities that can help students
+build practical skills.
 </p>
 
+<div class="meta">
 
-<div class="property-meta">
-
-<div class="meta-item">
-
-<strong>
-Type
-</strong>
-
-Commercial
-
+<div class="meta-line">
+<strong>Category:</strong>
+Free Course
 </div>
 
-<div class="meta-item">
-
-<strong>
-Location
-</strong>
-
-Moodbidri
-
+<div class="meta-line">
+<strong>Location:</strong>
+Online / India
 </div>
 
-<div class="meta-item">
-
-<strong>
-Purpose
-</strong>
-
-Rent
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Status
-</strong>
-
-Available
-
+<div class="meta-line">
+<strong>Certificate:</strong>
+Check provider
 </div>
 
 </div>
 
-
-<div class="property-buttons">
+<div class="card-actions">
 
 <button
-class="btn btn-blue property-enquiry"
-data-property="Commercial Space"
-data-location="Moodbidri"
 type="button"
+class="btn btn-blue opportunity-enquiry"
+data-opportunity="Free Skill Course"
+data-category="Course"
 >
-Enquire
+Ask VELORA HELP
 </button>
-
-</div>
 
 </div>
 
@@ -1896,111 +1517,196 @@ Enquire
 
 
 
-<!-- PROPERTY 6 -->
+<!-- ADMISSION -->
 
 <article
-class="property-card"
-data-purpose="Sale"
-data-type="Villa"
-data-location="Belthangady"
-data-budget="sale"
-data-keywords="villa house sale belthangady premium home"
+class="opportunity-card"
+data-category="Admission"
+data-location="Dakshina Kannada"
+data-keywords="puc degree admission college university course dakshina kannada"
 >
 
-<div class="property-image">
-🏡
+<div class="opportunity-top">
+
+<div class="opportunity-icon">
+🏫
 </div>
 
-<div class="property-content">
-
-<div class="property-top">
-
-<div>
-
-<h3>
-Family Villa
-</h3>
-
-<div class="property-location">
-📍 Belthangady
-</div>
-
-</div>
-
-<span class="property-tag">
-SALE
+<span class="status open">
+OPEN
 </span>
 
 </div>
 
+<h3>
+College Admission Guidance
+</h3>
 
-<p class="property-description">
-A sample villa listing for demonstrating
-future verified property sales.
+<p>
+Guidance for PUC, degree and other educational
+admissions in Dakshina Kannada.
 </p>
 
+<div class="meta">
 
-<div class="property-meta">
-
-<div class="meta-item">
-
-<strong>
-Type
-</strong>
-
-Villa
-
+<div class="meta-line">
+<strong>Category:</strong>
+Admission
 </div>
 
-<div class="meta-item">
-
-<strong>
-Bedrooms
-</strong>
-
-4 BHK
-
+<div class="meta-line">
+<strong>Location:</strong>
+Dakshina Kannada
 </div>
 
-<div class="meta-item">
-
-<strong>
-Purpose
-</strong>
-
-Sale
-
-</div>
-
-<div class="meta-item">
-
-<strong>
-Status
-</strong>
-
-Available
-
+<div class="meta-line">
+<strong>Courses:</strong>
+PUC / Degree / Others
 </div>
 
 </div>
 
+<div class="card-actions">
 
-<div class="property-buttons">
-
-<button
-class="btn btn-blue property-enquiry"
-data-property="Family Villa"
-data-location="Belthangady"
-type="button"
+<a
+href="admissions.html"
+class="btn btn-blue"
 >
-Enquire
-</button>
-
-</div>
+Open Admissions
+</a>
 
 </div>
 
 </article>
+
+
+
+<!-- STUDENT JOB -->
+
+<article
+class="opportunity-card"
+data-category="Job"
+data-location="Mangaluru"
+data-keywords="student job part time work employment mangalore"
+>
+
+<div class="opportunity-top">
+
+<div class="opportunity-icon">
+💰
+</div>
+
+<span class="status open">
+OPEN
+</span>
+
+</div>
+
+<h3>
+Student Job Opportunity
+</h3>
+
+<p>
+Part-time and student-friendly work opportunities
+from local employers.
+</p>
+
+<div class="meta">
+
+<div class="meta-line">
+<strong>Category:</strong>
+Student Job
+</div>
+
+<div class="meta-line">
+<strong>Location:</strong>
+Mangaluru
+</div>
+
+<div class="meta-line">
+<strong>Type:</strong>
+Part-time / Entry Level
+</div>
+
+</div>
+
+<div class="card-actions">
+
+<a
+href="jobs.html"
+class="btn btn-blue"
+>
+Open Jobs
+</a>
+
+</div>
+
+</article>
+
+
+
+<!-- GOVERNMENT -->
+
+<article
+class="opportunity-card"
+data-category="Government"
+data-location="Karnataka"
+data-keywords="government scheme student karnataka education welfare"
+>
+
+<div class="opportunity-top">
+
+<div class="opportunity-icon">
+🏛️
+</div>
+
+<span class="status soon">
+CHECK
+</span>
+
+</div>
+
+<h3>
+Government Student Scheme
+</h3>
+
+<p>
+Government schemes may provide educational,
+financial or welfare support depending on eligibility.
+</p>
+
+<div class="meta">
+
+<div class="meta-line">
+<strong>Category:</strong>
+Government
+</div>
+
+<div class="meta-line">
+<strong>Location:</strong>
+Karnataka
+</div>
+
+<div class="meta-line">
+<strong>Eligibility:</strong>
+Scheme dependent
+</div>
+
+</div>
+
+<div class="card-actions">
+
+<a
+href="government.html"
+class="btn btn-blue"
+>
+Government Services
+</a>
+
+</div>
+
+</article>
+
 
 
 </div>
@@ -2012,7 +1718,7 @@ Enquire
 
 
 <!-- =====================================================
-     HOW IT WORKS
+     STUDENT PROCESS
 ===================================================== -->
 
 <section class="section">
@@ -2022,17 +1728,17 @@ Enquire
 <div class="heading">
 
 <small>
-FOR PROPERTY SEEKERS
+STUDENT GUIDANCE
 </small>
 
 <h2>
-How property enquiry works
+How VELORA HELP works for students
 </h2>
 
 <p>
-The initial VELORA HELP model keeps the enquiry
-centralised so we can understand what the customer
-actually needs before connecting them.
+Students don't always know which opportunity is suitable.
+Our model is to understand the student's requirement first
+and then provide direction.
 </p>
 
 </div>
@@ -2048,12 +1754,12 @@ actually needs before connecting them.
 </div>
 
 <h3>
-Tell us
+Tell us your goal
 </h3>
 
 <p>
-Tell us whether you want to rent or buy and
-what property you need.
+Tell us whether you need a scholarship,
+internship, course, admission, job or other help.
 </p>
 
 </div>
@@ -2066,11 +1772,12 @@ what property you need.
 </div>
 
 <h3>
-Choose location
+Share your details
 </h3>
 
 <p>
-Select your taluk, town or preferred area.
+Tell us your education level, course, location
+and requirement.
 </p>
 
 </div>
@@ -2083,12 +1790,12 @@ Select your taluk, town or preferred area.
 </div>
 
 <h3>
-VELORA reviews
+We review
 </h3>
 
 <p>
-We review the requirement and available
-property listings.
+VELORA HELP reviews the request and identifies
+relevant available information.
 </p>
 
 </div>
@@ -2101,12 +1808,12 @@ property listings.
 </div>
 
 <h3>
-Get connected
+Get direction
 </h3>
 
 <p>
-We guide you toward the appropriate owner
-or property partner.
+We explain the next step, documents and where
+the student should apply or enquire.
 </p>
 
 </div>
@@ -2121,74 +1828,71 @@ or property partner.
 
 
 <!-- =====================================================
-     LIST PROPERTY
+     STUDENT HELP BOX
 ===================================================== -->
 
 <section
 class="section alt"
-id="list-property"
+id="student-request"
 >
 
 <div class="vh-container">
 
-<div class="partner-box">
+<div class="feature-box">
 
 <small>
-FOR OWNERS & PROPERTY AGENTS
+STUDENT HELP DESK
 </small>
 
 <h2>
-Have a property to list?
+Don't know where to start?
 </h2>
 
 <p>
-Owners, brokers and real-estate professionals can submit
-property information to VELORA HELP. We can review the
-listing before publishing it on the platform.
+Tell VELORA HELP your situation. Whether you are looking
+for a scholarship, internship, free course, admission,
+student job, government scheme or another opportunity,
+we can review your requirement and guide you.
 </p>
 
 
-<div class="partner-benefits">
+<div class="feature-grid">
 
 
-<div class="benefit">
+<div class="feature-item">
 
 <strong>
-🏠 Property Listing
+🎓 Education
 </strong>
 
 <span>
-Submit property type, location, rent/sale
-information and description.
+PUC, degree, courses and admission guidance.
 </span>
 
 </div>
 
 
-<div class="benefit">
+<div class="feature-item">
 
 <strong>
-📸 Photos
+💼 Career
 </strong>
 
 <span>
-Property photos can be submitted for
-review before publication.
+Internships, jobs, skills and career opportunities.
 </span>
 
 </div>
 
 
-<div class="benefit">
+<div class="feature-item">
 
 <strong>
-🤝 Customer Enquiries
+💰 Financial Support
 </strong>
 
 <span>
-Customer enquiries are routed through
-VELORA HELP rather than exposing your
-personal number publicly.
+Scholarships and eligible student schemes.
 </span>
 
 </div>
@@ -2205,7 +1909,7 @@ personal number publicly.
 
 
 <!-- =====================================================
-     PROPERTY SUBMISSION FORM
+     STUDENT FORM
 ===================================================== -->
 
 <section class="section">
@@ -2215,17 +1919,16 @@ personal number publicly.
 <div class="heading">
 
 <small>
-PROPERTY SUBMISSION
+STUDENT ENQUIRY
 </small>
 
 <h2>
-Submit your property
+Tell VELORA HELP what you need.
 </h2>
 
 <p>
-Send the property details to VELORA HELP. The current
-website is free to submit. Partnership plans can be
-introduced later when the platform is established.
+Submit your requirement and the information will be
+prepared for sending to the VELORA HELP WhatsApp number.
 </p>
 
 </div>
@@ -2233,22 +1936,22 @@ introduced later when the platform is established.
 
 <div class="form-box">
 
-<form id="propertySubmitForm">
+<form id="studentForm">
 
 <div class="form-grid">
 
 
 <div>
 
-<label for="ownerName">
-Owner / Agent Name *
+<label for="studentName">
+Full Name *
 </label>
 
 <input
-id="ownerName"
+id="studentName"
 type="text"
 required
-placeholder="Full name"
+placeholder="Your full name"
 >
 
 </div>
@@ -2256,12 +1959,12 @@ placeholder="Full name"
 
 <div>
 
-<label for="ownerPhone">
+<label for="studentPhone">
 Phone Number *
 </label>
 
 <input
-id="ownerPhone"
+id="studentPhone"
 type="tel"
 required
 placeholder="+91..."
@@ -2272,113 +1975,39 @@ placeholder="+91..."
 
 <div>
 
-<label for="ownerType">
-You are *
+<label for="studentAge">
+Age
 </label>
 
-<select
-id="ownerType"
-required
+<input
+id="studentAge"
+type="number"
+min="10"
+max="100"
+placeholder="Age"
 >
-
-<option value="">
-Select
-</option>
-
-<option>
-Property Owner
-</option>
-
-<option>
-Real Estate Agent
-</option>
-
-<option>
-Broker
-</option>
-
-<option>
-Builder / Developer
-</option>
-
-<option>
-Property Manager
-</option>
-
-</select>
 
 </div>
 
 
 <div>
 
-<label for="listingPurposeForm">
-Property Purpose *
+<label for="studentGender">
+Gender
 </label>
 
-<select
-id="listingPurposeForm"
-required
->
+<select id="studentGender">
 
-<option value="">
-Select
+<option>
+Prefer not to say
 </option>
 
 <option>
-Rent
+Male
 </option>
 
 <option>
-Sale
-</option>
-
-</select>
-
-</div>
-
-
-<div>
-
-<label for="listingPropertyType">
-Property Type *
-</label>
-
-<select
-id="listingPropertyType"
-required
->
-
-<option value="">
-Select
-</option>
-
-<option>
-House
-</option>
-
-<option>
-Apartment
-</option>
-
-<option>
-Room
-</option>
-
-<option>
-Villa
-</option>
-
-<option>
-Land
-</option>
-
-<option>
-Commercial
-</option>
-
-<option>
-PG / Hostel
+Female
 </option>
 
 <option>
@@ -2392,12 +2021,91 @@ Other
 
 <div>
 
-<label for="listingTaluk">
+<label for="studentEducation">
+Current Education *
+</label>
+
+<select
+id="studentEducation"
+required
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+School
+</option>
+
+<option>
+SSLC
+</option>
+
+<option>
+1st PUC
+</option>
+
+<option>
+2nd PUC
+</option>
+
+<option>
+Diploma
+</option>
+
+<option>
+1st Year Degree
+</option>
+
+<option>
+2nd Year Degree
+</option>
+
+<option>
+3rd Year Degree
+</option>
+
+<option>
+Postgraduate
+</option>
+
+<option>
+ITI
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="studentCourse">
+Course / Stream
+</label>
+
+<input
+id="studentCourse"
+type="text"
+placeholder="Example: B.Com, Science, Computer Science"
+>
+
+</div>
+
+
+<div>
+
+<label for="studentTaluk">
 Taluk *
 </label>
 
 <select
-id="listingTaluk"
+id="studentTaluk"
 required
 >
 
@@ -2444,69 +2152,72 @@ Mulki
 
 <div>
 
-<label for="listingArea">
-Town / Area / Village *
+<label for="studentArea">
+Town / Area
 </label>
 
 <input
-id="listingArea"
+id="studentArea"
 type="text"
+placeholder="Your area"
+>
+
+</div>
+
+
+<div class="full">
+
+<label for="studentNeed">
+What do you need? *
+</label>
+
+<select
+id="studentNeed"
 required
-placeholder="Example: Sullia town"
 >
 
-</div>
-
-
-<div>
-
-<label for="listingPrice">
-Rent / Sale Price *
-</label>
-
-<input
-id="listingPrice"
-type="text"
-required
-placeholder="Example: ₹15,000/month"
->
-
-</div>
-
-
-<div>
-
-<label for="listingBedrooms">
-Bedrooms / Size
-</label>
-
-<input
-id="listingBedrooms"
-type="text"
-placeholder="Example: 2 BHK / 1200 sq.ft"
->
-
-</div>
-
-
-<div>
-
-<label for="listingAvailability">
-Availability
-</label>
-
-<select id="listingAvailability">
-
-<option>
-Available Now
+<option value="">
+Select requirement
 </option>
 
 <option>
-Available Soon
+Scholarship
 </option>
 
 <option>
-Occupied
+Internship
+</option>
+
+<option>
+Free Course
+</option>
+
+<option>
+Admission
+</option>
+
+<option>
+Student Job
+</option>
+
+<option>
+Government Scheme
+</option>
+
+<option>
+Competition
+</option>
+
+<option>
+Training
+</option>
+
+<option>
+Career Guidance
+</option>
+
+<option>
+Other
 </option>
 
 </select>
@@ -2516,62 +2227,16 @@ Occupied
 
 <div class="full">
 
-<label for="listingAddress">
-Property Address / Location Details *
+<label for="studentProblem">
+Explain Your Requirement *
 </label>
 
 <textarea
-id="listingAddress"
-rows="4"
-required
-placeholder="Enter the property location and useful nearby landmark information."
-></textarea>
-
-</div>
-
-
-<div class="full">
-
-<label for="listingDescription">
-Property Description *
-</label>
-
-<textarea
-id="listingDescription"
+id="studentProblem"
 rows="6"
 required
 maxlength="2000"
-placeholder="Describe the property, facilities, parking, furnishing, nearby facilities and other useful information."
-></textarea>
-
-</div>
-
-
-<div class="full">
-
-<label for="listingPhotos">
-Property Photo Information
-</label>
-
-<input
-id="listingPhotos"
-type="text"
-placeholder="Example: I have 8 property photos ready to share"
->
-
-</div>
-
-
-<div class="full">
-
-<label for="listingVerification">
-Ownership / Verification Information
-</label>
-
-<textarea
-id="listingVerification"
-rows="4"
-placeholder="Mention any available ownership, agency, registration or verification information."
+placeholder="Example: I completed 2nd PUC and I want to find a degree course with scholarship support..."
 ></textarea>
 
 </div>
@@ -2582,13 +2247,13 @@ placeholder="Mention any available ownership, agency, registration or verificati
 <div class="form-note">
 
 <strong>
-🔐 Important:
+🔐 Privacy:
 </strong>
 
-Do not enter OTPs, passwords, bank PINs or other
-sensitive security information. Property ownership
-and legal documents should be verified appropriately
-before any transaction.
+Do not enter passwords, OTPs, bank PINs or other
+sensitive security information. VELORA HELP should
+only collect information necessary to understand
+and respond to the student's enquiry.
 
 </div>
 
@@ -2601,7 +2266,7 @@ before any transaction.
 type="submit"
 class="btn btn-blue"
 >
-🏠 Submit Property to VELORA HELP
+💬 Send Student Requirement
 </button>
 
 </div>
@@ -2620,35 +2285,35 @@ class="btn btn-blue"
 
 
 <!-- =====================================================
-     CUSTOMER ENQUIRY
+     SUBMIT OPPORTUNITY
 ===================================================== -->
 
 <section
 class="section alt"
-id="property-enquiry"
+id="submit-opportunity"
 >
 
 <div class="vh-container">
 
-<div class="partner-box">
+<div class="feature-box">
 
 <small>
-PROPERTY REQUIREMENT
+COLLEGES • ORGANISATIONS • BUSINESSES
 </small>
 
 <h2>
-Tell us what property you need.
+Have an opportunity for students?
 </h2>
 
 <p>
-Can't find the right property above? Send your exact
-requirement to VELORA HELP. Include your budget, location,
-property type and purpose.
+Colleges, companies, training organisations, NGOs,
+businesses and other legitimate organisations can
+submit useful student opportunities for review.
 </p>
 
 
 <form
-id="propertyEnquiryForm"
+id="opportunitySubmitForm"
 style="margin-top:25px;"
 >
 
@@ -2657,15 +2322,15 @@ style="margin-top:25px;"
 
 <div>
 
-<label for="buyerName">
-Full Name *
+<label for="orgName" style="color:white;">
+Organisation Name *
 </label>
 
 <input
-id="buyerName"
+id="orgName"
 type="text"
 required
-placeholder="Your full name"
+placeholder="Organisation / institution"
 >
 
 </div>
@@ -2673,12 +2338,12 @@ placeholder="Your full name"
 
 <div>
 
-<label for="buyerPhone">
-Phone Number *
+<label for="orgPhone" style="color:white;">
+Contact Number *
 </label>
 
 <input
-id="buyerPhone"
+id="orgPhone"
 type="tel"
 required
 placeholder="+91..."
@@ -2689,12 +2354,12 @@ placeholder="+91..."
 
 <div>
 
-<label for="buyerPurpose">
-I want to *
+<label for="orgCategory" style="color:white;">
+Opportunity Type *
 </label>
 
 <select
-id="buyerPurpose"
+id="orgCategory"
 required
 >
 
@@ -2703,59 +2368,31 @@ Select
 </option>
 
 <option>
-Rent
+Scholarship
 </option>
 
 <option>
-Buy
-</option>
-
-</select>
-
-</div>
-
-
-<div>
-
-<label for="buyerType">
-Property Type *
-</label>
-
-<select
-id="buyerType"
-required
->
-
-<option value="">
-Select
+Internship
 </option>
 
 <option>
-House
+Free Course
 </option>
 
 <option>
-Apartment
+Admission
 </option>
 
 <option>
-Room
+Student Job
 </option>
 
 <option>
-Villa
+Competition
 </option>
 
 <option>
-Land
-</option>
-
-<option>
-Commercial
-</option>
-
-<option>
-PG / Hostel
+Training
 </option>
 
 <option>
@@ -2769,96 +2406,14 @@ Other
 
 <div>
 
-<label for="buyerTaluk">
-Preferred Taluk *
-</label>
-
-<select
-id="buyerTaluk"
-required
->
-
-<option value="">
-Select Taluk
-</option>
-
-<option>
-Mangaluru
-</option>
-
-<option>
-Bantwal
-</option>
-
-<option>
-Belthangady
-</option>
-
-<option>
-Puttur
-</option>
-
-<option>
-Sullia
-</option>
-
-<option>
-Moodbidri
-</option>
-
-<option>
-Kadaba
-</option>
-
-<option>
-Mulki
-</option>
-
-</select>
-
-</div>
-
-
-<div>
-
-<label for="buyerArea">
-Preferred Area
+<label for="orgLocation" style="color:white;">
+Location
 </label>
 
 <input
-id="buyerArea"
+id="orgLocation"
 type="text"
-placeholder="Town / village / area"
->
-
-</div>
-
-
-<div>
-
-<label for="buyerBudget">
-Budget
-</label>
-
-<input
-id="buyerBudget"
-type="text"
-placeholder="Example: ₹15,000/month"
->
-
-</div>
-
-
-<div>
-
-<label for="buyerBedrooms">
-Bedrooms / Size
-</label>
-
-<input
-id="buyerBedrooms"
-type="text"
-placeholder="Example: 2 BHK"
+placeholder="Location / online"
 >
 
 </div>
@@ -2866,16 +2421,16 @@ placeholder="Example: 2 BHK"
 
 <div class="full">
 
-<label for="buyerRequirement">
-Additional Requirement *
+<label for="orgOpportunity" style="color:white;">
+Opportunity Details *
 </label>
 
 <textarea
-id="buyerRequirement"
+id="orgOpportunity"
 rows="6"
 required
 maxlength="2000"
-placeholder="Tell us exactly what you are looking for..."
+placeholder="Explain the opportunity, eligibility, deadline and important details."
 ></textarea>
 
 </div>
@@ -2887,7 +2442,7 @@ placeholder="Tell us exactly what you are looking for..."
 type="submit"
 class="btn btn-white"
 >
-💬 Send Property Requirement
+📢 Submit Opportunity
 </button>
 
 </div>
@@ -2916,17 +2471,17 @@ class="btn btn-white"
 <div class="heading">
 
 <small>
-TRUST & SAFETY
+RESPONSIBLE INFORMATION
 </small>
 
 <h2>
-Property listings need verification.
+Students deserve accurate information.
 </h2>
 
 <p>
-VELORA HELP should never promise that a property is
-genuine simply because someone submitted it. Listings
-should be reviewed before being marked verified.
+VELORA HELP should verify opportunity information
+before presenting it as verified. Official sources
+should always be preferred for applications.
 </p>
 
 </div>
@@ -2942,12 +2497,12 @@ should be reviewed before being marked verified.
 </div>
 
 <h3>
-Listing Review
+Check Eligibility
 </h3>
 
 <p>
-Property information can be reviewed before
-publication.
+Students should check age, education, income,
+location and other eligibility requirements.
 </p>
 
 </div>
@@ -2960,12 +2515,12 @@ publication.
 </div>
 
 <h3>
-Document Verification
+Check Documents
 </h3>
 
 <p>
-Appropriate ownership or agency documents can
-be requested when necessary.
+Required documents can vary by scholarship,
+college, organisation or government scheme.
 </p>
 
 </div>
@@ -2978,13 +2533,12 @@ be requested when necessary.
 </div>
 
 <h3>
-Customer Caution
+Use Official Sources
 </h3>
 
 <p>
-Customers should independently verify property
-documents, ownership, price and transaction terms
-before making payment.
+Application links and important deadlines should
+be confirmed from the relevant official organisation.
 </p>
 
 </div>
@@ -2993,16 +2547,19 @@ before making payment.
 </div>
 
 
-<div class="form-note" style="margin-top:25px;">
+<div
+class="form-note"
+style="margin-top:25px;"
+>
 
 <strong>
-⚠️ VELORA HELP notice:
+Important:
 </strong>
 
-A "Verified Property" label should only be shown after
-your team has actually completed its verification process.
-The sample listings on this page are demonstrations and
-must be replaced with real listings before public launch.
+Opportunity information changes frequently. Do not publish
+a scholarship, internship, admission deadline or government
+scheme as "open" unless your team has checked the information.
+This page currently contains demonstration content.
 
 </div>
 
@@ -3081,19 +2638,23 @@ Local Services
 <div>
 
 <h4>
-Property
+Students
 </h4>
 
-<a href="property.html">
-Find Property
+<a href="students.html">
+Student Help
 </a>
 
-<a href="#list-property">
-List Property
+<a href="#opportunities">
+Opportunities
 </a>
 
-<a href="#property-enquiry">
-Property Requirement
+<a href="#submit-opportunity">
+Submit Opportunity
+</a>
+
+<a href="jobs.html">
+Jobs
 </a>
 
 </div>
@@ -3174,7 +2735,7 @@ aria-live="polite"
 
 
 <!-- =====================================================
-     PROPERTY PAGE JAVASCRIPT
+     STUDENTS PAGE JAVASCRIPT
 ===================================================== -->
 
 <script>
@@ -3225,11 +2786,11 @@ new Date().getFullYear();
 
 
 /* =====================================================
-   PROPERTY TYPE BUTTONS
+   CATEGORY BUTTONS
 ===================================================== */
 
 document
-.querySelectorAll(".type-button")
+.querySelectorAll(".category-button")
 .forEach(
 function(button){
 
@@ -3237,37 +2798,27 @@ button.addEventListener(
 "click",
 function(){
 
-const type =
-button.getAttribute("data-type");
+const category =
+button.getAttribute(
+"data-category"
+);
 
 const select =
-document.getElementById("propertyType");
+document.getElementById(
+"opportunityCategory"
+);
 
 if(select){
 
-const option =
-Array.from(
-select.options
-).find(
-function(item){
-
-return item.value === type ||
-item.text === type;
-
-}
-);
-
-if(option){
-
 select.value =
-option.value;
-
-}
+category;
 
 }
 
 document
-.getElementById("property-search")
+.getElementById(
+"opportunity-search"
+)
 .scrollIntoView({
 behavior:"smooth"
 });
@@ -3280,12 +2831,12 @@ behavior:"smooth"
 
 
 /* =====================================================
-   PROPERTY SEARCH
+   OPPORTUNITY SEARCH
 ===================================================== */
 
 const searchForm =
 document.getElementById(
-"propertySearchForm"
+"opportunitySearchForm"
 );
 
 
@@ -3298,34 +2849,31 @@ function(event){
 event.preventDefault();
 
 
-const purpose =
+const keyword =
 document.getElementById(
-"listingPurpose"
-).value;
+"opportunityKeyword"
+)
+.value
+.trim()
+.toLowerCase();
 
 
-const type =
+const category =
 document.getElementById(
-"propertyType"
+"opportunityCategory"
 ).value;
 
 
 const location =
 document.getElementById(
-"propertyLocation"
-).value;
-
-
-const budget =
-document.getElementById(
-"propertyBudget"
+"opportunityLocation"
 ).value;
 
 
 const cards =
 Array.from(
 document.querySelectorAll(
-".property-card"
+".opportunity-card"
 )
 );
 
@@ -3334,15 +2882,9 @@ const matches =
 cards.filter(
 function(card){
 
-const cardPurpose =
+const cardCategory =
 card.getAttribute(
-"data-purpose"
-) || "";
-
-
-const cardType =
-card.getAttribute(
-"data-type"
+"data-category"
 ) || "";
 
 
@@ -3352,41 +2894,37 @@ card.getAttribute(
 ) || "";
 
 
-const cardBudget =
+const keywords =
 card.getAttribute(
-"data-budget"
+"data-keywords"
 ) || "";
 
 
-const purposeMatch =
-!purpose ||
-cardPurpose === purpose;
+const keywordMatch =
+!keyword ||
+keywords.toLowerCase()
+.includes(keyword) ||
+cardCategory.toLowerCase()
+.includes(keyword);
 
 
-const typeMatch =
-!type ||
-cardType === type;
+const categoryMatch =
+!category ||
+cardCategory === category;
 
 
 const locationMatch =
 !location ||
-cardLocation === location;
-
-
-const budgetMatch =
-!budget ||
-cardBudget === budget ||
-(
-budget === "sale" &&
-cardPurpose === "Sale"
-);
+cardLocation === location ||
+cardLocation === "India" ||
+cardLocation === "Karnataka" ||
+cardLocation === "Dakshina Kannada";
 
 
 return(
-purposeMatch &&
-typeMatch &&
-locationMatch &&
-budgetMatch
+keywordMatch &&
+categoryMatch &&
+locationMatch
 );
 
 }
@@ -3412,14 +2950,13 @@ resultContent.innerHTML = `
 <div class="result-item">
 
 <strong>
-No matching property found
+No matching opportunity found
 </strong>
 
 <span>
-We don't currently have a matching listing
-displayed on this page. Send your exact
-requirement to VELORA HELP and we can
-review it.
+We don't currently have a matching opportunity
+displayed on this page. Send your requirement
+to VELORA HELP and we can guide you.
 </span>
 
 </div>
@@ -3427,10 +2964,10 @@ review it.
 <div style="margin-top:15px;">
 
 <a
-href="#property-enquiry"
+href="#student-request"
 class="btn btn-red"
 >
-💬 Send Property Requirement
+🎓 Ask VELORA HELP
 </a>
 
 </div>
@@ -3446,24 +2983,22 @@ function(card){
 const title =
 card.querySelector("h3")
 ?.textContent ||
-"Property";
-
-
-const area =
-card.getAttribute(
-"data-location"
-) ||
-"Local area";
+"Opportunity";
 
 
 const description =
-card.querySelector(
-".property-description"
-)?.textContent ||
+card.querySelector("p")
+?.textContent ||
 "";
 
 
-return`
+const cardLocation =
+card.getAttribute(
+"data-location"
+) || "";
+
+
+return `
 
 <div class="result-item">
 
@@ -3472,9 +3007,9 @@ ${escapeHTML(title)}
 </strong>
 
 <span>
-📍 ${escapeHTML(area)}
-<br>
 ${escapeHTML(description)}
+<br>
+📍 ${escapeHTML(cardLocation)}
 </span>
 
 </div>
@@ -3490,10 +3025,10 @@ resultContent.innerHTML += `
 <div style="margin-top:15px;">
 
 <a
-href="#property-enquiry"
+href="#student-request"
 class="btn btn-red"
 >
-💬 Enquire About Property
+💬 Ask VELORA HELP
 </a>
 
 </div>
@@ -3520,12 +3055,12 @@ block:"center"
 
 
 /* =====================================================
-   PROPERTY CARD ENQUIRY
+   OPPORTUNITY ENQUIRY BUTTONS
 ===================================================== */
 
 document
 .querySelectorAll(
-".property-enquiry"
+".opportunity-enquiry"
 )
 .forEach(
 function(button){
@@ -3534,59 +3069,71 @@ button.addEventListener(
 "click",
 function(){
 
-const property =
+const opportunity =
 button.getAttribute(
-"data-property"
+"data-opportunity"
 );
 
 
-const location =
+const category =
 button.getAttribute(
-"data-location"
+"data-category"
 );
 
 
-const type =
+const need =
 document.getElementById(
-"buyerType"
+"studentNeed"
 );
 
 
-const area =
+const problem =
 document.getElementById(
-"buyerArea"
+"studentProblem"
 );
 
 
-const requirement =
-document.getElementById(
-"buyerRequirement"
+if(need){
+
+const option =
+Array.from(
+need.options
+).find(
+function(item){
+
+return item.text
+.toLowerCase()
+.includes(
+category.toLowerCase()
+);
+
+}
 );
 
 
-if(area){
+if(option){
 
-area.value =
-location;
+need.value =
+option.value;
+
+}
 
 }
 
 
-if(requirement){
+if(problem){
 
-requirement.value =
+problem.value =
 "I am interested in the " +
-property +
-" listed in " +
-location +
-". Please provide the available details and guide me regarding the property enquiry.";
+opportunity +
+" opportunity. Please guide me regarding eligibility, documents, application process and the appropriate official source.";
 
 }
 
 
 document
 .getElementById(
-"property-enquiry"
+"student-request"
 )
 .scrollIntoView({
 behavior:"smooth"
@@ -3600,18 +3147,18 @@ behavior:"smooth"
 
 
 /* =====================================================
-   PROPERTY SUBMISSION
+   STUDENT FORM
 ===================================================== */
 
-const propertySubmitForm =
+const studentForm =
 document.getElementById(
-"propertySubmitForm"
+"studentForm"
 );
 
 
-if(propertySubmitForm){
+if(studentForm){
 
-propertySubmitForm.addEventListener(
+studentForm.addEventListener(
 "submit",
 function(event){
 
@@ -3620,126 +3167,95 @@ event.preventDefault();
 
 const name =
 document.getElementById(
-"ownerName"
+"studentName"
 ).value.trim();
 
 
 const phone =
 document.getElementById(
-"ownerPhone"
+"studentPhone"
 ).value.trim();
 
 
-const ownerType =
+const age =
 document.getElementById(
-"ownerType"
+"studentAge"
+).value.trim();
+
+
+const gender =
+document.getElementById(
+"studentGender"
 ).value;
 
 
-const purpose =
+const education =
 document.getElementById(
-"listingPurposeForm"
+"studentEducation"
 ).value;
 
 
-const propertyType =
+const course =
 document.getElementById(
-"listingPropertyType"
-).value;
+"studentCourse"
+).value.trim();
 
 
 const taluk =
 document.getElementById(
-"listingTaluk"
+"studentTaluk"
 ).value;
 
 
 const area =
 document.getElementById(
-"listingArea"
+"studentArea"
 ).value.trim();
 
 
-const price =
+const need =
 document.getElementById(
-"listingPrice"
-).value.trim();
-
-
-const bedrooms =
-document.getElementById(
-"listingBedrooms"
-).value.trim();
-
-
-const availability =
-document.getElementById(
-"listingAvailability"
+"studentNeed"
 ).value;
 
 
-const address =
+const problem =
 document.getElementById(
-"listingAddress"
-).value.trim();
-
-
-const description =
-document.getElementById(
-"listingDescription"
-).value.trim();
-
-
-const photos =
-document.getElementById(
-"listingPhotos"
-).value.trim();
-
-
-const verification =
-document.getElementById(
-"listingVerification"
+"studentProblem"
 ).value.trim();
 
 
 const message =
 `Hello VELORA HELP,
 
-I want to submit a PROPERTY LISTING.
+I need STUDENT GUIDANCE.
 
-OWNER / AGENT DETAILS
+STUDENT DETAILS
 
 Name: ${name}
 Phone: ${phone}
-I am: ${ownerType}
+Age: ${age || "Not provided"}
+Gender: ${gender}
 
-PROPERTY DETAILS
+EDUCATION
 
-Purpose: ${purpose}
-Property Type: ${propertyType}
+Current Education: ${education}
+Course / Stream: ${course || "Not provided"}
+
+LOCATION
+
 Taluk: ${taluk}
-Area / Town / Village: ${area}
-Rent / Sale Price: ${price}
-Bedrooms / Size: ${bedrooms || "Not provided"}
-Availability: ${availability}
+Area: ${area || "Not provided"}
 
-PROPERTY ADDRESS / LOCATION
+REQUIREMENT
 
-${address}
+${need}
 
-PROPERTY DESCRIPTION
+PROBLEM / REQUIREMENT DETAILS
 
-${description}
+${problem}
 
-PHOTO INFORMATION
-
-${photos || "Not provided"}
-
-VERIFICATION INFORMATION
-
-${verification || "Not provided"}
-
-Please review my property and let me know the next steps for listing it with VELORA HELP.
+Please guide me regarding the appropriate next steps, eligibility, documents and where I should apply or enquire.
 
 Thank you.
 
@@ -3760,7 +3276,7 @@ url,
 
 
 showMessage(
-"Your property submission is ready. WhatsApp has been opened for VELORA HELP."
+"Your student enquiry is ready. WhatsApp has been opened for VELORA HELP."
 );
 
 }
@@ -3770,111 +3286,74 @@ showMessage(
 
 
 /* =====================================================
-   CUSTOMER PROPERTY ENQUIRY
+   SUBMIT OPPORTUNITY
 ===================================================== */
 
-const propertyEnquiryForm =
+const opportunitySubmitForm =
 document.getElementById(
-"propertyEnquiryForm"
+"opportunitySubmitForm"
 );
 
 
-if(propertyEnquiryForm){
+if(opportunitySubmitForm){
 
-propertyEnquiryForm.addEventListener(
+opportunitySubmitForm.addEventListener(
 "submit",
 function(event){
 
 event.preventDefault();
 
 
-const name =
+const organisation =
 document.getElementById(
-"buyerName"
+"orgName"
 ).value.trim();
 
 
 const phone =
 document.getElementById(
-"buyerPhone"
+"orgPhone"
 ).value.trim();
 
 
-const purpose =
+const category =
 document.getElementById(
-"buyerPurpose"
+"orgCategory"
 ).value;
 
 
-const type =
+const location =
 document.getElementById(
-"buyerType"
-).value;
-
-
-const taluk =
-document.getElementById(
-"buyerTaluk"
-).value;
-
-
-const area =
-document.getElementById(
-"buyerArea"
+"orgLocation"
 ).value.trim();
 
 
-const budget =
+const details =
 document.getElementById(
-"buyerBudget"
-).value.trim();
-
-
-const bedrooms =
-document.getElementById(
-"buyerBedrooms"
-).value.trim();
-
-
-const requirement =
-document.getElementById(
-"buyerRequirement"
+"orgOpportunity"
 ).value.trim();
 
 
 const message =
 `Hello VELORA HELP,
 
-I have a PROPERTY REQUIREMENT.
+I want to submit a STUDENT OPPORTUNITY.
 
-CUSTOMER DETAILS
+ORGANISATION
 
-Name: ${name}
-Phone: ${phone}
+Name: ${organisation}
+Contact: ${phone}
 
-REQUIREMENT
+OPPORTUNITY
 
-I want to: ${purpose}
-Property Type: ${type}
+Type: ${category}
+Location: ${location || "Not provided"}
 
-LOCATION
+DETAILS
 
-Taluk: ${taluk}
-Preferred Area: ${area || "Not specified"}
+${details}
 
-BUDGET
-
-${budget || "Not specified"}
-
-BEDROOM / SIZE
-
-${bedrooms || "Not specified"}
-
-ADDITIONAL REQUIREMENT
-
-${requirement}
-
-Please check whether you have a suitable property and guide me regarding the next steps.
+Please review this opportunity before publishing it on VELORA HELP.
 
 Thank you.
 
@@ -3895,7 +3374,7 @@ url,
 
 
 showMessage(
-"Your property requirement is ready. WhatsApp has been opened for VELORA HELP."
+"Your opportunity submission is ready. WhatsApp has been opened for VELORA HELP."
 );
 
 }
