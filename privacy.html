@@ -1,1 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#071a3d">
+
+<meta
+name="description"
+content="VELORA HELP Privacy Policy — Learn how VELORA HELP handles information submitted through its website and helpdesk."
+>
+
+<title>Privacy Policy | VELORA HELP</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =====================================================
+   PAGE BASE
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f6f8fb;
+    color:#17243d;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+}
+
+.vh-container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.vh-header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #e5e9f0;
+}
+
+.vh-nav{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.vh-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#071a3d;
+}
+
+.vh-brand img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.vh-brand-name{
+    font-size:1.15rem;
+    font-weight:800;
+}
+
+.vh-brand-sub{
+    font-size:.7rem;
+    opacity:.7;
+    margin-top:3px;
+}
+
+.vh-nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.vh-nav-links a{
+    color:#17243d;
+    padding:10px 11px;
+    border-radius:9px;
+    font-size:.88rem;
+    font-weight:600;
+}
+
+.vh-nav-links a:hover{
+    background:#eef2f8;
+}
+
+.vh-menu{
+    display:none;
+    background:#071a3d;
+    color:white;
+    border:0;
+    padding:10px 13px;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.policy-hero{
+    padding:85px 0;
+    color:white;
+
+    background:
+    linear-gradient(
+        110deg,
+        #071a3d 0%,
+        #12315e 60%,
+        #8a172d 100%
+    );
+}
+
+.policy-hero small{
+    color:#e8b7bf;
+    font-weight:800;
+    letter-spacing:.14em;
+}
+
+.policy-hero h1{
+    font-size:clamp(2.7rem,6vw,4.7rem);
+    line-height:1;
+    letter-spacing:-.045em;
+    margin:13px 0 20px;
+}
+
+.policy-hero p{
+    max-width:780px;
+    color:rgba(255,255,255,.84);
+}
+
+
+/* =====================================================
+   POLICY CONTENT
+===================================================== */
+
+.policy-section{
+    padding:70px 0;
+}
+
+.policy-layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:30px;
+    align-items:start;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.policy-sidebar{
+    position:sticky;
+    top:100px;
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:18px;
+    padding:20px;
+}
+
+.policy-sidebar h3{
+    margin:0 0 12px;
+    color:#071a3d;
+}
+
+.policy-sidebar a{
+    display:block;
+    color:#56637a;
+    padding:8px 0;
+    font-size:.88rem;
+}
+
+.policy-sidebar a:hover{
+    color:#a3132d;
+}
+
+
+/* =====================================================
+   ARTICLE
+===================================================== */
+
+.policy-content{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:22px;
+    padding:35px;
+}
+
+.policy-content h2{
+    color:#071a3d;
+    margin-top:40px;
+    margin-bottom:12px;
+    font-size:1.55rem;
+}
+
+.policy-content h2:first-child{
+    margin-top:0;
+}
+
+.policy-content h3{
+    color:#071a3d;
+    margin-top:25px;
+}
+
+.policy-content p{
+    color:#59677e;
+    margin:0 0 15px;
+}
+
+.policy-content ul{
+    color:#59677e;
+    padding-left:23px;
+}
+
+.policy-content li{
+    margin:8px 0;
+}
+
+.policy-note{
+    background:#f1f5fa;
+    border-left:4px solid #071a3d;
+    padding:17px 19px;
+    border-radius:8px;
+    color:#526077;
+    margin:22px 0;
+}
+
+.warning{
+    background:#fff8e6;
+    border:1px solid #efdda7;
+    color:#624f18;
+    border-radius:14px;
+    padding:18px;
+    margin:22px 0;
+}
+
+
+/* =====================================================
+   CONTACT BOX
+===================================================== */
+
+.contact-box{
+    margin-top:30px;
+    background:
+    linear-gradient(
+        115deg,
+        #071a3d,
+        #12315e
+    );
+    color:white;
+    border-radius:20px;
+    padding:30px;
+}
+
+.contact-box h2{
+    color:white;
+    margin:0 0 10px;
+}
+
+.contact-box p{
+    color:rgba(255,255,255,.8);
+}
+
+.contact-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:11px 17px;
+    border-radius:10px;
+    font-weight:750;
+}
+
+.btn-white{
+    background:white;
+    color:#071a3d;
+}
+
+.btn-red{
+    background:#a3132d;
+    color:white;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#06152f;
+    color:white;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:35px;
+}
+
+footer a{
+    display:block;
+    color:rgba(255,255,255,.72);
+    margin:9px 0;
+}
+
+footer a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:35px;
+    padding-top:20px;
+    color:rgba(255,255,255,.55);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1050px){
+
+    .vh-nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:4%;
+        right:4%;
+        padding:12px;
+        background:white;
+        border-radius:14px;
+        box-shadow:0 20px 50px rgba(0,0,0,.15);
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .vh-nav-links.active{
+        display:flex;
+    }
+
+    .vh-menu{
+        display:block;
+    }
+
+    .policy-layout{
+        grid-template-columns:1fr;
+    }
+
+    .policy-sidebar{
+        position:static;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .policy-hero{
+        padding:65px 0;
+    }
+
+    .policy-content{
+        padding:23px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="vh-header">
+
+<div class="vh-container vh-nav">
+
+
+<a href="index.html" class="vh-brand">
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo"
+>
+
+<div>
+
+<div class="vh-brand-name">
+VELORA HELP
+</div>
+
+<div class="vh-brand-sub">
+Your Problem. Our Direction.
+</div>
+
+</div>
+
+</a>
+
+
+<button
+id="menuButton"
+class="vh-menu"
+type="button"
+aria-label="Open navigation"
+>
+☰
+</button>
+
+
+<nav
+id="navigation"
+class="vh-nav-links"
+>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="students.html">
+Students
+</a>
+
+<a href="jobs.html">
+Jobs
+</a>
+
+<a href="property.html">
+Housing
+</a>
+
+<a href="businesses.html">
+Local Services
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="policy-hero">
+
+<div class="vh-container">
+
+<small>
+VELORA HELP • PRIVACY
+</small>
+
+<h1>
+Privacy Policy
+</h1>
+
+<p>
+Your trust matters to us. This page explains the types
+of information VELORA HELP may receive when you use the
+website, contact the helpdesk or submit an enquiry, and
+how that information is intended to be handled.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POLICY
+===================================================== -->
+
+<section class="policy-section">
+
+<div class="vh-container">
+
+<div class="policy-layout">
+
+
+<!-- SIDEBAR -->
+
+<aside class="policy-sidebar">
+
+<h3>
+On this page
+</h3>
+
+<a href="#introduction">
+1. Introduction
+</a>
+
+<a href="#information">
+2. Information We Receive
+</a>
+
+<a href="#use">
+3. How Information Is Used
+</a>
+
+<a href="#whatsapp">
+4. WhatsApp Enquiries
+</a>
+
+<a href="#sharing">
+5. Information Sharing
+</a>
+
+<a href="#health">
+6. Healthcare Information
+</a>
+
+<a href="#thirdparty">
+7. Third-Party Services
+</a>
+
+<a href="#security">
+8. Security
+</a>
+
+<a href="#retention">
+9. Data Retention
+</a>
+
+<a href="#children">
+10. Children
+</a>
+
+<a href="#rights">
+11. Your Choices
+</a>
+
+<a href="#changes">
+12. Policy Changes
+</a>
+
+<a href="#contact">
+13. Contact Us
+</a>
+
+</aside>
+
+
+
+<!-- CONTENT -->
+
+<main class="policy-content">
+
+
+<h2 id="introduction">
+1. Introduction
+</h2>
+
+<p>
+VELORA HELP, powered by VELORA DIGITAL, is a people-focused
+help and direction platform intended to connect people with
+useful information, services, opportunities and appropriate
+next steps.
+</p>
+
+<p>
+This Privacy Policy explains how information may be handled
+when you visit the VELORA HELP website or submit an enquiry
+through the website.
+</p>
+
+<p>
+By using the website, you acknowledge that you have read
+this policy. If you do not agree with the way information
+is described here, please do not submit personal information
+through the website.
+</p>
+
+
+
+<h2 id="information">
+2. Information We Receive
+</h2>
+
+<p>
+Depending on the feature you use, you may voluntarily
+provide information such as:
+</p>
+
+<ul>
+
+<li>
+Your name.
+</li>
+
+<li>
+Phone number.
+</li>
+
+<li>
+Email address.
+</li>
+
+<li>
+Taluk, town, village or general location.
+</li>
+
+<li>
+The category of your enquiry.
+</li>
+
+<li>
+Details about the problem or requirement.
+</li>
+
+<li>
+Your preferred method of contact.
+</li>
+
+<li>
+Information you voluntarily include in a WhatsApp enquiry.
+</li>
+
+</ul>
+
+<p>
+Please provide only information that is reasonably necessary
+for your enquiry.
+</p>
+
+
+
+<div class="warning">
+
+<strong>
+Important:
+</strong>
+
+<br>
+
+Do not submit passwords, OTPs, banking PINs, card numbers,
+account passwords or other security credentials through the
+VELORA HELP enquiry system.
+
+</div>
+
+
+
+<h2 id="use">
+3. How Information Is Used
+</h2>
+
+<p>
+Information submitted to VELORA HELP may be used to:
+</p>
+
+<ul>
+
+<li>
+Understand your enquiry or problem.
+</li>
+
+<li>
+Contact you regarding your request.
+</li>
+
+<li>
+Provide information or direction relevant to your request.
+</li>
+
+<li>
+Identify potentially relevant services, organisations,
+opportunities or official channels.
+</li>
+
+<li>
+Follow up on suitable enquiries.
+</li>
+
+<li>
+Improve the website and helpdesk process.
+</li>
+
+<li>
+Understand recurring local problems and service needs.
+</li>
+
+</ul>
+
+<p>
+The purpose is to help understand your requirement and
+provide useful direction. Submission of an enquiry does
+not guarantee that a particular organisation or authority
+will take action.
+</p>
+
+
+
+<h2 id="whatsapp">
+4. WhatsApp Enquiries
+</h2>
+
+<p>
+The current VELORA HELP website may prepare an enquiry
+message and open WhatsApp using the VELORA HELP contact
+number.
+</p>
+
+<p>
+When you choose to send that message, the information is
+transmitted through WhatsApp and is subject to the privacy
+and security practices of WhatsApp and your device.
+</p>
+
+<p>
+VELORA HELP does not control the operation, security,
+availability or privacy practices of third-party messaging
+services.
+</p>
+
+
+
+<h2 id="sharing">
+5. Information Sharing
+</h2>
+
+<p>
+VELORA HELP aims to limit unnecessary sharing of personal
+information.
+</p>
+
+<p>
+Where appropriate, information may need to be communicated
+to a relevant person, service provider, organisation or
+authority in order to respond to a particular enquiry.
+</p>
+
+<p>
+For example, if a person asks for direction regarding a
+local service, the relevant details may be used to help
+identify an appropriate service.
+</p>
+
+<p>
+Information should not be described as being shared with
+a particular organisation unless that sharing is actually
+required or carried out.
+</p>
+
+<p>
+VELORA HELP does not intend to sell personal enquiry
+information as a general business practice.
+</p>
+
+
+
+<h2 id="health">
+6. Healthcare Information
+</h2>
+
+<p>
+Healthcare enquiries require additional care.
+</p>
+
+<p>
+VELORA HELP may receive information when a person asks
+for hospital, doctor, appointment or healthcare direction.
+</p>
+
+<p>
+Users should avoid submitting unnecessary medical records,
+diagnostic reports, prescriptions, passwords, insurance
+credentials or other sensitive information through a
+general website enquiry.
+</p>
+
+<p>
+Information provided through VELORA HELP should not be
+considered a medical diagnosis or a substitute for advice
+from a qualified healthcare professional.
+</p>
+
+<p>
+In an emergency, users should contact the appropriate
+emergency medical service or hospital directly.
+</p>
+
+
+
+<h2 id="thirdparty">
+7. Third-Party Services
+</h2>
+
+<p>
+The website may contain links or connections to third-party
+websites and services, including official government websites,
+hospitals, colleges, businesses, maps, WhatsApp or other
+external platforms.
+</p>
+
+<p>
+Once you leave the VELORA HELP website and use an external
+service, that service's own terms and privacy policy may
+apply.
+</p>
+
+<p>
+VELORA HELP is not responsible for the privacy practices of
+external websites that it does not control.
+</p>
+
+
+
+<h2 id="security">
+8. Security
+</h2>
+
+<p>
+Reasonable efforts should be made to protect information
+handled by the VELORA HELP team.
+</p>
+
+<p>
+However, no website, device, communication channel or
+internet transmission can be guaranteed to be completely
+secure.
+</p>
+
+<p>
+Users should therefore avoid submitting unnecessary
+highly sensitive information through ordinary enquiry
+channels.
+</p>
+
+
+
+<h2 id="retention">
+9. Data Retention
+</h2>
+
+<p>
+Information may be retained for as long as reasonably
+necessary to respond to enquiries, maintain appropriate
+business records, improve services, resolve disputes,
+meet applicable legal obligations or operate the platform.
+</p>
+
+<p>
+As the VELORA HELP platform develops, its data-management
+procedures may be updated to include more structured
+enquiry records, status tracking and deletion processes.
+</p>
+
+
+
+<h2 id="children">
+10. Children
+</h2>
+
+<p>
+The website may contain information useful to students
+and young people.
+</p>
+
+<p>
+Children and minors should not submit unnecessary personal
+information. Where a service requires parental or guardian
+involvement, users should follow the requirements of the
+relevant institution or service.
+</p>
+
+
+
+<h2 id="rights">
+11. Your Choices
+</h2>
+
+<p>
+Depending on applicable law and the circumstances, you may
+contact VELORA HELP regarding information you have submitted
+through the platform.
+</p>
+
+<p>
+You may also choose not to provide optional information.
+However, some information may be necessary for the team to
+understand or respond to an enquiry.
+</p>
+
+<p>
+If you believe information submitted by you is incorrect,
+you can contact the helpdesk and request clarification or
+correction where reasonably possible.
+</p>
+
+
+
+<h2 id="changes">
+12. Policy Changes
+</h2>
+
+<p>
+VELORA HELP may update this Privacy Policy as the website,
+services, technology, team structure and legal requirements
+develop.
+</p>
+
+<p>
+The latest version published on this page should be treated
+as the current version for the website.
+</p>
+
+<p>
+When major changes are made, the policy may be updated with
+a new effective date.
+</p>
+
+
+
+<h2 id="contact">
+13. Contact VELORA HELP
+</h2>
+
+<p>
+If you have a question about this Privacy Policy or about
+information you submitted through VELORA HELP, contact the
+helpdesk.
+</p>
+
+
+<div class="contact-box">
+
+<h2>
+VELORA HELP
+</h2>
+
+<p>
+Your Problem. Our Direction.
+</p>
+
+<p>
+Powered by VELORA DIGITAL.
+</p>
+
+<p>
+<strong>
+Phone / WhatsApp:
+</strong>
+
++91 8088590273
+</p>
+
+
+<div class="contact-buttons">
+
+<a
+href="tel:+918088590273"
+class="btn btn-white"
+>
+📞 Call Us
+</a>
+
+<a
+href="https://wa.me/918088590273"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-red"
+>
+💬 WhatsApp Us
+</a>
+
+<a
+href="contact.html"
+class="btn btn-white"
+>
+📝 Help Desk
+</a>
+
+</div>
+
+</div>
+
+
+<div
+class="policy-note"
+style="margin-top:30px;"
+>
+
+<strong>
+Last Updated:
+</strong>
+
+30 August 2026
+
+<br><br>
+
+This website is currently an evolving VELORA HELP
+prototype. As the platform moves toward a full production
+system, its privacy, data security, consent, partner
+verification and data-retention procedures should be
+reviewed and updated accordingly.
+
+</div>
+
+
+</main>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="vh-container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP"
+style="
+width:90px;
+height:90px;
+object-fit:contain;
+background:white;
+border-radius:50%;
+padding:5px;
+"
+>
+
+<h3>
+VELORA HELP
+</h3>
+
+<p>
+Your Problem. Our Direction.
+</p>
+
+<p>
+Powered by VELORA DIGITAL.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Services
+</h4>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="students.html">
+Students
+</a>
+
+<a href="jobs.html">
+Jobs
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Local Help
+</h4>
+
+<a href="property.html">
+Housing
+</a>
+
+<a href="businesses.html">
+Local Services
+</a>
+
+<a href="contact.html">
+Report a Problem
+</a>
+
+<a href="contact.html">
+Help Desk
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Information
+</h4>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="privacy.html">
+Privacy
+</a>
+
+<a href="terms.html">
+Terms
+</a>
+
+<a href="disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span id="year"></span>
+VELORA HELP
+</span>
+
+<span>
+📞 +91 8088590273
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+const menuButton =
+document.getElementById(
+"menuButton"
+);
+
+const navigation =
+document.getElementById(
+"navigation"
+);
+
+
+if(
+menuButton &&
+navigation
+){
+
+menuButton.addEventListener(
+"click",
+function(){
+
+navigation.classList.toggle(
+"active"
+);
+
+}
+);
+
+}
+
+
+/* Current year */
+
+const year =
+document.getElementById(
+"year"
+);
+
+if(year){
+
+year.textContent =
+new Date().getFullYear();
+
+}
+
+
+/* Close mobile menu */
+
+document
+.querySelectorAll(
+".vh-nav-links a"
+)
+.forEach(
+function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+if(navigation){
+
+navigation.classList.remove(
+"active"
+);
+
+}
+
+}
+);
+
+}
+
+);
+
+});
+
+</script>
+
+
+</body>
+
+</html>
