@@ -1,1 +1,2191 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#071a3d">
+
+<meta
+name="description"
+content="About VELORA HELP — Your Problem. Our Direction. A people-focused local help and direction platform powered by VELORA DIGITAL."
+>
+
+<title>About VELORA HELP | Your Problem. Our Direction.</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =====================================================
+   PAGE BASE
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f6f8fb;
+    color:#17243d;
+}
+
+a{
+    text-decoration:none;
+}
+
+button{
+    font:inherit;
+}
+
+.vh-container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.vh-header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #e5e9f0;
+}
+
+.vh-nav{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.vh-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#071a3d;
+}
+
+.vh-brand img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.vh-brand-name{
+    font-size:1.15rem;
+    font-weight:800;
+}
+
+.vh-brand-sub{
+    font-size:.7rem;
+    opacity:.7;
+    margin-top:3px;
+}
+
+.vh-nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.vh-nav-links a{
+    color:#17243d;
+    padding:10px 11px;
+    border-radius:9px;
+    font-size:.88rem;
+    font-weight:600;
+}
+
+.vh-nav-links a:hover{
+    background:#eef2f8;
+}
+
+.vh-menu{
+    display:none;
+    background:#071a3d;
+    color:white;
+    border:0;
+    padding:10px 13px;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    padding:100px 0;
+    color:white;
+
+    background:
+    linear-gradient(
+        110deg,
+        #071a3d 0%,
+        #12315e 55%,
+        #8a172d 100%
+    );
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    right:-170px;
+    top:-180px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.hero::after{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    left:-330px;
+    bottom:-400px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.hero small{
+    color:#e7b4bd;
+    font-weight:800;
+    letter-spacing:.15em;
+}
+
+.hero h1{
+    font-size:clamp(2.8rem,6vw,5.5rem);
+    line-height:.98;
+    letter-spacing:-.05em;
+    margin:15px 0 22px;
+}
+
+.hero p{
+    max-width:800px;
+    color:rgba(255,255,255,.87);
+    font-size:1.08rem;
+    line-height:1.8;
+}
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:30px;
+}
+
+.btn{
+    min-height:46px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:11px 17px;
+    border-radius:11px;
+    border:0;
+    cursor:pointer;
+    font-weight:750;
+}
+
+.btn-white{
+    background:white;
+    color:#071a3d;
+}
+
+.btn-red{
+    background:#a3132d;
+    color:white;
+}
+
+.btn-blue{
+    background:#071a3d;
+    color:white;
+}
+
+.btn-light{
+    background:#eef2f8;
+    color:#071a3d;
+}
+
+
+/* =====================================================
+   INTRO CARDS
+===================================================== */
+
+.intro{
+    margin-top:-42px;
+    position:relative;
+    z-index:5;
+}
+
+.intro-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.intro-card{
+    background:white;
+    border:1px solid #e1e6ee;
+    border-radius:19px;
+    padding:25px;
+    box-shadow:0 18px 50px rgba(7,26,61,.09);
+}
+
+.intro-icon{
+    font-size:31px;
+    margin-bottom:12px;
+}
+
+.intro-card h3{
+    margin:0 0 8px;
+    color:#071a3d;
+}
+
+.intro-card p{
+    margin:0;
+    color:#667085;
+    line-height:1.65;
+    font-size:.9rem;
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section{
+    padding:78px 0;
+}
+
+.alt{
+    background:#eef2f7;
+}
+
+.heading{
+    max-width:820px;
+    margin-bottom:35px;
+}
+
+.heading small{
+    color:#a3132d;
+    font-weight:800;
+    letter-spacing:.13em;
+}
+
+.heading h2{
+    margin:9px 0 13px;
+    color:#071a3d;
+    font-size:clamp(2rem,4vw,3.2rem);
+    letter-spacing:-.03em;
+}
+
+.heading p{
+    color:#667085;
+    line-height:1.75;
+}
+
+
+/* =====================================================
+   STORY
+===================================================== */
+
+.story-grid{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:45px;
+    align-items:center;
+}
+
+.story-card{
+    background:white;
+    border:1px solid #e1e6ee;
+    border-radius:23px;
+    padding:32px;
+}
+
+.story-card h3{
+    margin:0 0 15px;
+    color:#071a3d;
+    font-size:1.5rem;
+}
+
+.story-card p{
+    color:#667085;
+    line-height:1.8;
+}
+
+.story-visual{
+    min-height:420px;
+    border-radius:25px;
+    padding:35px;
+    display:flex;
+    align-items:flex-end;
+    color:white;
+
+    background:
+    linear-gradient(
+        145deg,
+        #071a3d,
+        #12315e 60%,
+        #8a172d
+    );
+
+    box-shadow:0 25px 60px rgba(7,26,61,.18);
+}
+
+.story-visual h3{
+    font-size:clamp(2rem,4vw,3.3rem);
+    line-height:1;
+    margin:0 0 15px;
+}
+
+.story-visual p{
+    color:rgba(255,255,255,.78);
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   MISSION
+===================================================== */
+
+.mission-box{
+    max-width:950px;
+    margin:auto;
+    text-align:center;
+}
+
+.mission-quote{
+    font-size:clamp(2rem,5vw,4rem);
+    line-height:1.05;
+    letter-spacing:-.045em;
+    color:#071a3d;
+    font-weight:850;
+    margin:10px 0 25px;
+}
+
+.mission-box p{
+    color:#667085;
+    line-height:1.8;
+    font-size:1rem;
+}
+
+
+/* =====================================================
+   SERVICES
+===================================================== */
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.service-card{
+    background:white;
+    border:1px solid #e0e6ee;
+    border-radius:17px;
+    padding:21px;
+    transition:.2s ease;
+}
+
+.service-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(7,26,61,.08);
+}
+
+.service-icon{
+    font-size:28px;
+    margin-bottom:11px;
+}
+
+.service-card h3{
+    margin:0 0 8px;
+    color:#071a3d;
+}
+
+.service-card p{
+    margin:0;
+    color:#667085;
+    font-size:.86rem;
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.step{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:18px;
+    padding:23px;
+}
+
+.step-number{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#071a3d;
+    color:white;
+    font-weight:800;
+    margin-bottom:15px;
+}
+
+.step h3{
+    margin:0 0 8px;
+    color:#071a3d;
+}
+
+.step p{
+    margin:0;
+    color:#667085;
+    font-size:.88rem;
+    line-height:1.65;
+}
+
+
+/* =====================================================
+   VALUES
+===================================================== */
+
+.values-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
+}
+
+.value{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:18px;
+    padding:25px;
+}
+
+.value-icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.value h3{
+    margin:0 0 8px;
+    color:#071a3d;
+}
+
+.value p{
+    color:#667085;
+    line-height:1.65;
+    font-size:.89rem;
+}
+
+
+/* =====================================================
+   DAKSHINA KANNADA
+===================================================== */
+
+.region-box{
+    background:
+    linear-gradient(
+        115deg,
+        #071a3d,
+        #12315e
+    );
+    color:white;
+    border-radius:25px;
+    padding:40px;
+    overflow:hidden;
+    position:relative;
+}
+
+.region-box::after{
+    content:"";
+    position:absolute;
+    width:330px;
+    height:330px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+    right:-130px;
+    top:-150px;
+}
+
+.region-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.region-box small{
+    color:#e7b4bd;
+    font-weight:800;
+    letter-spacing:.12em;
+}
+
+.region-box h2{
+    font-size:clamp(2rem,4vw,3.3rem);
+    margin:10px 0 15px;
+}
+
+.region-box p{
+    color:rgba(255,255,255,.8);
+    line-height:1.8;
+}
+
+.taluk-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin-top:25px;
+}
+
+.taluk{
+    padding:9px 12px;
+    border-radius:30px;
+    background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.14);
+    color:rgba(255,255,255,.86);
+    font-size:.8rem;
+}
+
+
+/* =====================================================
+   FUTURE
+===================================================== */
+
+.future-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.future-card{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:20px;
+    padding:28px;
+}
+
+.future-card h3{
+    color:#071a3d;
+    margin:0 0 10px;
+}
+
+.future-card p{
+    color:#667085;
+    line-height:1.7;
+}
+
+.future-list{
+    padding:0;
+    margin:20px 0 0;
+    list-style:none;
+}
+
+.future-list li{
+    padding:11px 0;
+    border-bottom:1px solid #edf0f4;
+    color:#4f5d73;
+}
+
+.future-list li:last-child{
+    border-bottom:0;
+}
+
+
+/* =====================================================
+   RESPONSIBLE MODEL
+===================================================== */
+
+.notice{
+    background:#fff8e6;
+    border:1px solid #f0dfa9;
+    color:#624f18;
+    border-radius:17px;
+    padding:21px;
+    line-height:1.7;
+    font-size:.9rem;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+    text-align:center;
+    padding:85px 0;
+    background:#f7f8fa;
+}
+
+.cta h2{
+    color:#071a3d;
+    font-size:clamp(2rem,4vw,3.5rem);
+    margin:0 0 15px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:0 auto;
+    color:#667085;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#06152f;
+    color:white;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:35px;
+}
+
+footer a{
+    display:block;
+    color:rgba(255,255,255,.72);
+    margin:9px 0;
+}
+
+footer a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:35px;
+    padding-top:20px;
+    color:rgba(255,255,255,.55);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1050px){
+
+    .vh-nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:4%;
+        right:4%;
+        padding:12px;
+        background:white;
+        border-radius:14px;
+        box-shadow:0 20px 50px rgba(0,0,0,.15);
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .vh-nav-links.active{
+        display:flex;
+    }
+
+    .vh-menu{
+        display:block;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .intro-grid{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+
+    .values-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:750px){
+
+    .story-grid,
+    .future-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .hero{
+        padding:70px 0;
+    }
+
+    .intro{
+        margin-top:-25px;
+    }
+
+    .intro-grid,
+    .service-grid,
+    .steps,
+    .values-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .story-visual{
+        min-height:330px;
+    }
+
+    .region-box{
+        padding:27px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="vh-header">
+
+<div class="vh-container vh-nav">
+
+<a href="index.html" class="vh-brand">
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo"
+>
+
+<div>
+
+<div class="vh-brand-name">
+VELORA HELP
+</div>
+
+<div class="vh-brand-sub">
+Your Problem. Our Direction.
+</div>
+
+</div>
+
+</a>
+
+
+<button
+id="menuButton"
+class="vh-menu"
+type="button"
+aria-label="Open navigation"
+>
+☰
+</button>
+
+
+<nav
+id="navigation"
+class="vh-nav-links"
+>
+
+<a href="index.html">Home</a>
+
+<a href="healthcare.html">Healthcare</a>
+
+<a href="admissions.html">Admissions</a>
+
+<a href="government.html">Government</a>
+
+<a href="students.html">Students</a>
+
+<a href="jobs.html">Jobs</a>
+
+<a href="property.html">Housing</a>
+
+<a href="businesses.html">Local Services</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="vh-container">
+
+<div class="hero-content">
+
+<small>
+ABOUT VELORA HELP
+</small>
+
+<h1>
+Your Problem.<br>
+Our Direction.
+</h1>
+
+<p>
+VELORA HELP is a people-focused local help and direction
+platform created with one simple idea: when people face a
+problem, they should have a place where they can explain
+what they need and find a clear direction for the next step.
+</p>
+
+<div class="actions">
+
+<a
+href="contact.html"
+class="btn btn-white"
+>
+📝 Ask for Help
+</a>
+
+<a
+href="index.html"
+class="btn btn-white"
+>
+🏠 Explore VELORA HELP
+</a>
+
+<a
+href="tel:+918088590273"
+class="btn btn-red"
+>
+📞 +91 8088590273
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="intro">
+
+<div class="vh-container">
+
+<div class="intro-grid">
+
+
+<div class="intro-card">
+
+<div class="intro-icon">
+🧭
+</div>
+
+<h3>
+Direction
+</h3>
+
+<p>
+We help people understand where they may need to go,
+whom they may need to contact and what information
+they may need.
+</p>
+
+</div>
+
+
+<div class="intro-card">
+
+<div class="intro-icon">
+🤝
+</div>
+
+<h3>
+People First
+</h3>
+
+<p>
+The platform is designed around real local problems
+and practical support rather than complicated processes.
+</p>
+
+</div>
+
+
+<div class="intro-card">
+
+<div class="intro-icon">
+📍
+</div>
+
+<h3>
+Local Focus
+</h3>
+
+<p>
+We begin with Dakshina Kannada and aim to build useful
+local information across its towns, villages and taluks.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OUR STORY
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="story-grid">
+
+
+<div class="story-card">
+
+<h3>
+Why VELORA HELP?
+</h3>
+
+<p>
+Every day, people face questions that sound simple but
+can be difficult to solve.
+</p>
+
+<p>
+Which hospital should I approach? Where can I find a
+suitable doctor? Where can I apply for a government
+service? Is there a scholarship available? Where can I
+find a rental house? Who can help repair my AC? Where
+can I find a job? How can I apply for a college admission?
+Who should I contact about a road, water or waste problem?
+</p>
+
+<p>
+Many people know that a solution exists somewhere, but
+they may not know where to begin.
+</p>
+
+<p>
+<strong>
+VELORA HELP was created to make that first direction
+simpler.
+</strong>
+</p>
+
+</div>
+
+
+<div class="story-visual">
+
+<div>
+
+<h3>
+One platform.<br>
+Many directions.
+</h3>
+
+<p>
+Healthcare • Education • Jobs • Housing • Government
+Services • Local Workers • Public Problems • Student
+Opportunities • Admissions • Community Help
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MISSION
+===================================================== -->
+
+<section class="section alt">
+
+<div class="vh-container">
+
+<div class="mission-box">
+
+<small>
+OUR MISSION
+</small>
+
+<div class="mission-quote">
+“Make it easier for people to know what to do next.”
+</div>
+
+<p>
+Our mission is to create a practical local support
+platform where people can explain their requirements,
+discover relevant information and receive direction
+toward appropriate services, organisations, authorities
+or opportunities.
+</p>
+
+<p>
+VELORA HELP is intended to grow through local knowledge,
+responsible information, community participation and a
+dedicated helpdesk team.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WHAT WE COVER
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+WHAT WE COVER
+</small>
+
+<h2>
+A growing local help ecosystem.
+</h2>
+
+<p>
+The platform is designed to bring different everyday
+requirements into one place instead of making people
+search across many disconnected sources.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🏥
+</div>
+
+<h3>
+Healthcare
+</h3>
+
+<p>
+Hospital and doctor direction, appointments and
+healthcare information.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🎓
+</div>
+
+<h3>
+Education
+</h3>
+
+<p>
+Admissions, scholarships, courses and student
+opportunities.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+💼
+</div>
+
+<h3>
+Jobs
+</h3>
+
+<p>
+Local employment, internships, apprenticeships and
+part-time opportunities.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🏠
+</div>
+
+<h3>
+Housing
+</h3>
+
+<p>
+Rental and property information with a future
+verified-listing model.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🏛️
+</div>
+
+<h3>
+Government
+</h3>
+
+<p>
+Government schemes, services, eligibility and
+application direction.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🔧
+</div>
+
+<h3>
+Local Workers
+</h3>
+
+<p>
+Plumbers, electricians, mechanics, AC technicians
+and other local services.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🗑️
+</div>
+
+<h3>
+Civic Problems
+</h3>
+
+<p>
+Waste, garbage, water, roads and other public
+infrastructure concerns.
+</p>
+
+</div>
+
+
+<div class="service-card">
+
+<div class="service-icon">
+🧓
+</div>
+
+<h3>
+Community Help
+</h3>
+
+<p>
+Support and direction for elderly people and
+other community requirements.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW WE WORK
+===================================================== -->
+
+<section class="section alt">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+HOW VELORA HELP WORKS
+</small>
+
+<h2>
+Listen first. Then guide.
+</h2>
+
+<p>
+The core model is intentionally simple.
+</p>
+
+</div>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+People explain
+</h3>
+
+<p>
+A person tells us what they need, where they are and
+what problem they are facing.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+We understand
+</h3>
+
+<p>
+The helpdesk reviews the requirement and identifies
+what type of information or direction may be useful.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+We guide
+</h3>
+
+<p>
+Where possible, we point the person toward the
+appropriate service, organisation, opportunity or
+official channel.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>
+We follow up
+</h3>
+
+<p>
+As the organisation grows, suitable cases can be
+followed up by the VELORA HELP team.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VALUES
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+OUR VALUES
+</small>
+
+<h2>
+What we want VELORA HELP to stand for.
+</h2>
+
+</div>
+
+
+<div class="values-grid">
+
+
+<div class="value">
+
+<div class="value-icon">
+🤝
+</div>
+
+<h3>
+People First
+</h3>
+
+<p>
+Every feature should solve a genuine problem or make
+a useful service easier to discover.
+</p>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">
+🔎
+</div>
+
+<h3>
+Responsible Information
+</h3>
+
+<p>
+Important listings and information should be checked
+before being presented as verified.
+</p>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">
+📍
+</div>
+
+<h3>
+Local Knowledge
+</h3>
+
+<p>
+Useful local information matters because people often
+need solutions close to where they live.
+</p>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">
+🔐
+</div>
+
+<h3>
+Privacy
+</h3>
+
+<p>
+People should not be asked to share unnecessary
+sensitive information through ordinary enquiries.
+</p>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">
+⚖️
+</div>
+
+<h3>
+Neutral Direction
+</h3>
+
+<p>
+The platform should focus on helping people find
+appropriate information rather than making unsupported
+claims.
+</p>
+
+</div>
+
+
+<div class="value">
+
+<div class="value-icon">
+🌱
+</div>
+
+<h3>
+Continuous Improvement
+</h3>
+
+<p>
+As more people use the platform, we can identify
+common problems and improve the service around them.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     DAKSHINA KANNADA
+===================================================== -->
+
+<section class="section alt">
+
+<div class="vh-container">
+
+<div class="region-box">
+
+<div class="region-content">
+
+<small>
+STARTING LOCAL
+</small>
+
+<h2>
+Dakshina Kannada first.
+</h2>
+
+<p>
+VELORA HELP is planned to begin with Dakshina Kannada
+and gradually build useful information across the
+district's taluks, towns and villages.
+</p>
+
+<p>
+The long-term goal is not simply to create a website.
+It is to build a dependable local help network where
+people can find direction for everyday requirements.
+</p>
+
+
+<div class="taluk-grid">
+
+<span class="taluk">
+Mangaluru
+</span>
+
+<span class="taluk">
+Bantwal
+</span>
+
+<span class="taluk">
+Belthangady
+</span>
+
+<span class="taluk">
+Puttur
+</span>
+
+<span class="taluk">
+Sullia
+</span>
+
+<span class="taluk">
+Moodbidri
+</span>
+
+<span class="taluk">
+Kadaba
+</span>
+
+<span class="taluk">
+Mulki
+</span>
+
+</div>
+
+
+<div class="actions">
+
+<a
+href="contact.html"
+class="btn btn-white"
+>
+📍 Submit Local Requirement
+</a>
+
+<a
+href="index.html"
+class="btn btn-white"
+>
+Explore Services
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FUTURE VISION
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+THE FUTURE
+</small>
+
+<h2>
+From local help to a wider Karnataka network.
+</h2>
+
+<p>
+The initial focus is Dakshina Kannada. Once the model,
+team, verification process and technology are ready,
+the platform can expand district by district.
+</p>
+
+</div>
+
+
+<div class="future-grid">
+
+
+<div class="future-card">
+
+<h3>
+📈 District Expansion
+</h3>
+
+<p>
+The platform can eventually include useful local
+information from other Karnataka districts.
+</p>
+
+<ul class="future-list">
+
+<li>
+✔ Local hospitals and healthcare information
+</li>
+
+<li>
+✔ Colleges and admissions
+</li>
+
+<li>
+✔ Jobs and internships
+</li>
+
+<li>
+✔ Housing and rentals
+</li>
+
+<li>
+✔ Government services
+</li>
+
+<li>
+✔ Local workers and businesses
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="future-card">
+
+<h3>
+🚀 Technology Expansion
+</h3>
+
+<p>
+The website can eventually become a full digital
+platform with dedicated systems for users, partners
+and the VELORA HELP team.
+</p>
+
+<ul class="future-list">
+
+<li>
+✔ User accounts
+</li>
+
+<li>
+✔ Enquiry ID and tracking
+</li>
+
+<li>
+✔ Team dashboard
+</li>
+
+<li>
+✔ Verified partner profiles
+</li>
+
+<li>
+✔ Service availability information
+</li>
+
+<li>
+✔ Mobile application
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RESPONSIBLE MODEL
+===================================================== -->
+
+<section class="section alt">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+IMPORTANT
+</small>
+
+<h2>
+Help with responsibility.
+</h2>
+
+</div>
+
+
+<div class="notice">
+
+<strong>
+VELORA HELP is a direction and information platform.
+</strong>
+
+<br><br>
+
+The platform should not claim to replace doctors,
+hospitals, lawyers, government departments, emergency
+services, police, financial professionals or other
+qualified authorities.
+
+Healthcare recommendations should not be treated as
+medical diagnosis. Government information should be
+confirmed through official government channels.
+Business, property, worker and job information should
+be checked before being described as verified.
+
+For immediate emergencies, users should contact the
+appropriate emergency service directly.
+
+The goal of VELORA HELP is to make the path to the
+appropriate service clearer — not to replace the service
+itself.
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POWERED BY
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="mission-box">
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo"
+style="
+width:120px;
+height:120px;
+object-fit:contain;
+border-radius:50%;
+margin-bottom:20px;
+"
+>
+
+<small>
+POWERED BY
+</small>
+
+<h2
+style="
+font-size:clamp(2rem,4vw,3.2rem);
+color:#071a3d;
+margin:10px 0;
+"
+>
+VELORA DIGITAL
+</h2>
+
+<p>
+VELORA HELP is the people-focused help and direction
+initiative powered by VELORA DIGITAL.
+</p>
+
+<div class="actions" style="justify-content:center;">
+
+<a
+href="contact.html"
+class="btn btn-blue"
+>
+Contact VELORA HELP
+</a>
+
+<a
+href="https://wa.me/918088590273"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-red"
+>
+💬 WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+<div class="vh-container">
+
+<h2>
+Have a problem?
+</h2>
+
+<p>
+You don't have to know exactly where to start.
+Tell VELORA HELP what you need and let us understand
+your requirement.
+</p>
+
+
+<div class="actions" style="justify-content:center;">
+
+<a
+href="contact.html"
+class="btn btn-blue"
+>
+📝 Tell Us Your Problem
+</a>
+
+<a
+href="tel:+918088590273"
+class="btn btn-red"
+>
+📞 Call +91 8088590273
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="vh-container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP"
+style="
+width:90px;
+height:90px;
+object-fit:contain;
+background:white;
+border-radius:50%;
+padding:5px;
+"
+>
+
+<h3>
+VELORA HELP
+</h3>
+
+<p>
+Your Problem. Our Direction.
+</p>
+
+<p>
+Powered by VELORA DIGITAL.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Services
+</h4>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="students.html">
+Students
+</a>
+
+<a href="jobs.html">
+Jobs
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Local Help
+</h4>
+
+<a href="property.html">
+Housing
+</a>
+
+<a href="businesses.html">
+Local Services
+</a>
+
+<a href="contact.html">
+Report a Problem
+</a>
+
+<a href="contact.html">
+Help Desk
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Information
+</h4>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="privacy.html">
+Privacy
+</a>
+
+<a href="terms.html">
+Terms
+</a>
+
+<a href="disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span id="year"></span>
+VELORA HELP
+</span>
+
+<span>
+📞 +91 8088590273
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
+
+<script>
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuButton =
+document.getElementById(
+"menuButton"
+);
+
+const navigation =
+document.getElementById(
+"navigation"
+);
+
+if(
+menuButton &&
+navigation
+){
+
+menuButton.addEventListener(
+"click",
+function(){
+
+navigation.classList.toggle(
+"active"
+);
+
+}
+);
+
+}
+
+
+/* =====================================================
+   CURRENT YEAR
+===================================================== */
+
+const year =
+document.getElementById(
+"year"
+);
+
+if(year){
+
+year.textContent =
+new Date().getFullYear();
+
+}
+
+
+/* =====================================================
+   CLOSE MOBILE MENU AFTER LINK CLICK
+===================================================== */
+
+document
+.querySelectorAll(
+".vh-nav-links a"
+)
+.forEach(
+function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+if(navigation){
+
+navigation.classList.remove(
+"active"
+);
+
+}
+
+}
+);
+
+}
+);
+
+});
+
+</script>
+
+
+</body>
+
+</html>
