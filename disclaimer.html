@@ -1,1 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#071a3d">
+
+<meta
+name="description"
+content="VELORA HELP Disclaimer — Your Problem. Our Direction. Powered by VELORA DIGITAL."
+>
+
+<title>Disclaimer | VELORA HELP</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f6f8fb;
+    color:#17243d;
+    line-height:1.7;
+}
+
+a{
+    text-decoration:none;
+}
+
+.vh-container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.vh-header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #e5e9f0;
+}
+
+.vh-nav{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.vh-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#071a3d;
+}
+
+.vh-brand img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.vh-brand-name{
+    font-size:1.15rem;
+    font-weight:800;
+}
+
+.vh-brand-sub{
+    font-size:.7rem;
+    opacity:.7;
+    margin-top:3px;
+}
+
+.vh-nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.vh-nav-links a{
+    color:#17243d;
+    padding:10px 11px;
+    border-radius:9px;
+    font-size:.88rem;
+    font-weight:600;
+}
+
+.vh-nav-links a:hover{
+    background:#eef2f8;
+}
+
+.vh-menu{
+    display:none;
+    background:#071a3d;
+    color:white;
+    border:0;
+    padding:10px 13px;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.disclaimer-hero{
+    padding:85px 0;
+    color:white;
+
+    background:
+    linear-gradient(
+        110deg,
+        #071a3d 0%,
+        #12315e 60%,
+        #8a172d 100%
+    );
+}
+
+.disclaimer-hero small{
+    color:#e8b7bf;
+    font-weight:800;
+    letter-spacing:.14em;
+}
+
+.disclaimer-hero h1{
+    font-size:clamp(2.7rem,6vw,4.7rem);
+    line-height:1;
+    letter-spacing:-.045em;
+    margin:13px 0 20px;
+}
+
+.disclaimer-hero p{
+    max-width:800px;
+    color:rgba(255,255,255,.84);
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.disclaimer-section{
+    padding:70px 0;
+}
+
+.disclaimer-layout{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:30px;
+    align-items:start;
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.disclaimer-sidebar{
+    position:sticky;
+    top:100px;
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:18px;
+    padding:20px;
+}
+
+.disclaimer-sidebar h3{
+    margin:0 0 12px;
+    color:#071a3d;
+}
+
+.disclaimer-sidebar a{
+    display:block;
+    color:#56637a;
+    padding:8px 0;
+    font-size:.88rem;
+}
+
+.disclaimer-sidebar a:hover{
+    color:#a3132d;
+}
+
+
+/* =====================================================
+   ARTICLE
+===================================================== */
+
+.disclaimer-content{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:22px;
+    padding:35px;
+}
+
+.disclaimer-content h2{
+    color:#071a3d;
+    margin-top:40px;
+    margin-bottom:12px;
+    font-size:1.55rem;
+}
+
+.disclaimer-content h2:first-child{
+    margin-top:0;
+}
+
+.disclaimer-content h3{
+    color:#071a3d;
+    margin-top:25px;
+}
+
+.disclaimer-content p{
+    color:#59677e;
+    margin:0 0 15px;
+}
+
+.disclaimer-content ul{
+    color:#59677e;
+    padding-left:24px;
+}
+
+.disclaimer-content li{
+    margin:8px 0;
+}
+
+
+/* =====================================================
+   IMPORTANT BOX
+===================================================== */
+
+.important-box{
+    background:#fff8e6;
+    border:1px solid #efdda7;
+    color:#624f18;
+    border-radius:15px;
+    padding:20px;
+    margin:25px 0;
+}
+
+.info-box{
+    background:#f1f5fa;
+    border-left:4px solid #071a3d;
+    padding:18px 20px;
+    border-radius:8px;
+    color:#526077;
+    margin:25px 0;
+}
+
+
+/* =====================================================
+   EMERGENCY
+===================================================== */
+
+.emergency-box{
+    background:
+    linear-gradient(
+        120deg,
+        #7b1027,
+        #a3132d
+    );
+    color:white;
+    border-radius:20px;
+    padding:30px;
+    margin:30px 0;
+}
+
+.emergency-box h2{
+    color:white;
+    margin:0 0 10px;
+}
+
+.emergency-box p{
+    color:rgba(255,255,255,.88);
+}
+
+
+/* =====================================================
+   CONTACT BOX
+===================================================== */
+
+.contact-box{
+    margin-top:30px;
+    background:
+    linear-gradient(
+        115deg,
+        #071a3d,
+        #12315e
+    );
+    color:white;
+    border-radius:20px;
+    padding:30px;
+}
+
+.contact-box h2{
+    color:white;
+    margin:0 0 10px;
+}
+
+.contact-box p{
+    color:rgba(255,255,255,.8);
+}
+
+.contact-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:11px 17px;
+    border-radius:10px;
+    font-weight:750;
+}
+
+.btn-white{
+    background:white;
+    color:#071a3d;
+}
+
+.btn-red{
+    background:#a3132d;
+    color:white;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#06152f;
+    color:white;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:35px;
+}
+
+footer a{
+    display:block;
+    color:rgba(255,255,255,.72);
+    margin:9px 0;
+}
+
+footer a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:35px;
+    padding-top:20px;
+    color:rgba(255,255,255,.55);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1050px){
+
+    .vh-nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:4%;
+        right:4%;
+        padding:12px;
+        background:white;
+        border-radius:14px;
+        box-shadow:0 20px 50px rgba(0,0,0,.15);
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .vh-nav-links.active{
+        display:flex;
+    }
+
+    .vh-menu{
+        display:block;
+    }
+
+    .disclaimer-layout{
+        grid-template-columns:1fr;
+    }
+
+    .disclaimer-sidebar{
+        position:static;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .disclaimer-hero{
+        padding:65px 0;
+    }
+
+    .disclaimer-content{
+        padding:23px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="vh-header">
+
+<div class="vh-container vh-nav">
+
+
+<a href="index.html" class="vh-brand">
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo"
+>
+
+<div>
+
+<div class="vh-brand-name">
+VELORA HELP
+</div>
+
+<div class="vh-brand-sub">
+Your Problem. Our Direction.
+</div>
+
+</div>
+
+</a>
+
+
+<button
+id="menuButton"
+class="vh-menu"
+type="button"
+aria-label="Open navigation"
+>
+☰
+</button>
+
+
+<nav
+id="navigation"
+class="vh-nav-links"
+>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="students.html">
+Students
+</a>
+
+<a href="jobs.html">
+Jobs
+</a>
+
+<a href="property.html">
+Housing
+</a>
+
+<a href="businesses.html">
+Local Services
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="disclaimer-hero">
+
+<div class="vh-container">
+
+<small>
+VELORA HELP • IMPORTANT INFORMATION
+</small>
+
+<h1>
+Disclaimer
+</h1>
+
+<p>
+Please read this information before relying on information,
+listings, recommendations, opportunities or directions
+provided through VELORA HELP.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<section class="disclaimer-section">
+
+<div class="vh-container">
+
+<div class="disclaimer-layout">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="disclaimer-sidebar">
+
+<h3>
+On this page
+</h3>
+
+<a href="#general">
+1. General Disclaimer
+</a>
+
+<a href="#direction">
+2. Direction Service
+</a>
+
+<a href="#healthcare">
+3. Healthcare
+</a>
+
+<a href="#government">
+4. Government
+</a>
+
+<a href="#education">
+5. Education
+</a>
+
+<a href="#jobs">
+6. Jobs
+</a>
+
+<a href="#property">
+7. Property
+</a>
+
+<a href="#businesses">
+8. Local Businesses
+</a>
+
+<a href="#verification">
+9. Verification
+</a>
+
+<a href="#emergency">
+10. Emergencies
+</a>
+
+<a href="#thirdparty">
+11. External Services
+</a>
+
+<a href="#accuracy">
+12. Information Changes
+</a>
+
+<a href="#user">
+13. User Responsibility
+</a>
+
+<a href="#contact">
+14. Contact
+</a>
+
+</aside>
+
+
+
+<!-- =====================================================
+     ARTICLE
+===================================================== -->
+
+<main class="disclaimer-content">
+
+
+<h2 id="general">
+1. General Disclaimer
+</h2>
+
+<p>
+VELORA HELP is a people-focused information and direction
+platform powered by VELORA DIGITAL.
+</p>
+
+<p>
+The purpose of the platform is to help people understand
+where they may find useful services, information,
+opportunities or appropriate next steps.
+</p>
+
+<p>
+Information displayed on the website is provided for
+general informational and directional purposes.
+</p>
+
+<p>
+VELORA HELP does not guarantee that every piece of
+information is complete, current, available or suitable
+for every individual situation.
+</p>
+
+
+
+<h2 id="direction">
+2. Direction Is Not a Guarantee
+</h2>
+
+<p>
+When VELORA HELP suggests a hospital, doctor, college,
+course, government service, job, property, business,
+worker or other service, the suggestion should be
+considered a direction rather than a guarantee.
+</p>
+
+<p>
+The user should independently verify important details
+before making a decision.
+</p>
+
+<div class="info-box">
+
+<strong>
+Our goal:
+</strong>
+
+<br>
+
+VELORA HELP aims to make it easier to understand
+<strong>where to start</strong>.
+
+It does not promise a specific outcome from the
+organisation or service to which a user is directed.
+
+</div>
+
+
+
+<h2 id="healthcare">
+3. Healthcare Disclaimer
+</h2>
+
+<p>
+Healthcare information available through VELORA HELP is
+provided for general information and direction only.
+</p>
+
+<p>
+VELORA HELP is not a hospital, clinic, doctor, medical
+practice, emergency medical service or healthcare
+professional.
+</p>
+
+<p>
+Any information about doctors, hospitals, departments,
+specialties, appointments or healthcare facilities should
+be independently confirmed.
+</p>
+
+<p>
+A listing or recommendation does not constitute a medical
+diagnosis, prescription or professional medical advice.
+</p>
+
+<p>
+Users should consult a qualified healthcare professional
+for their individual medical needs.
+</p>
+
+
+<div class="emergency-box" id="emergency">
+
+<h2>
+🚨 Medical Emergency
+</h2>
+
+<p>
+If you or another person is experiencing a medical
+emergency, severe symptoms, serious injury or immediate
+danger, do not wait for a response from VELORA HELP.
+</p>
+
+<p>
+Contact the appropriate emergency service, hospital or
+qualified healthcare professional directly.
+</p>
+
+</div>
+
+
+
+<h2 id="government">
+4. Government Services and Schemes
+</h2>
+
+<p>
+VELORA HELP may provide information about government
+schemes, services, eligibility, documents, application
+procedures and official websites.
+</p>
+
+<p>
+Government rules, deadlines, eligibility requirements,
+documents and application procedures can change.
+</p>
+
+<p>
+Users should verify the latest information with the
+relevant official government department or official
+government website.
+</p>
+
+<p>
+VELORA HELP does not represent itself as a government
+department merely because it provides information about
+government services.
+</p>
+
+
+
+<h2 id="education">
+5. Education and Admissions
+</h2>
+
+<p>
+VELORA HELP may provide information about PUC admissions,
+degree admissions, colleges, courses, scholarships,
+entrance processes and educational opportunities.
+</p>
+
+<p>
+Users should verify admission dates, eligibility,
+documents, fees, seat availability, course recognition
+and other requirements directly with the relevant
+educational institution or official authority.
+</p>
+
+<p>
+VELORA HELP cannot guarantee admission to any college,
+course or programme.
+</p>
+
+
+
+<h2 id="jobs">
+6. Jobs, Internships and Opportunities
+</h2>
+
+<p>
+Job, internship, scholarship, course and opportunity
+information may be provided by external organisations,
+partners or public sources.
+</p>
+
+<p>
+Users should verify:
+</p>
+
+<ul>
+
+<li>
+The identity of the organisation.
+</li>
+
+<li>
+The authenticity of the opportunity.
+</li>
+
+<li>
+Eligibility requirements.
+</li>
+
+<li>
+Application deadlines.
+</li>
+
+<li>
+Fees or other charges.
+</li>
+
+<li>
+Employment conditions.
+</li>
+
+</ul>
+
+<p>
+VELORA HELP does not guarantee employment, internship
+selection, scholarship approval or admission.
+</p>
+
+
+<div class="important-box">
+
+<strong>
+⚠️ Be careful with fraud.
+</strong>
+
+<br><br>
+
+Never share an OTP, UPI PIN, ATM PIN, card PIN, password
+or banking credentials with someone claiming to arrange
+a job, scholarship, admission or other service.
+
+</div>
+
+
+
+<h2 id="property">
+7. Property and Rental Information
+</h2>
+
+<p>
+Property and rental listings may be provided by owners,
+brokers, agents, businesses or other third parties.
+</p>
+
+<p>
+VELORA HELP does not automatically guarantee:
+</p>
+
+<ul>
+
+<li>
+Ownership of a property.
+</li>
+
+<li>
+Accuracy of property documents.
+</li>
+
+<li>
+Property availability.
+</li>
+
+<li>
+Rental terms.
+</li>
+
+<li>
+Property price.
+</li>
+
+<li>
+Broker identity.
+</li>
+
+<li>
+Legal status of the property.
+</li>
+
+</ul>
+
+<p>
+Users should conduct appropriate property, legal and
+financial verification before entering into an agreement
+or transferring money.
+</p>
+
+
+
+<h2 id="businesses">
+8. Local Businesses and Service Providers
+</h2>
+
+<p>
+VELORA HELP may help users discover local businesses,
+plumbers, electricians, AC technicians, mechanics,
+repair services, cleaning services and other service
+providers.
+</p>
+
+<p>
+Users should verify the provider's:
+</p>
+
+<ul>
+
+<li>
+Identity.
+</li>
+
+<li>
+Experience and qualifications where relevant.
+</li>
+
+<li>
+Pricing.
+</li>
+
+<li>
+Availability.
+</li>
+
+<li>
+Terms of service.
+</li>
+
+<li>
+Quality of work.
+</li>
+
+</ul>
+
+<p>
+VELORA HELP does not automatically guarantee the quality,
+safety, conduct or performance of every service provider.
+</p>
+
+
+
+<h2 id="verification">
+9. Verification and Listings
+</h2>
+
+<p>
+VELORA HELP may eventually introduce verified profiles
+for doctors, businesses, workers, properties, educational
+organisations and other partners.
+</p>
+
+<p>
+A verification process should be completed before a
+profile is represented as verified.
+</p>
+
+<p>
+A verification badge should not be interpreted as a
+guarantee of future performance, service quality,
+financial reliability or a particular outcome.
+</p>
+
+<p>
+Verification may mean that certain information or
+documents were reviewed according to the platform's
+applicable verification process.
+</p>
+
+
+
+<h2 id="thirdparty">
+10. Third-Party Websites and Services
+</h2>
+
+<p>
+VELORA HELP may provide links or directions to external
+websites and services, including:
+</p>
+
+<ul>
+
+<li>
+Official government websites.
+</li>
+
+<li>
+Hospitals and healthcare organisations.
+</li>
+
+<li>
+Colleges and universities.
+</li>
+
+<li>
+Businesses.
+</li>
+
+<li>
+Maps and location services.
+</li>
+
+<li>
+WhatsApp.
+</li>
+
+<li>
+Other external platforms.
+</li>
+
+</ul>
+
+<p>
+These services are independently operated and may have
+their own terms, privacy policies and security practices.
+</p>
+
+<p>
+VELORA HELP does not control external websites and cannot
+guarantee their availability, accuracy, security or
+content.
+</p>
+
+
+
+<h2 id="accuracy">
+11. Information May Change
+</h2>
+
+<p>
+Information can become outdated.
+</p>
+
+<p>
+Examples include:
+</p>
+
+<ul>
+
+<li>
+Hospital departments.
+</li>
+
+<li>
+Doctor availability.
+</li>
+
+<li>
+Contact numbers.
+</li>
+
+<li>
+Opening hours.
+</li>
+
+<li>
+Property availability.
+</li>
+
+<li>
+Rental prices.
+</li>
+
+<li>
+Job vacancies.
+</li>
+
+<li>
+Scholarship deadlines.
+</li>
+
+<li>
+Admission dates.
+</li>
+
+<li>
+Government schemes.
+</li>
+
+<li>
+Eligibility conditions.
+</li>
+
+<li>
+Business availability.
+</li>
+
+</ul>
+
+<p>
+Always confirm important information before taking action.
+</p>
+
+
+
+<h2 id="user">
+12. User Responsibility
+</h2>
+
+<p>
+Users are responsible for the decisions they make after
+using information from VELORA HELP.
+</p>
+
+<p>
+Users should conduct appropriate verification before:
+</p>
+
+<ul>
+
+<li>
+Making medical decisions.
+</li>
+
+<li>
+Transferring money.
+</li>
+
+<li>
+Renting or purchasing property.
+</li>
+
+<li>
+Accepting employment.
+</li>
+
+<li>
+Paying an agent or service provider.
+</li>
+
+<li>
+Applying for an educational programme.
+</li>
+
+<li>
+Submitting important documents.
+</li>
+
+<li>
+Entering into a contract.
+</li>
+
+</ul>
+
+
+
+<h2>
+13. Public Problems and Complaints
+</h2>
+
+<p>
+VELORA HELP may allow users to submit information about
+public problems such as waste, water, roads, transport,
+public infrastructure and other local concerns.
+</p>
+
+<p>
+Submitting a complaint does not guarantee that a
+government department, municipality, public representative
+or other authority will take action.
+</p>
+
+<p>
+Where appropriate, VELORA HELP may help organise the
+information and identify a relevant authority or official
+channel.
+</p>
+
+
+
+<h2>
+14. Community and Public Representative Communication
+</h2>
+
+<p>
+VELORA HELP may, as its organisation develops, communicate
+with public representatives, government departments,
+municipal authorities, community organisations or other
+relevant parties regarding suitable public-interest
+issues.
+</p>
+
+<p>
+VELORA HELP does not guarantee that a particular public
+representative or authority will respond or resolve a
+reported issue.
+</p>
+
+
+
+<h2>
+15. No Professional Advice
+</h2>
+
+<p>
+Information provided by VELORA HELP should not be treated
+as professional legal, medical, financial, investment,
+property, employment or other specialised professional
+advice.
+</p>
+
+<p>
+Where professional advice is necessary, users should
+consult an appropriately qualified professional.
+</p>
+
+
+
+<h2>
+16. Website Availability
+</h2>
+
+<p>
+VELORA HELP aims to keep the website available and useful.
+However, technical problems, maintenance, hosting issues,
+internet connectivity, third-party outages or other
+circumstances may temporarily affect availability.
+</p>
+
+<p>
+No guarantee is made that the website will always operate
+without interruption or errors.
+</p>
+
+
+
+<h2>
+17. Future Services
+</h2>
+
+<p>
+VELORA HELP may introduce additional services in the
+future, including partner profiles, verified listings,
+admission assistance, appointment assistance, local
+service networks, enquiry tracking, mobile applications,
+team dashboards and other features.
+</p>
+
+<p>
+New services may have their own specific terms,
+verification requirements, pricing structures and
+policies.
+</p>
+
+
+
+<h2>
+18. Changes to This Disclaimer
+</h2>
+
+<p>
+This Disclaimer may be updated as VELORA HELP develops,
+adds services, expands into new areas or changes its
+technology and operating model.
+</p>
+
+<p>
+The latest version published on this page should be
+considered the current version for the website.
+</p>
+
+
+
+<h2 id="contact">
+19. Contact VELORA HELP
+</h2>
+
+<p>
+If you have questions about this Disclaimer or the
+VELORA HELP platform, please contact the helpdesk.
+</p>
+
+
+<div class="contact-box">
+
+<h2>
+VELORA HELP
+</h2>
+
+<p>
+Your Problem. Our Direction.
+</p>
+
+<p>
+Powered by VELORA DIGITAL.
+</p>
+
+<p>
+<strong>
+Phone / WhatsApp:
+</strong>
+
++91 8088590273
+</p>
+
+
+<div class="contact-buttons">
+
+<a
+href="tel:+918088590273"
+class="btn btn-white"
+>
+📞 Call Us
+</a>
+
+<a
+href="https://wa.me/918088590273"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-red"
+>
+💬 WhatsApp Us
+</a>
+
+<a
+href="contact.html"
+class="btn btn-white"
+>
+📝 Help Desk
+</a>
+
+</div>
+
+</div>
+
+
+<div class="info-box">
+
+<strong>
+Last Updated:
+</strong>
+
+30 August 2026
+
+<br><br>
+
+This Disclaimer is prepared for the current VELORA HELP
+website prototype. Before the platform becomes a full
+commercial service, accepts payments, stores user accounts,
+handles structured personal data, operates partner
+verification, or provides regulated services, the final
+legal documents should be reviewed and adapted by a
+qualified legal professional for the actual business and
+applicable Indian requirements.
+
+</div>
+
+
+</main>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="vh-container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP"
+style="
+width:90px;
+height:90px;
+object-fit:contain;
+background:white;
+border-radius:50%;
+padding:5px;
+"
+>
+
+<h3>
+VELORA HELP
+</h3>
+
+<p>
+Your Problem. Our Direction.
+</p>
+
+<p>
+Powered by VELORA DIGITAL.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Services
+</h4>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="students.html">
+Students
+</a>
+
+<a href="jobs.html">
+Jobs
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Local Help
+</h4>
+
+<a href="property.html">
+Housing
+</a>
+
+<a href="businesses.html">
+Local Services
+</a>
+
+<a href="contact.html">
+Report a Problem
+</a>
+
+<a href="contact.html">
+Help Desk
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Information
+</h4>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="privacy.html">
+Privacy
+</a>
+
+<a href="terms.html">
+Terms
+</a>
+
+<a href="disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span id="year"></span>
+VELORA HELP
+</span>
+
+<span>
+📞 +91 8088590273
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+const menuButton =
+document.getElementById(
+"menuButton"
+);
+
+const navigation =
+document.getElementById(
+"navigation"
+);
+
+
+/* Mobile menu */
+
+if(
+menuButton &&
+navigation
+){
+
+menuButton.addEventListener(
+"click",
+function(){
+
+navigation.classList.toggle(
+"active"
+);
+
+}
+);
+
+}
+
+
+/* Current year */
+
+const year =
+document.getElementById(
+"year"
+);
+
+if(year){
+
+year.textContent =
+new Date().getFullYear();
+
+}
+
+
+/* Close mobile menu */
+
+document
+.querySelectorAll(
+".vh-nav-links a"
+)
+.forEach(
+function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+if(navigation){
+
+navigation.classList.remove(
+"active"
+);
+
+}
+
+}
+);
+
+}
+);
+
+});
+
+</script>
+
+
+</body>
+
+</html>
