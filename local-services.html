@@ -1,1 +1,2661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071a3d">
 
+<meta name="description"
+content="VELORA HELP Local Services — find and enquire about plumbers, electricians, AC technicians, mechanics, repair services and trusted local workers across Dakshina Kannada.">
+
+<title>Local Services | VELORA HELP</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f6f8fb;
+color:#17243d;
+}
+
+a{
+text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+font:inherit;
+}
+
+.container{
+width:min(1180px,92%);
+margin:auto;
+}
+
+
+/* HEADER */
+
+.header{
+position:sticky;
+top:0;
+z-index:999;
+background:rgba(255,255,255,.97);
+backdrop-filter:blur(15px);
+border-bottom:1px solid #e5e9f0;
+}
+
+.nav{
+min-height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+color:#071a3d;
+}
+
+.brand img{
+width:52px;
+height:52px;
+object-fit:contain;
+border-radius:50%;
+}
+
+.brand-name{
+font-weight:800;
+font-size:1.15rem;
+}
+
+.brand-sub{
+font-size:.7rem;
+opacity:.7;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:4px;
+}
+
+.nav-links a{
+color:#17243d;
+padding:10px;
+border-radius:9px;
+font-size:.84rem;
+font-weight:600;
+}
+
+.nav-links a:hover{
+background:#eef2f8;
+}
+
+.menu{
+display:none;
+border:0;
+background:#071a3d;
+color:#fff;
+border-radius:10px;
+padding:10px 13px;
+cursor:pointer;
+font-size:20px;
+}
+
+
+/* HERO */
+
+.hero{
+padding:85px 0;
+color:white;
+background:
+linear-gradient(
+110deg,
+#071a3d,
+#12315e 58%,
+#a3132d
+);
+}
+
+.hero small{
+color:#f0c0c8;
+font-weight:800;
+letter-spacing:.14em;
+}
+
+.hero h1{
+max-width:900px;
+font-size:clamp(2.7rem,6vw,5rem);
+line-height:1;
+letter-spacing:-.045em;
+margin:15px 0 20px;
+}
+
+.hero p{
+max-width:800px;
+color:rgba(255,255,255,.88);
+line-height:1.8;
+}
+
+.hero-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:28px;
+}
+
+.btn{
+border:0;
+border-radius:11px;
+min-height:46px;
+padding:11px 17px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+cursor:pointer;
+font-weight:750;
+}
+
+.btn-white{
+background:#fff;
+color:#071a3d;
+}
+
+.btn-blue{
+background:#071a3d;
+color:#fff;
+}
+
+.btn-red{
+background:#a3132d;
+color:#fff;
+}
+
+.btn-light{
+background:#eef2f8;
+color:#071a3d;
+}
+
+
+/* SEARCH */
+
+.search-wrap{
+margin-top:-40px;
+position:relative;
+z-index:5;
+}
+
+.search-card{
+background:#fff;
+border:1px solid #e0e5ed;
+border-radius:20px;
+padding:25px;
+box-shadow:0 18px 45px rgba(7,26,61,.1);
+}
+
+.search-card h2{
+margin:0 0 7px;
+color:#071a3d;
+}
+
+.search-card p{
+color:#667085;
+margin:0 0 18px;
+}
+
+.search-grid{
+display:grid;
+grid-template-columns:1fr 1fr 1fr auto;
+gap:10px;
+}
+
+.field{
+width:100%;
+border:1px solid #d9e0e9;
+border-radius:10px;
+padding:13px 14px;
+outline:none;
+background:#fff;
+}
+
+.field:focus{
+border-color:#071a3d;
+}
+
+
+/* SECTIONS */
+
+.section{
+padding:75px 0;
+}
+
+.alt{
+background:#eef2f7;
+}
+
+.heading{
+max-width:850px;
+margin-bottom:32px;
+}
+
+.heading small{
+color:#a3132d;
+font-weight:800;
+letter-spacing:.13em;
+}
+
+.heading h2{
+color:#071a3d;
+font-size:clamp(2rem,4vw,3.1rem);
+letter-spacing:-.035em;
+margin:9px 0 13px;
+}
+
+.heading p{
+color:#667085;
+line-height:1.75;
+}
+
+
+/* SERVICE GRID */
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+
+.service-card{
+background:#fff;
+border:1px solid #e0e5ed;
+border-radius:18px;
+padding:23px;
+transition:.2s ease;
+}
+
+.service-card:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 35px rgba(7,26,61,.08);
+}
+
+.icon{
+font-size:32px;
+margin-bottom:12px;
+}
+
+.service-card h3{
+color:#071a3d;
+margin:0 0 8px;
+}
+
+.service-card p{
+color:#667085;
+font-size:.88rem;
+line-height:1.65;
+margin:0 0 17px;
+}
+
+
+/* INFO */
+
+.info-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.info-card{
+background:#fff;
+border:1px solid #e0e5ed;
+border-radius:20px;
+padding:27px;
+}
+
+.info-card h3{
+color:#071a3d;
+margin-top:0;
+}
+
+.info-card p{
+color:#667085;
+line-height:1.75;
+}
+
+.info-list{
+color:#667085;
+line-height:2;
+padding-left:20px;
+}
+
+
+/* PROVIDER */
+
+.provider-box{
+background:#fff;
+border:1px solid #e0e5ed;
+border-radius:22px;
+padding:30px;
+}
+
+.provider-box h3{
+color:#071a3d;
+margin-top:0;
+}
+
+
+/* FORM */
+
+.form-card{
+background:#fff;
+border:1px solid #e0e5ed;
+border-radius:22px;
+padding:30px;
+max-width:980px;
+margin:auto;
+}
+
+.form-card h2{
+color:#071a3d;
+margin-top:0;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.form-group{
+margin-bottom:4px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:7px;
+font-size:.86rem;
+font-weight:700;
+color:#344054;
+}
+
+.full{
+grid-column:1/-1;
+}
+
+textarea.field{
+min-height:130px;
+resize:vertical;
+}
+
+.status{
+display:none;
+margin-top:15px;
+padding:14px;
+border-radius:10px;
+background:#eaf8ef;
+color:#20633a;
+line-height:1.6;
+}
+
+.status.show{
+display:block;
+}
+
+
+/* VERIFIED */
+
+.verify{
+display:inline-flex;
+align-items:center;
+gap:5px;
+padding:5px 9px;
+border-radius:50px;
+background:#eaf8ef;
+color:#20633a;
+font-size:.72rem;
+font-weight:800;
+margin-bottom:10px;
+}
+
+
+/* NOTICE */
+
+.notice{
+background:#fff8e6;
+border:1px solid #efdda7;
+color:#624f18;
+border-radius:15px;
+padding:20px;
+line-height:1.7;
+}
+
+
+/* CTA */
+
+.cta{
+text-align:center;
+padding:80px 0;
+background:#f7f8fa;
+}
+
+.cta h2{
+color:#071a3d;
+font-size:clamp(2rem,4vw,3.4rem);
+margin:0 0 12px;
+}
+
+.cta p{
+max-width:720px;
+margin:auto;
+color:#667085;
+line-height:1.7;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#06152f;
+color:#fff;
+padding:55px 0 25px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:35px;
+}
+
+footer a{
+display:block;
+color:rgba(255,255,255,.72);
+margin:9px 0;
+}
+
+footer a:hover{
+color:#fff;
+}
+
+.footer-bottom{
+border-top:1px solid rgba(255,255,255,.12);
+margin-top:35px;
+padding-top:20px;
+color:rgba(255,255,255,.55);
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1050px){
+
+.nav-links{
+display:none;
+position:absolute;
+top:70px;
+left:4%;
+right:4%;
+padding:12px;
+background:#fff;
+border-radius:14px;
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+flex-direction:column;
+align-items:stretch;
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.menu{
+display:block;
+}
+
+.service-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+
+@media(max-width:750px){
+
+.search-grid,
+.form-grid,
+.info-grid{
+grid-template-columns:1fr;
+}
+
+.full{
+grid-column:auto;
+}
+
+}
+
+
+@media(max-width:600px){
+
+.hero{
+padding:65px 0;
+}
+
+.service-grid,
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.search-wrap{
+margin-top:-25px;
+}
+
+.search-card,
+.form-card,
+.info-card,
+.provider-box{
+padding:22px;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+<div class="container nav">
+
+<a href="index.html" class="brand">
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo"
+>
+
+<div>
+
+<div class="brand-name">
+VELORA HELP
+</div>
+
+<div class="brand-sub">
+Your Problem. Our Direction.
+</div>
+
+</div>
+
+</a>
+
+
+<button
+class="menu"
+id="menuButton"
+type="button"
+aria-label="Open navigation"
+>
+☰
+</button>
+
+
+<nav
+class="nav-links"
+id="navigation"
+>
+
+<a href="index.html">Home</a>
+<a href="healthcare.html">Healthcare</a>
+<a href="admissions.html">Admissions</a>
+<a href="government.html">Government</a>
+<a href="students.html">Students</a>
+<a href="jobs.html">Jobs</a>
+<a href="property.html">Housing</a>
+<a href="businesses.html">Local Services</a>
+<a href="transport.html">Transport</a>
+<a href="services.html">Services</a>
+<a href="civic.html">Civic</a>
+<a href="community.html">Community</a>
+<a href="digital-help.html">Digital Help</a>
+<a href="elderly.html">Elderly Help</a>
+<a href="emergency.html">Emergency</a>
+<a href="local-services.html">Local Services</a>
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<small>
+VELORA HELP • LOCAL SERVICES
+</small>
+
+<h1>
+Find local help near you.
+</h1>
+
+<p>
+Looking for a plumber, electrician, AC technician,
+carpenter, mechanic, cleaner, appliance repair technician
+or another local service? Tell VELORA HELP what you need
+and where you need it.
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#services"
+class="btn btn-white"
+>
+🔧 Explore Services
+</a>
+
+
+<a
+href="#service-request"
+class="btn btn-white"
+>
+📝 Request a Service
+</a>
+
+
+<a
+href="tel:+918088590273"
+class="btn btn-red"
+>
+📞 +91 8088590273
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SEARCH -->
+
+<section class="search-wrap">
+
+<div class="container">
+
+<div class="search-card">
+
+<h2>
+What local service do you need?
+</h2>
+
+<p>
+Choose your area and service requirement.
+</p>
+
+
+<div class="search-grid">
+
+<input
+id="searchLocation"
+class="field"
+type="text"
+placeholder="Town / village / area"
+>
+
+
+<select
+id="searchService"
+class="field"
+>
+
+<option value="">
+Select service
+</option>
+
+<option>
+Plumber
+</option>
+
+<option>
+Electrician
+</option>
+
+<option>
+AC Technician
+</option>
+
+<option>
+Refrigerator Repair
+</option>
+
+<option>
+Washing Machine Repair
+</option>
+
+<option>
+TV / Electronics Repair
+</option>
+
+<option>
+Carpenter
+</option>
+
+<option>
+Painter
+</option>
+
+<option>
+Mason / Construction
+</option>
+
+<option>
+Cleaning Service
+</option>
+
+<option>
+Pest Control
+</option>
+
+<option>
+Vehicle Mechanic
+</option>
+
+<option>
+Computer / Laptop Repair
+</option>
+
+<option>
+Mobile Repair
+</option>
+
+<option>
+CCTV / Security Installation
+</option>
+
+<option>
+Other Local Service
+</option>
+
+</select>
+
+
+<select
+id="searchUrgency"
+class="field"
+>
+
+<option value="">
+Urgency
+</option>
+
+<option>
+Normal
+</option>
+
+<option>
+Today
+</option>
+
+<option>
+Urgent
+</option>
+
+</select>
+
+
+<button
+id="serviceSearch"
+class="btn btn-blue"
+type="button"
+>
+Search
+</button>
+
+</div>
+
+
+<div
+id="searchResult"
+class="status"
+></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SERVICES -->
+
+<section
+class="section"
+id="services"
+>
+
+<div class="container">
+
+<div class="heading">
+
+<small>
+LOCAL SERVICE DIRECTORY
+</small>
+
+<h2>
+What service are you looking for?
+</h2>
+
+<p>
+Choose a category and send your requirement to the
+VELORA HELP helpdesk.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+
+<div class="service-card">
+
+<div class="icon">
+🔧
+</div>
+
+<h3>
+Plumber
+</h3>
+
+<p>
+Water leaks, taps, pipes, bathrooms, drainage and other
+plumbing requirements.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Plumber"
+>
+Find Plumber
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+⚡
+</div>
+
+<h3>
+Electrician
+</h3>
+
+<p>
+Electrical repair, wiring, switches, lights, fans and
+other electrical requirements.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Electrician"
+>
+Find Electrician
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+❄️
+</div>
+
+<h3>
+AC Technician
+</h3>
+
+<p>
+AC repair, servicing, installation and maintenance.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="AC Technician"
+>
+Find AC Technician
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+🧊
+</div>
+
+<h3>
+Refrigerator Repair
+</h3>
+
+<p>
+Refrigerator service, repair and maintenance requirements.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Refrigerator Repair"
+>
+Find Technician
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+🧺
+</div>
+
+<h3>
+Washing Machine
+</h3>
+
+<p>
+Washing machine repair, servicing and installation.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Washing Machine Repair"
+>
+Find Technician
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+📺
+</div>
+
+<h3>
+Electronics Repair
+</h3>
+
+<p>
+TV, speaker and other household electronics repair.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="TV / Electronics Repair"
+>
+Find Technician
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+🪚
+</div>
+
+<h3>
+Carpenter
+</h3>
+
+<p>
+Furniture, doors, cupboards and other carpentry work.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Carpenter"
+>
+Find Carpenter
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+🎨
+</div>
+
+<h3>
+Painter
+</h3>
+
+<p>
+House painting, commercial painting and finishing work.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Painter"
+>
+Find Painter
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+🧱
+</div>
+
+<h3>
+Construction Worker
+</h3>
+
+<p>
+Masonry, renovation and other construction-related work.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Mason / Construction"
+>
+Find Worker
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+🧹
+</div>
+
+<h3>
+Cleaning
+</h3>
+
+<p>
+Home, office and other cleaning requirements.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Cleaning Service"
+>
+Find Cleaner
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+🦟
+</div>
+
+<h3>
+Pest Control
+</h3>
+
+<p>
+Ask about local pest-control service requirements.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Pest Control"
+>
+Find Service
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+🚗
+</div>
+
+<h3>
+Vehicle Mechanic
+</h3>
+
+<p>
+Car, bike and other vehicle repair requirements.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Vehicle Mechanic"
+>
+Find Mechanic
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+💻
+</div>
+
+<h3>
+Computer Repair
+</h3>
+
+<p>
+Laptop, desktop, software and computer troubleshooting.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Computer / Laptop Repair"
+>
+Find Technician
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+📱
+</div>
+
+<h3>
+Mobile Repair
+</h3>
+
+<p>
+Mobile phone repair and related technical services.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Mobile Repair"
+>
+Find Technician
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+📹
+</div>
+
+<h3>
+CCTV & Security
+</h3>
+
+<p>
+CCTV installation, maintenance and security equipment.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="CCTV / Security Installation"
+>
+Find Service
+</a>
+
+</div>
+
+
+
+<div class="service-card">
+
+<div class="icon">
+📍
+</div>
+
+<h3>
+Other Service
+</h3>
+
+<p>
+Can't find your service? Send your requirement to us.
+</p>
+
+<a
+href="#service-request"
+class="btn btn-light"
+data-service="Other Local Service"
+>
+Request Help
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- HOW IT WORKS -->
+
+<section class="section alt">
+
+<div class="container">
+
+<div class="heading">
+
+<small>
+HOW LOCAL SERVICE HELP WORKS
+</small>
+
+<h2>
+Tell us what you need.
+</h2>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<h3>
+01 — Select your service
+</h3>
+
+<p>
+Choose the type of worker or technician you need.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+02 — Tell us your location
+</h3>
+
+<p>
+Give your town, village, area or locality in Dakshina
+Kannada.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+03 — Send your enquiry
+</h3>
+
+<p>
+Your requirement can be prepared and sent directly to
+the VELORA HELP WhatsApp helpdesk.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+04 — Get direction
+</h3>
+
+<p>
+The VELORA HELP team can review the requirement and
+provide available local-service direction.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- TRUST -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="heading">
+
+<small>
+TRUST & VERIFICATION
+</small>
+
+<h2>
+Local workers should be verified before recommendation.
+</h2>
+
+<p>
+VELORA HELP can build a local network of service providers.
+Provider information should be checked before being shown
+as verified.
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<h3>
+🪪 Identity
+</h3>
+
+<p>
+Where appropriate, collect and verify provider identity
+information before marking a provider as verified.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+📞 Contact
+</h3>
+
+<p>
+Keep the provider's correct contact information in the
+VELORA HELP records.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+📍 Service Area
+</h3>
+
+<p>
+Record the towns, villages and areas where the provider
+is willing to work.
+</p>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>
+⭐ Customer Feedback
+</h3>
+
+<p>
+Future versions can collect customer feedback and service
+history to improve recommendations.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROVIDER PARTNERSHIP -->
+
+<section class="section alt">
+
+<div class="container">
+
+<div class="provider-box">
+
+<h3>
+🔧 Are you a local service provider?
+</h3>
+
+<p>
+If you are a plumber, electrician, technician, mechanic,
+carpenter, painter, cleaner or another local professional,
+you can contact VELORA HELP about joining the local
+service network.
+</p>
+
+<p>
+Initially, provider registration can be handled through
+the VELORA HELP helpdesk. Future versions can introduce
+formal provider accounts, verification, service areas,
+plans and lead management.
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#provider-form"
+class="btn btn-blue"
+>
+Join Local Network
+</a>
+
+
+<a
+href="https://wa.me/918088590273"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-red"
+>
+💬 Provider WhatsApp
+</a>
+
+
+<a
+href="tel:+918088590273"
+class="btn btn-red"
+>
+📞 Call VELORA HELP
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CUSTOMER REQUEST -->
+
+<section
+class="section"
+id="service-request"
+>
+
+<div class="container">
+
+<div class="heading">
+
+<small>
+SERVICE REQUEST
+</small>
+
+<h2>
+Request a local worker.
+</h2>
+
+<p>
+Tell us exactly what you need and where you need it.
+</p>
+
+</div>
+
+
+<div class="form-card">
+
+<h2>
+🔧 Local Service Enquiry
+</h2>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label for="customerName">
+Your Name *
+</label>
+
+<input
+id="customerName"
+class="field"
+type="text"
+placeholder="Enter your name"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="customerPhone">
+Phone Number *
+</label>
+
+<input
+id="customerPhone"
+class="field"
+type="tel"
+placeholder="Enter your phone number"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="customerLocation">
+Service Location *
+</label>
+
+<input
+id="customerLocation"
+class="field"
+type="text"
+placeholder="Town / village / area"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="customerService">
+Service Required *
+</label>
+
+<select
+id="customerService"
+class="field"
+>
+
+<option value="">
+Select service
+</option>
+
+<option>Plumber</option>
+<option>Electrician</option>
+<option>AC Technician</option>
+<option>Refrigerator Repair</option>
+<option>Washing Machine Repair</option>
+<option>TV / Electronics Repair</option>
+<option>Carpenter</option>
+<option>Painter</option>
+<option>Mason / Construction</option>
+<option>Cleaning Service</option>
+<option>Pest Control</option>
+<option>Vehicle Mechanic</option>
+<option>Computer / Laptop Repair</option>
+<option>Mobile Repair</option>
+<option>CCTV / Security Installation</option>
+<option>Other Local Service</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="urgency">
+When do you need it?
+</label>
+
+<select
+id="urgency"
+class="field"
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+As soon as possible
+</option>
+
+<option>
+Today
+</option>
+
+<option>
+Tomorrow
+</option>
+
+<option>
+Within a few days
+</option>
+
+<option>
+Flexible
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="budget">
+Approximate Budget
+</label>
+
+<input
+id="budget"
+class="field"
+type="text"
+placeholder="Optional"
+>
+
+</div>
+
+
+<div class="form-group full">
+
+<label for="workDetails">
+Describe the work *
+</label>
+
+<textarea
+id="workDetails"
+class="field"
+placeholder="Explain the repair, installation or service you need..."
+></textarea>
+
+</div>
+
+
+<div class="form-group full">
+
+<label for="extra">
+Additional Information
+</label>
+
+<textarea
+id="extra"
+class="field"
+placeholder="Any other useful information..."
+></textarea>
+
+</div>
+
+
+</div>
+
+
+<button
+id="sendServiceRequest"
+class="btn btn-red"
+type="button"
+>
+💬 Send Service Enquiry
+</button>
+
+
+<div
+id="requestStatus"
+class="status"
+>
+Your service enquiry has been prepared for WhatsApp.
+Please press send in WhatsApp to submit it to VELORA HELP.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROVIDER FORM -->
+
+<section
+class="section"
+id="provider-form"
+>
+
+<div class="container">
+
+<div class="heading">
+
+<small>
+SERVICE PROVIDER REGISTRATION
+</small>
+
+<h2>
+Want to join the VELORA HELP network?
+</h2>
+
+<p>
+Send your details to our helpdesk. Provider verification
+and partnership terms can be discussed separately.
+</p>
+
+</div>
+
+
+<div class="form-card">
+
+<h2>
+🧰 Provider Enquiry
+</h2>
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label for="providerName">
+Full Name *
+</label>
+
+<input
+id="providerName"
+class="field"
+type="text"
+placeholder="Your full name"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="providerPhone">
+Phone Number *
+</label>
+
+<input
+id="providerPhone"
+class="field"
+type="tel"
+placeholder="Your phone number"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="providerService">
+Service *
+</label>
+
+<select
+id="providerService"
+class="field"
+>
+
+<option value="">
+Select
+</option>
+
+<option>Plumber</option>
+<option>Electrician</option>
+<option>AC Technician</option>
+<option>Refrigerator Repair</option>
+<option>Washing Machine Repair</option>
+<option>TV / Electronics Repair</option>
+<option>Carpenter</option>
+<option>Painter</option>
+<option>Mason / Construction</option>
+<option>Cleaning Service</option>
+<option>Pest Control</option>
+<option>Vehicle Mechanic</option>
+<option>Computer / Laptop Repair</option>
+<option>Mobile Repair</option>
+<option>CCTV / Security Installation</option>
+<option>Other Local Service</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="providerLocation">
+Base Location *
+</label>
+
+<input
+id="providerLocation"
+class="field"
+type="text"
+placeholder="Town / village / area"
+>
+
+</div>
+
+
+<div class="form-group full">
+
+<label for="providerAreas">
+Areas You Serve
+</label>
+
+<input
+id="providerAreas"
+class="field"
+type="text"
+placeholder="Example: Sulya, Bellare, Subrahmanya..."
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="experience">
+Experience
+</label>
+
+<input
+id="experience"
+class="field"
+type="text"
+placeholder="Example: 5 years"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label for="businessName">
+Business / Work Name
+</label>
+
+<input
+id="businessName"
+class="field"
+type="text"
+placeholder="Optional"
+>
+
+</div>
+
+
+<div class="form-group full">
+
+<label for="providerDetails">
+Tell us about your service *
+</label>
+
+<textarea
+id="providerDetails"
+class="field"
+placeholder="Describe your work, experience and services..."
+></textarea>
+
+</div>
+
+
+</div>
+
+
+<button
+id="sendProvider"
+class="btn btn-blue"
+type="button"
+>
+💬 Send Provider Enquiry
+</button>
+
+
+<div
+id="providerStatus"
+class="status"
+>
+Your provider enquiry has been prepared for WhatsApp.
+Please press send in WhatsApp to submit it to VELORA HELP.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- SAFETY NOTICE -->
+
+<section class="section alt">
+
+<div class="container">
+
+<div class="notice">
+
+<strong>
+Important safety information
+</strong>
+
+<br><br>
+
+VELORA HELP is a local information and direction platform.
+A provider should not be described as "verified" unless
+VELORA HELP has actually completed the relevant verification.
+
+Before hiring any worker, confirm the person's identity,
+service details, price, availability and work terms.
+
+Do not send advance payments to unknown providers merely
+because they appear on a website.
+
+For urgent electrical, gas, fire, medical or other dangerous
+situations, contact the appropriate emergency service.
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>
+Need a local service?
+</h2>
+
+<p>
+Tell VELORA HELP what you need, where you need it and
+when you need it.
+</p>
+
+
+<div
+class="hero-buttons"
+style="justify-content:center;"
+>
+
+<a
+href="#service-request"
+class="btn btn-blue"
+>
+🔧 Find Local Help
+</a>
+
+
+<a
+href="https://wa.me/918088590273"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-red"
+>
+💬 WhatsApp
+</a>
+
+
+<a
+href="tel:+918088590273"
+class="btn btn-red"
+>
+📞 Call
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP"
+style="
+width:90px;
+height:90px;
+object-fit:contain;
+background:white;
+border-radius:50%;
+padding:5px;
+"
+>
+
+<h3>
+VELORA HELP
+</h3>
+
+<p>
+Your Problem. Our Direction.
+</p>
+
+<p>
+Powered by VELORA DIGITAL.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Services
+</h4>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="students.html">
+Students
+</a>
+
+<a href="jobs.html">
+Jobs
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Local Help
+</h4>
+
+<a href="property.html">
+Housing
+</a>
+
+<a href="local-services.html">
+Local Services
+</a>
+
+<a href="transport.html">
+Transport
+</a>
+
+<a href="civic.html">
+Civic Help
+</a>
+
+<a href="community.html">
+Community
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Information
+</h4>
+
+<a href="digital-help.html">
+Digital Help
+</a>
+
+<a href="elderly.html">
+Elderly Help
+</a>
+
+<a href="emergency.html">
+Emergency
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="privacy.html">
+Privacy
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span id="year"></span> VELORA HELP
+</span>
+
+<span>
+📞 +91 8088590273
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* MOBILE MENU */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const navigation =
+document.getElementById("navigation");
+
+
+menuButton.addEventListener(
+"click",
+function(){
+
+navigation.classList.toggle("active");
+
+});
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+link.addEventListener(
+"click",
+function(){
+
+navigation.classList.remove("active");
+
+});
+
+});
+
+
+/* YEAR */
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+
+
+/* SEARCH */
+
+document
+.getElementById("serviceSearch")
+.addEventListener(
+"click",
+function(){
+
+const location =
+document
+.getElementById("searchLocation")
+.value
+.trim();
+
+const service =
+document
+.getElementById("searchService")
+.value;
+
+const urgency =
+document
+.getElementById("searchUrgency")
+.value;
+
+const result =
+document
+.getElementById("searchResult");
+
+
+if(!location || !service){
+
+result.textContent =
+"Please enter your location and select the service you need.";
+
+result.classList.add("show");
+
+return;
+
+}
+
+
+const message =
+`VELORA HELP — LOCAL SERVICE ENQUIRY
+
+Location:
+${location}
+
+Service:
+${service}
+
+Urgency:
+${urgency || "Not specified"}
+
+Please guide me toward a suitable local service provider.`;
+
+
+result.innerHTML = `
+
+<strong>
+Local service enquiry prepared.
+</strong>
+
+<br><br>
+
+Location:
+${escapeHTML(location)}
+
+<br>
+
+Service:
+${escapeHTML(service)}
+
+<br>
+
+Urgency:
+${escapeHTML(urgency || "Not specified")}
+
+<br><br>
+
+<a
+href="https://wa.me/918088590273?text=${encodeURIComponent(message)}"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-red"
+>
+💬 Send to VELORA HELP
+</a>
+
+`;
+
+result.classList.add("show");
+
+});
+
+
+
+/* SERVICE CATEGORY BUTTONS */
+
+document
+.querySelectorAll("[data-service]")
+.forEach(function(button){
+
+button.addEventListener(
+"click",
+function(){
+
+const selected =
+button.getAttribute("data-service");
+
+document
+.getElementById("customerService")
+.value =
+selected;
+
+});
+
+});
+
+
+
+/* CUSTOMER REQUEST */
+
+document
+.getElementById("sendServiceRequest")
+.addEventListener(
+"click",
+function(){
+
+const name =
+document
+.getElementById("customerName")
+.value
+.trim();
+
+const phone =
+document
+.getElementById("customerPhone")
+.value
+.trim();
+
+const location =
+document
+.getElementById("customerLocation")
+.value
+.trim();
+
+const service =
+document
+.getElementById("customerService")
+.value;
+
+const urgency =
+document
+.getElementById("urgency")
+.value;
+
+const budget =
+document
+.getElementById("budget")
+.value
+.trim();
+
+const details =
+document
+.getElementById("workDetails")
+.value
+.trim();
+
+const extra =
+document
+.getElementById("extra")
+.value
+.trim();
+
+
+if(
+!name ||
+!phone ||
+!location ||
+!service ||
+!details
+){
+
+alert(
+"Please complete your name, phone number, service location, service type and work details."
+);
+
+return;
+
+}
+
+
+const message =
+`VELORA HELP — LOCAL SERVICE REQUEST
+
+Customer Name:
+${name}
+
+Phone:
+${phone}
+
+Service Location:
+${location}
+
+Service Required:
+${service}
+
+When Needed:
+${urgency || "Not specified"}
+
+Approximate Budget:
+${budget || "Not specified"}
+
+Work Details:
+${details}
+
+Additional Information:
+${extra || "Not specified"}
+
+Please guide me regarding a suitable local service provider.`;
+
+
+window.open(
+"https://wa.me/918088590273?text="
++
+encodeURIComponent(message),
+"_blank"
+);
+
+
+document
+.getElementById("requestStatus")
+.classList.add("show");
+
+});
+
+
+
+/* PROVIDER REGISTRATION */
+
+document
+.getElementById("sendProvider")
+.addEventListener(
+"click",
+function(){
+
+const name =
+document
+.getElementById("providerName")
+.value
+.trim();
+
+const phone =
+document
+.getElementById("providerPhone")
+.value
+.trim();
+
+const service =
+document
+.getElementById("providerService")
+.value;
+
+const location =
+document
+.getElementById("providerLocation")
+.value
+.trim();
+
+const areas =
+document
+.getElementById("providerAreas")
+.value
+.trim();
+
+const experience =
+document
+.getElementById("experience")
+.value
+.trim();
+
+const business =
+document
+.getElementById("businessName")
+.value
+.trim();
+
+const details =
+document
+.getElementById("providerDetails")
+.value
+.trim();
+
+
+if(
+!name ||
+!phone ||
+!service ||
+!location ||
+!details
+){
+
+alert(
+"Please complete your name, phone number, service, location and service details."
+);
+
+return;
+
+}
+
+
+const message =
+`VELORA HELP — LOCAL SERVICE PROVIDER ENQUIRY
+
+Provider Name:
+${name}
+
+Phone:
+${phone}
+
+Service:
+${service}
+
+Base Location:
+${location}
+
+Areas Served:
+${areas || "Not specified"}
+
+Experience:
+${experience || "Not specified"}
+
+Business / Work Name:
+${business || "Not specified"}
+
+Service Details:
+${details}
+
+I would like to join the VELORA HELP local service network. Please contact me regarding verification and partnership.`;
+
+
+window.open(
+"https://wa.me/918088590273?text="
++
+encodeURIComponent(message),
+"_blank"
+);
+
+
+document
+.getElementById("providerStatus")
+.classList.add("show");
+
+});
+
+
+
+/* ESCAPE HTML */
+
+function escapeHTML(value){
+
+return value
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+</script>
+
+</body>
+</html>
