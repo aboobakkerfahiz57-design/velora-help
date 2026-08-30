@@ -1,1 +1,1870 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+name="theme-color"
+content="#071a3d"
+>
+
+<meta
+name="description"
+content="VELORA HELP Local Businesses and Services — Find trusted local service providers across Dakshina Kannada."
+>
+
+<title>Local Businesses & Services | VELORA HELP</title>
+
+<link
+rel="stylesheet"
+href="css/style.css"
+>
+
+<style>
+
+* {
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+background: #f6f8fb;
+color: #17243d;
+}
+
+a {
+text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+font: inherit;
+}
+
+.vh-container {
+width: min(1180px, 92%);
+margin: auto;
+}
+
+/* ==========================================
+HEADER
+========================================== */
+
+.vh-header {
+position: sticky;
+top: 0;
+z-index: 999;
+background: rgba(255,255,255,.97);
+backdrop-filter: blur(15px);
+border-bottom: 1px solid #e5e9f0;
+}
+
+.vh-nav {
+min-height: 76px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+}
+
+.vh-brand {
+display: flex;
+align-items: center;
+gap: 12px;
+color: #071a3d;
+}
+
+.vh-brand img {
+width: 52px;
+height: 52px;
+object-fit: contain;
+border-radius: 50%;
+}
+
+.vh-brand-name {
+font-size: 1.15rem;
+font-weight: 800;
+}
+
+.vh-brand-sub {
+font-size: .7rem;
+opacity: .7;
+margin-top: 3px;
+}
+
+.vh-nav-links {
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.vh-nav-links a {
+color: #17243d;
+padding: 10px 11px;
+border-radius: 9px;
+font-size: .88rem;
+font-weight: 600;
+}
+
+.vh-nav-links a:hover {
+background: #eef2f8;
+}
+
+.vh-menu {
+display: none;
+background: #071a3d;
+color: white;
+border: 0;
+padding: 10px 13px;
+border-radius: 10px;
+font-size: 20px;
+cursor: pointer;
+}
+
+/* ==========================================
+HERO
+========================================== */
+
+.hero {
+padding: 85px 0;
+color: white;
+
+background:
+linear-gradient(
+105deg,
+#071a3d 0%,
+#12315e 58%,
+#8a172d 100%
+);
+}
+
+.hero small {
+color: #e8b7bf;
+font-weight: 800;
+letter-spacing: .14em;
+}
+
+.hero h1 {
+font-size: clamp(2.7rem, 6vw, 5rem);
+line-height: 1;
+margin: 12px 0 20px;
+letter-spacing: -.045em;
+}
+
+.hero p {
+max-width: 760px;
+line-height: 1.75;
+color: rgba(255,255,255,.88);
+font-size: 1.06rem;
+}
+
+.actions {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+margin-top: 28px;
+}
+
+.btn {
+min-height: 46px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+padding: 11px 17px;
+border-radius: 11px;
+border: 0;
+cursor: pointer;
+font-weight: 750;
+}
+
+.btn-white {
+background: white;
+color: #071a3d;
+}
+
+.btn-red {
+background: #a3132d;
+color: white;
+}
+
+.btn-blue {
+background: #071a3d;
+color: white;
+}
+
+.btn-outline {
+background: transparent;
+color: #071a3d;
+border: 1px solid #d4dce8;
+}
+
+.btn-light {
+background: #eef2f8;
+color: #071a3d;
+}
+
+/* ==========================================
+SEARCH PANEL
+========================================== */
+
+.search-section {
+margin-top: -38px;
+position: relative;
+z-index: 5;
+}
+
+.search-panel {
+background: white;
+border-radius: 20px;
+padding: 26px;
+box-shadow: 0 20px 60px rgba(7,26,61,.14);
+}
+
+.search-grid {
+display: grid;
+grid-template-columns: 1.4fr 1fr 1fr auto;
+gap: 12px;
+}
+
+input,
+select,
+textarea {
+width: 100%;
+padding: 13px 14px;
+border: 1px solid #d7deea;
+border-radius: 10px;
+background: white;
+color: #17243d;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+outline: none;
+border-color: #a3132d;
+box-shadow: 0 0 0 3px rgba(163,19,45,.08);
+}
+
+/* ==========================================
+SECTIONS
+========================================== */
+
+.section {
+padding: 72px 0;
+}
+
+.alt {
+background: #eef2f7;
+}
+
+.heading {
+max-width: 760px;
+margin-bottom: 30px;
+}
+
+.heading small {
+color: #a3132d;
+font-weight: 800;
+letter-spacing: .12em;
+}
+
+.heading h2 {
+margin: 8px 0 12px;
+color: #071a3d;
+font-size: clamp(2rem,4vw,3.1rem);
+}
+
+.heading p {
+color: #667085;
+line-height: 1.7;
+}
+
+/* ==========================================
+SERVICE CATEGORIES
+========================================== */
+
+.category-grid {
+display: grid;
+grid-template-columns: repeat(4,1fr);
+gap: 15px;
+}
+
+.category-card {
+background: white;
+border: 1px solid #e0e6ee;
+border-radius: 17px;
+padding: 21px;
+cursor: pointer;
+transition: .2s ease;
+}
+
+.category-card:hover {
+transform: translateY(-3px);
+box-shadow: 0 15px 35px rgba(7,26,61,.09);
+}
+
+.category-icon {
+font-size: 28px;
+margin-bottom: 12px;
+}
+
+.category-card h3 {
+margin: 0 0 7px;
+color: #071a3d;
+}
+
+.category-card p {
+margin: 0;
+color: #667085;
+line-height: 1.55;
+font-size: .88rem;
+}
+
+/* ==========================================
+FEATURED SERVICES
+========================================== */
+
+.service-grid {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 19px;
+}
+
+.service-card {
+background: white;
+border: 1px solid #e0e5ed;
+border-radius: 19px;
+overflow: hidden;
+box-shadow: 0 7px 24px rgba(7,26,61,.04);
+}
+
+.service-top {
+padding: 23px;
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+gap: 12px;
+}
+
+.service-icon {
+width: 56px;
+height: 56px;
+display: grid;
+place-items: center;
+background: #eef2f8;
+border-radius: 15px;
+font-size: 26px;
+}
+
+.verified {
+display: inline-flex;
+align-items: center;
+gap: 5px;
+background: #eaf7ef;
+color: #19723a;
+padding: 6px 9px;
+border-radius: 20px;
+font-size: .7rem;
+font-weight: 800;
+}
+
+.service-body {
+padding: 0 23px 23px;
+}
+
+.service-body h3 {
+color: #071a3d;
+margin: 0 0 7px;
+}
+
+.service-body p {
+color: #667085;
+line-height: 1.6;
+font-size: .9rem;
+}
+
+.service-meta {
+margin-top: 16px;
+padding-top: 15px;
+border-top: 1px solid #edf0f4;
+}
+
+.meta-line {
+margin: 8px 0;
+color: #667085;
+font-size: .84rem;
+}
+
+.meta-line strong {
+color: #071a3d;
+}
+
+.service-buttons {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+margin-top: 18px;
+}
+
+.service-buttons .btn {
+min-height: 40px;
+padding: 9px 12px;
+font-size: .81rem;
+}
+
+/* ==========================================
+SEARCH RESULTS
+========================================== */
+
+.results {
+display: none;
+margin-top: 22px;
+padding: 20px;
+border-radius: 15px;
+background: #f7f9fc;
+border: 1px solid #dce2eb;
+}
+
+.results.active {
+display: block;
+}
+
+.result-item {
+padding: 15px 0;
+border-bottom: 1px solid #e2e6ec;
+}
+
+.result-item:last-child {
+border-bottom: 0;
+}
+
+.result-item strong {
+display: block;
+color: #071a3d;
+margin-bottom: 6px;
+}
+
+.result-item span {
+color: #667085;
+font-size: .9rem;
+line-height: 1.6;
+}
+
+/* ==========================================
+HOW IT WORKS
+========================================== */
+
+.steps {
+display: grid;
+grid-template-columns: repeat(4,1fr);
+gap: 15px;
+}
+
+.step {
+background: white;
+border: 1px solid #e1e6ee;
+border-radius: 17px;
+padding: 22px;
+}
+
+.step-number {
+width: 42px;
+height: 42px;
+border-radius: 50%;
+display: grid;
+place-items: center;
+background: #071a3d;
+color: white;
+font-weight: 800;
+margin-bottom: 14px;
+}
+
+.step h3 {
+color: #071a3d;
+margin: 0 0 8px;
+}
+
+.step p {
+color: #667085;
+line-height: 1.6;
+font-size: .89rem;
+}
+
+/* ==========================================
+PARTNER CTA
+========================================== */
+
+.partner-box {
+background:
+linear-gradient(
+115deg,
+#071a3d,
+#12315e
+);
+color: white;
+border-radius: 23px;
+padding: 38px;
+}
+
+.partner-box h2 {
+margin: 8px 0 12px;
+font-size: clamp(2rem,4vw,3rem);
+}
+
+.partner-box p {
+max-width: 760px;
+color: rgba(255,255,255,.83);
+line-height: 1.7;
+}
+
+.partner-benefits {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 12px;
+margin-top: 25px;
+}
+
+.benefit {
+background: rgba(255,255,255,.08);
+border: 1px solid rgba(255,255,255,.13);
+padding: 17px;
+border-radius: 13px;
+}
+
+.benefit strong {
+display: block;
+margin-bottom: 5px;
+}
+
+.benefit span {
+color: rgba(255,255,255,.7);
+font-size: .82rem;
+line-height: 1.5;
+}
+
+/* ==========================================
+PARTNER FORM
+========================================== */
+
+.form-box {
+background: white;
+border: 1px solid #e0e5ed;
+border-radius: 21px;
+padding: 30px;
+}
+
+.form-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+}
+
+.full {
+grid-column: 1 / -1;
+}
+
+label {
+display: block;
+margin-bottom: 7px;
+color: #071a3d;
+font-size: .9rem;
+font-weight: 700;
+}
+
+.form-note {
+background: #fff8e6;
+border: 1px solid #f1dfa9;
+color: #624f18;
+border-radius: 13px;
+padding: 15px;
+font-size: .86rem;
+line-height: 1.6;
+margin: 18px 0;
+}
+
+/* ==========================================
+TRUST / SAFETY
+========================================== */
+
+.trust-grid {
+display: grid;
+grid-template-columns: repeat(3,1fr);
+gap: 17px;
+}
+
+.trust-card {
+background: white;
+border: 1px solid #e1e6ee;
+border-radius: 17px;
+padding: 23px;
+}
+
+.trust-card .icon {
+font-size: 27px;
+margin-bottom: 12px;
+}
+
+.trust-card h3 {
+color: #071a3d;
+margin: 0 0 8px;
+}
+
+.trust-card p {
+color: #667085;
+line-height: 1.65;
+font-size: .89rem;
+}
+
+/* ==========================================
+FOOTER
+========================================== */
+
+footer {
+background: #06152f;
+color: white;
+padding: 55px 0 25px;
+}
+
+.footer-grid {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1fr;
+gap: 35px;
+}
+
+footer a {
+display: block;
+color: rgba(255,255,255,.72);
+margin: 9px 0;
+}
+
+footer a:hover {
+color: white;
+}
+
+.footer-bottom {
+border-top: 1px solid rgba(255,255,255,.12);
+margin-top: 35px;
+padding-top: 20px;
+color: rgba(255,255,255,.55);
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+/* ==========================================
+MESSAGE
+========================================== */
+
+.message {
+position: fixed;
+right: 20px;
+bottom: 20px;
+z-index: 9999;
+display: none;
+max-width: 390px;
+background: white;
+color: #071a3d;
+padding: 17px 20px;
+border-radius: 13px;
+box-shadow: 0 15px 50px rgba(0,0,0,.2);
+border-left: 5px solid #a3132d;
+}
+
+/* ==========================================
+RESPONSIVE
+========================================== */
+
+@media(max-width:1000px) {
+
+.vh-nav-links {
+display: none;
+position: absolute;
+top: 70px;
+left: 4%;
+right: 4%;
+padding: 12px;
+background: white;
+border-radius: 14px;
+box-shadow: 0 20px 50px rgba(0,0,0,.15);
+flex-direction: column;
+align-items: stretch;
+}
+
+.vh-nav-links.active {
+display: flex;
+}
+
+.vh-menu {
+display: block;
+}
+
+.search-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+.category-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+.service-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+.steps {
+grid-template-columns: 1fr 1fr;
+}
+
+.partner-benefits {
+grid-template-columns: 1fr 1fr;
+}
+
+.trust-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+.footer-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+}
+
+@media(max-width:650px) {
+
+.hero {
+padding: 65px 0;
+}
+
+.search-section {
+margin-top: -25px;
+}
+
+.search-grid,
+.category-grid,
+.service-grid,
+.steps,
+.partner-benefits,
+.trust-grid,
+.form-grid,
+.footer-grid {
+grid-template-columns: 1fr;
+}
+
+.full {
+grid-column: auto;
+}
+
+.partner-box,
+.form-box {
+padding: 24px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+HEADER
+===================================================== -->
+
+<header class="vh-header">
+
+<div class="vh-container vh-nav">
+
+<a
+href="index.html"
+class="vh-brand"
+>
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo"
+>
+
+<div>
+
+<div class="vh-brand-name">
+VELORA HELP
+</div>
+
+<div class="vh-brand-sub">
+Your Problem. Our Direction.
+</div>
+
+</div>
+
+</a>
+
+
+<button
+id="menuButton"
+class="vh-menu"
+type="button"
+aria-label="Open navigation"
+>
+☰
+</button>
+
+
+<nav
+id="navigation"
+class="vh-nav-links"
+>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="students.html">
+Students
+</a>
+
+<a href="jobs.html">
+Jobs
+</a>
+
+<a href="property.html">
+Housing
+</a>
+
+<a href="businesses.html">
+Local Services
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="vh-container">
+
+<small>
+VELORA HELP • LOCAL SERVICES
+</small>
+
+<h1>
+Find reliable<br>
+local help.
+</h1>
+
+<p>
+Need a plumber, electrician, AC technician,
+mechanic, tutor, cyber centre, cleaner, repair
+service or another local professional?
+Tell VELORA HELP what you need and where you
+need it.
+</p>
+
+
+<div class="actions">
+
+<a
+href="#find-service"
+class="btn btn-white"
+>
+🔎 Find a Service
+</a>
+
+<a
+href="#partner"
+class="btn btn-white"
+>
+🤝 Join as a Partner
+</a>
+
+<a
+href="#enquiry"
+class="btn btn-red"
+>
+💬 Ask VELORA HELP
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+SEARCH
+===================================================== -->
+
+<section
+class="search-section"
+id="find-service"
+>
+
+<div class="vh-container">
+
+<div class="search-panel">
+
+<div class="heading">
+
+<small>
+SERVICE FINDER
+</small>
+
+<h2>
+What service do you need?
+</h2>
+
+<p>
+Search by service and select your
+preferred location.
+</p>
+
+</div>
+
+
+<form id="serviceSearchForm">
+
+<div class="search-grid">
+
+<input
+id="serviceKeyword"
+type="search"
+placeholder="Example: plumber, AC repair, tutor..."
+>
+
+
+<select id="serviceCategory">
+
+<option value="">
+All Services
+</option>
+
+<option value="Plumber">
+Plumber
+</option>
+
+<option value="Electrician">
+Electrician
+</option>
+
+<option value="AC">
+AC / Cooling
+</option>
+
+<option value="Mechanic">
+Mechanic
+</option>
+
+<option value="Tutor">
+Tutor / Coaching
+</option>
+
+<option value="Cyber">
+Cyber Centre
+</option>
+
+<option value="Cleaner">
+Cleaning
+</option>
+
+<option value="Repair">
+Repair Services
+</option>
+
+<option value="Photographer">
+Photographer
+</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+
+<select id="serviceLocation">
+
+<option value="">
+Select Location
+</option>
+
+<option>
+Mangaluru
+</option>
+
+<option>
+Bantwal
+</option>
+
+<option>
+Belthangady
+</option>
+
+<option>
+Puttur
+</option>
+
+<option>
+Sullia
+</option>
+
+<option>
+Moodbidri
+</option>
+
+<option>
+Kadaba
+</option>
+
+<option>
+Mulki
+</option>
+
+</select>
+
+
+<button
+type="submit"
+class="btn btn-red"
+>
+Search
+</button>
+
+</div>
+
+</form>
+
+
+<div
+id="searchResults"
+class="results"
+>
+
+<h3>
+Service Results
+</h3>
+
+<div id="resultContent"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+SERVICE CATEGORIES
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+LOCAL HELP
+</small>
+
+<h2>
+Choose what you need
+</h2>
+
+<p>
+We can expand this directory across every
+taluk and town in Dakshina Kannada.
+</p>
+
+</div>
+
+
+<div class="category-grid">
+
+
+<div
+class="category-card category-button"
+data-category="Plumber"
+>
+
+<div class="category-icon">
+🔧
+</div>
+
+<h3>
+Plumbers
+</h3>
+
+<p>
+Pipe leaks, bathroom work, water
+connections and plumbing repairs.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Electrician"
+>
+
+<div class="category-icon">
+⚡
+</div>
+
+<h3>
+Electricians
+</h3>
+
+<p>
+Electrical repairs, wiring, switches,
+fans and other electrical services.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="AC"
+>
+
+<div class="category-icon">
+❄️
+</div>
+
+<h3>
+AC Technicians
+</h3>
+
+<p>
+AC repair, installation, servicing
+and maintenance.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Mechanic"
+>
+
+<div class="category-icon">
+🛠️
+</div>
+
+<h3>
+Mechanics
+</h3>
+
+<p>
+Vehicle repairs, servicing and
+emergency mechanical support.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Tutor"
+>
+
+<div class="category-icon">
+📚
+</div>
+
+<h3>
+Tutors
+</h3>
+
+<p>
+School, PUC, degree and skill-based
+tuition and coaching.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Cyber"
+>
+
+<div class="category-icon">
+💻
+</div>
+
+<h3>
+Cyber Centres
+</h3>
+
+<p>
+Online applications, printing,
+scanning and digital services.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Cleaner"
+>
+
+<div class="category-icon">
+🧹
+</div>
+
+<h3>
+Cleaning
+</h3>
+
+<p>
+Home, office and other cleaning
+requirements.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Repair"
+>
+
+<div class="category-icon">
+🔩
+</div>
+
+<h3>
+Repair Services
+</h3>
+
+<p>
+Appliance, electronics and
+household repair services.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Photographer"
+>
+
+<div class="category-icon">
+📷
+</div>
+
+<h3>
+Photographers
+</h3>
+
+<p>
+Events, weddings, portraits and
+professional photography.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Other"
+>
+
+<div class="category-icon">
+➕
+</div>
+
+<h3>
+Other Services
+</h3>
+
+<p>
+Can't find your service?
+Tell VELORA HELP.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+SAMPLE SERVICE DIRECTORY
+===================================================== -->
+
+<section
+class="section alt"
+id="directory"
+>
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+SERVICE DIRECTORY
+</small>
+
+<h2>
+Local professionals
+</h2>
+
+<p>
+This is the directory structure. Real partner
+profiles can be added after verification.
+</p>
+
+</div>
+
+
+<div class="service-grid">
+
+
+<!-- PLUMBER -->
+
+<article
+class="service-card"
+data-service="Plumber"
+data-location="Sullia"
+data-keywords="plumber plumbing pipe water bathroom repair"
+>
+
+<div class="service-top">
+
+<div class="service-icon">
+🔧
+</div>
+
+<span class="verified">
+✓ VERIFIED
+</span>
+
+</div>
+
+
+<div class="service-body">
+
+<h3>
+Verified Plumbing Partner
+</h3>
+
+<p>
+Plumbing support for household,
+commercial and emergency requirements.
+</p>
+
+
+<div class="service-meta">
+
+<div class="meta-line">
+<strong>Service:</strong>
+Plumbing
+</div>
+
+<div class="meta-line">
+<strong>Area:</strong>
+Sullia & nearby areas
+</div>
+
+<div class="meta-line">
+<strong>Availability:</strong>
+Subject to partner availability
+</div>
+
+</div>
+
+
+<div class="service-buttons">
+
+<button
+class="btn btn-blue service-enquiry"
+type="button"
+data-service="Plumber"
+data-area="Sullia"
+>
+Request Service
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- ELECTRICIAN -->
+
+<article
+class="service-card"
+data-service="Electrician"
+data-location="Bantwal"
+data-keywords="electrician electrical wiring fan light power repair"
+>
+
+<div class="service-top">
+
+<div class="service-icon">
+⚡
+</div>
+
+<span class="verified">
+✓ VERIFIED
+</span>
+
+</div>
+
+
+<div class="service-body">
+
+<h3>
+Verified Electrical Partner
+</h3>
+
+<p>
+Electrical installation, repair and
+maintenance services.
+</p>
+
+
+<div class="service-meta">
+
+<div class="meta-line">
+<strong>Service:</strong>
+Electrical
+</div>
+
+<div class="meta-line">
+<strong>Area:</strong>
+Bantwal & nearby areas
+</div>
+
+<div class="meta-line">
+<strong>Availability:</strong>
+Subject to partner availability
+</div>
+
+</div>
+
+
+<div class="service-buttons">
+
+<button
+class="btn btn-blue service-enquiry"
+type="button"
+data-service="Electrician"
+data-area="Bantwal"
+>
+Request Service
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- AC -->
+
+<article
+class="service-card"
+data-service="AC"
+data-location="Mangaluru"
+data-keywords="ac air conditioner cooling service repair installation"
+>
+
+<div class="service-top">
+
+<div class="service-icon">
+❄️
+</div>
+
+<span class="verified">
+✓ VERIFIED
+</span>
+
+</div>
+
+
+<div class="service-body">
+
+<h3>
+AC Service Partner
+</h3>
+
+<p>
+AC servicing, installation,
+maintenance and repair requirements.
+</p>
+
+
+<div class="service-meta">
+
+<div class="meta-line">
+<strong>Service:</strong>
+AC / Cooling
+</div>
+
+<div class="meta-line">
+<strong>Area:</strong>
+Mangaluru
+</div>
+
+<div class="meta-line">
+<strong>Availability:</strong>
+Subject to partner availability
+</div>
+
+</div>
+
+
+<div class="service-buttons">
+
+<button
+class="btn btn-blue service-enquiry"
+type="button"
+data-service="AC Technician"
+data-area="Mangaluru"
+>
+Request Service
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- TUTOR -->
+
+<article
+class="service-card"
+data-service="Tutor"
+data-location="Puttur"
+data-keywords="tutor tuition teacher coaching student education"
+>
+
+<div class="service-top">
+
+<div class="service-icon">
+📚
+</div>
+
+<span class="verified">
+✓ VERIFIED
+</span>
+
+</div>
+
+
+<div class="service-body">
+
+<h3>
+Education Partner
+</h3>
+
+<p>
+Tuition and coaching support for
+students and learners.
+</p>
+
+
+<div class="service-meta">
+
+<div class="meta-line">
+<strong>Service:</strong>
+Tuition / Coaching
+</div>
+
+<div class="meta-line">
+<strong>Area:</strong>
+Puttur
+</div>
+
+<div class="meta-line">
+<strong>Availability:</strong>
+Subject to partner availability
+</div>
+
+</div>
+
+
+<div class="service-buttons">
+
+<button
+class="btn btn-blue service-enquiry"
+type="button"
+data-service="Tutor / Coaching"
+data-area="Puttur"
+>
+Request Service
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- CYBER -->
+
+<article
+class="service-card"
+data-service="Cyber"
+data-location="Moodbidri"
+data-keywords="cyber centre online application government form printing scanning"
+>
+
+<div class="service-top">
+
+<div class="service-icon">
+💻
+</div>
+
+<span class="verified">
+✓ VERIFIED
+</span>
+
+</div>
+
+
+<div class="service-body">
+
+<h3>
+Digital Service Partner
+</h3>
+
+<p>
+Online applications, printing,
+scanning and digital assistance.
+</p>
+
+
+<div class="service-meta">
+
+<div class="meta-line">
+<strong>Service:</strong>
+Cyber / Digital Services
+</div>
+
+<div class="meta-line">
+<strong>Area:</strong>
+Moodbidri
+</div>
+
+<div class="meta-line">
+<strong>Availability:</strong>
+Subject to partner availability
+</div>
+
+</div>
+
+
+<div class="service-buttons">
+
+<button
+class="btn btn-blue service-enquiry"
+type="button"
+data-service="Cyber / Digital Centre"
+data-area="Moodbidri"
+>
+Request Service
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- MECHANIC -->
+
+<article
+class="service-card"
+data-service="Mechanic"
+data-location="Belthangady"
+data-keywords="mechanic vehicle bike car automobile repair"
+>
+
+<div class="service-top">
+
+<div class="service-icon">
+🛠️
+</div>
+
+<span class="verified">
+✓ VERIFIED
+</span>
+
+</div>
+
+
+<div class="service-body">
+
+<h3>
+Vehicle Service Partner
+</h3>
+
+<p>
+Vehicle repair and servicing
+requirements.
+</p>
+
+
+<div class="service-meta">
+
+<div class="meta-line">
+<strong>Service:</strong>
+Vehicle Mechanic
+</div>
+
+<div class="meta-line">
+<strong>Area:</strong>
+Belthangady
+</div>
+
+<div class="meta-line">
+<strong>Availability:</strong>
+Subject to partner availability
+</div>
+
+</div>
+
+
+<div class="service-buttons">
+
+<button
+class="btn btn-blue service-enquiry"
+type="button"
+data-service="Vehicle Mechanic"
+data-area="Belthangady"
+>
+Request Service
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+HOW IT WORKS
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+FOR CUSTOMERS
+</small>
+
+<h2>
+How VELORA HELP connects you
+</h2>
+
+</div>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Tell us your need
+</h3>
+
+<p>
+Select the service and explain
+what you need.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Share your location
+</h3>
+
+<p>
+...
+
+[Message clipped]  View entire message
