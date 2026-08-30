@@ -1,1 +1,2355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#071a3d"
+    >
+
+    <meta
+        name="description"
+        content="VELORA HELP Admissions — PUC, Degree, Courses, Colleges and admission guidance in Dakshina Kannada."
+    >
+
+    <title>Admissions | VELORA HELP</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #17243d;
+            background: #f6f8fb;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .vh-container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        .vh-header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(255,255,255,.97);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #e5e9f0;
+        }
+
+        .vh-nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .vh-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #071a3d;
+        }
+
+        .vh-brand img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .vh-brand-name {
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
+        .vh-brand-sub {
+            font-size: .7rem;
+            opacity: .7;
+            margin-top: 3px;
+        }
+
+        .vh-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .vh-nav-links a {
+            color: #17243d;
+            padding: 10px 12px;
+            border-radius: 9px;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .vh-nav-links a:hover {
+            background: #eef2f8;
+        }
+
+        .vh-menu {
+            display: none;
+            background: #071a3d;
+            color: white;
+            border: 0;
+            padding: 10px 13px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 85px 0;
+            color: white;
+
+            background:
+                linear-gradient(
+                    105deg,
+                    #071a3d 0%,
+                    #12315e 60%,
+                    #8a172d 100%
+                );
+        }
+
+        .hero small {
+            color: #e9b7bf;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .14em;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 6vw, 5rem);
+            line-height: 1;
+            margin: 12px 0 20px;
+            letter-spacing: -.04em;
+        }
+
+        .hero p {
+            max-width: 730px;
+            line-height: 1.7;
+            font-size: 1.08rem;
+            color: rgba(255,255,255,.88);
+        }
+
+        /* BUTTONS */
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 48px;
+            padding: 12px 18px;
+            border-radius: 11px;
+            border: 0;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 750;
+        }
+
+        .btn-white {
+            background: white;
+            color: #071a3d;
+        }
+
+        .btn-red {
+            background: #a3132d;
+            color: white;
+        }
+
+        .btn-blue {
+            background: #071a3d;
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #071a3d;
+            border: 1px solid #d5dce8;
+        }
+
+        /* SECTION */
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .alt {
+            background: #f6f8fb;
+        }
+
+        .heading {
+            max-width: 720px;
+            margin-bottom: 32px;
+        }
+
+        .heading small {
+            color: #a3132d;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+        }
+
+        .heading h2 {
+            color: #071a3d;
+            font-size: clamp(2rem, 4vw, 3.1rem);
+            margin: 8px 0 12px;
+        }
+
+        .heading p {
+            color: #667085;
+            line-height: 1.7;
+        }
+
+        /* SEARCH */
+
+        .search-panel {
+            background: white;
+            padding: 25px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 5;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(7,26,61,.14);
+        }
+
+        .search-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr auto;
+            gap: 12px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d8deea;
+            border-radius: 10px;
+            font: inherit;
+            color: #17243d;
+            background: white;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #a3132d;
+            box-shadow: 0 0 0 3px rgba(163,19,45,.08);
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e3e8ef;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(7,26,61,.05);
+            transition: .2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(7,26,61,.10);
+        }
+
+        .card-icon {
+            width: 54px;
+            height: 54px;
+            display: grid;
+            place-items: center;
+            background: #eef2f8;
+            border-radius: 14px;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #071a3d;
+            margin: 0 0 9px;
+        }
+
+        .card p {
+            color: #667085;
+            line-height: 1.6;
+            font-size: .92rem;
+        }
+
+        /* SEARCH RESULTS */
+
+        .results {
+            display: none;
+            margin-top: 25px;
+            background: #f7f9fc;
+            border: 1px solid #dce2eb;
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .results.active {
+            display: block;
+        }
+
+        .result {
+            padding: 16px 0;
+            border-bottom: 1px solid #e3e7ee;
+        }
+
+        .result:last-child {
+            border-bottom: 0;
+        }
+
+        .result strong {
+            display: block;
+            color: #071a3d;
+            margin-bottom: 5px;
+        }
+
+        .result span {
+            color: #667085;
+            font-size: .9rem;
+        }
+
+        /* ENQUIRY */
+
+        .enquiry {
+            background: #071a3d;
+            color: white;
+            border-radius: 23px;
+            padding: 35px;
+        }
+
+        .enquiry h2 {
+            margin-top: 8px;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .enquiry p {
+            color: rgba(255,255,255,.82);
+            line-height: 1.7;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 25px;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: .9rem;
+            font-weight: 650;
+        }
+
+        /* PROCESS */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .process-card {
+            background: white;
+            border: 1px solid #e3e8ef;
+            border-radius: 17px;
+            padding: 22px;
+        }
+
+        .number {
+            width: 42px;
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #071a3d;
+            color: white;
+            font-weight: 800;
+            margin-bottom: 14px;
+        }
+
+        .process-card h3 {
+            margin: 0 0 8px;
+            color: #071a3d;
+        }
+
+        .process-card p {
+            color: #667085;
+            line-height: 1.6;
+            font-size: .9rem;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #8a172d;
+            color: white;
+            border-radius: 22px;
+            padding: 35px;
+        }
+
+        .cta h2 {
+            margin-top: 0;
+        }
+
+        .cta p {
+            color: rgba(255,255,255,.87);
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #06152f;
+            color: white;
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        footer a {
+            display: block;
+            color: rgba(255,255,255,.72);
+            margin: 9px 0;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.12);
+            margin-top: 35px;
+            padding-top: 20px;
+            color: rgba(255,255,255,.55);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* MESSAGE */
+
+        .message {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 9999;
+            display: none;
+            max-width: 390px;
+            background: white;
+            color: #071a3d;
+            padding: 17px 20px;
+            border-radius: 13px;
+            box-shadow: 0 15px 50px rgba(0,0,0,.2);
+            border-left: 5px solid #a3132d;
+        }
+
+        @media(max-width: 950px) {
+
+            .vh-nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 4%;
+                right: 4%;
+                padding: 12px;
+                background: white;
+                border-radius: 14px;
+                box-shadow: 0 20px 50px rgba(0,0,0,.15);
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .vh-nav-links.active {
+                display: flex;
+            }
+
+            .vh-menu {
+                display: block;
+            }
+
+            .search-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .process {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .search-grid,
+            .cards,
+            .form-grid,
+            .process,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+
+            .search-panel {
+                margin-top: -25px;
+            }
+
+            .enquiry,
+            .cta {
+                padding: 25px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header class="vh-header">
+
+    <div class="vh-container vh-nav">
+
+        <a
+            href="index.html"
+            class="vh-brand"
+        >
+
+            <img
+                src="velora-help-logo.png"
+                alt="VELORA HELP Logo"
+            >
+
+            <div>
+
+                <div class="vh-brand-name">
+                    VELORA HELP
+                </div>
+
+                <div class="vh-brand-sub">
+                    Your Problem. Our Direction.
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <button
+            id="menuButton"
+            class="vh-menu"
+            type="button"
+            aria-label="Open menu"
+        >
+            ☰
+        </button>
+
+
+        <nav
+            id="navigation"
+            class="vh-nav-links"
+        >
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="healthcare.html">
+                Healthcare
+            </a>
+
+            <a href="admissions.html">
+                Admissions
+            </a>
+
+            <a href="government.html">
+                Government
+            </a>
+
+            <a href="students.html">
+                Students
+            </a>
+
+            <a href="jobs.html">
+                Jobs
+            </a>
+
+            <a href="property.html">
+                Housing
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="vh-container">
+
+        <small>
+            VELORA HELP • ADMISSIONS
+        </small>
+
+        <h1>
+            Find your<br>
+            next opportunity.
+        </h1>
+
+        <p>
+            Looking for PUC, degree, diploma or another
+            course? Tell VELORA HELP what you want to study,
+            where you want to study and your preferred location.
+            We can guide you toward the next step.
+        </p>
+
+
+        <div class="actions">
+
+            <a
+                href="#admission-search"
+                class="btn btn-white"
+            >
+                🎓 Find a Course
+            </a>
+
+            <a
+                href="#admission-enquiry"
+                class="btn btn-white"
+            >
+                💬 Admission Enquiry
+            </a>
+
+            <a
+                href="scholarships.html"
+                class="btn btn-red"
+            >
+                🏆 Scholarships
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMISSION SEARCH
+     ===================================================== -->
+
+<section id="admission-search">
+
+    <div class="vh-container">
+
+        <div class="search-panel">
+
+            <div class="heading">
+
+                <small>
+                    ADMISSION SEARCH
+                </small>
+
+                <h2>
+                    What do you want to study?
+                </h2>
+
+                <p>
+                    Search by level, course and location.
+                </p>
+
+            </div>
+
+
+            <form id="admissionSearchForm">
+
+                <div class="search-grid">
+
+                    <input
+                        id="courseSearch"
+                        type="search"
+                        placeholder="Example: B.Com, BCA, PUC..."
+                    >
+
+
+                    <select id="studyLevel">
+
+                        <option value="">
+                            Select Level
+                        </option>
+
+                        <option value="PUC">
+                            PUC
+                        </option>
+
+                        <option value="Degree">
+                            Degree
+                        </option>
+
+                        <option value="Diploma">
+                            Diploma
+                        </option>
+
+                        <option value="Certificate">
+                            Certificate Course
+                        </option>
+
+                        <option value="Professional">
+                            Professional Course
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+
+                    <select id="admissionLocation">
+
+                        <option value="">
+                            Select Location
+                        </option>
+
+                        <option>Mangaluru</option>
+                        <option>Bantwal</option>
+                        <option>Belthangady</option>
+                        <option>Puttur</option>
+                        <option>Sullia</option>
+                        <option>Moodbidri</option>
+                        <option>Kadaba</option>
+                        <option>Mulki</option>
+
+                    </select>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-red"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <div
+                id="searchResults"
+                class="results"
+            >
+
+                <h3>
+                    Admission search
+                </h3>
+
+                <div id="resultContent"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STUDY LEVELS
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="vh-container">
+
+        <div class="heading">
+
+            <small>
+                EDUCATION
+            </small>
+
+            <h2>
+                Admission guidance for different levels
+            </h2>
+
+            <p>
+                Choose the level you are interested in.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div
+                class="card"
+                data-level="PUC"
+            >
+
+                <div class="card-icon">
+                    📘
+                </div>
+
+                <h3>
+                    1st PUC
+                </h3>
+
+                <p>
+                    Guidance for students looking for
+                    first-year PUC admission and stream
+                    selection.
+                </p>
+
+                <button
+                    class="btn btn-outline admission-card-button"
+                    data-value="1st PUC"
+                    type="button"
+                >
+                    Ask About 1st PUC
+                </button>
+
+            </div>
+
+
+            <div
+                class="card"
+                data-level="PUC"
+            >
+
+                <div class="card-icon">
+                    📚
+                </div>
+
+                <h3>
+                    2nd PUC
+                </h3>
+
+                <p>
+                    Guidance for students looking for
+                    second-year PUC and further study options.
+                </p>
+
+                <button
+                    class="btn btn-outline admission-card-button"
+                    data-value="2nd PUC"
+                    type="button"
+                >
+                    Ask About 2nd PUC
+                </button>
+
+            </div>
+
+
+            <div
+                class="card"
+                data-level="Degree"
+            >
+
+                <div class="card-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Degree
+                </h3>
+
+                <p>
+                    Explore degree-course admission
+                    guidance and college options.
+                </p>
+
+                <button
+                    class="btn btn-outline admission-card-button"
+                    data-value="Degree"
+                    type="button"
+                >
+                    Ask About Degree
+                </button>
+
+            </div>
+
+
+            <div
+                class="card"
+                data-level="Diploma"
+            >
+
+                <div class="card-icon">
+                    🧑‍💻
+                </div>
+
+                <h3>
+                    Diploma
+                </h3>
+
+                <p>
+                    Find guidance for diploma and
+                    skill-oriented programmes.
+                </p>
+
+                <button
+                    class="btn btn-outline admission-card-button"
+                    data-value="Diploma"
+                    type="button"
+                >
+                    Ask About Diploma
+                </button>
+
+            </div>
+
+
+            <div
+                class="card"
+                data-level="Professional"
+            >
+
+                <div class="card-icon">
+                    💼
+                </div>
+
+                <h3>
+                    Professional Courses
+                </h3>
+
+                <p>
+                    Guidance for professional and
+                    career-oriented courses.
+                </p>
+
+                <button
+                    class="btn btn-outline admission-card-button"
+                    data-value="Professional Course"
+                    type="button"
+                >
+                    Ask About Course
+                </button>
+
+            </div>
+
+
+            <div
+                class="card"
+                data-level="Other"
+            >
+
+                <div class="card-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Other Courses
+                </h3>
+
+                <p>
+                    If you are unsure about the course,
+                    tell us what career or subject interests you.
+                </p>
+
+                <button
+                    class="btn btn-outline admission-card-button"
+                    data-value="Other Course"
+                    type="button"
+                >
+                    Get Guidance
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     POPULAR COURSE CATEGORIES
+     ===================================================== -->
+
+<section class="section alt">
+
+    <div class="vh-container">
+
+        <div class="heading">
+
+            <small>
+                COURSE CATEGORIES
+            </small>
+
+            <h2>
+                Explore course interests
+            </h2>
+
+            <p>
+                Select a course area and send an enquiry.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Computer & IT
+                </h3>
+
+                <p>
+                    BCA, computer applications, IT,
+                    software and related programmes.
+                </p>
+
+                <button
+                    class="btn btn-blue course-button"
+                    type="button"
+                    data-course="Computer & IT"
+                >
+                    Enquire
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Commerce
+                </h3>
+
+                <p>
+                    B.Com, business, accounting,
+                    finance and related courses.
+                </p>
+
+                <button
+                    class="btn btn-blue course-button"
+                    type="button"
+                    data-course="Commerce"
+                >
+                    Enquire
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🔬
+                </div>
+
+                <h3>
+                    Science
+                </h3>
+
+                <p>
+                    Science degree and other
+                    science-related programmes.
+                </p>
+
+                <button
+                    class="btn btn-blue course-button"
+                    type="button"
+                    data-course="Science"
+                >
+                    Enquire
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    ⚖️
+                </div>
+
+                <h3>
+                    Law
+                </h3>
+
+                <p>
+                    Explore law admission guidance
+                    and related programmes.
+                </p>
+
+                <button
+                    class="btn btn-blue course-button"
+                    type="button"
+                    data-course="Law"
+                >
+                    Enquire
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🩺
+                </div>
+
+                <h3>
+                    Healthcare
+                </h3>
+
+                <p>
+                    Explore healthcare-related education
+                    and professional programmes.
+                </p>
+
+                <button
+                    class="btn btn-blue course-button"
+                    type="button"
+                    data-course="Healthcare"
+                >
+                    Enquire
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🎨
+                </div>
+
+                <h3>
+                    Arts & Humanities
+                </h3>
+
+                <p>
+                    Explore arts, humanities, languages
+                    and related degree options.
+                </p>
+
+                <button
+                    class="btn btn-blue course-button"
+                    type="button"
+                    data-course="Arts & Humanities"
+                >
+                    Enquire
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMISSION PROCESS
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="vh-container">
+
+        <div class="heading">
+
+            <small>
+                HOW IT WORKS
+            </small>
+
+            <h2>
+                Admission guidance in four steps
+            </h2>
+
+        </div>
+
+
+        <div class="process">
+
+
+            <div class="process-card">
+
+                <div class="number">
+                    01
+                </div>
+
+                <h3>
+                    Tell us your course
+                </h3>
+
+                <p>
+                    Tell us the course, level or career
+                    you are interested in.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="number">
+                    02
+                </div>
+
+                <h3>
+                    Tell us your location
+                </h3>
+
+                <p>
+                    Select your preferred area or taluk
+                    in Dakshina Kannada.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="number">
+                    03
+                </div>
+
+                <h3>
+                    We review your requirement
+                </h3>
+
+                <p>
+                    VELORA HELP reviews the enquiry and
+                    available college/course information.
+                </p>
+
+            </div>
+
+
+            <div class="process-card">
+
+                <div class="number">
+                    04
+                </div>
+
+                <h3>
+                    Get direction
+                </h3>
+
+                <p>
+                    We guide you toward the appropriate
+                    next step and official admission source.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FULL ADMISSION ENQUIRY
+     ===================================================== -->
+
+<section
+    class="section alt"
+    id="admission-enquiry"
+>
+
+    <div class="vh-container">
+
+        <div class="enquiry">
+
+            <small>
+                VELORA HELP ADMISSION ENQUIRY
+            </small>
+
+            <h2>
+                Tell us what admission help you need
+            </h2>
+
+            <p>
+                Fill in the details below. Your enquiry
+                will be prepared as a WhatsApp message
+                to VELORA HELP at +91 8088590273.
+            </p>
+
+
+            <form id="admissionEnquiryForm">
+
+                <div class="form-grid">
+
+
+                    <div>
+
+                        <label for="studentName">
+                            Student Full Name *
+                        </label>
+
+                        <input
+                            id="studentName"
+                            name="studentName"
+                            type="text"
+                            placeholder="Enter student name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="studentPhone">
+                            Phone Number *
+                        </label>
+
+                        <input
+                            id="studentPhone"
+                            name="studentPhone"
+                            type="tel"
+                            placeholder="+91..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="studentTaluk">
+                            Taluk *
+                        </label>
+
+                        <select
+                            id="studentTaluk"
+                            name="taluk"
+                            required
+                        >
+
+                            <option value="">
+                                Select Taluk
+                            </option>
+
+                            <option>Mangaluru</option>
+                            <option>Bantwal</option>
+                            <option>Belthangady</option>
+                            <option>Puttur</option>
+                            <option>Sullia</option>
+                            <option>Moodbidri</option>
+                            <option>Kadaba</option>
+                            <option>Mulki</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="studentArea">
+                            Area / Village
+                        </label>
+
+                        <input
+                            id="studentArea"
+                            name="area"
+                            type="text"
+                            placeholder="Area / village"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="admissionLevel">
+                            Admission Level *
+                        </label>
+
+                        <select
+                            id="admissionLevel"
+                            name="level"
+                            required
+                        >
+
+                            <option value="">
+                                Select level
+                            </option>
+
+                            <option>1st PUC</option>
+                            <option>2nd PUC</option>
+                            <option>Degree</option>
+                            <option>Diploma</option>
+                            <option>Certificate Course</option>
+                            <option>Professional Course</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="courseName">
+                            Course / Stream *
+                        </label>
+
+                        <input
+                            id="courseName"
+                            name="course"
+                            type="text"
+                            placeholder="Example: BCA, B.Com, Science..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="collegePreference">
+                            Preferred College
+                        </label>
+
+                        <input
+                            id="collegePreference"
+                            name="college"
+                            type="text"
+                            placeholder="College name, if known"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="admissionYear">
+                            Admission Year
+                        </label>
+
+                        <select
+                            id="admissionYear"
+                            name="admissionYear"
+                        >
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option>2026-27</option>
+                            <option>2027-28</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="full">
+
+                        <label for="studentMarks">
+                            Previous Qualification / Marks
+                        </label>
+
+                        <input
+                            id="studentMarks"
+                            name="marks"
+                            type="text"
+                            placeholder="Example: SSLC 82%, PUC 76%, etc."
+                        >
+
+                    </div>
+
+
+                    <div class="full">
+
+                        <label for="admissionRequirement">
+                            What help do you need? *
+                        </label>
+
+                        <textarea
+                            id="admissionRequirement"
+                            name="requirement"
+                            rows="5"
+                            maxlength="1500"
+                            placeholder="Example: I want BCA admission in a college near Mangaluru..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="full">
+
+                        <button
+                            type="submit"
+                            class="btn btn-white"
+                        >
+                            💬 Send Admission Enquiry
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SCHOLARSHIP CTA
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="vh-container">
+
+        <div class="cta">
+
+            <h2>
+                🎓 Looking for scholarships too?
+            </h2>
+
+            <p>
+                Admission is only one part of education.
+                You can also explore scholarship opportunities,
+                student opportunities and other education guidance.
+            </p>
+
+            <div class="actions">
+
+                <a
+                    href="scholarships.html"
+                    class="btn btn-white"
+                >
+                    🏆 Explore Scholarships
+                </a>
+
+                <a
+                    href="students.html"
+                    class="btn btn-white"
+                >
+                    👨‍🎓 Student Help
+                </a>
+
+                <a
+                    href="jobs.html"
+                    class="btn btn-white"
+                >
+                    💼 Jobs & Internships
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <div class="vh-container">
+
+        <div class="footer-grid">
+
+
+            <div>
+
+                <img
+                    src="velora-help-logo.png"
+                    alt="VELORA HELP"
+                    style="
+                        width:90px;
+                        height:90px;
+                        object-fit:contain;
+                        background:white;
+                        border-radius:50%;
+                        padding:5px;
+                    "
+                >
+
+                <h3>
+                    VELORA HELP
+                </h3>
+
+                <p>
+                    Your Problem. Our Direction.
+                </p>
+
+                <p>
+                    Powered by VELORA DIGITAL.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Education
+                </h4>
+
+                <a href="admissions.html">
+                    Admissions
+                </a>
+
+                <a href="scholarships.html">
+                    Scholarships
+                </a>
+
+                <a href="students.html">
+                    Students
+                </a>
+
+                <a href="jobs.html">
+                    Jobs
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Help
+                </h4>
+
+                <a href="healthcare.html">
+                    Healthcare
+                </a>
+
+                <a href="government.html">
+                    Government
+                </a>
+
+                <a href="property.html">
+                    Housing
+                </a>
+
+                <a href="local-services.html">
+                    Local Services
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Information
+                </h4>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="disclaimer.html">
+                    Disclaimer
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span>
+                VELORA HELP
+            </span>
+
+            <span>
+                📞 +91 8088590273
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     MESSAGE
+     ===================================================== -->
+
+<div
+    id="message"
+    class="message"
+    role="status"
+    aria-live="polite"
+></div>
+
+
+<!-- =====================================================
+     JAVASCRIPT FILES
+     ===================================================== -->
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/admissions.js"></script>
+
+
+<!-- =====================================================
+     ADMISSIONS PAGE FUNCTIONALITY
+     ===================================================== -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+        /* ==========================================
+           MOBILE MENU
+        ========================================== */
+
+        const menuButton =
+            document.getElementById(
+                "menuButton"
+            );
+
+        const navigation =
+            document.getElementById(
+                "navigation"
+            );
+
+
+        if (menuButton && navigation) {
+
+            menuButton.addEventListener(
+                "click",
+                function () {
+
+                    navigation.classList.toggle(
+                        "active"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* ==========================================
+           YEAR
+        ========================================== */
+
+        const year =
+            document.getElementById(
+                "year"
+            );
+
+        if (year) {
+
+            year.textContent =
+                new Date().getFullYear();
+
+        }
+
+
+        /* ==========================================
+           COURSE SEARCH
+        ========================================== */
+
+        const searchForm =
+            document.getElementById(
+                "admissionSearchForm"
+            );
+
+        const results =
+            document.getElementById(
+                "searchResults"
+            );
+
+        const resultContent =
+            document.getElementById(
+                "resultContent"
+            );
+
+
+        if (searchForm) {
+
+            searchForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const course =
+                        document
+                            .getElementById(
+                                "courseSearch"
+                            )
+                            .value
+                            .trim();
+
+
+                    const level =
+                        document
+                            .getElementById(
+                                "studyLevel"
+                            )
+                            .value;
+
+
+                    const location =
+                        document
+                            .getElementById(
+                                "admissionLocation"
+                            )
+                            .value;
+
+
+                    const courseText =
+                        course ||
+                        "Any suitable course";
+
+
+                    const levelText =
+                        level ||
+                        "Any suitable level";
+
+
+                    const locationText =
+                        location ||
+                        "Dakshina Kannada";
+
+
+                    resultContent.innerHTML = `
+
+                        <div class="result">
+
+                            <strong>
+                                🎓 Admission Requirement
+                            </strong>
+
+                            <span>
+                                Course:
+                                ${escapeHTML(courseText)}
+                                <br>
+                                Level:
+                                ${escapeHTML(levelText)}
+                                <br>
+                                Location:
+                                ${escapeHTML(locationText)}
+                            </span>
+
+                        </div>
+
+
+                        <div class="result">
+
+                            <strong>
+                                Need college-specific guidance?
+                            </strong>
+
+                            <span>
+                                Send your admission requirement
+                                to VELORA HELP. Our team can review
+                                the requirement and guide you toward
+                                the appropriate next step.
+                            </span>
+
+                        </div>
+
+
+                        <div style="margin-top:18px;">
+
+                            <a
+                                href="#admission-enquiry"
+                                class="btn btn-red"
+                            >
+                                💬 Send Admission Enquiry
+                            </a>
+
+                        </div>
+
+                    `;
+
+
+                    results.classList.add(
+                        "active"
+                    );
+
+
+                    results.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }
+            );
+
+        }
+
+
+        /* ==========================================
+           LEVEL CARD BUTTONS
+        ========================================== */
+
+        document
+            .querySelectorAll(
+                ".admission-card-button"
+            )
+            .forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            const value =
+                                button.getAttribute(
+                                    "data-value"
+                                );
+
+
+                            const level =
+                                document.getElementById(
+                                    "admissionLevel"
+                                );
+
+
+                            if (level) {
+
+                                const matchingOption =
+                                    Array.from(
+                                        level.options
+                                    ).find(
+                                        function (option) {
+
+                                            return (
+                                                option.text
+                                                    .toLowerCase()
+                                                    .includes(
+                                                        value
+                                                            .toLowerCase()
+                                                    )
+                                            );
+
+                                        }
+                                    );
+
+
+                                if (matchingOption) {
+
+                                    level.value =
+                                        matchingOption.value;
+
+                                }
+
+                            }
+
+
+                            document
+                                .getElementById(
+                                    "admission-enquiry"
+                                )
+                                .scrollIntoView({
+                                    behavior: "smooth"
+                                });
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /* ==========================================
+           COURSE CATEGORY BUTTONS
+        ========================================== */
+
+        document
+            .querySelectorAll(
+                ".course-button"
+            )
+            .forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            const course =
+                                button.getAttribute(
+                                    "data-course"
+                                );
+
+
+                            const courseInput =
+                                document.getElementById(
+                                    "courseName"
+                                );
+
+
+                            if (courseInput) {
+
+                                courseInput.value =
+                                    course;
+
+                            }
+
+
+                            document
+                                .getElementById(
+                                    "admission-enquiry"
+                                )
+                                .scrollIntoView({
+                                    behavior: "smooth"
+                                });
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /* ==========================================
+           ADMISSION ENQUIRY
+        ========================================== */
+
+        const enquiryForm =
+            document.getElementById(
+                "admissionEnquiryForm"
+            );
+
+
+        if (enquiryForm) {
+
+            enquiryForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const studentName =
+                        document
+                            .getElementById(
+                                "studentName"
+                            )
+                            .value
+                            .trim();
+
+
+                    const studentPhone =
+                        document
+                            .getElementById(
+                                "studentPhone"
+                            )
+                            .value
+                            .trim();
+
+
+                    const taluk =
+                        document
+                            .getElementById(
+                                "studentTaluk"
+                            )
+                            .value;
+
+
+                    const area =
+                        document
+                            .getElementById(
+                                "studentArea"
+                            )
+                            .value
+                            .trim();
+
+
+                    const level =
+                        document
+                            .getElementById(
+                                "admissionLevel"
+                            )
+                            .value;
+
+
+                    const course =
+                        document
+                            .getElementById(
+                                "courseName"
+                            )
+                            .value
+                            .trim();
+
+
+                    const college =
+                        document
+                            .getElementById(
+                                "collegePreference"
+                            )
+                            .value
+                            .trim();
+
+
+                    const admissionYear =
+                        document
+                            .getElementById(
+                                "admissionYear"
+                            )
+                            .value;
+
+
+                    const marks =
+                        document
+                            .getElementById(
+                                "studentMarks"
+                            )
+                            .value
+                            .trim();
+
+
+                    const requirement =
+                        document
+                            .getElementById(
+                                "admissionRequirement"
+                            )
+                            .value
+                            .trim();
+
+
+                    const message =
+`Hello VELORA HELP,
+
+I need admission guidance.
+
+STUDENT DETAILS
+
+Name: ${studentName}
+Phone: ${studentPhone}
+
+LOCATION
+
+Taluk: ${taluk}
+Area/Village: ${area || "Not provided"}
+
+ADMISSION DETAILS
+
+Level: ${level}
+Course / Stream: ${course}
+Preferred College: ${college || "Not specified"}
+Admission Year: ${admissionYear || "Not specified"}
+Previous Qualification / Marks: ${marks || "Not provided"}
+
+REQUIREMENT
+
+${requirement}
+
+Please guide me regarding the appropriate college, course, admission process and next step.
+
+Thank you.
+VELORA HELP`;
+
+
+                    const whatsappURL =
+                        "https://wa.me/918088590273?text=" +
+                        encodeURIComponent(
+                            message
+                        );
+
+
+                    window.open(
+                        whatsappURL,
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
+
+
+                    showMessage(
+                        "Your admission enquiry is ready. WhatsApp has been opened for VELORA HELP."
+                    );
+
+                }
+            );
+
+        }
+
+    }
+);
+
+
+/* ================================================
+   HTML ESCAPING
+================================================ */
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+
+/* ================================================
+   MESSAGE
+================================================ */
+
+function showMessage(text) {
+
+    const message =
+        document.getElementById(
+            "message"
+        );
+
+
+    if (!message) {
+        return;
+    }
+
+
+    message.textContent =
+        text;
+
+
+    message.style.display =
+        "block";
+
+
+    setTimeout(
+        function () {
+
+            message.style.display =
+                "none";
+
+        },
+        4500
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
