@@ -1,1 +1,3466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>VELORA HELP — Your Problem. Our Direction.</title>
+
+<meta name="description"
+content="VELORA HELP connects people across Dakshina Kannada with healthcare, government services, education, jobs, housing, local services, civic support and more.">
+
+<meta name="theme-color" content="#071d49">
+
+<link rel="icon" type="image/png" href="velora-help-logo.png">
+
+<style>
+:root{
+  --navy:#071d49;
+  --navy2:#0d2e68;
+  --burgundy:#a30d2d;
+  --burgundy2:#c0183c;
+  --white:#ffffff;
+  --off:#f6f8fc;
+  --text:#14213d;
+  --muted:#64748b;
+  --border:#e5eaf2;
+  --green:#128c4b;
+  --shadow:0 18px 50px rgba(7,29,73,.10);
+  --radius:20px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Inter,Arial,Helvetica,sans-serif;
+  background:var(--white);
+  color:var(--text);
+  line-height:1.6;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+button,
+a{
+  -webkit-tap-highlight-color:transparent;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(229,234,242,.8);
+}
+
+.nav{
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:max-content;
+}
+
+.brand img{
+  width:53px;
+  height:53px;
+  object-fit:contain;
+}
+
+.brand-text strong{
+  display:block;
+  font-size:19px;
+  letter-spacing:.5px;
+  color:var(--navy);
+}
+
+.brand-text span{
+  display:block;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:1.3px;
+  color:var(--burgundy);
+  text-transform:uppercase;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+.nav-links a{
+  font-size:13px;
+  font-weight:700;
+  color:#334155;
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:var(--burgundy);
+}
+
+.nav-help{
+  background:var(--burgundy);
+  color:white!important;
+  padding:11px 17px;
+  border-radius:999px;
+}
+
+.menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  font-size:28px;
+  color:var(--navy);
+  cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:760px;
+  padding-top:78px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  overflow:hidden;
+  background-image:
+    linear-gradient(90deg,rgba(4,18,48,.88),rgba(4,18,48,.48),rgba(4,18,48,.08)),
+    url("velora-help-homepage-bg.jpg");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-content{
+  max-width:780px;
+  color:white;
+  padding:80px 0;
+}
+
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 15px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(10px);
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:22px;
+}
+
+.hero h1{
+  font-size:clamp(48px,7vw,82px);
+  line-height:1;
+  letter-spacing:-3px;
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:#f3c3cd;
+}
+
+.hero h2{
+  font-size:clamp(21px,3vw,32px);
+  margin-bottom:17px;
+  font-weight:600;
+}
+
+.hero p{
+  max-width:690px;
+  font-size:18px;
+  color:#eef4ff;
+  margin-bottom:30px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  border:0;
+  cursor:pointer;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:8px;
+  padding:14px 21px;
+  border-radius:12px;
+  font-weight:800;
+  transition:.25s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:var(--burgundy);
+  color:white;
+  box-shadow:0 10px 25px rgba(163,13,45,.28);
+}
+
+.btn-light{
+  background:white;
+  color:var(--navy);
+}
+
+.btn-outline{
+  background:transparent;
+  color:var(--navy);
+  border:1px solid var(--border);
+}
+
+.btn-white-outline{
+  background:transparent;
+  color:white;
+  border:1px solid rgba(255,255,255,.5);
+}
+
+/* ================= GENERAL ================= */
+
+section{
+  padding:85px 0;
+}
+
+.section-head{
+  text-align:center;
+  max-width:750px;
+  margin:0 auto 45px;
+}
+
+.section-head .eyebrow{
+  color:var(--burgundy);
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:9px;
+}
+
+.section-head h2{
+  color:var(--navy);
+  font-size:clamp(30px,4vw,44px);
+  line-height:1.15;
+  margin-bottom:13px;
+}
+
+.section-head p{
+  color:var(--muted);
+}
+
+.light{
+  background:var(--off);
+}
+
+.grid{
+  display:grid;
+  gap:18px;
+}
+
+.grid-4{
+  grid-template-columns:repeat(4,1fr);
+}
+
+.grid-3{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.grid-2{
+  grid-template-columns:repeat(2,1fr);
+}
+
+/* ================= SEARCH ================= */
+
+.search-box{
+  margin-top:-45px;
+  position:relative;
+  z-index:5;
+}
+
+.search-card{
+  background:white;
+  padding:22px;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+
+.search-row{
+  display:flex;
+  gap:10px;
+}
+
+.search-row input{
+  flex:1;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:15px;
+  outline:none;
+}
+
+.search-row input:focus{
+  border-color:var(--burgundy);
+}
+
+/* ================= CATEGORY CARDS ================= */
+
+.category-card{
+  border:1px solid var(--border);
+  background:white;
+  border-radius:18px;
+  padding:24px 20px;
+  cursor:pointer;
+  transition:.28s;
+  box-shadow:0 7px 24px rgba(7,29,73,.04);
+}
+
+.category-card:hover{
+  transform:translateY(-6px);
+  border-color:#d4dbea;
+  box-shadow:var(--shadow);
+}
+
+.category-icon{
+  width:54px;
+  height:54px;
+  border-radius:15px;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  background:#f1f4fa;
+  margin-bottom:16px;
+}
+
+.category-card h3{
+  color:var(--navy);
+  font-size:17px;
+  margin-bottom:5px;
+}
+
+.category-card p{
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* ================= TALUK ================= */
+
+.taluk-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:22px;
+  text-align:center;
+  cursor:pointer;
+  font-weight:800;
+  color:var(--navy);
+  transition:.25s;
+}
+
+.taluk-card:hover{
+  background:var(--navy);
+  color:white;
+  transform:translateY(-4px);
+}
+
+/* ================= HELP CTA ================= */
+
+.help-banner{
+  background:linear-gradient(135deg,var(--navy),#123d83);
+  color:white;
+  border-radius:28px;
+  padding:50px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  box-shadow:var(--shadow);
+}
+
+.help-banner h2{
+  font-size:34px;
+  line-height:1.15;
+  margin-bottom:10px;
+}
+
+.help-banner p{
+  color:#d9e6fb;
+}
+
+/* ================= PROBLEMS ================= */
+
+.problem-card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:23px;
+}
+
+.problem-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:13px;
+}
+
+.problem-number{
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#f2f5fa;
+  font-weight:900;
+  color:var(--navy);
+}
+
+.progress{
+  height:8px;
+  background:#edf1f6;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.progress span{
+  height:100%;
+  display:block;
+  background:linear-gradient(90deg,var(--navy),var(--burgundy));
+  border-radius:999px;
+}
+
+/* ================= SERVICE DETAIL ================= */
+
+.service-panel{
+  display:none;
+}
+
+.service-panel.active{
+  display:block;
+  animation:fadeIn .3s ease;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.panel{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(7,29,73,.05);
+}
+
+.panel h3{
+  color:var(--navy);
+  margin-bottom:10px;
+  font-size:25px;
+}
+
+.panel p{
+  color:var(--muted);
+}
+
+.option-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin:22px 0;
+}
+
+.option-btn{
+  border:1px solid var(--border);
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  cursor:pointer;
+  text-align:left;
+  font-weight:700;
+  color:var(--navy);
+  transition:.2s;
+}
+
+.option-btn:hover{
+  border-color:var(--burgundy);
+  color:var(--burgundy);
+}
+
+/* ================= FORMS ================= */
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  font-size:12px;
+  font-weight:800;
+  color:var(--navy);
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid var(--border);
+  border-radius:11px;
+  outline:none;
+  background:white;
+  color:var(--text);
+}
+
+.field textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--burgundy);
+}
+
+/* ================= LISTINGS ================= */
+
+.listing{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:23px;
+}
+
+.listing h3{
+  color:var(--navy);
+  margin-bottom:7px;
+}
+
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:12px 0;
+}
+
+.tag{
+  padding:5px 9px;
+  border-radius:999px;
+  background:#f1f4f9;
+  color:#45536b;
+  font-size:11px;
+  font-weight:800;
+}
+
+.verified{
+  background:#e8f7ef;
+  color:var(--green);
+}
+
+/* ================= EMERGENCY ================= */
+
+.emergency{
+  background:#fff5f6;
+}
+
+.emergency-card{
+  border:1px solid #f2d9de;
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+}
+
+.emergency-card .big-icon{
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+.emergency-card h3{
+  color:#821029;
+  margin-bottom:6px;
+}
+
+.emergency-card a{
+  color:var(--burgundy);
+  font-weight:900;
+}
+
+/* ================= GOVERNMENT ================= */
+
+.scheme{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px;
+  position:relative;
+  overflow:hidden;
+}
+
+.scheme::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  bottom:0;
+  width:5px;
+  background:var(--burgundy);
+}
+
+.scheme h3{
+  color:var(--navy);
+  margin-bottom:8px;
+}
+
+.scheme p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.scheme .status{
+  display:inline-block;
+  margin-bottom:12px;
+  font-size:10px;
+  font-weight:900;
+  padding:5px 9px;
+  border-radius:999px;
+  background:#eaf8f0;
+  color:var(--green);
+}
+
+/* ================= FAQ ================= */
+
+.faq{
+  border:1px solid var(--border);
+  border-radius:15px;
+  margin-bottom:10px;
+  overflow:hidden;
+}
+
+.faq button{
+  width:100%;
+  text-align:left;
+  border:0;
+  background:white;
+  padding:18px;
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-weight:800;
+  color:var(--navy);
+}
+
+.faq-answer{
+  display:none;
+  padding:0 18px 18px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.faq.open .faq-answer{
+  display:block;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:#061633;
+  color:white;
+  padding:60px 0 25px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr 1fr;
+  gap:35px;
+}
+
+.footer-brand img{
+  width:72px;
+  margin-bottom:15px;
+}
+
+.footer-brand h3{
+  font-size:23px;
+  margin-bottom:8px;
+}
+
+.footer-brand p{
+  color:#aebed9;
+  max-width:330px;
+}
+
+footer h4{
+  margin-bottom:14px;
+}
+
+footer ul{
+  list-style:none;
+}
+
+footer li{
+  margin:8px 0;
+  color:#b9c7df;
+  font-size:14px;
+}
+
+footer li a:hover{
+  color:white;
+}
+
+.footer-bottom{
+  margin-top:45px;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.12);
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:#91a4c3;
+  font-size:12px;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(3,12,30,.72);
+  backdrop-filter:blur(7px);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  background:white;
+  width:min(720px,100%);
+  max-height:90vh;
+  overflow:auto;
+  border-radius:24px;
+  padding:30px;
+  position:relative;
+  animation:modalIn .25s ease;
+}
+
+@keyframes modalIn{
+  from{opacity:0;transform:scale(.96)}
+  to{opacity:1;transform:scale(1)}
+}
+
+.close{
+  position:absolute;
+  right:18px;
+  top:15px;
+  border:0;
+  background:#f1f4f8;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:21px;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  z-index:5000;
+  background:#071d49;
+  color:white;
+  padding:15px 19px;
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  transform:translateY(120px);
+  opacity:0;
+  transition:.3s;
+  max-width:360px;
+  font-size:14px;
+}
+
+.toast.show{
+  transform:translateY(0);
+  opacity:1;
+}
+
+/* ================= FLOATING WHATSAPP ================= */
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:900;
+  width:57px;
+  height:57px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#1fa855;
+  color:white;
+  font-size:26px;
+  box-shadow:0 12px 30px rgba(0,0,0,.2);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+  .nav-links{
+    position:absolute;
+    top:78px;
+    left:0;
+    width:100%;
+    background:white;
+    display:none;
+    flex-direction:column;
+    padding:20px;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+  }
+
+  .nav-links.open{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .grid-4{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .help-banner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+@media(max-width:650px){
+  section{
+    padding:65px 0;
+  }
+
+  .hero{
+    min-height:720px;
+  }
+
+  .hero h1{
+    letter-spacing:-2px;
+  }
+
+  .search-row{
+    flex-direction:column;
+  }
+
+  .grid-4,
+  .grid-3,
+  .grid-2,
+  .option-grid,
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+  }
+
+  .help-banner{
+    padding:32px 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+  <div class="container nav">
+
+    <a href="#home" class="brand">
+      <img src="velora-help-logo.png" alt="VELORA HELP Logo">
+      <div class="brand-text">
+        <strong>VELORA HELP</strong>
+        <span>Your Problem. Our Direction.</span>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#dakshina-kannada">Dakshina Kannada</a>
+      <a href="#problems">Problems</a>
+      <a href="#government">Government</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-help">Get Help</a>
+    </nav>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+
+  </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<main id="home">
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        📍 Serving Dakshina Kannada
+      </div>
+
+      <h1>
+        VELORA <span>HELP</span>
+      </h1>
+
+      <h2>Your problem. Our direction.</h2>
+
+      <p>
+        Tell us what you need. Find the right service, place,
+        opportunity, information or direction — all in one place.
+      </p>
+
+      <div class="hero-actions">
+
+        <button class="btn btn-primary"
+          onclick="openHelpModal('General Help')">
+          🆘 Get Help Now
+        </button>
+
+        <button class="btn btn-light"
+          onclick="scrollToSection('services')">
+          Explore Services
+        </button>
+
+        <button class="btn btn-white-outline"
+          onclick="openProblemModal()">
+          📢 Report a Problem
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<div class="container search-box">
+
+  <div class="search-card">
+
+    <div class="search-row">
+
+      <input
+        id="siteSearch"
+        type="search"
+        placeholder="Search healthcare, jobs, rentals, government services..."
+        oninput="searchSite()">
+
+      <button class="btn btn-primary" onclick="searchSite(true)">
+        🔎 Search
+      </button>
+
+    </div>
+
+    <div id="searchResults"
+      style="display:none;margin-top:18px">
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= QUICK HELP ================= -->
+
+<section>
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Start Here</div>
+
+    <h2>What do you need help with?</h2>
+
+    <p>
+      Choose a category and VELORA HELP will guide you
+      toward the appropriate next step.
+    </p>
+
+  </div>
+
+
+  <div class="grid grid-4" id="services">
+
+    <div class="category-card" onclick="openService('Healthcare')">
+      <div class="category-icon">🩺</div>
+      <h3>Healthcare</h3>
+      <p>Find appropriate hospitals, clinics and doctors.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Emergency Help')">
+      <div class="category-icon">🚨</div>
+      <h3>Emergency Help</h3>
+      <p>Quick access to emergency directions and contacts.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Local Services')">
+      <div class="category-icon">🔧</div>
+      <h3>Local Services</h3>
+      <p>Find electricians, plumbers, repair and home services.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Rent & Property')">
+      <div class="category-icon">🏠</div>
+      <h3>Rent & Property</h3>
+      <p>Find or list homes, rooms, PGs and properties.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Students')">
+      <div class="category-icon">🎓</div>
+      <h3>Students</h3>
+      <p>Internships, scholarships, courses and opportunities.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Jobs & Careers')">
+      <div class="category-icon">💼</div>
+      <h3>Jobs & Careers</h3>
+      <p>Jobs, apprenticeships, skills and career guidance.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Transport')">
+      <div class="category-icon">🚌</div>
+      <h3>Transport</h3>
+      <p>Transport, routes, travel and local mobility help.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Waste & Garbage')">
+      <div class="category-icon">🗑️</div>
+      <h3>Waste & Garbage</h3>
+      <p>Report garbage and cleanliness problems.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Water Problems')">
+      <div class="category-icon">💧</div>
+      <h3>Water Problems</h3>
+      <p>Report water supply, leakage and drainage issues.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Roads & Infrastructure')">
+      <div class="category-icon">🛣️</div>
+      <h3>Roads & Infrastructure</h3>
+      <p>Report potholes, streetlights and infrastructure issues.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Public Safety')">
+      <div class="category-icon">🛡️</div>
+      <h3>Public Safety</h3>
+      <p>Share safety concerns and find appropriate help.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Elderly Help')">
+      <div class="category-icon">👴</div>
+      <h3>Elderly Help</h3>
+      <p>Assistance with daily needs and local support.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Local Businesses')">
+      <div class="category-icon">🏪</div>
+      <h3>Local Businesses</h3>
+      <p>Discover and connect with local businesses.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Government Services')">
+      <div class="category-icon">🏛️</div>
+      <h3>Government Services</h3>
+      <p>Find government schemes, services and official guidance.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Digital Help')">
+      <div class="category-icon">💻</div>
+      <h3>Digital Help</h3>
+      <p>Get guidance with online services and digital tasks.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Cost of Living')">
+      <div class="category-icon">💰</div>
+      <h3>Cost of Living</h3>
+      <p>Find practical local resources and affordable options.</p>
+    </div>
+
+    <div class="category-card" onclick="openService('Community Help')">
+      <div class="category-icon">🤝</div>
+      <h3>Community Help</h3>
+      <p>Connect people with community support.</p>
+    </div>
+
+    <div class="category-card" onclick="openProblemModal()">
+      <div class="category-icon">📢</div>
+      <h3>Report a Problem</h3>
+      <p>Tell us about a problem affecting your area.</p>
+    </div>
+
+    <div class="category-card" onclick="openHelpModal('Something Else')">
+      <div class="category-icon">➕</div>
+      <h3>Something Else</h3>
+      <p>Can't find your category? Tell us directly.</p>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SERVICE WORKSPACE ================= -->
+
+<section class="light" id="serviceWorkspace">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">VELORA Guidance</div>
+
+    <h2 id="serviceTitle">Choose a service</h2>
+
+    <p id="serviceDescription">
+      Select a category above to begin.
+    </p>
+
+  </div>
+
+
+  <div id="servicePanel" class="service-panel">
+
+    <div class="panel">
+
+      <h3 id="panelHeading"></h3>
+
+      <p id="panelText"></p>
+
+      <div class="option-grid" id="serviceOptions"></div>
+
+      <button class="btn btn-primary"
+        onclick="openHelpModal(currentService)">
+        💬 Ask VELORA
+      </button>
+
+      <button class="btn btn-outline"
+        onclick="closeService()">
+        Close
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= HEALTHCARE ================= -->
+
+<section id="healthcare">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Healthcare</div>
+
+    <h2>Find the right healthcare direction</h2>
+
+    <p>
+      Tell us what you need and where you are.
+      VELORA HELP can guide you toward relevant healthcare options.
+    </p>
+
+  </div>
+
+
+  <div class="panel">
+
+    <div class="form-grid">
+
+      <div class="field">
+        <label>What are you looking for?</label>
+
+        <select id="healthNeed">
+          <option>General consultation</option>
+          <option>Fever / common illness</option>
+          <option>Child care</option>
+          <option>Dental</option>
+          <option>Eye care</option>
+          <option>ENT</option>
+          <option>Skin</option>
+          <option>Orthopedic</option>
+          <option>Women's health</option>
+          <option>Specialist consultation</option>
+          <option>Emergency</option>
+          <option>Other</option>
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Select Taluk</label>
+
+        <select id="healthTaluk">
+          <option>Mangaluru</option>
+          <option>Moodabidri</option>
+          <option>Mulki</option>
+          <option>Ullal</option>
+          <option>Bantwal</option>
+          <option>Belthangady</option>
+          <option>Puttur</option>
+          <option>Sullia</option>
+          <option>Kadaba</option>
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:10px">
+
+      <button class="btn btn-primary"
+        onclick="findHealthcare()">
+        🩺 Find Healthcare Options
+      </button>
+
+      <button class="btn btn-outline"
+        onclick="openHelpModal('Healthcare')">
+        💬 I Need VELORA Guidance
+      </button>
+
+    </div>
+
+
+    <div id="healthResults"
+      style="margin-top:25px">
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EMERGENCY ================= -->
+
+<section class="emergency" id="emergency">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Emergency</div>
+
+    <h2>Emergency Help</h2>
+
+    <p>
+      For immediate danger, contact the appropriate official
+      emergency service directly.
+    </p>
+
+  </div>
+
+
+  <div class="grid grid-4">
+
+    <div class="emergency-card">
+
+      <div class="big-icon">🚑</div>
+
+      <h3>Ambulance</h3>
+
+      <a href="tel:108">Call 108</a>
+
+    </div>
+
+
+    <div class="emergency-card">
+
+      <div class="big-icon">🚓</div>
+
+      <h3>Police</h3>
+
+      <a href="tel:112">Call 112</a>
+
+    </div>
+
+
+    <div class="emergency-card">
+
+      <div class="big-icon">🚒</div>
+
+      <h3>Fire & Rescue</h3>
+
+      <a href="tel:112">Call 112</a>
+
+    </div>
+
+
+    <div class="emergency-card">
+
+      <div class="big-icon">🆘</div>
+
+      <h3>VELORA Help</h3>
+
+      <button
+        class="btn btn-primary"
+        onclick="openHelpModal('Emergency Help')">
+        Contact VELORA
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="panel" style="margin-top:25px">
+
+    <h3>📍 Share your location</h3>
+
+    <p>
+      You can open your map location and share it with
+      your family, emergency service or VELORA support.
+    </p>
+
+    <br>
+
+    <button class="btn btn-primary"
+      onclick="shareLocation()">
+      📍 Share My Location
+    </button>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= DAKSHINA KANNADA ================= -->
+
+<section id="dakshina-kannada" class="light">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Local Coverage</div>
+
+    <h2>Explore Dakshina Kannada</h2>
+
+    <p>
+      VELORA HELP starts with Dakshina Kannada and its nine taluks.
+    </p>
+
+  </div>
+
+
+  <div class="grid grid-3">
+
+    <div class="taluk-card" onclick="selectTaluk('Mangaluru')">
+      📍 Mangaluru
+    </div>
+
+    <div class="taluk-card" onclick="selectTaluk('Moodabidri')">
+      📍 Moodabidri
+    </div>
+
+    <div class="taluk-card" onclick="selectTaluk('Mulki')">
+      📍 Mulki
+    </div>
+
+    <div class="taluk-card" onclick="selectTaluk('Ullal')">
+      📍 Ullal
+    </div>
+
+    <div class="taluk-card" onclick="selectTaluk('Bantwal')">
+      📍 Bantwal
+    </div>
+
+    <div class="taluk-card" onclick="selectTaluk('Belthangady')">
+      📍 Belthangady
+    </div>
+
+    <div class="taluk-card" onclick="selectTaluk('Puttur')">
+      📍 Puttur
+    </div>
+
+    <div class="taluk-card" onclick="selectTaluk('Sullia')">
+      📍 Sullia
+    </div>
+
+    <div class="taluk-card" onclick="selectTaluk('Kadaba')">
+      📍 Kadaba
+    </div>
+
+  </div>
+
+
+  <div id="talukResult"
+    style="margin-top:30px">
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TOP PROBLEMS ================= -->
+
+<section id="problems">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Community Intelligence</div>
+
+    <h2>🔥 Top Problems Reported This Month</h2>
+
+    <p>
+      VELORA HELP aims to understand what people are actually
+      facing across the district.
+    </p>
+
+  </div>
+
+
+  <div class="grid grid-3">
+
+    <div class="problem-card">
+
+      <div class="problem-top">
+
+        <div>
+          <strong>Garbage & Waste</strong>
+          <div style="color:var(--muted);font-size:13px">
+            247 reports
+          </div>
+        </div>
+
+        <div class="problem-number">01</div>
+
+      </div>
+
+      <div class="progress">
+        <span style="width:100%"></span>
+      </div>
+
+    </div>
+
+
+    <div class="problem-card">
+
+      <div class="problem-top">
+
+        <div>
+          <strong>Road Problems</strong>
+          <div style="color:var(--muted);font-size:13px">
+            182 reports
+          </div>
+        </div>
+
+        <div class="problem-number">02</div>
+
+      </div>
+
+      <div class="progress">
+        <span style="width:74%"></span>
+      </div>
+
+    </div>
+
+
+    <div class="problem-card">
+
+      <div class="problem-top">
+
+        <div>
+          <strong>Water Problems</strong>
+          <div style="color:var(--muted);font-size:13px">
+            143 reports
+          </div>
+        </div>
+
+        <div class="problem-number">03</div>
+
+      </div>
+
+      <div class="progress">
+        <span style="width:58%"></span>
+      </div>
+
+    </div>
+
+
+    <div class="problem-card">
+
+      <div class="problem-top">
+
+        <div>
+          <strong>Healthcare Access</strong>
+          <div style="color:var(--muted);font-size:13px">
+            98 reports
+          </div>
+        </div>
+
+        <div class="problem-number">04</div>
+
+      </div>
+
+      <div class="progress">
+        <span style="width:40%"></span>
+      </div>
+
+    </div>
+
+
+    <div class="problem-card">
+
+      <div class="problem-top">
+
+        <div>
+          <strong>Rental Problems</strong>
+          <div style="color:var(--muted);font-size:13px">
+            76 reports
+          </div>
+        </div>
+
+        <div class="problem-number">05</div>
+
+      </div>
+
+      <div class="progress">
+        <span style="width:31%"></span>
+      </div>
+
+    </div>
+
+
+    <div class="problem-card">
+
+      <div class="problem-top">
+
+        <div>
+          <strong>Transport</strong>
+          <div style="color:var(--muted);font-size:13px">
+            61 reports
+          </div>
+        </div>
+
+        <div class="problem-number">06</div>
+
+      </div>
+
+      <div class="progress">
+        <span style="width:25%"></span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div style="text-align:center;margin-top:30px">
+
+    <button class="btn btn-primary"
+      onclick="openProblemModal()">
+      📢 Report Your Problem
+    </button>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GOVERNMENT ================= -->
+
+<section id="government" class="light">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">For The People</div>
+
+    <h2>🏛️ Government Services & Schemes</h2>
+
+    <p>
+      Find government schemes and services, understand eligibility,
+      documents and application pathways, and access official sources.
+    </p>
+
+  </div>
+
+
+  <div class="help-banner" style="margin-bottom:35px">
+
+    <div>
+
+      <h2>🔎 Find schemes for me</h2>
+
+      <p>
+        Tell us a little about yourself and VELORA can help
+        identify relevant government-service categories.
+      </p>
+
+    </div>
+
+    <button class="btn btn-light"
+      onclick="openSchemeFinder()">
+      Check Possible Eligibility
+    </button>
+
+  </div>
+
+
+  <div class="grid grid-3">
+
+    <div class="scheme">
+
+      <span class="status">KARNATAKA</span>
+
+      <h3>Gruha Lakshmi</h3>
+
+      <p>
+        Women/family welfare benefit. Check current eligibility,
+        application status and official information before applying.
+      </p>
+
+      <br>
+
+      <button class="btn btn-outline"
+        onclick="schemeDetails('Gruha Lakshmi')">
+        View Guidance
+      </button>
+
+    </div>
+
+
+    <div class="scheme">
+
+      <span class="status">KARNATAKA</span>
+
+      <h3>Gruha Jyothi</h3>
+
+      <p>
+        Electricity-related Karnataka guarantee scheme.
+        Check current eligibility and official conditions.
+      </p>
+
+      <br>
+
+      <button class="btn btn-outline"
+        onclick="schemeDetails('Gruha Jyothi')">
+        View Guidance
+      </button>
+
+    </div>
+
+
+    <div class="scheme">
+
+      <span class="status">KARNATAKA</span>
+
+      <h3>Shakti</h3>
+
+      <p>
+        Karnataka public-transport related guarantee scheme.
+        Check current rules and eligible services.
+      </p>
+
+      <br>
+
+      <button class="btn btn-outline"
+        onclick="schemeDetails('Shakti')">
+        View Guidance
+      </button>
+
+    </div>
+
+
+    <div class="scheme">
+
+      <span class="status">KARNATAKA</span>
+
+      <h3>Anna Bhagya</h3>
+
+      <p>
+        Food-security related Karnataka programme.
+        Benefits and implementation can change, so verify current details.
+      </p>
+
+      <br>
+
+      <button class="btn btn-outline"
+        onclick="schemeDetails('Anna Bhagya')">
+        View Guidance
+      </button>
+
+    </div>
+
+
+    <div class="scheme">
+
+      <span class="status">KARNATAKA</span>
+
+      <h3>Yuva Nidhi</h3>
+
+      <p>
+        Youth-focused support for eligible graduates and diploma holders.
+        Check current eligibility and application requirements.
+      </p>
+
+      <br>
+
+      <button class="btn btn-outline"
+        onclick="schemeDetails('Yuva Nidhi')">
+        View Guidance
+      </button>
+
+    </div>
+
+
+    <div class="scheme">
+
+      <span class="status">CENTRAL + STATE</span>
+
+      <h3>Healthcare Schemes</h3>
+
+      <p>
+        Explore central and Karnataka healthcare assistance,
+        including government health programmes.
+      </p>
+
+      <br>
+
+      <button class="btn btn-outline"
+        onclick="schemeDetails('Healthcare Schemes')">
+        View Guidance
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <br><br>
+
+
+  <div class="grid grid-4">
+
+    <div class="category-card"
+      onclick="schemeCategory('Women & Family')">
+      <div class="category-icon">👩</div>
+      <h3>Women & Family</h3>
+      <p>Welfare and support programmes.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Students & Youth')">
+      <div class="category-icon">🎓</div>
+      <h3>Students & Youth</h3>
+      <p>Scholarships, education and youth programmes.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Senior Citizens')">
+      <div class="category-icon">👴</div>
+      <h3>Senior Citizens</h3>
+      <p>Senior welfare and support services.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Persons with Disabilities')">
+      <div class="category-icon">♿</div>
+      <h3>Persons with Disabilities</h3>
+      <p>Welfare and assistance services.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Farmers & Agriculture')">
+      <div class="category-icon">🌾</div>
+      <h3>Farmers & Agriculture</h3>
+      <p>Agriculture and farmer programmes.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Housing')">
+      <div class="category-icon">🏠</div>
+      <h3>Housing</h3>
+      <p>Housing and property-related programmes.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Jobs & Employment')">
+      <div class="category-icon">💼</div>
+      <h3>Jobs & Employment</h3>
+      <p>Employment and skill programmes.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Business & Entrepreneurship')">
+      <div class="category-icon">🚀</div>
+      <h3>Business & Entrepreneurship</h3>
+      <p>Business, MSME and entrepreneurship support.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Labour & Workers')">
+      <div class="category-icon">👷</div>
+      <h3>Labour & Workers</h3>
+      <p>Worker welfare and labour services.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Rural Development')">
+      <div class="category-icon">🏘️</div>
+      <h3>Rural Development</h3>
+      <p>Rural services and development programmes.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Urban Services')">
+      <div class="category-icon">🏙️</div>
+      <h3>Urban Services</h3>
+      <p>Municipal and urban services.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="schemeCategory('Citizen Documents')">
+      <div class="category-icon">🪪</div>
+      <h3>Citizen Documents</h3>
+      <p>Certificates and citizen-service guidance.</p>
+    </div>
+
+  </div>
+
+
+  <div style="margin-top:35px;text-align:center">
+
+    <a
+      class="btn btn-primary"
+      href="https://sevasindhu.karnataka.gov.in/"
+      target="_blank"
+      rel="noopener">
+      🌐 Open Karnataka Seva Sindhu
+    </a>
+
+    <a
+      class="btn btn-outline"
+      href="https://www.karnataka.gov.in/"
+      target="_blank"
+      rel="noopener">
+      🌐 Karnataka Government
+    </a>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= LOCAL SERVICES ================= -->
+
+<section id="local-services">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Local Network</div>
+
+    <h2>🔧 Local Services</h2>
+
+    <p>
+      A future-ready directory for useful local service providers.
+    </p>
+
+  </div>
+
+
+  <div class="grid grid-3">
+
+    <div class="listing">
+      <h3>🔌 Electrician</h3>
+      <p>Find electrical repair and installation assistance.</p>
+      <div class="meta">
+        <span class="tag">Home Service</span>
+        <span class="tag">Local</span>
+      </div>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Electrician')">
+        Find Help
+      </button>
+    </div>
+
+    <div class="listing">
+      <h3>🚰 Plumber</h3>
+      <p>Water, pipe, tap and plumbing assistance.</p>
+      <div class="meta">
+        <span class="tag">Home Service</span>
+      </div>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Plumber')">
+        Find Help
+      </button>
+    </div>
+
+    <div class="listing">
+      <h3>❄️ AC Repair</h3>
+      <p>AC installation, maintenance and repair assistance.</p>
+      <div class="meta">
+        <span class="tag">Repair</span>
+      </div>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('AC Repair')">
+        Find Help
+      </button>
+    </div>
+
+    <div class="listing">
+      <h3>📱 Mobile Repair</h3>
+      <p>Find local mobile and device repair support.</p>
+      <div class="meta">
+        <span class="tag">Technology</span>
+      </div>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Mobile Repair')">
+        Find Help
+      </button>
+    </div>
+
+    <div class="listing">
+      <h3>💻 Computer Repair</h3>
+      <p>Computer, laptop and basic technology assistance.</p>
+      <div class="meta">
+        <span class="tag">Technology</span>
+      </div>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Computer Repair')">
+        Find Help
+      </button>
+    </div>
+
+    <div class="listing">
+      <h3>🧹 Cleaning</h3>
+      <p>Home and local cleaning service guidance.</p>
+      <div class="meta">
+        <span class="tag">Home Service</span>
+      </div>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Cleaning')">
+        Find Help
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= STUDENT HUB ================= -->
+
+<section id="students" class="light">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Student Hub</div>
+
+    <h2>🎓 Opportunities for Students</h2>
+
+    <p>
+      Discover internships, scholarships, courses, jobs,
+      competitions and skill opportunities.
+    </p>
+
+  </div>
+
+
+  <div class="grid grid-3">
+
+    <div class="listing">
+      <h3>💼 Internships</h3>
+      <p>Find internship opportunities and application guidance.</p>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Student Internship')">
+        Find Internships
+      </button>
+    </div>
+
+    <div class="listing">
+      <h3>💰 Scholarships</h3>
+      <p>Find scholarship opportunities and eligibility guidance.</p>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Scholarships')">
+        Find Scholarships
+      </button>
+    </div>
+
+    <div class="listing">
+      <h3>🏛️ Government Schemes</h3>
+      <p>Explore student and youth government programmes.</p>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Student Government Schemes')">
+        Explore
+      </button>
+    </div>
+
+    <div class="listing">
+      <h3>💻 Free Courses</h3>
+      <p>Find useful free online and offline learning opportunities.</p>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Free Courses')">
+        Find Courses
+      </button>
+    </div>
+
+    <div class="listing">
+      <h3>🏆 Competitions</h3>
+      <p>Competitions, hackathons and challenges.</p>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Competitions & Hackathons')">
+        Find Opportunities
+      </button>
+    </div>
+
+    <div class="listing">
+      <h3>🎯 Career Guidance</h3>
+      <p>Tell VELORA what you're studying and what you want to do.</p>
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Career Guidance')">
+        Get Guidance
+      </button>
+    </div>
+
+  </div>
+
+
+  <div style="margin-top:30px;text-align:center">
+
+    <button class="btn btn-outline"
+      onclick="openHelpModal('Closing Soon Opportunities')">
+      ⏳ Closing Soon
+    </button>
+
+    <button class="btn btn-primary"
+      onclick="openHelpModal('Opening Now Opportunities')">
+      🟢 Opening Now
+    </button>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= RENTALS ================= -->
+
+<section id="rentals">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Housing</div>
+
+    <h2>🏠 Rent & Property</h2>
+
+    <p>
+      Find rental houses, apartments, rooms, PGs and other property
+      options through the growing VELORA network.
+    </p>
+
+  </div>
+
+
+  <div class="grid grid-2">
+
+    <div class="panel">
+
+      <h3>🔎 I want to find a property</h3>
+
+      <p>
+        Tell us what you're looking for and your location.
+      </p>
+
+      <br>
+
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Rental / Property Search')">
+        Find a Rental
+      </button>
+
+    </div>
+
+
+    <div class="panel">
+
+      <h3>🏡 I want to list a property</h3>
+
+      <p>
+        Property owners can submit their property for consideration.
+      </p>
+
+      <br>
+
+      <button class="btn btn-primary"
+        onclick="openHelpModal('Property Listing')">
+        List Property
+      </button>
+
+      <button class="btn btn-outline"
+        onclick="openHelpModal('Report Fake Rental Listing')">
+        🚨 Report Fake Listing
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ELDERLY ================= -->
+
+<section id="elderly" class="light">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Community Care</div>
+
+    <h2>👴 Elderly Help</h2>
+
+    <p>
+      Request guidance for everyday assistance and local support.
+    </p>
+
+  </div>
+
+
+  <div class="grid grid-4">
+
+    <div class="category-card"
+      onclick="openHelpModal('Elderly Medicine Help')">
+      <div class="category-icon">💊</div>
+      <h3>Medicine</h3>
+      <p>Help finding appropriate local assistance.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="openHelpModal('Elderly Hospital Help')">
+      <div class="category-icon">🏥</div>
+      <h3>Hospital</h3>
+      <p>Guidance for healthcare access.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="openHelpModal('Elderly Transportation')">
+      <div class="category-icon">🚕</div>
+      <h3>Transportation</h3>
+      <p>Find appropriate local transport assistance.</p>
+    </div>
+
+    <div class="category-card"
+      onclick="openHelpModal('Elderly Digital Help')">
+      <div class="category-icon">📱</div>
+      <h3>Digital Help</h3>
+      <p>Help with basic digital services.</p>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= TRANSPORT ================= -->
+
+<section id="transport">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Mobility</div>
+
+    <h2>🚌 Transport</h2>
+
+    <p>
+      Find directions, transport information and local mobility guidance.
+    </p>
+
+  </div>
+
+
+  <div class="panel">
+
+    <div class="form-grid">
+
+      <div class="field">
+
+        <label>From</label>
+
+        <input id="fromLocation"
+          placeholder="Example: Bantwal">
+
+      </div>
+
+      <div class="field">
+
+        <label>To</label>
+
+        <input id="toLocation"
+          placeholder="Example: Mangaluru">
+
+      </div>
+
+    </div>
+
+
+    <br>
+
+    <button class="btn btn-primary"
+      onclick="openMapsRoute()">
+      🗺️ Open Route in Maps
+    </button>
+
+    <button class="btn btn-outline"
+      onclick="openHelpModal('Transport Guidance')">
+      💬 Ask VELORA
+    </button>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CIVIC REPORT ================= -->
+
+<section id="report" class="light">
+
+<div class="container">
+
+  <div class="help-banner">
+
+    <div>
+
+      <h2>📢 See a problem in your area?</h2>
+
+      <p>
+        Garbage, water, roads, drainage, streetlights,
+        traffic or another local problem — report it to VELORA HELP.
+      </p>
+
+    </div>
+
+    <button class="btn btn-light"
+      onclick="openProblemModal()">
+      Report Problem
+    </button>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">About VELORA HELP</div>
+
+    <h2>One place to find the right direction.</h2>
+
+    <p>
+      VELORA HELP is designed as a people-focused platform that
+      connects residents with useful information, services,
+      opportunities and appropriate next steps.
+    </p>
+
+  </div>
+
+
+  <div class="grid grid-3">
+
+    <div class="panel">
+      <h3>🤝 People First</h3>
+      <p>
+        We start with the person's problem instead of expecting
+        them to know which organisation or service to contact.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h3>📍 Local First</h3>
+      <p>
+        The initial focus is Dakshina Kannada and its nine taluks,
+        with the platform designed for future expansion.
+      </p>
+    </div>
+
+    <div class="panel">
+      <h3>🔎 Verified Direction</h3>
+      <p>
+        Official information, responsible referrals and transparent
+        guidance are central to the platform.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FAQ ================= -->
+
+<section class="light">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Questions</div>
+
+    <h2>Frequently Asked Questions</h2>
+
+  </div>
+
+
+  <div class="faq">
+
+    <button onclick="toggleFaq(this)">
+      What is VELORA HELP?
+      <span>＋</span>
+    </button>
+
+    <div class="faq-answer">
+      VELORA HELP is a people-focused local guidance platform
+      powered by VELORA DIGITAL.
+    </div>
+
+  </div>
+
+
+  <div class="faq">
+
+    <button onclick="toggleFaq(this)">
+      Which area does VELORA HELP cover?
+      <span>＋</span>
+    </button>
+
+    <div class="faq-answer">
+      The first launch focus is Dakshina Kannada and its nine taluks:
+      Mangaluru, Moodabidri, Mulki, Ullal, Bantwal, Belthangady,
+      Puttur, Sullia and Kadaba.
+    </div>
+
+  </div>
+
+
+  <div class="faq">
+
+    <button onclick="toggleFaq(this)">
+      Can VELORA HELP diagnose medical problems?
+      <span>＋</span>
+    </button>
+
+    <div class="faq-answer">
+      No. VELORA HELP does not diagnose medical conditions.
+      It can help users identify appropriate healthcare categories
+      and direct them toward relevant healthcare services.
+    </div>
+
+  </div>
+
+
+  <div class="faq">
+
+    <button onclick="toggleFaq(this)">
+      Is VELORA HELP a government department?
+      <span>＋</span>
+    </button>
+
+    <div class="faq-answer">
+      No. VELORA HELP is an independent guidance platform powered
+      by VELORA DIGITAL. Government information should be verified
+      through the linked official government source.
+    </div>
+
+  </div>
+
+
+  <div class="faq">
+
+    <button onclick="toggleFaq(this)">
+      How do I report a local problem?
+      <span>＋</span>
+    </button>
+
+    <div class="faq-answer">
+      Use the Report a Problem button. You can provide your name,
+      location, category, description and other relevant details.
+      The first version sends the request to the VELORA HELP
+      WhatsApp contact.
+    </div>
+
+  </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="container">
+
+  <div class="section-head">
+
+    <div class="eyebrow">Contact VELORA</div>
+
+    <h2>💬 Tell us your problem</h2>
+
+    <p>
+      You don't need to know where to start.
+      Tell VELORA HELP what you need.
+    </p>
+
+  </div>
+
+
+  <div class="panel">
+
+    <form id="contactForm"
+      onsubmit="sendContact(event)">
+
+      <div class="form-grid">
+
+        <div class="field">
+
+          <label>Your Name *</label>
+
+          <input
+            id="contactName"
+            required
+            placeholder="Enter your name">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Mobile Number *</label>
+
+          <input
+            id="contactPhone"
+            required
+            type="tel"
+            placeholder="Enter mobile number">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Taluk *</label>
+
+          <select id="contactTaluk" required>
+
+            <option value="">Select Taluk</option>
+            <option>Mangaluru</option>
+            <option>Moodabidri</option>
+            <option>Mulki</option>
+            <option>Ullal</option>
+            <option>Bantwal</option>
+            <option>Belthangady</option>
+            <option>Puttur</option>
+            <option>Sullia</option>
+            <option>Kadaba</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Category *</label>
+
+          <select id="contactCategory" required>
+
+            <option value="">Select Category</option>
+            <option>Healthcare</option>
+            <option>Emergency Help</option>
+            <option>Local Services</option>
+            <option>Rent & Property</option>
+            <option>Students</option>
+            <option>Jobs & Careers</option>
+            <option>Transport</option>
+            <option>Waste & Garbage</option>
+            <option>Water Problems</option>
+            <option>Roads & Infrastructure</option>
+            <option>Public Safety</option>
+            <option>Elderly Help</option>
+            <option>Government Services</option>
+            <option>Digital Help</option>
+            <option>Cost of Living</option>
+            <option>Community Help</option>
+            <option>Other</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>Where is the problem / requirement?</label>
+
+          <input
+            id="contactLocation"
+            placeholder="Area, locality or landmark">
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>What do you need help with? *</label>
+
+          <textarea
+            id="contactMessage"
+            required
+            placeholder="Explain your problem or requirement in your own words..."></textarea>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Preferred Contact</label>
+
+          <select id="contactPreference">
+
+            <option>WhatsApp</option>
+            <option>Call</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <br>
+
+      <button class="btn btn-primary" type="submit">
+        💬 Send Request to VELORA
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-outline"
+        onclick="resetForm('contactForm')">
+        Clear
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+  <div class="footer-grid">
+
+    <div class="footer-brand">
+
+      <img src="velora-help-logo.png"
+        alt="VELORA HELP">
+
+      <h3>VELORA HELP</h3>
+
+      <p>
+        Your problem. Our direction.
+        Powered by VELORA DIGITAL.
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h4>Services</h4>
+
+      <ul>
+
+        <li><a href="#healthcare">Healthcare</a></li>
+        <li><a href="#emergency">Emergency Help</a></li>
+        <li><a href="#local-services">Local Services</a></li>
+        <li><a href="#rentals">Rent & Property</a></li>
+        <li><a href="#students">Students</a></li>
+
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <h4>Community</h4>
+
+      <ul>
+
+        <li><a href="#problems">Top Problems</a></li>
+        <li><a href="#report">Report a Problem</a></li>
+        <li><a href="#dakshina-kannada">Dakshina Kannada</a></li>
+        <li><a href="#elderly">Elderly Help</a></li>
+        <li><a href="#contact">Contact VELORA</a></li>
+
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <h4>Government</h4>
+
+      <ul>
+
+        <li><a href="#government">Government Services</a></li>
+
+        <li>
+          <a href="https://sevasindhu.karnataka.gov.in/"
+             target="_blank"
+             rel="noopener">
+            Seva Sindhu
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.karnataka.gov.in/"
+             target="_blank"
+             rel="noopener">
+            Karnataka Government
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 VELORA HELP. Powered by VELORA DIGITAL.
+    </span>
+
+    <span>
+      Your problem. Our direction.
+    </span>
+
+  </div>
+
+</div>
+
+</footer>
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/918088590273?text=Hello%20VELORA%20HELP%2C%20I%20need%20help."
+  target="_blank"
+  rel="noopener"
+  aria-label="WhatsApp VELORA HELP">
+  💬
+</a>
+
+
+<!-- ================= GENERAL HELP MODAL ================= -->
+
+<div class="modal" id="helpModal">
+
+  <div class="modal-box">
+
+    <button class="close"
+      onclick="closeModal('helpModal')">
+      ×
+    </button>
+
+    <h2 style="color:var(--navy);margin-bottom:7px">
+      💬 Contact VELORA HELP
+    </h2>
+
+    <p style="color:var(--muted);margin-bottom:25px">
+      Tell us what you need and we'll guide you toward
+      the appropriate next step.
+    </p>
+
+
+    <form id="quickHelpForm"
+      onsubmit="sendQuickHelp(event)">
+
+      <div class="form-grid">
+
+        <div class="field">
+
+          <label>Name *</label>
+
+          <input id="quickName" required>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Mobile *</label>
+
+          <input id="quickPhone" required type="tel">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Taluk *</label>
+
+          <select id="quickTaluk" required>
+
+            <option value="">Select Taluk</option>
+            <option>Mangaluru</option>
+            <option>Moodabidri</option>
+            <option>Mulki</option>
+            <option>Ullal</option>
+            <option>Bantwal</option>
+            <option>Belthangady</option>
+            <option>Puttur</option>
+            <option>Sullia</option>
+            <option>Kadaba</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Category</label>
+
+          <input id="quickCategory"
+            readonly>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>Location</label>
+
+          <input id="quickLocation"
+            placeholder="Area / locality / landmark">
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>What do you need? *</label>
+
+          <textarea id="quickMessage"
+            required
+            placeholder="Tell us your problem..."></textarea>
+
+        </div>
+
+      </div>
+
+
+      <br>
+
+      <button class="btn btn-primary"
+        type="submit">
+        💬 Send to VELORA WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- ================= PROBLEM MODAL ================= -->
+
+<div class="modal" id="problemModal">
+
+  <div class="modal-box">
+
+    <button class="close"
+      onclick="closeModal('problemModal')">
+      ×
+    </button>
+
+    <h2 style="color:var(--navy);margin-bottom:7px">
+      📢 Report a Problem
+    </h2>
+
+    <p style="color:var(--muted);margin-bottom:25px">
+      Help us understand problems affecting people in your area.
+    </p>
+
+
+    <form id="problemForm"
+      onsubmit="sendProblem(event)">
+
+      <div class="form-grid">
+
+        <div class="field">
+
+          <label>Name *</label>
+
+          <input id="problemName" required>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Mobile *</label>
+
+          <input id="problemPhone"
+            required
+            type="tel">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Taluk *</label>
+
+          <select id="problemTaluk" required>
+
+            <option value="">Select Taluk</option>
+            <option>Mangaluru</option>
+            <option>Moodabidri</option>
+            <option>Mulki</option>
+            <option>Ullal</option>
+            <option>Bantwal</option>
+            <option>Belthangady</option>
+            <option>Puttur</option>
+            <option>Sullia</option>
+            <option>Kadaba</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Problem Category *</label>
+
+          <select id="problemCategory" required>
+
+            <option value="">Select</option>
+            <option>Waste & Garbage</option>
+            <option>Water</option>
+            <option>Road</option>
+            <option>Streetlight</option>
+            <option>Drainage</option>
+            <option>Traffic</option>
+            <option>Public Safety</option>
+            <option>Healthcare</option>
+            <option>Rental</option>
+            <option>Transport</option>
+            <option>Other</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>Where did it happen? *</label>
+
+          <input id="problemLocation"
+            required
+            placeholder="Area / locality / landmark">
+
+        </div>
+
+
+        <div class="field">
+
+          <label>How often?</label>
+
+          <select id="problemFrequency">
+
+            <option>Once</option>
+            <option>Sometimes</option>
+            <option>Frequently</option>
+            <option>Every day</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>Impact</label>
+
+          <input id="problemImpact"
+            placeholder="How does it affect people?">
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>What is the problem? *</label>
+
+          <textarea id="problemDescription"
+            required
+            placeholder="Describe the problem..."></textarea>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>What solution would you like?</label>
+
+          <textarea id="problemSolution"
+            placeholder="Tell us what you think should happen..."></textarea>
+
+        </div>
+
+      </div>
+
+
+      <br>
+
+      <button class="btn btn-primary"
+        type="submit">
+        📢 Send Problem to VELORA
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- ================= SCHEME MODAL ================= -->
+
+<div class="modal" id="schemeModal">
+
+  <div class="modal-box">
+
+    <button class="close"
+      onclick="closeModal('schemeModal')">
+      ×
+    </button>
+
+    <h2 id="schemeModalTitle"
+      style="color:var(--navy)">
+      Government Guidance
+    </h2>
+
+    <div id="schemeModalContent"
+      style="margin-top:18px">
+    </div>
+
+    <br>
+
+    <button class="btn btn-primary"
+      onclick="openHelpModal('Government Scheme Guidance')">
+      💬 Get VELORA Guidance
+    </button>
+
+    <a
+      class="btn btn-outline"
+      href="https://sevasindhu.karnataka.gov.in/"
+      target="_blank"
+      rel="noopener">
+      🌐 Official Seva Sindhu
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- ================= SCHEME FINDER ================= -->
+
+<div class="modal" id="schemeFinderModal">
+
+  <div class="modal-box">
+
+    <button class="close"
+      onclick="closeModal('schemeFinderModal')">
+      ×
+    </button>
+
+    <h2 style="color:var(--navy)">
+      🔎 Find Possible Schemes
+    </h2>
+
+    <p style="color:var(--muted);margin:8px 0 22px">
+      This is a guidance tool, not an official eligibility decision.
+    </p>
+
+
+    <div class="form-grid">
+
+      <div class="field">
+
+        <label>Age</label>
+
+        <input id="schemeAge"
+          type="number"
+          min="1"
+          max="120"
+          placeholder="Age">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Primary category</label>
+
+        <select id="schemeProfile">
+
+          <option>Student</option>
+          <option>Job seeker</option>
+          <option>Farmer</option>
+          <option>Woman / Family</option>
+          <option>Senior citizen</option>
+          <option>Person with disability</option>
+          <option>Worker</option>
+          <option>Business owner</option>
+          <option>General citizen</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Taluk</label>
+
+        <select id="schemeTaluk">
+
+          <option>Mangaluru</option>
+          <option>Moodabidri</option>
+          <option>Mulki</option>
+          <option>Ullal</option>
+          <option>Bantwal</option>
+          <option>Belthangady</option>
+          <option>Puttur</option>
+          <option>Sullia</option>
+          <option>Kadaba</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>Employment</label>
+
+        <select id="schemeEmployment">
+
+          <option>Student</option>
+          <option>Employed</option>
+          <option>Unemployed</option>
+          <option>Self-employed</option>
+          <option>Farmer</option>
+          <option>Other</option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <br>
+
+    <button class="btn btn-primary"
+      onclick="findSchemes()">
+      Find Possible Categories
+    </button>
+
+
+    <div id="schemeResults"
+      style="margin-top:25px">
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ================= TOAST ================= -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+/* =========================================================
+   VELORA HELP CONFIGURATION
+   Change ONLY these values when dedicated contact is ready.
+========================================================= */
+
+const VELORA = {
+
+  name: "VELORA HELP",
+
+  company: "VELORA DIGITAL",
+
+  phone: "918088590273",
+
+  displayPhone: "+91 8088590273",
+
+  email: "veloradigital.co.in@gmail.com",
+
+  website: "https://veloradigital.co.in"
+
+};
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function toggleMenu(){
+
+  document
+    .getElementById("navLinks")
+    .classList.toggle("open");
+
+}
+
+
+function scrollToSection(id){
+
+  document
+    .getElementById(id)
+    ?.scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+document
+  .querySelectorAll(".nav-links a")
+  .forEach(link => {
+
+    link.addEventListener("click", () => {
+
+      document
+        .getElementById("navLinks")
+        .classList.remove("open");
+
+    });
+
+  });
+
+
+/* =========================================================
+   SERVICE DATA
+========================================================= */
+
+const serviceData = {
+
+  "Healthcare":{
+    description:"Find the appropriate healthcare direction based on your need and location.",
+    options:[
+      "General consultation",
+      "Fever / common illness",
+      "Child care",
+      "Dental",
+      "Eye care",
+      "ENT",
+      "Skin",
+      "Orthopedic",
+      "Women's health",
+      "Specialist",
+      "Emergency"
+    ]
+  },
+
+  "Emergency Help":{
+    description:"Access emergency contacts and share your location when appropriate.",
+    options:[
+      "Ambulance",
+      "Police",
+      "Fire & Rescue",
+      "Emergency Hospital",
+      "Share Location"
+    ]
+  },
+
+  "Local Services":{
+    description:"Find local service categories and request VELORA guidance.",
+    options:[
+      "Electrician",
+      "Plumber",
+      "Carpenter",
+      "AC Repair",
+      "Refrigerator Repair",
+      "Washing Machine Repair",
+      "Mobile Repair",
+      "Computer Repair",
+      "Cleaning",
+      "Painting",
+      "Movers"
+    ]
+  },
+
+  "Rent & Property":{
+    description:"Find rental/property guidance or submit a property listing.",
+    options:[
+      "House",
+      "Apartment",
+      "Room",
+      "PG",
+      "Hostel",
+      "Student Accommodation",
+      "Commercial Property",
+      "List Property",
+      "Report Fake Listing"
+    ]
+  },
+
+  "Students":{
+    description:"Explore student opportunities and request guidance.",
+    options:[
+      "Internships",
+      "Scholarships",
+      "Free Courses",
+      "Competitions",
+      "Hackathons",
+      "Workshops",
+      "Apprenticeships",
+      "Jobs",
+      "Career Guidance"
+    ]
+  },
+
+  "Jobs & Careers":{
+    description:"Tell VELORA what kind of work or career support you need.",
+    options:[
+      "Full-time Job",
+      "Part-time Job",
+      "Internship",
+      "Apprenticeship",
+      "Skill Training",
+      "Career Guidance",
+      "Self Employment"
+    ]
+  },
+
+  "Transport":{
+    description:"Get local transport and route guidance.",
+    options:[
+      "Bus",
+      "Train",
+      "Airport",
+      "Taxi",
+      "Auto",
+      "Parking",
+      "Route",
+      "Traffic",
+      "Road Closure"
+    ]
+  },
+
+  "Waste & Garbage":{
+    description:"Report garbage and cleanliness problems in your area.",
+    options:[
+      "Garbage Dump",
+      "Missed Collection",
+      "Public Cleanliness",
+      "Illegal Dumping",
+      "Other"
+    ]
+  },
+
+  "Water Problems":{
+    description:"Report water supply, leakage or drainage problems.",
+    options:[
+      "No Water",
+      "Water Leakage",
+      "Dirty Water",
+      "Low Pressure",
+      "Drainage",
+      "Other"
+    ]
+  },
+
+  "Roads & Infrastructure":{
+    description:"Report road and public infrastructure problems.",
+    options:[
+      "Pothole",
+      "Damaged Road",
+      "Streetlight",
+      "Drainage",
+      "Flooding",
+      "Fallen Tree",
+      "Traffic Signal",
+      "Other"
+    ]
+  },
+
+  "Public
