@@ -1,1 +1,3970 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#071a3d">
+
+<meta
+name="description"
+content="VELORA HELP Property — Find verified rental and sale properties across Dakshina Kannada."
+>
+
+<title>Property & Rentals | VELORA HELP</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f6f8fb;
+    color:#17243d;
+}
+
+a{
+    text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+.vh-container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.vh-header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #e5e9f0;
+}
+
+.vh-nav{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.vh-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#071a3d;
+}
+
+.vh-brand img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.vh-brand-name{
+    font-size:1.15rem;
+    font-weight:800;
+}
+
+.vh-brand-sub{
+    font-size:.7rem;
+    opacity:.7;
+    margin-top:3px;
+}
+
+.vh-nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.vh-nav-links a{
+    color:#17243d;
+    padding:10px 11px;
+    border-radius:9px;
+    font-size:.88rem;
+    font-weight:600;
+}
+
+.vh-nav-links a:hover{
+    background:#eef2f8;
+}
+
+.vh-menu{
+    display:none;
+    background:#071a3d;
+    color:white;
+    border:0;
+    padding:10px 13px;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    padding:90px 0;
+    color:white;
+
+    background:
+    linear-gradient(
+        105deg,
+        #071a3d 0%,
+        #12315e 58%,
+        #8a172d 100%
+    );
+}
+
+.hero small{
+    color:#e8b7bf;
+    font-weight:800;
+    letter-spacing:.14em;
+}
+
+.hero h1{
+    font-size:clamp(2.7rem,6vw,5rem);
+    line-height:1;
+    margin:12px 0 20px;
+    letter-spacing:-.045em;
+}
+
+.hero p{
+    max-width:760px;
+    line-height:1.75;
+    color:rgba(255,255,255,.88);
+    font-size:1.06rem;
+}
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:28px;
+}
+
+.btn{
+    min-height:46px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:11px 17px;
+    border-radius:11px;
+    border:0;
+    cursor:pointer;
+    font-weight:750;
+}
+
+.btn-white{
+    background:white;
+    color:#071a3d;
+}
+
+.btn-red{
+    background:#a3132d;
+    color:white;
+}
+
+.btn-blue{
+    background:#071a3d;
+    color:white;
+}
+
+.btn-outline{
+    background:transparent;
+    color:#071a3d;
+    border:1px solid #d4dce8;
+}
+
+.btn-light{
+    background:#eef2f8;
+    color:#071a3d;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-section{
+    margin-top:-38px;
+    position:relative;
+    z-index:5;
+}
+
+.search-panel{
+    background:white;
+    border-radius:20px;
+    padding:26px;
+    box-shadow:0 20px 60px rgba(7,26,61,.14);
+}
+
+.search-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr auto;
+    gap:12px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #d7deea;
+    border-radius:10px;
+    background:white;
+    color:#17243d;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#a3132d;
+    box-shadow:0 0 0 3px rgba(163,19,45,.08);
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section{
+    padding:72px 0;
+}
+
+.alt{
+    background:#eef2f7;
+}
+
+.heading{
+    max-width:780px;
+    margin-bottom:30px;
+}
+
+.heading small{
+    color:#a3132d;
+    font-weight:800;
+    letter-spacing:.12em;
+}
+
+.heading h2{
+    margin:8px 0 12px;
+    color:#071a3d;
+    font-size:clamp(2rem,4vw,3.1rem);
+}
+
+.heading p{
+    color:#667085;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   PROPERTY TYPES
+===================================================== */
+
+.type-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.type-card{
+    background:white;
+    border:1px solid #e0e6ee;
+    border-radius:17px;
+    padding:22px;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.type-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(7,26,61,.09);
+}
+
+.type-icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.type-card h3{
+    margin:0 0 7px;
+    color:#071a3d;
+}
+
+.type-card p{
+    margin:0;
+    color:#667085;
+    font-size:.88rem;
+    line-height:1.55;
+}
+
+
+/* =====================================================
+   PROPERTY GRID
+===================================================== */
+
+.property-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.property-card{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:19px;
+    overflow:hidden;
+    box-shadow:0 7px 24px rgba(7,26,61,.04);
+}
+
+.property-image{
+    height:210px;
+    background:
+    linear-gradient(
+        135deg,
+        #dfe6f0,
+        #f8fafc
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#667085;
+    font-size:3rem;
+}
+
+.property-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.property-content{
+    padding:22px;
+}
+
+.property-top{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:10px;
+}
+
+.property-content h3{
+    margin:0 0 7px;
+    color:#071a3d;
+}
+
+.property-location{
+    color:#667085;
+    font-size:.84rem;
+}
+
+.property-tag{
+    background:#f7e8eb;
+    color:#8a172d;
+    padding:6px 9px;
+    border-radius:20px;
+    font-size:.7rem;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.property-description{
+    color:#667085;
+    line-height:1.6;
+    font-size:.9rem;
+    margin:15px 0;
+}
+
+.property-meta{
+    border-top:1px solid #edf0f4;
+    border-bottom:1px solid #edf0f4;
+    padding:13px 0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.meta-item{
+    color:#667085;
+    font-size:.82rem;
+}
+
+.meta-item strong{
+    display:block;
+    color:#071a3d;
+    margin-bottom:3px;
+}
+
+.property-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:17px;
+}
+
+.property-buttons .btn{
+    min-height:40px;
+    padding:9px 12px;
+    font-size:.8rem;
+}
+
+
+/* =====================================================
+   SEARCH RESULTS
+===================================================== */
+
+.results{
+    display:none;
+    margin-top:22px;
+    padding:20px;
+    border-radius:15px;
+    background:#f7f9fc;
+    border:1px solid #dce2eb;
+}
+
+.results.active{
+    display:block;
+}
+
+.result-item{
+    padding:15px 0;
+    border-bottom:1px solid #e2e6ec;
+}
+
+.result-item:last-child{
+    border-bottom:0;
+}
+
+.result-item strong{
+    display:block;
+    color:#071a3d;
+    margin-bottom:6px;
+}
+
+.result-item span{
+    color:#667085;
+    font-size:.9rem;
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.step{
+    background:white;
+    border:1px solid #e1e6ee;
+    border-radius:17px;
+    padding:22px;
+}
+
+.step-number{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#071a3d;
+    color:white;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.step h3{
+    color:#071a3d;
+    margin:0 0 8px;
+}
+
+.step p{
+    color:#667085;
+    line-height:1.6;
+    font-size:.89rem;
+}
+
+
+/* =====================================================
+   PROPERTY SUBMISSION
+===================================================== */
+
+.form-box{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:21px;
+    padding:30px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    display:block;
+    margin-bottom:7px;
+    color:#071a3d;
+    font-size:.9rem;
+    font-weight:700;
+}
+
+.form-note{
+    background:#fff8e6;
+    border:1px solid #f1dfa9;
+    color:#624f18;
+    border-radius:13px;
+    padding:15px;
+    font-size:.86rem;
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   PARTNER BOX
+===================================================== */
+
+.partner-box{
+    background:
+    linear-gradient(
+        115deg,
+        #071a3d,
+        #12315e
+    );
+
+    color:white;
+    border-radius:23px;
+    padding:38px;
+}
+
+.partner-box h2{
+    margin:8px 0 12px;
+    font-size:clamp(2rem,4vw,3rem);
+}
+
+.partner-box p{
+    max-width:780px;
+    color:rgba(255,255,255,.83);
+    line-height:1.7;
+}
+
+.partner-benefits{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:25px;
+}
+
+.benefit{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.13);
+    padding:17px;
+    border-radius:13px;
+}
+
+.benefit strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.benefit span{
+    color:rgba(255,255,255,.7);
+    font-size:.82rem;
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   VERIFICATION
+===================================================== */
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
+}
+
+.trust-card{
+    background:white;
+    border:1px solid #e1e6ee;
+    border-radius:17px;
+    padding:23px;
+}
+
+.trust-icon{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.trust-card h3{
+    margin:0 0 8px;
+    color:#071a3d;
+}
+
+.trust-card p{
+    color:#667085;
+    line-height:1.65;
+    font-size:.89rem;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#06152f;
+    color:white;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:35px;
+}
+
+footer a{
+    display:block;
+    color:rgba(255,255,255,.72);
+    margin:9px 0;
+}
+
+footer a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:35px;
+    padding-top:20px;
+    color:rgba(255,255,255,.55);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:9999;
+    display:none;
+    max-width:390px;
+    background:white;
+    color:#071a3d;
+    padding:17px 20px;
+    border-radius:13px;
+    box-shadow:0 15px 50px rgba(0,0,0,.2);
+    border-left:5px solid #a3132d;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1050px){
+
+    .vh-nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:4%;
+        right:4%;
+        padding:12px;
+        background:white;
+        border-radius:14px;
+        box-shadow:0 20px 50px rgba(0,0,0,.15);
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .vh-nav-links.active{
+        display:flex;
+    }
+
+    .vh-menu{
+        display:block;
+    }
+
+    .search-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .type-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .property-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .partner-benefits{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .hero{
+        padding:65px 0;
+    }
+
+    .search-section{
+        margin-top:-25px;
+    }
+
+    .search-grid,
+    .type-grid,
+    .property-grid,
+    .steps,
+    .partner-benefits,
+    .trust-grid,
+    .form-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .partner-box,
+    .form-box{
+        padding:24px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="vh-header">
+
+<div class="vh-container vh-nav">
+
+<a href="index.html" class="vh-brand">
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo"
+>
+
+<div>
+
+<div class="vh-brand-name">
+VELORA HELP
+</div>
+
+<div class="vh-brand-sub">
+Your Problem. Our Direction.
+</div>
+
+</div>
+
+</a>
+
+
+<button
+id="menuButton"
+class="vh-menu"
+type="button"
+aria-label="Open navigation"
+>
+☰
+</button>
+
+
+<nav
+id="navigation"
+class="vh-nav-links"
+>
+
+<a href="index.html">Home</a>
+
+<a href="healthcare.html">Healthcare</a>
+
+<a href="admissions.html">Admissions</a>
+
+<a href="government.html">Government</a>
+
+<a href="students.html">Students</a>
+
+<a href="jobs.html">Jobs</a>
+
+<a href="property.html">Housing</a>
+
+<a href="businesses.html">Local Services</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="vh-container">
+
+<small>
+VELORA HELP • PROPERTY
+</small>
+
+<h1>
+Find a place<br>
+with confidence.
+</h1>
+
+<p>
+Looking for a house, apartment, room, land or commercial
+property in Dakshina Kannada? Search according to your
+requirement, location and budget. Property enquiries are
+handled through VELORA HELP so we can guide you to the
+appropriate owner or agent.
+</p>
+
+
+<div class="actions">
+
+<a
+href="#property-search"
+class="btn btn-white"
+>
+🔎 Find Property
+</a>
+
+<a
+href="#list-property"
+class="btn btn-white"
+>
+🏠 List Your Property
+</a>
+
+<a
+href="#property-enquiry"
+class="btn btn-red"
+>
+💬 Ask VELORA HELP
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
+<section
+class="search-section"
+id="property-search"
+>
+
+<div class="vh-container">
+
+<div class="search-panel">
+
+<div class="heading">
+
+<small>
+PROPERTY FINDER
+</small>
+
+<h2>
+What are you looking for?
+</h2>
+
+<p>
+Search by purpose, property type, location and budget.
+</p>
+
+</div>
+
+
+<form id="propertySearchForm">
+
+<div class="search-grid">
+
+
+<select id="listingPurpose">
+
+<option value="">
+Rent or Buy?
+</option>
+
+<option value="Rent">
+Rent
+</option>
+
+<option value="Sale">
+Buy / Sale
+</option>
+
+</select>
+
+
+<select id="propertyType">
+
+<option value="">
+Property Type
+</option>
+
+<option value="House">
+House
+</option>
+
+<option value="Apartment">
+Apartment
+</option>
+
+<option value="Room">
+Room
+</option>
+
+<option value="Villa">
+Villa
+</option>
+
+<option value="Land">
+Land
+</option>
+
+<option value="Commercial">
+Commercial
+</option>
+
+</select>
+
+
+<select id="propertyLocation">
+
+<option value="">
+Location
+</option>
+
+<option>
+Mangaluru
+</option>
+
+<option>
+Bantwal
+</option>
+
+<option>
+Belthangady
+</option>
+
+<option>
+Puttur
+</option>
+
+<option>
+Sullia
+</option>
+
+<option>
+Moodbidri
+</option>
+
+<option>
+Kadaba
+</option>
+
+<option>
+Mulki
+</option>
+
+</select>
+
+
+<select id="propertyBudget">
+
+<option value="">
+Budget
+</option>
+
+<option value="low">
+Below ₹10,000
+</option>
+
+<option value="medium">
+₹10,000 – ₹25,000
+</option>
+
+<option value="high">
+₹25,000+
+</option>
+
+<option value="sale">
+For Sale
+</option>
+
+</select>
+
+
+<button
+type="submit"
+class="btn btn-red"
+>
+Search
+</button>
+
+</div>
+
+</form>
+
+
+<div
+id="searchResults"
+class="results"
+>
+
+<h3>
+Property Results
+</h3>
+
+<div id="resultContent"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROPERTY TYPES
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+PROPERTY CATEGORIES
+</small>
+
+<h2>
+Choose your requirement
+</h2>
+
+<p>
+Select a property type and VELORA HELP will guide
+you toward available listings.
+</p>
+
+</div>
+
+
+<div class="type-grid">
+
+
+<div
+class="type-card type-button"
+data-type="House"
+>
+
+<div class="type-icon">
+🏠
+</div>
+
+<h3>
+House
+</h3>
+
+<p>
+Independent houses for rent or sale.
+</p>
+
+</div>
+
+
+<div
+class="type-card type-button"
+data-type="Apartment"
+>
+
+<div class="type-icon">
+🏢
+</div>
+
+<h3>
+Apartment
+</h3>
+
+<p>
+Apartments and flats in different locations.
+</p>
+
+</div>
+
+
+<div
+class="type-card type-button"
+data-type="Room"
+>
+
+<div class="type-icon">
+🛏️
+</div>
+
+<h3>
+Room
+</h3>
+
+<p>
+Rooms and accommodation for students and workers.
+</p>
+
+</div>
+
+
+<div
+class="type-card type-button"
+data-type="Villa"
+>
+
+<div class="type-icon">
+🏡
+</div>
+
+<h3>
+Villa
+</h3>
+
+<p>
+Premium homes and villas.
+</p>
+
+</div>
+
+
+<div
+class="type-card type-button"
+data-type="Land"
+>
+
+<div class="type-icon">
+🌳
+</div>
+
+<h3>
+Land
+</h3>
+
+<p>
+Residential, agricultural and other land listings.
+</p>
+
+</div>
+
+
+<div
+class="type-card type-button"
+data-type="Commercial"
+>
+
+<div class="type-icon">
+🏬
+</div>
+
+<h3>
+Commercial
+</h3>
+
+<p>
+Shops, offices, buildings and commercial spaces.
+</p>
+
+</div>
+
+
+<div
+class="type-card type-button"
+data-type="PG"
+>
+
+<div class="type-icon">
+🛏️
+</div>
+
+<h3>
+PG / Hostel
+</h3>
+
+<p>
+Student and working-professional accommodation.
+</p>
+
+</div>
+
+
+<div
+class="type-card type-button"
+data-type="Other"
+>
+
+<div class="type-icon">
+➕
+</div>
+
+<h3>
+Other
+</h3>
+
+<p>
+Tell VELORA HELP exactly what you need.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SAMPLE PROPERTY DIRECTORY
+===================================================== -->
+
+<section
+class="section alt"
+id="listings"
+>
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+PROPERTY DIRECTORY
+</small>
+
+<h2>
+Available listings
+</h2>
+
+<p>
+These are demonstration listings showing how the
+future VELORA HELP property directory will work.
+Replace them with real verified listings before launch.
+</p>
+
+</div>
+
+
+<div class="property-grid">
+
+
+<!-- PROPERTY 1 -->
+
+<article
+class="property-card"
+data-purpose="Rent"
+data-type="Apartment"
+data-location="Mangaluru"
+data-budget="medium"
+data-keywords="apartment flat rent mangaluru 2bhk"
+>
+
+<div class="property-image">
+🏢
+</div>
+
+<div class="property-content">
+
+<div class="property-top">
+
+<div>
+
+<h3>
+2 BHK Apartment
+</h3>
+
+<div class="property-location">
+📍 Mangaluru
+</div>
+
+</div>
+
+<span class="property-tag">
+RENT
+</span>
+
+</div>
+
+
+<p class="property-description">
+A sample 2 BHK apartment listing suitable for
+families or working professionals.
+</p>
+
+
+<div class="property-meta">
+
+<div class="meta-item">
+
+<strong>
+Type
+</strong>
+
+Apartment
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Bedrooms
+</strong>
+
+2 BHK
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Purpose
+</strong>
+
+Rent
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Status
+</strong>
+
+Available
+
+</div>
+
+</div>
+
+
+<div class="property-buttons">
+
+<button
+class="btn btn-blue property-enquiry"
+data-property="2 BHK Apartment"
+data-location="Mangaluru"
+type="button"
+>
+Enquire
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- PROPERTY 2 -->
+
+<article
+class="property-card"
+data-purpose="Rent"
+data-type="House"
+data-location="Bantwal"
+data-budget="medium"
+data-keywords="house rent bantwal family"
+>
+
+<div class="property-image">
+🏠
+</div>
+
+<div class="property-content">
+
+<div class="property-top">
+
+<div>
+
+<h3>
+Independent House
+</h3>
+
+<div class="property-location">
+📍 Bantwal
+</div>
+
+</div>
+
+<span class="property-tag">
+RENT
+</span>
+
+</div>
+
+
+<p class="property-description">
+A sample independent house listing for a
+family looking around Bantwal.
+</p>
+
+
+<div class="property-meta">
+
+<div class="meta-item">
+
+<strong>
+Type
+</strong>
+
+House
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Bedrooms
+</strong>
+
+3 BHK
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Purpose
+</strong>
+
+Rent
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Status
+</strong>
+
+Available
+
+</div>
+
+</div>
+
+
+<div class="property-buttons">
+
+<button
+class="btn btn-blue property-enquiry"
+data-property="Independent House"
+data-location="Bantwal"
+type="button"
+>
+Enquire
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- PROPERTY 3 -->
+
+<article
+class="property-card"
+data-purpose="Sale"
+data-type="Land"
+data-location="Puttur"
+data-budget="sale"
+data-keywords="land sale puttur property plot"
+>
+
+<div class="property-image">
+🌳
+</div>
+
+<div class="property-content">
+
+<div class="property-top">
+
+<div>
+
+<h3>
+Residential Land
+</h3>
+
+<div class="property-location">
+📍 Puttur
+</div>
+
+</div>
+
+<span class="property-tag">
+SALE
+</span>
+
+</div>
+
+
+<p class="property-description">
+A sample land listing demonstrating the future
+property-sale directory.
+</p>
+
+
+<div class="property-meta">
+
+<div class="meta-item">
+
+<strong>
+Type
+</strong>
+
+Land
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Location
+</strong>
+
+Puttur
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Purpose
+</strong>
+
+Sale
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Status
+</strong>
+
+Available
+
+</div>
+
+</div>
+
+
+<div class="property-buttons">
+
+<button
+class="btn btn-blue property-enquiry"
+data-property="Residential Land"
+data-location="Puttur"
+type="button"
+>
+Enquire
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- PROPERTY 4 -->
+
+<article
+class="property-card"
+data-purpose="Rent"
+data-type="Room"
+data-location="Sullia"
+data-budget="low"
+data-keywords="room rent sullia student working"
+>
+
+<div class="property-image">
+🛏️
+</div>
+
+<div class="property-content">
+
+<div class="property-top">
+
+<div>
+
+<h3>
+Single Room
+</h3>
+
+<div class="property-location">
+📍 Sullia
+</div>
+
+</div>
+
+<span class="property-tag">
+RENT
+</span>
+
+</div>
+
+
+<p class="property-description">
+A sample room listing for students and
+working professionals.
+</p>
+
+
+<div class="property-meta">
+
+<div class="meta-item">
+
+<strong>
+Type
+</strong>
+
+Room
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Suitable For
+</strong>
+
+Students
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Purpose
+</strong>
+
+Rent
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Status
+</strong>
+
+Available
+
+</div>
+
+</div>
+
+
+<div class="property-buttons">
+
+<button
+class="btn btn-blue property-enquiry"
+data-property="Single Room"
+data-location="Sullia"
+type="button"
+>
+Enquire
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- PROPERTY 5 -->
+
+<article
+class="property-card"
+data-purpose="Rent"
+data-type="Commercial"
+data-location="Moodbidri"
+data-budget="high"
+data-keywords="shop office commercial rent moodbidri"
+>
+
+<div class="property-image">
+🏬
+</div>
+
+<div class="property-content">
+
+<div class="property-top">
+
+<div>
+
+<h3>
+Commercial Space
+</h3>
+
+<div class="property-location">
+📍 Moodbidri
+</div>
+
+</div>
+
+<span class="property-tag">
+RENT
+</span>
+
+</div>
+
+
+<p class="property-description">
+A sample commercial property for a shop,
+office or business requirement.
+</p>
+
+
+<div class="property-meta">
+
+<div class="meta-item">
+
+<strong>
+Type
+</strong>
+
+Commercial
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Location
+</strong>
+
+Moodbidri
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Purpose
+</strong>
+
+Rent
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Status
+</strong>
+
+Available
+
+</div>
+
+</div>
+
+
+<div class="property-buttons">
+
+<button
+class="btn btn-blue property-enquiry"
+data-property="Commercial Space"
+data-location="Moodbidri"
+type="button"
+>
+Enquire
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- PROPERTY 6 -->
+
+<article
+class="property-card"
+data-purpose="Sale"
+data-type="Villa"
+data-location="Belthangady"
+data-budget="sale"
+data-keywords="villa house sale belthangady premium home"
+>
+
+<div class="property-image">
+🏡
+</div>
+
+<div class="property-content">
+
+<div class="property-top">
+
+<div>
+
+<h3>
+Family Villa
+</h3>
+
+<div class="property-location">
+📍 Belthangady
+</div>
+
+</div>
+
+<span class="property-tag">
+SALE
+</span>
+
+</div>
+
+
+<p class="property-description">
+A sample villa listing for demonstrating
+future verified property sales.
+</p>
+
+
+<div class="property-meta">
+
+<div class="meta-item">
+
+<strong>
+Type
+</strong>
+
+Villa
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Bedrooms
+</strong>
+
+4 BHK
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Purpose
+</strong>
+
+Sale
+
+</div>
+
+<div class="meta-item">
+
+<strong>
+Status
+</strong>
+
+Available
+
+</div>
+
+</div>
+
+
+<div class="property-buttons">
+
+<button
+class="btn btn-blue property-enquiry"
+data-property="Family Villa"
+data-location="Belthangady"
+type="button"
+>
+Enquire
+</button>
+
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+FOR PROPERTY SEEKERS
+</small>
+
+<h2>
+How property enquiry works
+</h2>
+
+<p>
+The initial VELORA HELP model keeps the enquiry
+centralised so we can understand what the customer
+actually needs before connecting them.
+</p>
+
+</div>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Tell us
+</h3>
+
+<p>
+Tell us whether you want to rent or buy and
+what property you need.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Choose location
+</h3>
+
+<p>
+Select your taluk, town or preferred area.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+VELORA reviews
+</h3>
+
+<p>
+We review the requirement and available
+property listings.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>
+Get connected
+</h3>
+
+<p>
+We guide you toward the appropriate owner
+or property partner.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LIST PROPERTY
+===================================================== -->
+
+<section
+class="section alt"
+id="list-property"
+>
+
+<div class="vh-container">
+
+<div class="partner-box">
+
+<small>
+FOR OWNERS & PROPERTY AGENTS
+</small>
+
+<h2>
+Have a property to list?
+</h2>
+
+<p>
+Owners, brokers and real-estate professionals can submit
+property information to VELORA HELP. We can review the
+listing before publishing it on the platform.
+</p>
+
+
+<div class="partner-benefits">
+
+
+<div class="benefit">
+
+<strong>
+🏠 Property Listing
+</strong>
+
+<span>
+Submit property type, location, rent/sale
+information and description.
+</span>
+
+</div>
+
+
+<div class="benefit">
+
+<strong>
+📸 Photos
+</strong>
+
+<span>
+Property photos can be submitted for
+review before publication.
+</span>
+
+</div>
+
+
+<div class="benefit">
+
+<strong>
+🤝 Customer Enquiries
+</strong>
+
+<span>
+Customer enquiries are routed through
+VELORA HELP rather than exposing your
+personal number publicly.
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROPERTY SUBMISSION FORM
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+PROPERTY SUBMISSION
+</small>
+
+<h2>
+Submit your property
+</h2>
+
+<p>
+Send the property details to VELORA HELP. The current
+website is free to submit. Partnership plans can be
+introduced later when the platform is established.
+</p>
+
+</div>
+
+
+<div class="form-box">
+
+<form id="propertySubmitForm">
+
+<div class="form-grid">
+
+
+<div>
+
+<label for="ownerName">
+Owner / Agent Name *
+</label>
+
+<input
+id="ownerName"
+type="text"
+required
+placeholder="Full name"
+>
+
+</div>
+
+
+<div>
+
+<label for="ownerPhone">
+Phone Number *
+</label>
+
+<input
+id="ownerPhone"
+type="tel"
+required
+placeholder="+91..."
+>
+
+</div>
+
+
+<div>
+
+<label for="ownerType">
+You are *
+</label>
+
+<select
+id="ownerType"
+required
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+Property Owner
+</option>
+
+<option>
+Real Estate Agent
+</option>
+
+<option>
+Broker
+</option>
+
+<option>
+Builder / Developer
+</option>
+
+<option>
+Property Manager
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="listingPurposeForm">
+Property Purpose *
+</label>
+
+<select
+id="listingPurposeForm"
+required
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+Rent
+</option>
+
+<option>
+Sale
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="listingPropertyType">
+Property Type *
+</label>
+
+<select
+id="listingPropertyType"
+required
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+House
+</option>
+
+<option>
+Apartment
+</option>
+
+<option>
+Room
+</option>
+
+<option>
+Villa
+</option>
+
+<option>
+Land
+</option>
+
+<option>
+Commercial
+</option>
+
+<option>
+PG / Hostel
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="listingTaluk">
+Taluk *
+</label>
+
+<select
+id="listingTaluk"
+required
+>
+
+<option value="">
+Select Taluk
+</option>
+
+<option>
+Mangaluru
+</option>
+
+<option>
+Bantwal
+</option>
+
+<option>
+Belthangady
+</option>
+
+<option>
+Puttur
+</option>
+
+<option>
+Sullia
+</option>
+
+<option>
+Moodbidri
+</option>
+
+<option>
+Kadaba
+</option>
+
+<option>
+Mulki
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="listingArea">
+Town / Area / Village *
+</label>
+
+<input
+id="listingArea"
+type="text"
+required
+placeholder="Example: Sullia town"
+>
+
+</div>
+
+
+<div>
+
+<label for="listingPrice">
+Rent / Sale Price *
+</label>
+
+<input
+id="listingPrice"
+type="text"
+required
+placeholder="Example: ₹15,000/month"
+>
+
+</div>
+
+
+<div>
+
+<label for="listingBedrooms">
+Bedrooms / Size
+</label>
+
+<input
+id="listingBedrooms"
+type="text"
+placeholder="Example: 2 BHK / 1200 sq.ft"
+>
+
+</div>
+
+
+<div>
+
+<label for="listingAvailability">
+Availability
+</label>
+
+<select id="listingAvailability">
+
+<option>
+Available Now
+</option>
+
+<option>
+Available Soon
+</option>
+
+<option>
+Occupied
+</option>
+
+</select>
+
+</div>
+
+
+<div class="full">
+
+<label for="listingAddress">
+Property Address / Location Details *
+</label>
+
+<textarea
+id="listingAddress"
+rows="4"
+required
+placeholder="Enter the property location and useful nearby landmark information."
+></textarea>
+
+</div>
+
+
+<div class="full">
+
+<label for="listingDescription">
+Property Description *
+</label>
+
+<textarea
+id="listingDescription"
+rows="6"
+required
+maxlength="2000"
+placeholder="Describe the property, facilities, parking, furnishing, nearby facilities and other useful information."
+></textarea>
+
+</div>
+
+
+<div class="full">
+
+<label for="listingPhotos">
+Property Photo Information
+</label>
+
+<input
+id="listingPhotos"
+type="text"
+placeholder="Example: I have 8 property photos ready to share"
+>
+
+</div>
+
+
+<div class="full">
+
+<label for="listingVerification">
+Ownership / Verification Information
+</label>
+
+<textarea
+id="listingVerification"
+rows="4"
+placeholder="Mention any available ownership, agency, registration or verification information."
+></textarea>
+
+</div>
+
+
+<div class="full">
+
+<div class="form-note">
+
+<strong>
+🔐 Important:
+</strong>
+
+Do not enter OTPs, passwords, bank PINs or other
+sensitive security information. Property ownership
+and legal documents should be verified appropriately
+before any transaction.
+
+</div>
+
+</div>
+
+
+<div class="full">
+
+<button
+type="submit"
+class="btn btn-blue"
+>
+🏠 Submit Property to VELORA HELP
+</button>
+
+</div>
+
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CUSTOMER ENQUIRY
+===================================================== -->
+
+<section
+class="section alt"
+id="property-enquiry"
+>
+
+<div class="vh-container">
+
+<div class="partner-box">
+
+<small>
+PROPERTY REQUIREMENT
+</small>
+
+<h2>
+Tell us what property you need.
+</h2>
+
+<p>
+Can't find the right property above? Send your exact
+requirement to VELORA HELP. Include your budget, location,
+property type and purpose.
+</p>
+
+
+<form
+id="propertyEnquiryForm"
+style="margin-top:25px;"
+>
+
+<div class="form-grid">
+
+
+<div>
+
+<label for="buyerName">
+Full Name *
+</label>
+
+<input
+id="buyerName"
+type="text"
+required
+placeholder="Your full name"
+>
+
+</div>
+
+
+<div>
+
+<label for="buyerPhone">
+Phone Number *
+</label>
+
+<input
+id="buyerPhone"
+type="tel"
+required
+placeholder="+91..."
+>
+
+</div>
+
+
+<div>
+
+<label for="buyerPurpose">
+I want to *
+</label>
+
+<select
+id="buyerPurpose"
+required
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+Rent
+</option>
+
+<option>
+Buy
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="buyerType">
+Property Type *
+</label>
+
+<select
+id="buyerType"
+required
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+House
+</option>
+
+<option>
+Apartment
+</option>
+
+<option>
+Room
+</option>
+
+<option>
+Villa
+</option>
+
+<option>
+Land
+</option>
+
+<option>
+Commercial
+</option>
+
+<option>
+PG / Hostel
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="buyerTaluk">
+Preferred Taluk *
+</label>
+
+<select
+id="buyerTaluk"
+required
+>
+
+<option value="">
+Select Taluk
+</option>
+
+<option>
+Mangaluru
+</option>
+
+<option>
+Bantwal
+</option>
+
+<option>
+Belthangady
+</option>
+
+<option>
+Puttur
+</option>
+
+<option>
+Sullia
+</option>
+
+<option>
+Moodbidri
+</option>
+
+<option>
+Kadaba
+</option>
+
+<option>
+Mulki
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="buyerArea">
+Preferred Area
+</label>
+
+<input
+id="buyerArea"
+type="text"
+placeholder="Town / village / area"
+>
+
+</div>
+
+
+<div>
+
+<label for="buyerBudget">
+Budget
+</label>
+
+<input
+id="buyerBudget"
+type="text"
+placeholder="Example: ₹15,000/month"
+>
+
+</div>
+
+
+<div>
+
+<label for="buyerBedrooms">
+Bedrooms / Size
+</label>
+
+<input
+id="buyerBedrooms"
+type="text"
+placeholder="Example: 2 BHK"
+>
+
+</div>
+
+
+<div class="full">
+
+<label for="buyerRequirement">
+Additional Requirement *
+</label>
+
+<textarea
+id="buyerRequirement"
+rows="6"
+required
+maxlength="2000"
+placeholder="Tell us exactly what you are looking for..."
+></textarea>
+
+</div>
+
+
+<div class="full">
+
+<button
+type="submit"
+class="btn btn-white"
+>
+💬 Send Property Requirement
+</button>
+
+</div>
+
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRUST
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+TRUST & SAFETY
+</small>
+
+<h2>
+Property listings need verification.
+</h2>
+
+<p>
+VELORA HELP should never promise that a property is
+genuine simply because someone submitted it. Listings
+should be reviewed before being marked verified.
+</p>
+
+</div>
+
+
+<div class="trust-grid">
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+🔎
+</div>
+
+<h3>
+Listing Review
+</h3>
+
+<p>
+Property information can be reviewed before
+publication.
+</p>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+📄
+</div>
+
+<h3>
+Document Verification
+</h3>
+
+<p>
+Appropriate ownership or agency documents can
+be requested when necessary.
+</p>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+🛡️
+</div>
+
+<h3>
+Customer Caution
+</h3>
+
+<p>
+Customers should independently verify property
+documents, ownership, price and transaction terms
+before making payment.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="form-note" style="margin-top:25px;">
+
+<strong>
+⚠️ VELORA HELP notice:
+</strong>
+
+A "Verified Property" label should only be shown after
+your team has actually completed its verification process.
+The sample listings on this page are demonstrations and
+must be replaced with real listings before public launch.
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="vh-container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP"
+style="
+width:90px;
+height:90px;
+object-fit:contain;
+background:white;
+border-radius:50%;
+padding:5px;
+"
+>
+
+<h3>
+VELORA HELP
+</h3>
+
+<p>
+Your Problem. Our Direction.
+</p>
+
+<p>
+Powered by VELORA DIGITAL.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Services
+</h4>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="businesses.html">
+Local Services
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Property
+</h4>
+
+<a href="property.html">
+Find Property
+</a>
+
+<a href="#list-property">
+List Property
+</a>
+
+<a href="#property-enquiry">
+Property Requirement
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Information
+</h4>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="privacy.html">
+Privacy
+</a>
+
+<a href="terms.html">
+Terms
+</a>
+
+<a href="disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span id="year"></span>
+VELORA HELP
+</span>
+
+<span>
+📞 +91 8088590273
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     MESSAGE
+===================================================== -->
+
+<div
+id="message"
+class="message"
+role="status"
+aria-live="polite"
+></div>
+
+
+
+<!-- =====================================================
+     PROJECT JAVASCRIPT
+===================================================== -->
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
+
+
+
+<!-- =====================================================
+     PROPERTY PAGE JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const navigation =
+document.getElementById("navigation");
+
+
+if(menuButton && navigation){
+
+menuButton.addEventListener(
+"click",
+function(){
+
+navigation.classList.toggle("active");
+
+}
+);
+
+}
+
+
+/* =====================================================
+   YEAR
+===================================================== */
+
+const year =
+document.getElementById("year");
+
+if(year){
+
+year.textContent =
+new Date().getFullYear();
+
+}
+
+
+/* =====================================================
+   PROPERTY TYPE BUTTONS
+===================================================== */
+
+document
+.querySelectorAll(".type-button")
+.forEach(
+function(button){
+
+button.addEventListener(
+"click",
+function(){
+
+const type =
+button.getAttribute("data-type");
+
+const select =
+document.getElementById("propertyType");
+
+if(select){
+
+const option =
+Array.from(
+select.options
+).find(
+function(item){
+
+return item.value === type ||
+item.text === type;
+
+}
+);
+
+if(option){
+
+select.value =
+option.value;
+
+}
+
+}
+
+document
+.getElementById("property-search")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+);
+
+}
+);
+
+
+/* =====================================================
+   PROPERTY SEARCH
+===================================================== */
+
+const searchForm =
+document.getElementById(
+"propertySearchForm"
+);
+
+
+if(searchForm){
+
+searchForm.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const purpose =
+document.getElementById(
+"listingPurpose"
+).value;
+
+
+const type =
+document.getElementById(
+"propertyType"
+).value;
+
+
+const location =
+document.getElementById(
+"propertyLocation"
+).value;
+
+
+const budget =
+document.getElementById(
+"propertyBudget"
+).value;
+
+
+const cards =
+Array.from(
+document.querySelectorAll(
+".property-card"
+)
+);
+
+
+const matches =
+cards.filter(
+function(card){
+
+const cardPurpose =
+card.getAttribute(
+"data-purpose"
+) || "";
+
+
+const cardType =
+card.getAttribute(
+"data-type"
+) || "";
+
+
+const cardLocation =
+card.getAttribute(
+"data-location"
+) || "";
+
+
+const cardBudget =
+card.getAttribute(
+"data-budget"
+) || "";
+
+
+const purposeMatch =
+!purpose ||
+cardPurpose === purpose;
+
+
+const typeMatch =
+!type ||
+cardType === type;
+
+
+const locationMatch =
+!location ||
+cardLocation === location;
+
+
+const budgetMatch =
+!budget ||
+cardBudget === budget ||
+(
+budget === "sale" &&
+cardPurpose === "Sale"
+);
+
+
+return(
+purposeMatch &&
+typeMatch &&
+locationMatch &&
+budgetMatch
+);
+
+}
+);
+
+
+const results =
+document.getElementById(
+"searchResults"
+);
+
+
+const resultContent =
+document.getElementById(
+"resultContent"
+);
+
+
+if(!matches.length){
+
+resultContent.innerHTML = `
+
+<div class="result-item">
+
+<strong>
+No matching property found
+</strong>
+
+<span>
+We don't currently have a matching listing
+displayed on this page. Send your exact
+requirement to VELORA HELP and we can
+review it.
+</span>
+
+</div>
+
+<div style="margin-top:15px;">
+
+<a
+href="#property-enquiry"
+class="btn btn-red"
+>
+💬 Send Property Requirement
+</a>
+
+</div>
+
+`;
+
+}else{
+
+resultContent.innerHTML =
+matches.map(
+function(card){
+
+const title =
+card.querySelector("h3")
+?.textContent ||
+"Property";
+
+
+const area =
+card.getAttribute(
+"data-location"
+) ||
+"Local area";
+
+
+const description =
+card.querySelector(
+".property-description"
+)?.textContent ||
+"";
+
+
+return`
+
+<div class="result-item">
+
+<strong>
+${escapeHTML(title)}
+</strong>
+
+<span>
+📍 ${escapeHTML(area)}
+<br>
+${escapeHTML(description)}
+</span>
+
+</div>
+
+`;
+
+}
+).join("");
+
+
+resultContent.innerHTML += `
+
+<div style="margin-top:15px;">
+
+<a
+href="#property-enquiry"
+class="btn btn-red"
+>
+💬 Enquire About Property
+</a>
+
+</div>
+
+`;
+
+}
+
+
+results.classList.add(
+"active"
+);
+
+
+results.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}
+);
+
+}
+
+
+/* =====================================================
+   PROPERTY CARD ENQUIRY
+===================================================== */
+
+document
+.querySelectorAll(
+".property-enquiry"
+)
+.forEach(
+function(button){
+
+button.addEventListener(
+"click",
+function(){
+
+const property =
+button.getAttribute(
+"data-property"
+);
+
+
+const location =
+button.getAttribute(
+"data-location"
+);
+
+
+const type =
+document.getElementById(
+"buyerType"
+);
+
+
+const area =
+document.getElementById(
+"buyerArea"
+);
+
+
+const requirement =
+document.getElementById(
+"buyerRequirement"
+);
+
+
+if(area){
+
+area.value =
+location;
+
+}
+
+
+if(requirement){
+
+requirement.value =
+"I am interested in the " +
+property +
+" listed in " +
+location +
+". Please provide the available details and guide me regarding the property enquiry.";
+
+}
+
+
+document
+.getElementById(
+"property-enquiry"
+)
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+);
+
+}
+);
+
+
+/* =====================================================
+   PROPERTY SUBMISSION
+===================================================== */
+
+const propertySubmitForm =
+document.getElementById(
+"propertySubmitForm"
+);
+
+
+if(propertySubmitForm){
+
+propertySubmitForm.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const name =
+document.getElementById(
+"ownerName"
+).value.trim();
+
+
+const phone =
+document.getElementById(
+"ownerPhone"
+).value.trim();
+
+
+const ownerType =
+document.getElementById(
+"ownerType"
+).value;
+
+
+const purpose =
+document.getElementById(
+"listingPurposeForm"
+).value;
+
+
+const propertyType =
+document.getElementById(
+"listingPropertyType"
+).value;
+
+
+const taluk =
+document.getElementById(
+"listingTaluk"
+).value;
+
+
+const area =
+document.getElementById(
+"listingArea"
+).value.trim();
+
+
+const price =
+document.getElementById(
+"listingPrice"
+).value.trim();
+
+
+const bedrooms =
+document.getElementById(
+"listingBedrooms"
+).value.trim();
+
+
+const availability =
+document.getElementById(
+"listingAvailability"
+).value;
+
+
+const address =
+document.getElementById(
+"listingAddress"
+).value.trim();
+
+
+const description =
+document.getElementById(
+"listingDescription"
+).value.trim();
+
+
+const photos =
+document.getElementById(
+"listingPhotos"
+).value.trim();
+
+
+const verification =
+document.getElementById(
+"listingVerification"
+).value.trim();
+
+
+const message =
+`Hello VELORA HELP,
+
+I want to submit a PROPERTY LISTING.
+
+OWNER / AGENT DETAILS
+
+Name: ${name}
+Phone: ${phone}
+I am: ${ownerType}
+
+PROPERTY DETAILS
+
+Purpose: ${purpose}
+Property Type: ${propertyType}
+Taluk: ${taluk}
+Area / Town / Village: ${area}
+Rent / Sale Price: ${price}
+Bedrooms / Size: ${bedrooms || "Not provided"}
+Availability: ${availability}
+
+PROPERTY ADDRESS / LOCATION
+
+${address}
+
+PROPERTY DESCRIPTION
+
+${description}
+
+PHOTO INFORMATION
+
+${photos || "Not provided"}
+
+VERIFICATION INFORMATION
+
+${verification || "Not provided"}
+
+Please review my property and let me know the next steps for listing it with VELORA HELP.
+
+Thank you.
+
+VELORA HELP
+Your Problem. Our Direction.`;
+
+
+const url =
+"https://wa.me/918088590273?text=" +
+encodeURIComponent(message);
+
+
+window.open(
+url,
+"_blank",
+"noopener,noreferrer"
+);
+
+
+showMessage(
+"Your property submission is ready. WhatsApp has been opened for VELORA HELP."
+);
+
+}
+);
+
+}
+
+
+/* =====================================================
+   CUSTOMER PROPERTY ENQUIRY
+===================================================== */
+
+const propertyEnquiryForm =
+document.getElementById(
+"propertyEnquiryForm"
+);
+
+
+if(propertyEnquiryForm){
+
+propertyEnquiryForm.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const name =
+document.getElementById(
+"buyerName"
+).value.trim();
+
+
+const phone =
+document.getElementById(
+"buyerPhone"
+).value.trim();
+
+
+const purpose =
+document.getElementById(
+"buyerPurpose"
+).value;
+
+
+const type =
+document.getElementById(
+"buyerType"
+).value;
+
+
+const taluk =
+document.getElementById(
+"buyerTaluk"
+).value;
+
+
+const area =
+document.getElementById(
+"buyerArea"
+).value.trim();
+
+
+const budget =
+document.getElementById(
+"buyerBudget"
+).value.trim();
+
+
+const bedrooms =
+document.getElementById(
+"buyerBedrooms"
+).value.trim();
+
+
+const requirement =
+document.getElementById(
+"buyerRequirement"
+).value.trim();
+
+
+const message =
+`Hello VELORA HELP,
+
+I have a PROPERTY REQUIREMENT.
+
+CUSTOMER DETAILS
+
+Name: ${name}
+Phone: ${phone}
+
+REQUIREMENT
+
+I want to: ${purpose}
+Property Type: ${type}
+
+LOCATION
+
+Taluk: ${taluk}
+Preferred Area: ${area || "Not specified"}
+
+BUDGET
+
+${budget || "Not specified"}
+
+BEDROOM / SIZE
+
+${bedrooms || "Not specified"}
+
+ADDITIONAL REQUIREMENT
+
+${requirement}
+
+Please check whether you have a suitable property and guide me regarding the next steps.
+
+Thank you.
+
+VELORA HELP
+Your Problem. Our Direction.`;
+
+
+const url =
+"https://wa.me/918088590273?text=" +
+encodeURIComponent(message);
+
+
+window.open(
+url,
+"_blank",
+"noopener,noreferrer"
+);
+
+
+showMessage(
+"Your property requirement is ready. WhatsApp has been opened for VELORA HELP."
+);
+
+}
+);
+
+}
+
+}
+);
+
+
+/* =====================================================
+   HTML ESCAPE
+===================================================== */
+
+function escapeHTML(value){
+
+return String(value)
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;")
+.replaceAll("'","&#039;");
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(text){
+
+const message =
+document.getElementById(
+"message"
+);
+
+
+if(!message){
+
+return;
+
+}
+
+
+message.textContent =
+text;
+
+
+message.style.display =
+"block";
+
+
+setTimeout(
+function(){
+
+message.style.display =
+"none";
+
+},
+4500
+);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
