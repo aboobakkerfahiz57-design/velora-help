@@ -1,1 +1,1754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071a3d">
+    <meta name="description" content="VELORA HELP Healthcare — Find guidance for hospitals, doctors, appointments and emergency healthcare services in Dakshina Kannada.">
 
+    <title>Healthcare | VELORA HELP</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #17243d;
+            background: #f6f8fb;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .vh-container {
+            width: min(1180px, 92%);
+            margin: auto;
+        }
+
+        .vh-header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(255,255,255,.97);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #e5e9f0;
+        }
+
+        .vh-nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .vh-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #071a3d;
+        }
+
+        .vh-brand img {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+
+        .vh-brand-name {
+            font-weight: 800;
+            font-size: 1.15rem;
+        }
+
+        .vh-brand-sub {
+            font-size: .7rem;
+            opacity: .7;
+            margin-top: 3px;
+        }
+
+        .vh-nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .vh-nav-links a {
+            color: #17243d;
+            padding: 10px 12px;
+            border-radius: 9px;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .vh-nav-links a:hover {
+            background: #eef2f8;
+        }
+
+        .vh-menu {
+            display: none;
+            background: #071a3d;
+            color: white;
+            border: 0;
+            padding: 10px 13px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .hero {
+            padding: 85px 0;
+            background:
+                linear-gradient(
+                    100deg,
+                    #071a3d 0%,
+                    #102c59 65%,
+                    #7f1722 100%
+                );
+            color: white;
+        }
+
+        .hero small {
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            font-weight: 800;
+            color: #e9b7bf;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1;
+            margin: 12px 0 20px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            line-height: 1.7;
+            color: rgba(255,255,255,.88);
+            font-size: 1.08rem;
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            min-height: 48px;
+            padding: 12px 18px;
+            border-radius: 11px;
+            border: 0;
+            cursor: pointer;
+            font-weight: 750;
+            font-size: .95rem;
+        }
+
+        .btn-white {
+            background: white;
+            color: #071a3d;
+        }
+
+        .btn-red {
+            background: #a3132d;
+            color: white;
+        }
+
+        .btn-blue {
+            background: #071a3d;
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #071a3d;
+            border: 1px solid #d6dce7;
+        }
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin-bottom: 32px;
+        }
+
+        .section-heading small {
+            color: #a3132d;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: .12em;
+        }
+
+        .section-heading h2 {
+            color: #071a3d;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            margin: 8px 0 12px;
+        }
+
+        .section-heading p {
+            color: #667085;
+            line-height: 1.7;
+        }
+
+        .search-panel {
+            background: white;
+            padding: 25px;
+            margin-top: -40px;
+            position: relative;
+            z-index: 5;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(7,26,61,.14);
+        }
+
+        .search-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr auto;
+            gap: 12px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d8deea;
+            border-radius: 10px;
+            font: inherit;
+            background: white;
+            color: #17243d;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #a3132d;
+            box-shadow: 0 0 0 3px rgba(163,19,45,.08);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid #e3e8ef;
+            box-shadow: 0 8px 25px rgba(7,26,61,.05);
+        }
+
+        .icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: #eef2f8;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin: 0 0 9px;
+            color: #071a3d;
+        }
+
+        .card p {
+            color: #667085;
+            line-height: 1.6;
+            font-size: .92rem;
+        }
+
+        .notice {
+            background: #fff7ed;
+            border: 1px solid #fed7aa;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            color: #7c2d12;
+        }
+
+        .emergency {
+            background: #7f1722;
+            color: white;
+            border-radius: 22px;
+            padding: 35px;
+        }
+
+        .emergency h2 {
+            margin-top: 0;
+        }
+
+        .emergency p {
+            line-height: 1.7;
+            color: rgba(255,255,255,.86);
+        }
+
+        .enquiry {
+            background: #071a3d;
+            color: white;
+            border-radius: 22px;
+            padding: 35px;
+        }
+
+        .enquiry h2 {
+            margin-top: 0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .form-full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 650;
+            font-size: .9rem;
+        }
+
+        .enquiry input,
+        .enquiry select,
+        .enquiry textarea {
+            background: white;
+        }
+
+        .result-box {
+            margin-top: 25px;
+            display: none;
+            background: #f6f8fb;
+            border: 1px solid #dce2eb;
+            border-radius: 16px;
+            padding: 22px;
+        }
+
+        .result-box.active {
+            display: block;
+        }
+
+        .result-box h3 {
+            color: #071a3d;
+        }
+
+        .result-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #e4e8ef;
+        }
+
+        .result-item:last-child {
+            border-bottom: 0;
+        }
+
+        .result-item strong {
+            display: block;
+            color: #071a3d;
+            margin-bottom: 5px;
+        }
+
+        .result-item span {
+            color: #667085;
+            font-size: .9rem;
+        }
+
+        footer {
+            background: #06152f;
+            color: white;
+            padding: 55px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        footer a {
+            display: block;
+            color: rgba(255,255,255,.72);
+            margin: 9px 0;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.12);
+            margin-top: 35px;
+            padding-top: 20px;
+            color: rgba(255,255,255,.55);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .message {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: white;
+            color: #071a3d;
+            padding: 17px 20px;
+            border-radius: 13px;
+            box-shadow: 0 15px 50px rgba(0,0,0,.2);
+            display: none;
+            z-index: 9999;
+            max-width: 380px;
+            border-left: 5px solid #a3132d;
+        }
+
+        @media(max-width: 950px) {
+
+            .vh-nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 4%;
+                right: 4%;
+                background: white;
+                padding: 12px;
+                border-radius: 14px;
+                box-shadow: 0 20px 50px rgba(0,0,0,.15);
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .vh-nav-links.active {
+                display: flex;
+            }
+
+            .vh-menu {
+                display: block;
+            }
+
+            .search-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .search-grid,
+            .cards,
+            .form-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-full {
+                grid-column: auto;
+            }
+
+            .hero {
+                padding: 65px 0;
+            }
+
+            .search-panel {
+                margin-top: -25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
+<header class="vh-header">
+
+    <div class="vh-container vh-nav">
+
+        <a href="index.html" class="vh-brand">
+
+            <img
+                src="velora-help-logo.png"
+                alt="VELORA HELP Logo"
+            >
+
+            <div>
+                <div class="vh-brand-name">
+                    VELORA HELP
+                </div>
+
+                <div class="vh-brand-sub">
+                    Your Problem. Our Direction.
+                </div>
+            </div>
+
+        </a>
+
+        <button
+            class="vh-menu"
+            id="menuButton"
+            type="button"
+        >
+            ☰
+        </button>
+
+        <nav
+            class="vh-nav-links"
+            id="navigation"
+        >
+
+            <a href="index.html">Home</a>
+            <a href="healthcare.html">Healthcare</a>
+            <a href="admissions.html">Admissions</a>
+            <a href="government.html">Government</a>
+            <a href="local-services.html">Local Services</a>
+            <a href="property.html">Housing</a>
+            <a href="report-problem.html">Report Problem</a>
+            <a href="contact.html">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+
+<section class="hero">
+
+    <div class="vh-container">
+
+        <small>
+            VELORA HELP • HEALTHCARE
+        </small>
+
+        <h1>
+            Find the right<br>
+            healthcare direction.
+        </h1>
+
+        <p>
+            Looking for a hospital, doctor, clinic,
+            specialist or appointment guidance?
+            Tell us what you need and where you are.
+            VELORA HELP will help you understand the
+            appropriate next step.
+        </p>
+
+        <div class="actions">
+
+            <a
+                href="#find-healthcare"
+                class="btn btn-white"
+            >
+                🏥 Find Healthcare
+            </a>
+
+            <a
+                href="#enquiry"
+                class="btn btn-white"
+            >
+                💬 Ask VELORA HELP
+            </a>
+
+            <a
+                href="emergency.html"
+                class="btn btn-red"
+            >
+                🚨 Emergency Help
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SEARCH
+     ===================================================== -->
+
+<section id="find-healthcare">
+
+    <div class="vh-container">
+
+        <div class="search-panel">
+
+            <div class="section-heading">
+
+                <small>
+                    HEALTHCARE SEARCH
+                </small>
+
+                <h2>
+                    What healthcare help do you need?
+                </h2>
+
+                <p>
+                    Select your location and requirement.
+                </p>
+
+            </div>
+
+            <form id="healthcareSearchForm">
+
+                <div class="search-grid">
+
+                    <input
+                        id="healthSearch"
+                        type="search"
+                        placeholder="Example: fever, dentist, hospital..."
+                    >
+
+                    <select id="healthTaluk">
+
+                        <option value="">
+                            Select Taluk
+                        </option>
+
+                        <option>Mangaluru</option>
+                        <option>Bantwal</option>
+                        <option>Belthangady</option>
+                        <option>Puttur</option>
+                        <option>Sullia</option>
+                        <option>Moodbidri</option>
+                        <option>Kadaba</option>
+                        <option>Mulki</option>
+
+                    </select>
+
+                    <select id="healthType">
+
+                        <option value="">
+                            Healthcare Type
+                        </option>
+
+                        <option>General Doctor</option>
+                        <option>Hospital</option>
+                        <option>Dental</option>
+                        <option>Child Specialist</option>
+                        <option>Women &amp; Child</option>
+                        <option>Skin</option>
+                        <option>Orthopaedic</option>
+                        <option>ENT</option>
+                        <option>Eye</option>
+                        <option>Other Specialist</option>
+
+                    </select>
+
+                    <button
+                        type="submit"
+                        class="btn btn-red"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div
+                class="result-box"
+                id="healthResults"
+            >
+
+                <h3>
+                    Healthcare guidance
+                </h3>
+
+                <div id="healthResultContent"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DISCLAIMER
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="vh-container">
+
+        <div class="notice">
+
+            <strong>
+                Important:
+            </strong>
+
+            VELORA HELP provides information and
+            direction. It does not replace a qualified
+            medical professional. For a serious or
+            life-threatening emergency, contact emergency
+            services immediately.
+
+        </div>
+
+
+        <div class="section-heading">
+
+            <small>
+                HEALTHCARE CATEGORIES
+            </small>
+
+            <h2>
+                What are you looking for?
+            </h2>
+
+            <p>
+                Choose an area below to continue.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <a
+                class="card"
+                href="#enquiry"
+                data-health-category="General Doctor"
+            >
+
+                <div class="icon">👨‍⚕️</div>
+
+                <h3>
+                    General Doctor
+                </h3>
+
+                <p>
+                    Fever, cold, cough, weakness,
+                    general health concerns and
+                    basic consultation guidance.
+                </p>
+
+            </a>
+
+
+            <a
+                class="card"
+                href="#enquiry"
+                data-health-category="Hospital"
+            >
+
+                <div class="icon">🏥</div>
+
+                <h3>
+                    Hospital
+                </h3>
+
+                <p>
+                    Hospital information, departments,
+                    location and appointment guidance.
+                </p>
+
+            </a>
+
+
+            <a
+                class="card"
+                href="#enquiry"
+                data-health-category="Dental"
+            >
+
+                <div class="icon">🦷</div>
+
+                <h3>
+                    Dental
+                </h3>
+
+                <p>
+                    Dental consultation and
+                    clinic guidance.
+                </p>
+
+            </a>
+
+
+            <a
+                class="card"
+                href="#enquiry"
+                data-health-category="Child Specialist"
+            >
+
+                <div class="icon">👶</div>
+
+                <h3>
+                    Child Specialist
+                </h3>
+
+                <p>
+                    Guidance for parents looking
+                    for appropriate child healthcare.
+                </p>
+
+            </a>
+
+
+            <a
+                class="card"
+                href="#enquiry"
+                data-health-category="Women & Child"
+            >
+
+                <div class="icon">👩‍⚕️</div>
+
+                <h3>
+                    Women &amp; Child
+                </h3>
+
+                <p>
+                    Find appropriate healthcare
+                    direction for women and children.
+                </p>
+
+            </a>
+
+
+            <a
+                class="card"
+                href="#enquiry"
+                data-health-category="Specialist"
+            >
+
+                <div class="icon">🩺</div>
+
+                <h3>
+                    Specialist
+                </h3>
+
+                <p>
+                    Find direction for specialist
+                    healthcare requirements.
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EMERGENCY
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="vh-container">
+
+        <div class="emergency">
+
+            <h2>
+                🚨 Emergency Healthcare
+            </h2>
+
+            <p>
+                If someone is experiencing a
+                life-threatening emergency, do not wait
+                for online guidance. Contact emergency
+                services or go to the nearest appropriate
+                emergency facility immediately.
+            </p>
+
+            <div class="actions">
+
+                <a
+                    href="tel:112"
+                    class="btn btn-white"
+                >
+                    📞 Call 112
+                </a>
+
+                <a
+                    href="emergency.html"
+                    class="btn btn-white"
+                >
+                    Emergency Help Page
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ENQUIRY
+     ===================================================== -->
+
+<section
+    class="section"
+    id="enquiry"
+>
+
+    <div class="vh-container">
+
+        <div class="enquiry">
+
+            <small>
+                VELORA HELP ENQUIRY
+            </small>
+
+            <h2>
+                Tell us what healthcare help you need
+            </h2>
+
+            <p>
+                Submit your requirement. Your enquiry
+                can be prepared as a WhatsApp message
+                to VELORA HELP.
+            </p>
+
+
+            <form id="healthEnquiryForm">
+
+                <div class="form-grid">
+
+
+                    <div>
+
+                        <label for="name">
+                            Full Name *
+                        </label>
+
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="phone">
+                            Phone Number *
+                        </label>
+
+                        <input
+                            id="phone"
+                            name="phone"
+                            type="tel"
+                            placeholder="+91..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="taluk">
+                            Taluk *
+                        </label>
+
+                        <select
+                            id="taluk"
+                            name="taluk"
+                            required
+                        >
+
+                            <option value="">
+                                Select Taluk
+                            </option>
+
+                            <option>Mangaluru</option>
+                            <option>Bantwal</option>
+                            <option>Belthangady</option>
+                            <option>Puttur</option>
+                            <option>Sullia</option>
+                            <option>Moodbidri</option>
+                            <option>Kadaba</option>
+                            <option>Mulki</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="area">
+                            Area / Village
+                        </label>
+
+                        <input
+                            id="area"
+                            name="area"
+                            type="text"
+                            placeholder="Your area / village"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="consultation">
+                            What do you need? *
+                        </label>
+
+                        <select
+                            id="consultation"
+                            name="consultation"
+                            required
+                        >
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option>General Doctor</option>
+                            <option>Hospital</option>
+                            <option>Specialist</option>
+                            <option>Dental</option>
+                            <option>Child Specialist</option>
+                            <option>Women & Child</option>
+                            <option>Appointment Guidance</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="preferred">
+                            Preferred location
+                        </label>
+
+                        <input
+                            id="preferred"
+                            name="preferred"
+                            type="text"
+                            placeholder="Preferred hospital / area"
+                        >
+
+                    </div>
+
+
+                    <div class="form-full">
+
+                        <label for="healthProblem">
+                            Briefly explain your requirement *
+                        </label>
+
+                        <textarea
+                            id="healthProblem"
+                            name="problem"
+                            rows="5"
+                            maxlength="1500"
+                            placeholder="Example: I am looking for a general doctor near Sullia for consultation..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-full">
+
+                        <button
+                            type="submit"
+                            class="btn btn-white"
+                        >
+                            💬 Send Enquiry to VELORA HELP
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TRUST / DIRECTION
+     ===================================================== -->
+
+<section class="section">
+
+    <div class="vh-container">
+
+        <div class="section-heading">
+
+            <small>
+                OUR DIRECTION
+            </small>
+
+            <h2>
+                What happens after your enquiry?
+            </h2>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="icon">
+                    01
+                </div>
+
+                <h3>
+                    You tell us
+                </h3>
+
+                <p>
+                    Give us your requirement,
+                    location and basic details.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    02
+                </div>
+
+                <h3>
+                    We review
+                </h3>
+
+                <p>
+                    The VELORA HELP team reviews
+                    your enquiry and available information.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    03
+                </div>
+
+                <h3>
+                    We guide
+                </h3>
+
+                <p>
+                    We direct you toward an appropriate
+                    hospital, doctor, official source or
+                    next step.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer>
+
+    <div class="vh-container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <img
+                    src="velora-help-logo.png"
+                    alt="VELORA HELP"
+                    style="
+                        width:90px;
+                        height:90px;
+                        object-fit:contain;
+                        background:white;
+                        border-radius:50%;
+                        padding:5px;
+                    "
+                >
+
+                <h3>
+                    VELORA HELP
+                </h3>
+
+                <p>
+                    Your Problem. Our Direction.
+                </p>
+
+                <p>
+                    Powered by VELORA DIGITAL.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>Healthcare</h4>
+
+                <a href="healthcare.html">
+                    Healthcare
+                </a>
+
+                <a href="emergency.html">
+                    Emergency
+                </a>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>VELORA HELP</h4>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="local-services.html">
+                    Local Services
+                </a>
+
+                <a href="property.html">
+                    Housing
+                </a>
+
+                <a href="government.html">
+                    Government
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>Information</h4>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="disclaimer.html">
+                    Disclaimer
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span>
+                VELORA HELP
+            </span>
+
+            <span>
+                📞 +91 8088590273
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<div
+    class="message"
+    id="message"
+></div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     ===================================================== -->
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/healthcare.js"></script>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        /* ---------------------------------------------
+           MOBILE MENU
+        --------------------------------------------- */
+
+        const menu =
+            document.getElementById(
+                "menuButton"
+            );
+
+        const nav =
+            document.getElementById(
+                "navigation"
+            );
+
+        if (menu && nav) {
+
+            menu.addEventListener(
+                "click",
+                function () {
+
+                    nav.classList.toggle(
+                        "active"
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* ---------------------------------------------
+           YEAR
+        --------------------------------------------- */
+
+        const year =
+            document.getElementById(
+                "year"
+            );
+
+        if (year) {
+
+            year.textContent =
+                new Date().getFullYear();
+
+        }
+
+
+        /* ---------------------------------------------
+           SEARCH
+        --------------------------------------------- */
+
+        const searchForm =
+            document.getElementById(
+                "healthcareSearchForm"
+            );
+
+        const results =
+            document.getElementById(
+                "healthResults"
+            );
+
+        const resultContent =
+            document.getElementById(
+                "healthResultContent"
+            );
+
+
+        if (searchForm) {
+
+            searchForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const search =
+                        document
+                            .getElementById(
+                                "healthSearch"
+                            )
+                            .value
+                            .trim();
+
+
+                    const taluk =
+                        document
+                            .getElementById(
+                                "healthTaluk"
+                            )
+                            .value;
+
+
+                    const type =
+                        document
+                            .getElementById(
+                                "healthType"
+                            )
+                            .value;
+
+
+                    let selected =
+                        type || "Healthcare";
+
+
+                    if (!search && !taluk && !type) {
+
+                        selected =
+                            "General Healthcare";
+
+                    }
+
+
+                    resultContent.innerHTML = `
+
+                        <div class="result-item">
+
+                            <strong>
+                                ${escapeHTML(selected)}
+                            </strong>
+
+                            <span>
+                                Location:
+                                ${escapeHTML(taluk || "Dakshina Kannada")}
+                            </span>
+
+                        </div>
+
+                        <div class="result-item">
+
+                            <strong>
+                                Need a specific doctor or hospital?
+                            </strong>
+
+                            <span>
+                                Send your requirement to VELORA HELP
+                                and our team can guide you toward
+                                the appropriate next step.
+                            </span>
+
+                        </div>
+
+                        <div class="result-item">
+
+                            <strong>
+                                Your search
+                            </strong>
+
+                            <span>
+                                ${escapeHTML(
+                                    search ||
+                                    "Healthcare guidance requested"
+                                )}
+                            </span>
+
+                        </div>
+
+                        <div style="margin-top:18px;">
+
+                            <a
+                                class="btn btn-red"
+                                href="#enquiry"
+                            >
+                                💬 Send Healthcare Enquiry
+                            </a>
+
+                        </div>
+                    `;
+
+
+                    results.classList.add(
+                        "active"
+                    );
+
+
+                    results.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }
+            );
+
+        }
+
+
+        /* ---------------------------------------------
+           CATEGORY BUTTONS
+        --------------------------------------------- */
+
+        document
+            .querySelectorAll(
+                "[data-health-category]"
+            )
+            .forEach(
+                function (card) {
+
+                    card.addEventListener(
+                        "click",
+                        function () {
+
+                            const category =
+                                card.getAttribute(
+                                    "data-health-category"
+                                );
+
+
+                            const select =
+                                document.getElementById(
+                                    "consultation"
+                                );
+
+
+                            if (select) {
+
+                                const option =
+                                    Array.from(
+                                        select.options
+                                    ).find(
+                                        function (item) {
+                                            return item.text === category;
+                                        }
+                                    );
+
+
+                                if (option) {
+                                    select.value =
+                                        category;
+                                }
+
+                            }
+
+                        }
+                    );
+
+                }
+            );
+
+
+        /* ---------------------------------------------
+           ENQUIRY -> WHATSAPP
+        --------------------------------------------- */
+
+        const enquiryForm =
+            document.getElementById(
+                "healthEnquiryForm"
+            );
+
+
+        if (enquiryForm) {
+
+            enquiryForm.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const name =
+                        document
+                            .getElementById("name")
+                            .value
+                            .trim();
+
+
+                    const phone =
+                        document
+                            .getElementById("phone")
+                            .value
+                            .trim();
+
+
+                    const taluk =
+                        document
+                            .getElementById("taluk")
+                            .value;
+
+
+                    const area =
+                        document
+                            .getElementById("area")
+                            .value
+                            .trim();
+
+
+                    const consultation =
+                        document
+                            .getElementById("consultation")
+                            .value;
+
+
+                    const preferred =
+                        document
+                            .getElementById("preferred")
+                            .value
+                            .trim();
+
+
+                    const problem =
+                        document
+                            .getElementById("healthProblem")
+                            .value
+                            .trim();
+
+
+                    const message =
+`Hello VELORA HELP,
+
+I need healthcare guidance.
+
+Name: ${name}
+Phone: ${phone}
+Taluk: ${taluk}
+Area/Village: ${area || "Not provided"}
+Requirement: ${consultation}
+Preferred Location: ${preferred || "Not specified"}
+
+Problem / Requirement:
+${problem}
+
+Please guide me regarding the appropriate hospital, doctor, clinic or next step.
+
+Thank you.
+VELORA HELP`;
+
+
+                    const whatsappURL =
+                        "https://wa.me/918088590273?text=" +
+                        encodeURIComponent(
+                            message
+                        );
+
+
+                    window.open(
+                        whatsappURL,
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
+
+
+                    showMessage(
+                        "Your enquiry is ready. WhatsApp has been opened for VELORA HELP."
+                    );
+
+                }
+            );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SECURITY / TEXT ESCAPING
+   ===================================================== */
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+
+}
+
+
+/* =====================================================
+   MESSAGE
+   ===================================================== */
+
+function showMessage(text) {
+
+    const box =
+        document.getElementById(
+            "message"
+        );
+
+    if (!box) {
+        return;
+    }
+
+    box.textContent = text;
+
+    box.style.display =
+        "block";
+
+
+    setTimeout(
+        function () {
+
+            box.style.display =
+                "none";
+
+        },
+        4500
+    );
+
+}
+
+</script>
+
+</body>
+</html>
