@@ -1,1 +1,2706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#071a3d"
+    >
+
+    <meta
+        name="description"
+        content="VELORA HELP — Your Problem. Our Direction. A community assistance platform for Dakshina Kannada."
+    >
+
+    <meta
+        name="keywords"
+        content="Velora Help, Dakshina Kannada, Mangalore, healthcare, hospitals, doctors, jobs, scholarships, admissions, government services, rentals, local services"
+    >
+
+    <title>VELORA HELP | Your Problem. Our Direction.</title>
+
+    <!-- =====================================================
+         VELORA HELP CSS
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+    <!-- =====================================================
+         SMALL INDEX-SPECIFIC FALLBACK STYLES
+         ===================================================== -->
+
+    <style>
+
+        /*
+        These styles make the homepage usable even if
+        some classes are not yet present in style.css.
+        */
+
+        .vh-home {
+            min-height: 100vh;
+        }
+
+        .vh-hero {
+            min-height: 88vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-image:
+                linear-gradient(
+                    90deg,
+                    rgba(3, 18, 45, .92) 0%,
+                    rgba(3, 18, 45, .68) 42%,
+                    rgba(3, 18, 45, .18) 100%
+                ),
+                url("velora-help-homepage-bg.jpg");
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .vh-container {
+            width: min(1180px, 92%);
+            margin: 0 auto;
+        }
+
+        .vh-header {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: rgba(255,255,255,.96);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(0,0,0,.08);
+        }
+
+        .vh-nav {
+            min-height: 76px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .vh-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: #071a3d;
+            font-weight: 800;
+        }
+
+        .vh-brand img {
+            width: 52px;
+            height: 52px;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        .vh-brand-text {
+            line-height: 1.05;
+        }
+
+        .vh-brand-name {
+            font-size: 1.15rem;
+            letter-spacing: .03em;
+        }
+
+        .vh-brand-sub {
+            font-size: .7rem;
+            font-weight: 500;
+            opacity: .7;
+            margin-top: 4px;
+        }
+
+        .vh-nav-links {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            flex-wrap: wrap;
+        }
+
+        .vh-nav-links a {
+            text-decoration: none;
+            color: #17243d;
+            padding: 10px 12px;
+            border-radius: 10px;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .vh-nav-links a:hover {
+            background: #eef2f8;
+        }
+
+        .vh-menu-btn {
+            display: none;
+            border: 0;
+            background: #071a3d;
+            color: white;
+            border-radius: 10px;
+            padding: 10px 13px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .vh-hero-content {
+            max-width: 720px;
+            padding: 90px 0;
+            color: white;
+        }
+
+        .vh-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 13px;
+            border: 1px solid rgba(255,255,255,.35);
+            background: rgba(255,255,255,.12);
+            border-radius: 999px;
+            font-size: .82rem;
+            margin-bottom: 20px;
+        }
+
+        .vh-hero h1 {
+            font-size: clamp(2.8rem, 7vw, 5.8rem);
+            line-height: .95;
+            margin: 0 0 20px;
+            letter-spacing: -.05em;
+        }
+
+        .vh-hero h1 span {
+            display: block;
+        }
+
+        .vh-hero p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 650px;
+            color: rgba(255,255,255,.9);
+        }
+
+        .vh-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .vh-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 48px;
+            padding: 12px 19px;
+            border-radius: 12px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            font-weight: 750;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .vh-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .vh-btn-primary {
+            background: #a3132d;
+            color: white;
+        }
+
+        .vh-btn-light {
+            background: white;
+            color: #071a3d;
+        }
+
+        .vh-btn-outline {
+            background: transparent;
+            color: #071a3d;
+            border-color: rgba(7,26,61,.22);
+        }
+
+        .vh-btn-danger {
+            background: #b42318;
+            color: white;
+        }
+
+        .vh-section {
+            padding: 80px 0;
+        }
+
+        .vh-section-alt {
+            background: #f6f8fb;
+        }
+
+        .vh-section-heading {
+            max-width: 720px;
+            margin-bottom: 35px;
+        }
+
+        .vh-section-heading small {
+            color: #a3132d;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: .12em;
+        }
+
+        .vh-section-heading h2 {
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            color: #071a3d;
+            margin: 8px 0 12px;
+        }
+
+        .vh-section-heading p {
+            color: #5e6879;
+            line-height: 1.7;
+        }
+
+        .vh-search-box {
+            margin-top: -55px;
+            position: relative;
+            z-index: 5;
+            background: white;
+            border-radius: 22px;
+            box-shadow: 0 20px 60px rgba(7,26,61,.16);
+            padding: 25px;
+        }
+
+        .vh-search-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr auto;
+            gap: 12px;
+        }
+
+        .vh-input,
+        .vh-select,
+        .vh-textarea {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #d9dfeb;
+            border-radius: 11px;
+            padding: 13px 14px;
+            background: white;
+            color: #18243b;
+            outline: none;
+        }
+
+        .vh-input:focus,
+        .vh-select:focus,
+        .vh-textarea:focus {
+            border-color: #a3132d;
+            box-shadow: 0 0 0 3px rgba(163,19,45,.08);
+        }
+
+        .vh-category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .vh-card {
+            background: white;
+            border: 1px solid #e5e9f0;
+            border-radius: 18px;
+            padding: 23px;
+            text-decoration: none;
+            color: #17243d;
+            transition: .2s ease;
+            box-shadow: 0 8px 30px rgba(7,26,61,.05);
+        }
+
+        .vh-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(7,26,61,.1);
+        }
+
+        .vh-icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: #eef2f8;
+            font-size: 1.5rem;
+            margin-bottom: 14px;
+        }
+
+        .vh-card h3 {
+            margin: 0 0 8px;
+            color: #071a3d;
+            font-size: 1.05rem;
+        }
+
+        .vh-card p {
+            margin: 0;
+            color: #667085;
+            line-height: 1.5;
+            font-size: .9rem;
+        }
+
+        .vh-problem-box {
+            background: #071a3d;
+            color: white;
+            border-radius: 24px;
+            padding: 35px;
+        }
+
+        .vh-problem-box h2 {
+            margin-top: 0;
+        }
+
+        .vh-problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .vh-problem-box .vh-input,
+        .vh-problem-box .vh-select,
+        .vh-problem-box .vh-textarea {
+            border-color: rgba(255,255,255,.2);
+        }
+
+        .vh-full {
+            grid-column: 1 / -1;
+        }
+
+        .vh-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .vh-stat {
+            background: white;
+            border-radius: 17px;
+            padding: 22px;
+            border: 1px solid #e4e8ef;
+        }
+
+        .vh-stat strong {
+            display: block;
+            font-size: 1.9rem;
+            color: #071a3d;
+        }
+
+        .vh-stat span {
+            color: #667085;
+            font-size: .9rem;
+        }
+
+        .vh-top-problems {
+            background: white;
+            border-radius: 20px;
+            border: 1px solid #e5e9f0;
+            overflow: hidden;
+        }
+
+        .vh-problem-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 16px 20px;
+            border-bottom: 1px solid #edf0f4;
+        }
+
+        .vh-problem-row:last-child {
+            border-bottom: 0;
+        }
+
+        .vh-problem-count {
+            min-width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #eef2f8;
+            color: #071a3d;
+            font-weight: 800;
+        }
+
+        .vh-footer {
+            background: #06152f;
+            color: white;
+            padding: 55px 0 25px;
+        }
+
+        .vh-footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .vh-footer a {
+            color: rgba(255,255,255,.75);
+            text-decoration: none;
+            display: block;
+            margin: 9px 0;
+        }
+
+        .vh-footer a:hover {
+            color: white;
+        }
+
+        .vh-footer h3,
+        .vh-footer h4 {
+            color: white;
+        }
+
+        .vh-footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.12);
+            margin-top: 40px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            color: rgba(255,255,255,.6);
+            font-size: .85rem;
+        }
+
+        .vh-alert {
+            display: none;
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 9999;
+            max-width: 380px;
+            background: white;
+            color: #071a3d;
+            border-radius: 14px;
+            box-shadow: 0 15px 50px rgba(0,0,0,.2);
+            padding: 17px 20px;
+            border-left: 5px solid #a3132d;
+        }
+
+        @media (max-width: 950px) {
+
+            .vh-nav-links {
+                display: none;
+                position: absolute;
+                left: 4%;
+                right: 4%;
+                top: 70px;
+                background: white;
+                border-radius: 15px;
+                box-shadow: 0 20px 50px rgba(0,0,0,.15);
+                padding: 12px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .vh-nav-links.active {
+                display: flex;
+            }
+
+            .vh-menu-btn {
+                display: block;
+            }
+
+            .vh-search-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .vh-category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .vh-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .vh-footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .vh-hero {
+                min-height: 80vh;
+                background-position: 65% center;
+            }
+
+            .vh-hero-content {
+                padding: 70px 0;
+            }
+
+            .vh-search-grid,
+            .vh-category-grid,
+            .vh-problem-grid,
+            .vh-stats,
+            .vh-footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .vh-full {
+                grid-column: auto;
+            }
+
+            .vh-search-box {
+                margin-top: -30px;
+            }
+
+            .vh-problem-box {
+                padding: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header class="vh-header">
+
+    <div class="vh-container vh-nav">
+
+        <a
+            href="index.html"
+            class="vh-brand"
+            aria-label="VELORA HELP Home"
+        >
+
+            <img
+                src="velora-help-logo.png"
+                alt="VELORA HELP Logo"
+            >
+
+            <div class="vh-brand-text">
+
+                <div class="vh-brand-name">
+                    VELORA HELP
+                </div>
+
+                <div class="vh-brand-sub">
+                    Your Problem. Our Direction.
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="vh-menu-btn"
+            id="vhMenuButton"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+
+        <nav
+            class="vh-nav-links"
+            id="vhNavigation"
+        >
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="healthcare.html">
+                Healthcare
+            </a>
+
+            <a href="admissions.html">
+                Admissions
+            </a>
+
+            <a href="government.html">
+                Government
+            </a>
+
+            <a href="local-services.html">
+                Local Services
+            </a>
+
+            <a href="property.html">
+                Housing
+            </a>
+
+            <a href="report-problem.html">
+                Report Problem
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<main class="vh-home">
+
+<section class="vh-hero">
+
+    <div class="vh-container">
+
+        <div class="vh-hero-content">
+
+            <div class="vh-kicker">
+                🇮🇳 Serving people • Starting with Dakshina Kannada
+            </div>
+
+
+            <h1>
+
+                <span>
+                    VELORA
+                </span>
+
+                <span>
+                    HELP
+                </span>
+
+            </h1>
+
+
+            <p>
+                Your problem. Our direction.
+                Find guidance for healthcare, education,
+                admissions, jobs, housing, government services,
+                local services and everyday community problems.
+            </p>
+
+
+            <div class="vh-actions">
+
+                <a
+                    href="report-problem.html"
+                    class="vh-btn vh-btn-primary"
+                >
+                    🚨 Report a Problem
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="vh-btn vh-btn-light"
+                >
+                    💬 Get Help
+                </a>
+
+
+                <a
+                    href="tel:+918088590273"
+                    class="vh-btn vh-btn-light"
+                >
+                    📞 Call VELORA HELP
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     QUICK SEARCH
+     ========================================================= -->
+
+<section>
+
+    <div class="vh-container">
+
+        <div class="vh-search-box">
+
+            <div class="vh-section-heading">
+
+                <small>
+                    FIND HELP
+                </small>
+
+                <h2>
+                    What do you need help with?
+                </h2>
+
+                <p>
+                    Search the VELORA HELP directory or
+                    send your requirement directly to our team.
+                </p>
+
+            </div>
+
+
+            <form
+                id="homeSearchForm"
+                class="vh-search-grid"
+            >
+
+                <input
+                    class="vh-input"
+                    id="homeSearch"
+                    type="search"
+                    placeholder="Search: doctor, job, rental..."
+                    autocomplete="off"
+                >
+
+
+                <select
+                    class="vh-select"
+                    id="homeTaluk"
+                >
+
+                    <option value="">
+                        Select Taluk
+                    </option>
+
+                    <option value="Mangaluru">
+                        Mangaluru
+                    </option>
+
+                    <option value="Bantwal">
+                        Bantwal
+                    </option>
+
+                    <option value="Belthangady">
+                        Belthangady
+                    </option>
+
+                    <option value="Puttur">
+                        Puttur
+                    </option>
+
+                    <option value="Sullia">
+                        Sullia
+                    </option>
+
+                    <option value="Moodbidri">
+                        Moodbidri
+                    </option>
+
+                    <option value="Kadaba">
+                        Kadaba
+                    </option>
+
+                    <option value="Mulki">
+                        Mulki
+                    </option>
+
+                </select>
+
+
+                <select
+                    class="vh-select"
+                    id="homeCategory"
+                >
+
+                    <option value="">
+                        Select Service
+                    </option>
+
+                    <option value="Healthcare">
+                        Healthcare
+                    </option>
+
+                    <option value="Education">
+                        Education
+                    </option>
+
+                    <option value="Jobs">
+                        Jobs
+                    </option>
+
+                    <option value="Housing">
+                        Housing
+                    </option>
+
+                    <option value="Government Services">
+                        Government Services
+                    </option>
+
+                    <option value="Local Services">
+                        Local Services
+                    </option>
+
+                    <option value="Transport">
+                        Transport
+                    </option>
+
+                    <option value="Waste / Garbage">
+                        Waste / Garbage
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+
+                <button
+                    type="submit"
+                    class="vh-btn vh-btn-primary"
+                >
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     EMERGENCY
+     ========================================================= -->
+
+<section
+    class="vh-section"
+    id="emergency"
+>
+
+    <div class="vh-container">
+
+        <div
+            class="vh-problem-box"
+            style="background:#7f1722;"
+        >
+
+            <small>
+                EMERGENCY
+            </small>
+
+            <h2>
+                Need urgent help?
+            </h2>
+
+            <p>
+                For life-threatening emergencies, contact
+                the appropriate emergency service immediately.
+                VELORA HELP can also help with local guidance
+                when appropriate.
+            </p>
+
+
+            <div class="vh-actions">
+
+                <a
+                    href="emergency.html"
+                    class="vh-btn vh-btn-light"
+                >
+                    🚨 Emergency Help
+                </a>
+
+
+                <a
+                    href="tel:112"
+                    class="vh-btn vh-btn-light"
+                >
+                    📞 Call 112
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ALL SERVICES
+     ========================================================= -->
+
+<section
+    class="vh-section vh-section-alt"
+    id="services"
+>
+
+    <div class="vh-container">
+
+        <div class="vh-section-heading">
+
+            <small>
+                ONE PLATFORM
+            </small>
+
+            <h2>
+                Help for everyday problems
+            </h2>
+
+            <p>
+                VELORA HELP brings different local assistance
+                areas together in one place.
+            </p>
+
+        </div>
+
+
+        <div class="vh-category-grid">
+
+
+            <a
+                href="healthcare.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🏥
+                </div>
+
+                <h3>
+                    Healthcare
+                </h3>
+
+                <p>
+                    Find healthcare information,
+                    doctors, hospitals and appointment guidance.
+                </p>
+
+            </a>
+
+
+            <a
+                href="admissions.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Admissions
+                </h3>
+
+                <p>
+                    PUC, degree and other course
+                    admission guidance.
+                </p>
+
+            </a>
+
+
+            <a
+                href="scholarships.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    Scholarships
+                </h3>
+
+                <p>
+                    Find scholarship and education
+                    opportunity information.
+                </p>
+
+            </a>
+
+
+            <a
+                href="government.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🏛️
+                </div>
+
+                <h3>
+                    Government Services
+                </h3>
+
+                <p>
+                    Understand schemes, eligibility,
+                    documents and official application sources.
+                </p>
+
+            </a>
+
+
+            <a
+                href="jobs.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    💼
+                </div>
+
+                <h3>
+                    Jobs & Opportunities
+                </h3>
+
+                <p>
+                    Discover jobs, internships,
+                    opportunities and guidance.
+                </p>
+
+            </a>
+
+
+            <a
+                href="property.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🏠
+                </div>
+
+                <h3>
+                    Housing & Rentals
+                </h3>
+
+                <p>
+                    Explore verified property and
+                    rental assistance.
+                </p>
+
+            </a>
+
+
+            <a
+                href="local-services.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    Local Services
+                </h3>
+
+                <p>
+                    Find plumbers, electricians,
+                    AC technicians and other local workers.
+                </p>
+
+            </a>
+
+
+            <a
+                href="transport.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🚌
+                </div>
+
+                <h3>
+                    Transport
+                </h3>
+
+                <p>
+                    Local transport information and
+                    assistance.
+                </p>
+
+            </a>
+
+
+            <a
+                href="elderly.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    👴
+                </div>
+
+                <h3>
+                    Elderly Help
+                </h3>
+
+                <p>
+                    Assistance and guidance for
+                    elderly people and families.
+                </p>
+
+            </a>
+
+
+            <a
+                href="businesses.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🏪
+                </div>
+
+                <h3>
+                    Local Businesses
+                </h3>
+
+                <p>
+                    Discover local businesses and
+                    community opportunities.
+                </p>
+
+            </a>
+
+
+            <a
+                href="digital-help.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Digital Help
+                </h3>
+
+                <p>
+                    Get guidance with online services
+                    and digital processes.
+                </p>
+
+            </a>
+
+
+            <a
+                href="civic.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🏙️
+                </div>
+
+                <h3>
+                    Civic Problems
+                </h3>
+
+                <p>
+                    Roads, waste, water, public spaces
+                    and civic concerns.
+                </p>
+
+            </a>
+
+
+            <a
+                href="community.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Community Help
+                </h3>
+
+                <p>
+                    Connect community needs with
+                    practical guidance.
+                </p>
+
+            </a>
+
+
+            <a
+                href="services.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🧭
+                </div>
+
+                <h3>
+                    All Services
+                </h3>
+
+                <p>
+                    Explore the complete VELORA HELP
+                    assistance directory.
+                </p>
+
+            </a>
+
+
+            <a
+                href="report-problem.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    📝
+                </div>
+
+                <h3>
+                    Report a Problem
+                </h3>
+
+                <p>
+                    Tell us what happened and where
+                    help is needed.
+                </p>
+
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    💬
+                </div>
+
+                <h3>
+                    Contact VELORA HELP
+                </h3>
+
+                <p>
+                    Send your requirement to our team
+                    for guidance.
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     HOW IT WORKS
+     ========================================================= -->
+
+<section class="vh-section">
+
+    <div class="vh-container">
+
+        <div class="vh-section-heading">
+
+            <small>
+                SIMPLE PROCESS
+            </small>
+
+            <h2>
+                Tell us. We guide you.
+            </h2>
+
+            <p>
+                VELORA HELP is designed around a simple idea:
+                people should not have to struggle to understand
+                where to go next.
+            </p>
+
+        </div>
+
+
+        <div class="vh-category-grid">
+
+
+            <div class="vh-card">
+
+                <div class="vh-icon">
+                    01
+                </div>
+
+                <h3>
+                    Tell us your problem
+                </h3>
+
+                <p>
+                    Explain what you need, where you are,
+                    and what kind of help you are looking for.
+                </p>
+
+            </div>
+
+
+            <div class="vh-card">
+
+                <div class="vh-icon">
+                    02
+                </div>
+
+                <h3>
+                    We review your enquiry
+                </h3>
+
+                <p>
+                    Our team receives the requirement and
+                    checks the available information.
+                </p>
+
+            </div>
+
+
+            <div class="vh-card">
+
+                <div class="vh-icon">
+                    03
+                </div>
+
+                <h3>
+                    We provide direction
+                </h3>
+
+                <p>
+                    We guide you toward the appropriate
+                    service, official source or local option.
+                </p>
+
+            </div>
+
+
+            <div class="vh-card">
+
+                <div class="vh-icon">
+                    04
+                </div>
+
+                <h3>
+                    Follow up
+                </h3>
+
+                <p>
+                    Keep your enquiry/reference information
+                    for future communication.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     REPORT PROBLEM
+     ========================================================= -->
+
+<section
+    class="vh-section vh-section-alt"
+    id="report"
+>
+
+    <div class="vh-container">
+
+        <div class="vh-section-heading">
+
+            <small>
+                COMMUNITY VOICE
+            </small>
+
+            <h2>
+                What problem are you facing?
+            </h2>
+
+            <p>
+                Report healthcare, roads, waste, water,
+                education, transport, public safety,
+                government service and other local problems.
+            </p>
+
+        </div>
+
+
+        <div class="vh-problem-box">
+
+            <form
+                data-problem-report
+                id="homeProblemForm"
+            >
+
+                <div class="vh-problem-grid">
+
+
+                    <div>
+
+                        <label for="problemName">
+                            Your Name
+                        </label>
+
+                        <input
+                            class="vh-input"
+                            id="problemName"
+                            name="name"
+                            type="text"
+                            placeholder="Enter your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="problemPhone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            class="vh-input"
+                            id="problemPhone"
+                            name="phone"
+                            type="tel"
+                            placeholder="+91..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="problemCategory">
+                            Problem Category
+                        </label>
+
+                        <select
+                            class="vh-select"
+                            id="problemCategory"
+                            name="category"
+                            data-problem-category-options
+                            required
+                        >
+
+                            <option value="">
+                                Select category
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="problemTaluk">
+                            Taluk
+                        </label>
+
+                        <select
+                            class="vh-select"
+                            id="problemTaluk"
+                            name="taluk"
+                            data-problem-taluk-options
+                            required
+                        >
+
+                            <option value="">
+                                Select taluk
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="problemArea">
+                            Area / Village
+                        </label>
+
+                        <input
+                            class="vh-input"
+                            id="problemArea"
+                            name="area"
+                            type="text"
+                            placeholder="Area / village"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="problemLocation">
+                            Where did it happen?
+                        </label>
+
+                        <input
+                            class="vh-input"
+                            id="problemLocation"
+                            name="location"
+                            type="text"
+                            placeholder="Location"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="vh-full">
+
+                        <label for="problemTitle">
+                            What is the problem?
+                        </label>
+
+                        <input
+                            class="vh-input"
+                            id="problemTitle"
+                            name="problem"
+                            type="text"
+                            placeholder="Briefly describe the problem"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="problemFrequency">
+                            How often does it happen?
+                        </label>
+
+                        <select
+                            class="vh-select"
+                            id="problemFrequency"
+                            name="frequency"
+                        >
+
+                            <option value="">
+                                Select
+                            </option>
+
+                            <option>
+                                One time
+                            </option>
+
+                            <option>
+                                Occasionally
+                            </option>
+
+                            <option>
+                                Frequently
+                            </option>
+
+                            <option>
+                                Daily
+                            </option>
+
+                            <option>
+                                Ongoing
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="problemImpact">
+                            How does it affect you?
+                        </label>
+
+                        <input
+                            class="vh-input"
+                            id="problemImpact"
+                            name="impact"
+                            type="text"
+                            placeholder="How are people affected?"
+                        >
+
+                    </div>
+
+
+                    <div class="vh-full">
+
+                        <label for="problemSolution">
+                            What solution would you like?
+                        </label>
+
+                        <input
+                            class="vh-input"
+                            id="problemSolution"
+                            name="solution"
+                            type="text"
+                            placeholder="Your suggested solution"
+                        >
+
+                    </div>
+
+
+                    <div class="vh-full">
+
+                        <label for="problemDescription">
+                            More details
+                        </label>
+
+                        <textarea
+                            class="vh-textarea"
+                            id="problemDescription"
+                            name="description"
+                            rows="5"
+                            maxlength="1500"
+                            data-problem-counter="1500"
+                            placeholder="Give us any additional information..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="vh-full">
+
+                        <button
+                            type="submit"
+                            class="vh-btn vh-btn-light"
+                        >
+                            📝 Submit Problem Report
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOP PROBLEMS
+     ========================================================= -->
+
+<section class="vh-section">
+
+    <div class="vh-container">
+
+        <div class="vh-section-heading">
+
+            <small>
+                COMMUNITY DATA
+            </small>
+
+            <h2>
+                Top problems reported this month
+            </h2>
+
+            <p>
+                This section is designed to highlight the
+                issues people are reporting most often.
+            </p>
+
+        </div>
+
+
+        <div
+            class="vh-top-problems"
+            data-top-problems
+        >
+
+            <div class="vh-problem-row">
+
+                <div>
+                    No problem reports yet
+                </div>
+
+                <div class="vh-problem-count">
+                    —
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STUDENT / OPPORTUNITY CTA
+     ========================================================= -->
+
+<section
+    class="vh-section vh-section-alt"
+>
+
+    <div class="vh-container">
+
+        <div class="vh-problem-box">
+
+            <small>
+                STUDENTS
+            </small>
+
+            <h2>
+                Looking for an opportunity?
+            </h2>
+
+            <p>
+                Find guidance for admissions, scholarships,
+                internships, jobs, courses and other
+                student opportunities.
+            </p>
+
+
+            <div class="vh-actions">
+
+                <a
+                    href="students.html"
+                    class="vh-btn vh-btn-light"
+                >
+                    🎓 Student Help
+                </a>
+
+
+                <a
+                    href="scholarships.html"
+                    class="vh-btn vh-btn-light"
+                >
+                    🏆 Scholarships
+                </a>
+
+
+                <a
+                    href="admissions.html"
+                    class="vh-btn vh-btn-light"
+                >
+                    📚 Admissions
+                </a>
+
+
+                <a
+                    href="jobs.html"
+                    class="vh-btn vh-btn-light"
+                >
+                    💼 Jobs & Internships
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GOVERNMENT CTA
+     ========================================================= -->
+
+<section class="vh-section">
+
+    <div class="vh-container">
+
+        <div class="vh-section-heading">
+
+            <small>
+                GOVERNMENT SERVICES
+            </small>
+
+            <h2>
+                Don't know where to apply?
+            </h2>
+
+            <p>
+                Government services can involve eligibility,
+                documents, application portals and official
+                contacts. VELORA HELP can help you understand
+                the next step using verified information.
+            </p>
+
+        </div>
+
+
+        <div class="vh-category-grid">
+
+
+            <a
+                href="government.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🏛️
+                </div>
+
+                <h3>
+                    Government Schemes
+                </h3>
+
+                <p>
+                    Explore verified scheme information.
+                </p>
+
+            </a>
+
+
+            <a
+                href="government.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    📄
+                </div>
+
+                <h3>
+                    Documents
+                </h3>
+
+                <p>
+                    Understand documents required for
+                    listed services.
+                </p>
+
+            </a>
+
+
+            <a
+                href="government.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Official Websites
+                </h3>
+
+                <p>
+                    Go directly to official application sources.
+                </p>
+
+            </a>
+
+
+            <a
+                href="contact.html"
+                class="vh-card"
+            >
+
+                <div class="vh-icon">
+                    💬
+                </div>
+
+                <h3>
+                    Get Guidance
+                </h3>
+
+                <p>
+                    Send your requirement to VELORA HELP.
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT CTA
+     ========================================================= -->
+
+<section class="vh-section vh-section-alt">
+
+    <div class="vh-container">
+
+        <div
+            class="vh-problem-box"
+        >
+
+            <small>
+                VELORA HELP
+            </small>
+
+            <h2>
+                Your problem. Our direction.
+            </h2>
+
+            <p>
+                If you don't know where to go,
+                tell us what you need. We'll review
+                your enquiry and guide you toward
+                the appropriate next step.
+            </p>
+
+
+            <div class="vh-actions">
+
+                <a
+                    href="https://wa.me/918088590273?text=Hello%20VELORA%20HELP%2C%20I%20need%20guidance."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="vh-btn vh-btn-light"
+                >
+                    💬 WhatsApp Us
+                </a>
+
+
+                <a
+                    href="tel:+918088590273"
+                    class="vh-btn vh-btn-light"
+                >
+                    📞 +91 8088590273
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="vh-btn vh-btn-light"
+                >
+                    Contact Page
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer class="vh-footer">
+
+    <div class="vh-container">
+
+        <div class="vh-footer-grid">
+
+
+            <div>
+
+                <img
+                    src="velora-help-logo.png"
+                    alt="VELORA HELP"
+                    style="
+                        width:90px;
+                        height:90px;
+                        object-fit:contain;
+                        border-radius:50%;
+                        background:white;
+                        padding:5px;
+                    "
+                >
+
+                <h3>
+                    VELORA HELP
+                </h3>
+
+                <p>
+                    Your Problem. Our Direction.
+                </p>
+
+                <p>
+                    Powered by VELORA DIGITAL.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Help
+                </h4>
+
+                <a href="healthcare.html">
+                    Healthcare
+                </a>
+
+                <a href="emergency.html">
+                    Emergency
+                </a>
+
+                <a href="local-services.html">
+                    Local Services
+                </a>
+
+                <a href="property.html">
+                    Housing
+                </a>
+
+                <a href="transport.html">
+                    Transport
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Students
+                </h4>
+
+                <a href="students.html">
+                    Student Help
+                </a>
+
+                <a href="admissions.html">
+                    Admissions
+                </a>
+
+                <a href="scholarships.html">
+                    Scholarships
+                </a>
+
+                <a href="jobs.html">
+                    Jobs
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h4>
+                    Information
+                </h4>
+
+                <a href="government.html">
+                    Government
+                </a>
+
+                <a href="report-problem.html">
+                    Report Problem
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a href="disclaimer.html">
+                    Disclaimer
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="vh-footer-bottom">
+
+            <span>
+                © <span id="vhYear"></span>
+                VELORA HELP. All rights reserved.
+            </span>
+
+            <span>
+                Powered by VELORA DIGITAL
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     ALERT
+     ========================================================= -->
+
+<div
+    class="vh-alert"
+    id="vhAlert"
+    role="status"
+    aria-live="polite"
+></div>
+
+
+<!-- =========================================================
+     VELORA CONFIGURATION
+     ========================================================= -->
+
+<script>
+
+    /*
+    Central configuration.
+
+    WhatsApp number is stored without + or spaces
+    because that is the format required by wa.me.
+    */
+
+    window.VELORA_CONFIG = {
+
+        brand:
+            "VELORA HELP",
+
+        tagline:
+            "Your Problem. Our Direction.",
+
+        company:
+            "VELORA DIGITAL",
+
+        phone:
+            "918088590273",
+
+        displayPhone:
+            "+91 8088590273",
+
+        email:
+            "veloradigital.co.in@gmail.com"
+
+    };
+
+</script>
+
+
+<!-- =========================================================
+     MENU
+     ========================================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const menuButton =
+            document.getElementById(
+                "vhMenuButton"
+            );
+
+
+        const navigation =
+            document.getElementById(
+                "vhNavigation"
+            );
+
+
+        if (
+            menuButton &&
+            navigation
+        ) {
+
+            menuButton.addEventListener(
+                "click",
+                function () {
+
+                    const active =
+                        navigation.classList.toggle(
+                            "active"
+                        );
+
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        active
+                            ? "true"
+                            : "false"
+                    );
+
+                }
+            );
+
+
+            navigation
+                .querySelectorAll("a")
+                .forEach(
+                    function (link) {
+
+                        link.addEventListener(
+                            "click",
+                            function () {
+
+                                navigation.classList.remove(
+                                    "active"
+                                );
+
+                                menuButton.setAttribute(
+                                    "aria-expanded",
+                                    "false"
+                                );
+
+                            }
+                        );
+
+                    }
+                );
+
+        }
+
+
+        const year =
+            document.getElementById(
+                "vhYear"
+            );
+
+
+        if (year) {
+
+            year.textContent =
+                new Date()
+                    .getFullYear();
+
+        }
+
+    }
+);
+
+</script>
+
+
+<!-- =========================================================
+     HOME SEARCH
+     ========================================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const form =
+            document.getElementById(
+                "homeSearchForm"
+            );
+
+
+        if (!form) {
+            return;
+        }
+
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const search =
+                    document
+                        .getElementById(
+                            "homeSearch"
+                        )
+                        .value
+                        .trim()
+                        .toLowerCase();
+
+
+                const category =
+                    document
+                        .getElementById(
+                            "homeCategory"
+                        )
+                        .value;
+
+
+                const taluk =
+                    document
+                        .getElementById(
+                            "homeTaluk"
+                        )
+                        .value;
+
+
+                let destination =
+                    "services.html";
+
+
+                if (
+                    category ===
+                    "Healthcare"
+                ) {
+
+                    destination =
+                        "healthcare.html";
+
+                }
+
+                else if (
+                    category ===
+                    "Education"
+                ) {
+
+                    destination =
+                        "students.html";
+
+                }
+
+                else if (
+                    category ===
+                    "Jobs"
+                ) {
+
+                    destination =
+                        "jobs.html";
+
+                }
+
+                else if (
+                    category ===
+                    "Housing"
+                ) {
+
+                    destination =
+                        "property.html";
+
+                }
+
+                else if (
+                    category ===
+                    "Government Services"
+                ) {
+
+                    destination =
+                        "government.html";
+
+                }
+
+                else if (
+                    category ===
+                    "Local Services"
+                ) {
+
+                    destination =
+                        "local-services.html";
+
+                }
+
+                else if (
+                    category ===
+                    "Transport"
+                ) {
+
+                    destination =
+                        "transport.html";
+
+                }
+
+                else if (
+                    category ===
+                    "Waste / Garbage"
+                ) {
+
+                    destination =
+                        "civic.html";
+
+                }
+
+                else if (
+                    search.includes(
+                        "doctor"
+                    ) ||
+                    search.includes(
+                        "hospital"
+                    ) ||
+                    search.includes(
+                        "fever"
+                    )
+                ) {
+
+                    destination =
+                        "healthcare.html";
+
+                }
+
+                else if (
+                    search.includes(
+                        "job"
+                    ) ||
+                    search.includes(
+                        "work"
+                    ) ||
+                    search.includes(
+                        "internship"
+                    )
+                ) {
+
+                    destination =
+                        "jobs.html";
+
+                }
+
+                else if (
+                    search.includes(
+                        "rent"
+                    ) ||
+                    search.includes(
+                        "house"
+                    ) ||
+                    search.includes(
+                        "property"
+                    )
+                ) {
+
+                    destination =
+                        "property.html";
+
+                }
+
+                else if (
+                    search.includes(
+                        "scholarship"
+                    )
+                ) {
+
+                    destination =
+                        "scholarships.html";
+
+                }
+
+                else if (
+                    search.includes(
+                        "admission"
+                    ) ||
+                    search.includes(
+                        "college"
+                    ) ||
+                    search.includes(
+                        "puc"
+                    )
+                ) {
+
+                    destination =
+                        "admissions.html";
+
+                }
+
+                else if (
+                    search.includes(
+                        "government"
+                    ) ||
+                    search.includes(
+                        "scheme"
+                    )
+                ) {
+
+                    destination =
+                        "government.html";
+
+                }
+
+
+                /*
+                Pass search information to the next page.
+                */
+
+                const params =
+                    new URLSearchParams();
+
+
+                if (search) {
+
+                    params.set(
+                        "search",
+                        search
+                    );
+
+                }
+
+
+                if (taluk) {
+
+                    params.set(
+                        "taluk",
+                        taluk
+                    );
+
+                }
+
+
+                window.location.href =
+                    destination +
+                    (
+                        params.toString()
+                            ? "?" +
+                              params.toString()
+                            : ""
+                    );
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+
+<!-- =========================================================
+     VELORA JS FILES
+     IMPORTANT ORDER
+     ========================================================= -->
+
+<script
+    src="js/data.js"
+>
+</script>
+
+
+<script
+    src="js/main.js"
+>
+</script>
+
+
+<script
+    src="js/forms.js"
+>
+</script>
+
+
+<script
+    src="js/healthcare.js"
+>
+</script>
+
+
+<script
+    src="js/admissions.js"
+>
+</script>
+
+
+<script
+    src="js/government.js"
+>
+</script>
+
+
+<script
+    src="js/problems.js"
+>
+</script>
+
+
+<!-- =========================================================
+     FINAL INDEX INITIALISATION
+     ========================================================= -->
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        /*
+        Make sure VELORA HELP phone links
+        always use the correct number.
+        */
+
+        document
+            .querySelectorAll(
+                "[data-velora-whatsapp]"
+            )
+            .forEach(
+                function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            const message =
+                                button.getAttribute(
+                                    "data-message"
+                                ) ||
+                                "Hello VELORA HELP, I need guidance.";
+
+
+                            window.open(
+
+                                "https://wa.me/" +
+                                VELORA_CONFIG.phone +
+                                "?text=" +
+                                encodeURIComponent(
+                                    message
+                                ),
+
+                                "_blank",
+
+                                "noopener,noreferrer"
+
+                            );
+
+                        }
+                    );
+
+                }
+            );
+
+
+        console.log(
+            "VELORA HELP homepage loaded successfully."
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
