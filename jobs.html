@@ -1,1 +1,3655 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color" content="#071a3d">
+
+<meta
+name="description"
+content="VELORA HELP Jobs — Find local jobs, part-time work, internships, apprenticeships and employment opportunities across Dakshina Kannada."
+>
+
+<title>Jobs & Employment | VELORA HELP</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* =====================================================
+   BASE
+===================================================== */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f6f8fb;
+    color:#17243d;
+}
+
+a{
+    text-decoration:none;
+}
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+.vh-container{
+    width:min(1180px,92%);
+    margin:auto;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.vh-header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,255,255,.97);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #e5e9f0;
+}
+
+.vh-nav{
+    min-height:76px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.vh-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#071a3d;
+}
+
+.vh-brand img{
+    width:52px;
+    height:52px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.vh-brand-name{
+    font-size:1.15rem;
+    font-weight:800;
+}
+
+.vh-brand-sub{
+    font-size:.7rem;
+    opacity:.7;
+    margin-top:3px;
+}
+
+.vh-nav-links{
+    display:flex;
+    align-items:center;
+    gap:5px;
+}
+
+.vh-nav-links a{
+    color:#17243d;
+    padding:10px 11px;
+    border-radius:9px;
+    font-size:.88rem;
+    font-weight:600;
+}
+
+.vh-nav-links a:hover{
+    background:#eef2f8;
+}
+
+.vh-menu{
+    display:none;
+    background:#071a3d;
+    color:white;
+    border:0;
+    padding:10px 13px;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    padding:90px 0;
+    color:white;
+
+    background:
+    linear-gradient(
+        105deg,
+        #071a3d 0%,
+        #12315e 58%,
+        #8a172d 100%
+    );
+}
+
+.hero small{
+    color:#e8b7bf;
+    font-weight:800;
+    letter-spacing:.14em;
+}
+
+.hero h1{
+    font-size:clamp(2.7rem,6vw,5rem);
+    line-height:1;
+    margin:12px 0 20px;
+    letter-spacing:-.045em;
+}
+
+.hero p{
+    max-width:800px;
+    line-height:1.75;
+    color:rgba(255,255,255,.88);
+    font-size:1.06rem;
+}
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:28px;
+}
+
+.btn{
+    min-height:46px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:11px 17px;
+    border-radius:11px;
+    border:0;
+    cursor:pointer;
+    font-weight:750;
+}
+
+.btn-white{
+    background:white;
+    color:#071a3d;
+}
+
+.btn-red{
+    background:#a3132d;
+    color:white;
+}
+
+.btn-blue{
+    background:#071a3d;
+    color:white;
+}
+
+.btn-light{
+    background:#eef2f8;
+    color:#071a3d;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-section{
+    margin-top:-38px;
+    position:relative;
+    z-index:5;
+}
+
+.search-panel{
+    background:white;
+    border-radius:20px;
+    padding:26px;
+    box-shadow:0 20px 60px rgba(7,26,61,.14);
+}
+
+.search-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1fr auto;
+    gap:12px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #d7deea;
+    border-radius:10px;
+    background:white;
+    color:#17243d;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#a3132d;
+    box-shadow:0 0 0 3px rgba(163,19,45,.08);
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+.section{
+    padding:72px 0;
+}
+
+.alt{
+    background:#eef2f7;
+}
+
+.heading{
+    max-width:790px;
+    margin-bottom:30px;
+}
+
+.heading small{
+    color:#a3132d;
+    font-weight:800;
+    letter-spacing:.12em;
+}
+
+.heading h2{
+    margin:8px 0 12px;
+    color:#071a3d;
+    font-size:clamp(2rem,4vw,3.1rem);
+}
+
+.heading p{
+    color:#667085;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   JOB CATEGORIES
+===================================================== */
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.category-card{
+    background:white;
+    border:1px solid #e0e6ee;
+    border-radius:17px;
+    padding:22px;
+    cursor:pointer;
+    transition:.2s ease;
+}
+
+.category-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(7,26,61,.09);
+}
+
+.category-icon{
+    font-size:30px;
+    margin-bottom:12px;
+}
+
+.category-card h3{
+    margin:0 0 7px;
+    color:#071a3d;
+}
+
+.category-card p{
+    margin:0;
+    color:#667085;
+    font-size:.88rem;
+    line-height:1.55;
+}
+
+
+/* =====================================================
+   JOB CARDS
+===================================================== */
+
+.job-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.job-card{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:19px;
+    padding:23px;
+    box-shadow:0 7px 24px rgba(7,26,61,.04);
+}
+
+.job-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.job-icon{
+    width:56px;
+    height:56px;
+    display:grid;
+    place-items:center;
+    background:#eef2f8;
+    border-radius:15px;
+    font-size:27px;
+}
+
+.status{
+    padding:6px 9px;
+    border-radius:20px;
+    font-size:.7rem;
+    font-weight:800;
+}
+
+.open{
+    background:#eaf7ef;
+    color:#19723a;
+}
+
+.soon{
+    background:#fff4da;
+    color:#735a12;
+}
+
+.job-card h3{
+    margin:18px 0 7px;
+    color:#071a3d;
+}
+
+.company{
+    color:#8a172d;
+    font-size:.85rem;
+    font-weight:750;
+}
+
+.job-card p{
+    color:#667085;
+    line-height:1.6;
+    font-size:.9rem;
+}
+
+.meta{
+    margin-top:17px;
+    padding-top:15px;
+    border-top:1px solid #edf0f4;
+}
+
+.meta-line{
+    margin:8px 0;
+    color:#667085;
+    font-size:.83rem;
+}
+
+.meta-line strong{
+    color:#071a3d;
+}
+
+.card-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:18px;
+}
+
+.card-actions .btn{
+    min-height:40px;
+    padding:9px 12px;
+    font-size:.8rem;
+}
+
+
+/* =====================================================
+   SEARCH RESULTS
+===================================================== */
+
+.results{
+    display:none;
+    margin-top:22px;
+    padding:20px;
+    border-radius:15px;
+    background:#f7f9fc;
+    border:1px solid #dce2eb;
+}
+
+.results.active{
+    display:block;
+}
+
+.result-item{
+    padding:15px 0;
+    border-bottom:1px solid #e2e6ec;
+}
+
+.result-item:last-child{
+    border-bottom:0;
+}
+
+.result-item strong{
+    display:block;
+    color:#071a3d;
+    margin-bottom:6px;
+}
+
+.result-item span{
+    color:#667085;
+    font-size:.9rem;
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   HOW IT WORKS
+===================================================== */
+
+.steps{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.step{
+    background:white;
+    border:1px solid #e1e6ee;
+    border-radius:17px;
+    padding:22px;
+}
+
+.step-number{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    background:#071a3d;
+    color:white;
+    font-weight:800;
+    margin-bottom:14px;
+}
+
+.step h3{
+    color:#071a3d;
+    margin:0 0 8px;
+}
+
+.step p{
+    color:#667085;
+    line-height:1.6;
+    font-size:.89rem;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.form-box{
+    background:white;
+    border:1px solid #e0e5ed;
+    border-radius:21px;
+    padding:30px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    display:block;
+    margin-bottom:7px;
+    color:#071a3d;
+    font-size:.9rem;
+    font-weight:700;
+}
+
+.form-note{
+    background:#fff8e6;
+    border:1px solid #f1dfa9;
+    color:#624f18;
+    border-radius:13px;
+    padding:15px;
+    font-size:.86rem;
+    line-height:1.6;
+}
+
+
+/* =====================================================
+   EMPLOYER BOX
+===================================================== */
+
+.employer-box{
+    background:
+    linear-gradient(
+        115deg,
+        #071a3d,
+        #12315e
+    );
+    color:white;
+    border-radius:23px;
+    padding:38px;
+}
+
+.employer-box h2{
+    margin:8px 0 12px;
+    font-size:clamp(2rem,4vw,3rem);
+}
+
+.employer-box p{
+    max-width:790px;
+    color:rgba(255,255,255,.83);
+    line-height:1.7;
+}
+
+.benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:25px;
+}
+
+.benefit{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.13);
+    padding:17px;
+    border-radius:13px;
+}
+
+.benefit strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.benefit span{
+    color:rgba(255,255,255,.7);
+    font-size:.82rem;
+    line-height:1.5;
+}
+
+
+/* =====================================================
+   TRUST
+===================================================== */
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:17px;
+}
+
+.trust-card{
+    background:white;
+    border:1px solid #e1e6ee;
+    border-radius:17px;
+    padding:23px;
+}
+
+.trust-icon{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.trust-card h3{
+    margin:0 0 8px;
+    color:#071a3d;
+}
+
+.trust-card p{
+    color:#667085;
+    line-height:1.65;
+    font-size:.89rem;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    background:#06152f;
+    color:white;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:35px;
+}
+
+footer a{
+    display:block;
+    color:rgba(255,255,255,.72);
+    margin:9px 0;
+}
+
+footer a:hover{
+    color:white;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:35px;
+    padding-top:20px;
+    color:rgba(255,255,255,.55);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:9999;
+    display:none;
+    max-width:390px;
+    background:white;
+    color:#071a3d;
+    padding:17px 20px;
+    border-radius:13px;
+    box-shadow:0 15px 50px rgba(0,0,0,.2);
+    border-left:5px solid #a3132d;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1050px){
+
+    .vh-nav-links{
+        display:none;
+        position:absolute;
+        top:70px;
+        left:4%;
+        right:4%;
+        padding:12px;
+        background:white;
+        border-radius:14px;
+        box-shadow:0 20px 50px rgba(0,0,0,.15);
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .vh-nav-links.active{
+        display:flex;
+    }
+
+    .vh-menu{
+        display:block;
+    }
+
+    .search-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .category-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .job-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .steps{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .benefit-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .hero{
+        padding:65px 0;
+    }
+
+    .search-section{
+        margin-top:-25px;
+    }
+
+    .search-grid,
+    .category-grid,
+    .job-grid,
+    .steps,
+    .benefit-grid,
+    .trust-grid,
+    .form-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .employer-box,
+    .form-box{
+        padding:24px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="vh-header">
+
+<div class="vh-container vh-nav">
+
+<a href="index.html" class="vh-brand">
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo"
+>
+
+<div>
+
+<div class="vh-brand-name">
+VELORA HELP
+</div>
+
+<div class="vh-brand-sub">
+Your Problem. Our Direction.
+</div>
+
+</div>
+
+</a>
+
+
+<button
+id="menuButton"
+class="vh-menu"
+type="button"
+aria-label="Open navigation"
+>
+☰
+</button>
+
+
+<nav
+id="navigation"
+class="vh-nav-links"
+>
+
+<a href="index.html">Home</a>
+
+<a href="healthcare.html">Healthcare</a>
+
+<a href="admissions.html">Admissions</a>
+
+<a href="government.html">Government</a>
+
+<a href="students.html">Students</a>
+
+<a href="jobs.html">Jobs</a>
+
+<a href="property.html">Housing</a>
+
+<a href="businesses.html">Local Services</a>
+
+<a href="contact.html">Contact</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="vh-container">
+
+<small>
+VELORA HELP • JOBS
+</small>
+
+<h1>
+Find work.<br>
+Find your direction.
+</h1>
+
+<p>
+Looking for a job in Dakshina Kannada? Find local
+full-time jobs, part-time work, student jobs, internships,
+apprenticeships, work-from-home opportunities and other
+employment options. Tell VELORA HELP what you are looking
+for and where you want to work.
+</p>
+
+
+<div class="actions">
+
+<a
+href="#job-search"
+class="btn btn-white"
+>
+🔎 Find a Job
+</a>
+
+<a
+href="#job-request"
+class="btn btn-white"
+>
+💼 Job Help
+</a>
+
+<a
+href="#employer"
+class="btn btn-red"
+>
+🏢 Hire Through VELORA HELP
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SEARCH
+===================================================== -->
+
+<section
+class="search-section"
+id="job-search"
+>
+
+<div class="vh-container">
+
+<div class="search-panel">
+
+<div class="heading">
+
+<small>
+JOB FINDER
+</small>
+
+<h2>
+What kind of work are you looking for?
+</h2>
+
+<p>
+Search by job type, location and work arrangement.
+</p>
+
+</div>
+
+
+<form id="jobSearchForm">
+
+<div class="search-grid">
+
+
+<input
+id="jobKeyword"
+type="search"
+placeholder="Example: cashier, driver, accountant..."
+>
+
+
+<select id="jobCategory">
+
+<option value="">
+All Job Types
+</option>
+
+<option value="Full Time">
+Full-Time
+</option>
+
+<option value="Part Time">
+Part-Time
+</option>
+
+<option value="Student">
+Student Jobs
+</option>
+
+<option value="Internship">
+Internships
+</option>
+
+<option value="Apprenticeship">
+Apprenticeships
+</option>
+
+<option value="Work From Home">
+Work From Home
+</option>
+
+<option value="Skilled">
+Skilled Work
+</option>
+
+<option value="Office">
+Office Jobs
+</option>
+
+</select>
+
+
+<select id="jobLocation">
+
+<option value="">
+Location
+</option>
+
+<option>
+Mangaluru
+</option>
+
+<option>
+Bantwal
+</option>
+
+<option>
+Belthangady
+</option>
+
+<option>
+Puttur
+</option>
+
+<option>
+Sullia
+</option>
+
+<option>
+Moodbidri
+</option>
+
+<option>
+Kadaba
+</option>
+
+<option>
+Mulki
+</option>
+
+</select>
+
+
+<select id="jobExperience">
+
+<option value="">
+Experience
+</option>
+
+<option value="Fresher">
+Fresher
+</option>
+
+<option value="0-2">
+0–2 Years
+</option>
+
+<option value="2+">
+2+ Years
+</option>
+
+<option value="Any">
+Any Experience
+</option>
+
+</select>
+
+
+<button
+type="submit"
+class="btn btn-red"
+>
+Search
+</button>
+
+</div>
+
+</form>
+
+
+<div
+id="searchResults"
+class="results"
+>
+
+<h3>
+Job Results
+</h3>
+
+<div id="resultContent"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     JOB CATEGORIES
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+EMPLOYMENT
+</small>
+
+<h2>
+Choose the work you need.
+</h2>
+
+<p>
+VELORA HELP can expand the job directory across every
+taluk and town in Dakshina Kannada.
+</p>
+
+</div>
+
+
+<div class="category-grid">
+
+
+<div
+class="category-card category-button"
+data-category="Full Time"
+>
+
+<div class="category-icon">
+💼
+</div>
+
+<h3>
+Full-Time Jobs
+</h3>
+
+<p>
+Regular employment opportunities across different
+industries and businesses.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Part Time"
+>
+
+<div class="category-icon">
+⏰
+</div>
+
+<h3>
+Part-Time Jobs
+</h3>
+
+<p>
+Flexible work opportunities for students and others.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Student"
+>
+
+<div class="category-icon">
+🎓
+</div>
+
+<h3>
+Student Jobs
+</h3>
+
+<p>
+Student-friendly part-time and entry-level work.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Internship"
+>
+
+<div class="category-icon">
+🧑‍💻
+</div>
+
+<h3>
+Internships
+</h3>
+
+<p>
+Practical experience and career-building opportunities.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Apprenticeship"
+>
+
+<div class="category-icon">
+🛠️
+</div>
+
+<h3>
+Apprenticeships
+</h3>
+
+<p>
+Learn practical skills while gaining workplace experience.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Work From Home"
+>
+
+<div class="category-icon">
+🏠
+</div>
+
+<h3>
+Work From Home
+</h3>
+
+<p>
+Remote and home-based opportunities where available.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Skilled"
+>
+
+<div class="category-icon">
+🔧
+</div>
+
+<h3>
+Skilled Work
+</h3>
+
+<p>
+Technicians, drivers, mechanics, electricians and more.
+</p>
+
+</div>
+
+
+<div
+class="category-card category-button"
+data-category="Office"
+>
+
+<div class="category-icon">
+🗂️
+</div>
+
+<h3>
+Office Jobs
+</h3>
+
+<p>
+Administration, accounts, sales and office support roles.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     JOB LISTINGS
+===================================================== -->
+
+<section
+class="section alt"
+id="jobs"
+>
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+JOB BOARD
+</small>
+
+<h2>
+Local employment opportunities
+</h2>
+
+<p>
+The cards below demonstrate the future job-board
+structure. Replace demonstration listings with current
+and verified employer information before launch.
+</p>
+
+</div>
+
+
+<div class="job-grid">
+
+
+<!-- JOB 1 -->
+
+<article
+class="job-card"
+data-category="Full Time"
+data-location="Mangaluru"
+data-experience="Fresher"
+data-keywords="sales executive retail shop mangalore fresher"
+>
+
+<div class="job-top">
+
+<div class="job-icon">
+💼
+</div>
+
+<span class="status open">
+OPEN
+</span>
+
+</div>
+
+<h3>
+Sales Executive
+</h3>
+
+<div class="company">
+Local Business • Mangaluru
+</div>
+
+<p>
+Customer support and sales role suitable for
+candidates with communication skills.
+</p>
+
+<div class="meta">
+
+<div class="meta-line">
+<strong>Job Type:</strong>
+Full-Time
+</div>
+
+<div class="meta-line">
+<strong>Experience:</strong>
+Fresher / Experienced
+</div>
+
+<div class="meta-line">
+<strong>Location:</strong>
+Mangaluru
+</div>
+
+</div>
+
+<div class="card-actions">
+
+<button
+type="button"
+class="btn btn-blue job-enquiry"
+data-job="Sales Executive"
+data-company="Local Business"
+data-location="Mangaluru"
+>
+Enquire
+</button>
+
+</div>
+
+</article>
+
+
+
+<!-- JOB 2 -->
+
+<article
+class="job-card"
+data-category="Part Time"
+data-location="Puttur"
+data-experience="Fresher"
+data-keywords="part time cashier retail puttur student"
+>
+
+<div class="job-top">
+
+<div class="job-icon">
+⏰
+</div>
+
+<span class="status open">
+OPEN
+</span>
+
+</div>
+
+<h3>
+Part-Time Retail Assistant
+</h3>
+
+<div class="company">
+Local Retail Business • Puttur
+</div>
+
+<p>
+Part-time customer service and retail support
+opportunity.
+</p>
+
+<div class="meta">
+
+<div class="meta-line">
+<strong>Job Type:</strong>
+Part-Time
+</div>
+
+<div class="meta-line">
+<strong>Experience:</strong>
+Fresher
+</div>
+
+<div class="meta-line">
+<strong>Location:</strong>
+Puttur
+</div>
+
+</div>
+
+<div class="card-actions">
+
+<button
+type="button"
+class="btn btn-blue job-enquiry"
+data-job="Part-Time Retail Assistant"
+data-company="Local Retail Business"
+data-location="Puttur"
+>
+Enquire
+</button>
+
+</div>
+
+</article>
+
+
+
+<!-- JOB 3 -->
+
+<article
+class="job-card"
+data-category="Student"
+data-location="Sullia"
+data-experience="Fresher"
+data-keywords="student job part time sullia tuition office assistant"
+>
+
+<div class="job-top">
+
+<div class="job-icon">
+🎓
+</div>
+
+<span class="status open">
+OPEN
+</span>
+
+</div>
+
+<h3>
+Student Support Assistant
+</h3>
+
+<div class="company">
+Local Organisation • Sullia
+</div>
+
+<p>
+Flexible student-friendly opportunity for
+part-time support work.
+</p>
+
+<div class="meta">
+
+<div class="meta-line">
+<strong>Job Type:</strong>
+Student / Part-Time
+</div>
+
+<div class="meta-line">
+<strong>Experience:</strong>
+Fresher
+</div>
+
+<div class="meta-line">
+<strong>Location:</strong>
+Sullia
+</div>
+
+</div>
+
+<div class="card-actions">
+
+<button
+type="button"
+class="btn btn-blue job-enquiry"
+data-job="Student Support Assistant"
+data-company="Local Organisation"
+data-location="Sullia"
+>
+Enquire
+</button>
+
+</div>
+
+</article>
+
+
+
+<!-- JOB 4 -->
+
+<article
+class="job-card"
+data-category="Internship"
+data-location="Mangaluru"
+data-experience="Fresher"
+data-keywords="internship digital marketing social media mangalore student"
+>
+
+<div class="job-top">
+
+<div class="job-icon">
+🧑‍💻
+</div>
+
+<span class="status open">
+OPEN
+</span>
+
+</div>
+
+<h3>
+Digital Marketing Intern
+</h3>
+
+<div class="company">
+Local Company • Mangaluru
+</div>
+
+<p>
+Practical experience opportunity for students
+interested in digital marketing and social media.
+</p>
+
+<div class="meta">
+
+<div class="meta-line">
+<strong>Job Type:</strong>
+Internship
+</div>
+
+<div class="meta-line">
+<strong>Experience:</strong>
+Fresher
+</div>
+
+<div class="meta-line">
+<strong>Location:</strong>
+Mangaluru
+</div>
+
+</div>
+
+<div class="card-actions">
+
+<button
+type="button"
+class="btn btn-blue job-enquiry"
+data-job="Digital Marketing Intern"
+data-company="Local Company"
+data-location="Mangaluru"
+>
+Enquire
+</button>
+
+</div>
+
+</article>
+
+
+
+<!-- JOB 5 -->
+
+<article
+class="job-card"
+data-category="Skilled"
+data-location="Bantwal"
+data-experience="2+"
+data-keywords="electrician technician skilled worker bantwal"
+>
+
+<div class="job-top">
+
+<div class="job-icon">
+🔧
+</div>
+
+<span class="status open">
+OPEN
+</span>
+
+</div>
+
+<h3>
+Electrical Technician
+</h3>
+
+<div class="company">
+Service Company • Bantwal
+</div>
+
+<p>
+Skilled technician requirement for electrical
+installation and maintenance work.
+</p>
+
+<div class="meta">
+
+<div class="meta-line">
+<strong>Job Type:</strong>
+Skilled Work
+</div>
+
+<div class="meta-line">
+<strong>Experience:</strong>
+2+ Years
+</div>
+
+<div class="meta-line">
+<strong>Location:</strong>
+Bantwal
+</div>
+
+</div>
+
+<div class="card-actions">
+
+<button
+type="button"
+class="btn btn-blue job-enquiry"
+data-job="Electrical Technician"
+data-company="Service Company"
+data-location="Bantwal"
+>
+Enquire
+</button>
+
+</div>
+
+</article>
+
+
+
+<!-- JOB 6 -->
+
+<article
+class="job-card"
+data-category="Office"
+data-location="Moodbidri"
+data-experience="0-2"
+data-keywords="office administrator accounts computer moodbidri"
+>
+
+<div class="job-top">
+
+<div class="job-icon">
+🗂️
+</div>
+
+<span class="status soon">
+CHECK
+</span>
+
+</div>
+
+<h3>
+Office Assistant
+</h3>
+
+<div class="company">
+Local Business • Moodbidri
+</div>
+
+<p>
+Office support role involving basic computer,
+documentation and customer coordination.
+</p>
+
+<div class="meta">
+
+<div class="meta-line">
+<strong>Job Type:</strong>
+Office
+</div>
+
+<div class="meta-line">
+<strong>Experience:</strong>
+0–2 Years
+</div>
+
+<div class="meta-line">
+<strong>Location:</strong>
+Moodbidri
+</div>
+
+</div>
+
+<div class="card-actions">
+
+<button
+type="button"
+class="btn btn-blue job-enquiry"
+data-job="Office Assistant"
+data-company="Local Business"
+data-location="Moodbidri"
+>
+Enquire
+</button>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HOW IT WORKS
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+FOR JOB SEEKERS
+</small>
+
+<h2>
+How VELORA HELP can guide you
+</h2>
+
+<p>
+Finding a job is not only about seeing a vacancy.
+The goal is to understand what work is suitable for you,
+where you can work and what the next step should be.
+</p>
+
+</div>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Tell us your skills
+</h3>
+
+<p>
+Tell us your education, experience, skills and
+the type of work you want.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Choose location
+</h3>
+
+<p>
+Tell us your preferred taluk, town or
+work location.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+We review
+</h3>
+
+<p>
+VELORA HELP reviews suitable available
+job information.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>
+Get direction
+</h3>
+
+<p>
+We guide you toward the relevant employer
+or application process.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     JOB SEEKER REQUEST
+===================================================== -->
+
+<section
+class="section alt"
+id="job-request"
+>
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+JOB HELP DESK
+</small>
+
+<h2>
+Can't find the right job?
+</h2>
+
+<p>
+Tell us what you can do and what type of job you are
+looking for. VELORA HELP can review your requirement.
+</p>
+
+</div>
+
+
+<div class="form-box">
+
+<form id="jobSeekerForm">
+
+<div class="form-grid">
+
+
+<div>
+
+<label for="seekerName">
+Full Name *
+</label>
+
+<input
+id="seekerName"
+type="text"
+required
+placeholder="Your full name"
+>
+
+</div>
+
+
+<div>
+
+<label for="seekerPhone">
+Phone Number *
+</label>
+
+<input
+id="seekerPhone"
+type="tel"
+required
+placeholder="+91..."
+>
+
+</div>
+
+
+<div>
+
+<label for="seekerEducation">
+Education
+</label>
+
+<input
+id="seekerEducation"
+type="text"
+placeholder="Example: SSLC / PUC / B.Com / ITI"
+>
+
+</div>
+
+
+<div>
+
+<label for="seekerExperience">
+Experience
+</label>
+
+<input
+id="seekerExperience"
+type="text"
+placeholder="Example: Fresher / 2 years"
+>
+
+</div>
+
+
+<div>
+
+<label for="seekerJobType">
+Preferred Job Type *
+</label>
+
+<select
+id="seekerJobType"
+required
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+Full-Time
+</option>
+
+<option>
+Part-Time
+</option>
+
+<option>
+Student Job
+</option>
+
+<option>
+Internship
+</option>
+
+<option>
+Apprenticeship
+</option>
+
+<option>
+Work From Home
+</option>
+
+<option>
+Skilled Work
+</option>
+
+<option>
+Office Job
+</option>
+
+<option>
+Any Suitable Job
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="seekerTaluk">
+Preferred Taluk *
+</label>
+
+<select
+id="seekerTaluk"
+required
+>
+
+<option value="">
+Select Taluk
+</option>
+
+<option>
+Mangaluru
+</option>
+
+<option>
+Bantwal
+</option>
+
+<option>
+Belthangady
+</option>
+
+<option>
+Puttur
+</option>
+
+<option>
+Sullia
+</option>
+
+<option>
+Moodbidri
+</option>
+
+<option>
+Kadaba
+</option>
+
+<option>
+Mulki
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="seekerArea">
+Preferred Area
+</label>
+
+<input
+id="seekerArea"
+type="text"
+placeholder="Town / village / area"
+>
+
+</div>
+
+
+<div>
+
+<label for="seekerSalary">
+Expected Salary
+</label>
+
+<input
+id="seekerSalary"
+type="text"
+placeholder="Example: ₹15,000/month"
+>
+
+</div>
+
+
+<div class="full">
+
+<label for="seekerSkills">
+Your Skills
+</label>
+
+<input
+id="seekerSkills"
+type="text"
+placeholder="Example: Computer, sales, driving, accounts, electrical work"
+>
+
+</div>
+
+
+<div class="full">
+
+<label for="seekerRequirement">
+Tell Us What You Need *
+</label>
+
+<textarea
+id="seekerRequirement"
+rows="6"
+required
+maxlength="2000"
+placeholder="Explain what type of job you are looking for..."
+></textarea>
+
+</div>
+
+
+<div class="full">
+
+<div class="form-note">
+
+<strong>
+🔐 Privacy:
+</strong>
+
+Do not submit passwords, OTPs, bank PINs or other
+sensitive security information. Only provide information
+necessary for your job enquiry.
+
+</div>
+
+</div>
+
+
+<div class="full">
+
+<button
+type="submit"
+class="btn btn-blue"
+>
+💬 Send Job Requirement
+</button>
+
+</div>
+
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EMPLOYER SECTION
+===================================================== -->
+
+<section
+class="section"
+id="employer"
+>
+
+<div class="vh-container">
+
+<div class="employer-box">
+
+<small>
+FOR EMPLOYERS
+</small>
+
+<h2>
+Need someone for your business?
+</h2>
+
+<p>
+Businesses, shops, companies, institutions and other
+legitimate employers can submit their job requirements
+to VELORA HELP. We can review the information before
+presenting it to job seekers.
+</p>
+
+
+<div class="benefit-grid">
+
+
+<div class="benefit">
+
+<strong>
+👥 Reach Candidates
+</strong>
+
+<span>
+Share your vacancy with relevant local job seekers.
+</span>
+
+</div>
+
+
+<div class="benefit">
+
+<strong>
+📍 Local Hiring
+</strong>
+
+<span>
+Find candidates according to taluk, town and
+work location.
+</span>
+
+</div>
+
+
+<div class="benefit">
+
+<strong>
+🛡️ Responsible Listings
+</strong>
+
+<span>
+Job information should be reviewed before being
+presented as verified.
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EMPLOYER FORM
+===================================================== -->
+
+<section class="section alt">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+EMPLOYER JOB SUBMISSION
+</small>
+
+<h2>
+Submit a vacancy
+</h2>
+
+<p>
+Send your vacancy information to VELORA HELP.
+The current platform does not charge a job-posting plan.
+</p>
+
+</div>
+
+
+<div class="form-box">
+
+<form id="employerForm">
+
+<div class="form-grid">
+
+
+<div>
+
+<label for="employerName">
+Employer / Contact Name *
+</label>
+
+<input
+id="employerName"
+type="text"
+required
+placeholder="Full name"
+>
+
+</div>
+
+
+<div>
+
+<label for="employerBusiness">
+Business / Organisation *
+</label>
+
+<input
+id="employerBusiness"
+type="text"
+required
+placeholder="Business name"
+>
+
+</div>
+
+
+<div>
+
+<label for="employerPhone">
+Contact Number *
+</label>
+
+<input
+id="employerPhone"
+type="tel"
+required
+placeholder="+91..."
+>
+
+</div>
+
+
+<div>
+
+<label for="employerJobTitle">
+Job Title *
+</label>
+
+<input
+id="employerJobTitle"
+type="text"
+required
+placeholder="Example: Sales Executive"
+>
+
+</div>
+
+
+<div>
+
+<label for="employerJobType">
+Job Type *
+</label>
+
+<select
+id="employerJobType"
+required
+>
+
+<option value="">
+Select
+</option>
+
+<option>
+Full-Time
+</option>
+
+<option>
+Part-Time
+</option>
+
+<option>
+Student Job
+</option>
+
+<option>
+Internship
+</option>
+
+<option>
+Apprenticeship
+</option>
+
+<option>
+Work From Home
+</option>
+
+<option>
+Skilled Work
+</option>
+
+<option>
+Office Job
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label for="employerLocation">
+Work Location *
+</label>
+
+<input
+id="employerLocation"
+type="text"
+required
+placeholder="Town / area"
+>
+
+</div>
+
+
+<div>
+
+<label for="employerExperience">
+Experience Required
+</label>
+
+<input
+id="employerExperience"
+type="text"
+placeholder="Example: Fresher / 2 years"
+>
+
+</div>
+
+
+<div>
+
+<label for="employerSalary">
+Salary / Compensation
+</label>
+
+<input
+id="employerSalary"
+type="text"
+placeholder="Example: ₹18,000/month"
+>
+
+</div>
+
+
+<div class="full">
+
+<label for="employerEligibility">
+Eligibility / Qualification
+</label>
+
+<textarea
+id="employerEligibility"
+rows="4"
+maxlength="1500"
+placeholder="Education, skills, age requirement or other eligibility information."
+></textarea>
+
+</div>
+
+
+<div class="full">
+
+<label for="employerDescription">
+Job Description *
+</label>
+
+<textarea
+id="employerDescription"
+rows="6"
+required
+maxlength="2000"
+placeholder="Describe responsibilities, working hours and other useful information."
+></textarea>
+
+</div>
+
+
+<div class="full">
+
+<label for="employerDeadline">
+Application Deadline
+</label>
+
+<input
+id="employerDeadline"
+type="date"
+>
+
+</div>
+
+
+<div class="full">
+
+<button
+type="submit"
+class="btn btn-blue"
+>
+🏢 Submit Job Vacancy
+</button>
+
+</div>
+
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SAFETY
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+JOB SAFETY
+</small>
+
+<h2>
+Find work safely.
+</h2>
+
+<p>
+A job platform must protect job seekers from misleading
+vacancies and recruitment scams.
+</p>
+
+</div>
+
+
+<div class="trust-grid">
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+🔎
+</div>
+
+<h3>
+Verify Employer
+</h3>
+
+<p>
+Employer details should be checked before a vacancy
+is presented as verified.
+</p>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+💰
+</div>
+
+<h3>
+Never Pay Suspicious Fees
+</h3>
+
+<p>
+Be cautious if someone demands money for a job,
+interview, appointment or guaranteed employment.
+</p>
+
+</div>
+
+
+<div class="trust-card">
+
+<div class="trust-icon">
+🛡️
+</div>
+
+<h3>
+Protect Your Information
+</h3>
+
+<p>
+Never share OTPs, passwords, banking PINs or other
+security credentials with a recruiter.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div
+class="form-note"
+style="margin-top:25px;"
+>
+
+<strong>
+Important:
+</strong>
+
+Job listings can change or expire. VELORA HELP should
+confirm vacancy status before describing a vacancy as
+currently available or verified. The listings on this
+demonstration page are sample listings.
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="vh-container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP"
+style="
+width:90px;
+height:90px;
+object-fit:contain;
+background:white;
+border-radius:50%;
+padding:5px;
+"
+>
+
+<h3>
+VELORA HELP
+</h3>
+
+<p>
+Your Problem. Our Direction.
+</p>
+
+<p>
+Powered by VELORA DIGITAL.
+</p>
+
+</div>
+
+
+<div>
+
+<h4>
+Services
+</h4>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="businesses.html">
+Local Services
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Opportunities
+</h4>
+
+<a href="students.html">
+Students
+</a>
+
+<a href="jobs.html">
+Jobs
+</a>
+
+<a href="property.html">
+Housing
+</a>
+
+<a href="businesses.html">
+Local Services
+</a>
+
+</div>
+
+
+<div>
+
+<h4>
+Information
+</h4>
+
+<a href="about.html">
+About
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a href="privacy.html">
+Privacy
+</a>
+
+<a href="terms.html">
+Terms
+</a>
+
+<a href="disclaimer.html">
+Disclaimer
+</a>
+
+</div>
+
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© <span id="year"></span>
+VELORA HELP
+</span>
+
+<span>
+📞 +91 8088590273
+</span>
+
+</div>
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     MESSAGE
+===================================================== -->
+
+<div
+id="message"
+class="message"
+role="status"
+aria-live="polite"
+></div>
+
+
+
+<!-- =====================================================
+     PROJECT JAVASCRIPT
+===================================================== -->
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
+
+
+
+<!-- =====================================================
+     JOBS PAGE JAVASCRIPT
+===================================================== -->
+
+<script>
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+const menuButton =
+document.getElementById("menuButton");
+
+const navigation =
+document.getElementById("navigation");
+
+
+if(menuButton && navigation){
+
+menuButton.addEventListener(
+"click",
+function(){
+
+navigation.classList.toggle("active");
+
+}
+);
+
+}
+
+
+/* =====================================================
+   YEAR
+===================================================== */
+
+const year =
+document.getElementById("year");
+
+if(year){
+
+year.textContent =
+new Date().getFullYear();
+
+}
+
+
+/* =====================================================
+   CATEGORY BUTTONS
+===================================================== */
+
+document
+.querySelectorAll(".category-button")
+.forEach(
+function(button){
+
+button.addEventListener(
+"click",
+function(){
+
+const category =
+button.getAttribute(
+"data-category"
+);
+
+
+const select =
+document.getElementById(
+"jobCategory"
+);
+
+
+if(select){
+
+const option =
+Array.from(
+select.options
+).find(
+function(item){
+
+return item.value === category;
+
+}
+);
+
+
+if(option){
+
+select.value =
+option.value;
+
+}
+
+}
+
+
+document
+.getElementById(
+"job-search"
+)
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+);
+
+}
+);
+
+
+/* =====================================================
+   JOB SEARCH
+===================================================== */
+
+const jobSearchForm =
+document.getElementById(
+"jobSearchForm"
+);
+
+
+if(jobSearchForm){
+
+jobSearchForm.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const keyword =
+document.getElementById(
+"jobKeyword"
+)
+.value
+.trim()
+.toLowerCase();
+
+
+const category =
+document.getElementById(
+"jobCategory"
+).value;
+
+
+const location =
+document.getElementById(
+"jobLocation"
+).value;
+
+
+const experience =
+document.getElementById(
+"jobExperience"
+).value;
+
+
+const cards =
+Array.from(
+document.querySelectorAll(
+".job-card"
+)
+);
+
+
+const matches =
+cards.filter(
+function(card){
+
+const cardCategory =
+card.getAttribute(
+"data-category"
+) || "";
+
+
+const cardLocation =
+card.getAttribute(
+"data-location"
+) || "";
+
+
+const cardExperience =
+card.getAttribute(
+"data-experience"
+) || "";
+
+
+const keywords =
+card.getAttribute(
+"data-keywords"
+) || "";
+
+
+const keywordMatch =
+!keyword ||
+keywords.toLowerCase()
+.includes(keyword) ||
+card.querySelector("h3")
+?.textContent
+.toLowerCase()
+.includes(keyword);
+
+
+const categoryMatch =
+!category ||
+cardCategory === category;
+
+
+const locationMatch =
+!location ||
+cardLocation === location;
+
+
+let experienceMatch =
+true;
+
+
+if(experience){
+
+if(experience === "Any"){
+
+experienceMatch =
+true;
+
+}
+
+else if(experience === "Fresher"){
+
+experienceMatch =
+cardExperience === "Fresher";
+
+}
+
+else if(experience === "0-2"){
+
+experienceMatch =
+cardExperience === "0-2" ||
+cardExperience === "Fresher";
+
+}
+
+else if(experience === "2+"){
+
+experienceMatch =
+cardExperience === "2+";
+
+}
+
+}
+
+
+return(
+keywordMatch &&
+categoryMatch &&
+locationMatch &&
+experienceMatch
+);
+
+}
+);
+
+
+const results =
+document.getElementById(
+"searchResults"
+);
+
+
+const resultContent =
+document.getElementById(
+"resultContent"
+);
+
+
+if(!matches.length){
+
+resultContent.innerHTML = `
+
+<div class="result-item">
+
+<strong>
+No matching job found
+</strong>
+
+<span>
+We don't currently have a matching vacancy
+displayed on this page. Send your job requirement
+to VELORA HELP and we can review it.
+</span>
+
+</div>
+
+<div style="margin-top:15px;">
+
+<a
+href="#job-request"
+class="btn btn-red"
+>
+💼 Ask VELORA HELP
+</a>
+
+</div>
+
+`;
+
+}else{
+
+resultContent.innerHTML =
+matches.map(
+function(card){
+
+const title =
+card.querySelector("h3")
+?.textContent ||
+"Job";
+
+
+const company =
+card.querySelector(".company")
+?.textContent ||
+"Employer";
+
+
+const description =
+card.querySelector("p")
+?.textContent ||
+"";
+
+
+const location =
+card.getAttribute(
+"data-location"
+) || "";
+
+
+return `
+
+<div class="result-item">
+
+<strong>
+${escapeHTML(title)}
+</strong>
+
+<span>
+${escapeHTML(company)}
+<br>
+📍 ${escapeHTML(location)}
+<br>
+${escapeHTML(description)}
+</span>
+
+</div>
+
+`;
+
+}
+).join("");
+
+
+resultContent.innerHTML += `
+
+<div style="margin-top:15px;">
+
+<a
+href="#job-request"
+class="btn btn-red"
+>
+💬 Ask VELORA HELP
+</a>
+
+</div>
+
+`;
+
+}
+
+
+results.classList.add(
+"active"
+);
+
+
+results.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}
+);
+
+}
+
+
+/* =====================================================
+   JOB CARD ENQUIRY
+===================================================== */
+
+document
+.querySelectorAll(
+".job-enquiry"
+)
+.forEach(
+function(button){
+
+button.addEventListener(
+"click",
+function(){
+
+const job =
+button.getAttribute(
+"data-job"
+);
+
+
+const company =
+button.getAttribute(
+"data-company"
+);
+
+
+const location =
+button.getAttribute(
+"data-location"
+);
+
+
+const requirement =
+document.getElementById(
+"seekerRequirement"
+);
+
+
+const area =
+document.getElementById(
+"seekerArea"
+);
+
+
+if(area){
+
+area.value =
+location;
+
+}
+
+
+if(requirement){
+
+requirement.value =
+"I am interested in the " +
+job +
+" opportunity with " +
+company +
+" in " +
+location +
+". Please guide me regarding the vacancy, eligibility and application process.";
+
+}
+
+
+document
+.getElementById(
+"job-request"
+)
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+);
+
+}
+);
+
+
+/* =====================================================
+   JOB SEEKER FORM
+===================================================== */
+
+const jobSeekerForm =
+document.getElementById(
+"jobSeekerForm"
+);
+
+
+if(jobSeekerForm){
+
+jobSeekerForm.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const name =
+document.getElementById(
+"seekerName"
+).value.trim();
+
+
+const phone =
+document.getElementById(
+"seekerPhone"
+).value.trim();
+
+
+const education =
+document.getElementById(
+"seekerEducation"
+).value.trim();
+
+
+const experience =
+document.getElementById(
+"seekerExperience"
+).value.trim();
+
+
+const jobType =
+document.getElementById(
+"seekerJobType"
+).value;
+
+
+const taluk =
+document.getElementById(
+"seekerTaluk"
+).value;
+
+
+const area =
+document.getElementById(
+"seekerArea"
+).value.trim();
+
+
+const salary =
+document.getElementById(
+"seekerSalary"
+).value.trim();
+
+
+const skills =
+document.getElementById(
+"seekerSkills"
+).value.trim();
+
+
+const requirement =
+document.getElementById(
+"seekerRequirement"
+).value.trim();
+
+
+const message =
+`Hello VELORA HELP,
+
+I need JOB GUIDANCE.
+
+JOB SEEKER DETAILS
+
+Name: ${name}
+Phone: ${phone}
+
+EDUCATION
+
+${education || "Not provided"}
+
+EXPERIENCE
+
+${experience || "Fresher / Not provided"}
+
+PREFERRED JOB TYPE
+
+${jobType}
+
+LOCATION
+
+Taluk: ${taluk}
+Area: ${area || "Not specified"}
+
+EXPECTED SALARY
+
+${salary || "Not specified"}
+
+SKILLS
+
+${skills || "Not provided"}
+
+JOB REQUIREMENT
+
+${requirement}
+
+Please guide me toward suitable available employment opportunities.
+
+Thank you.
+
+VELORA HELP
+Your Problem. Our Direction.`;
+
+
+const url =
+"https://wa.me/918088590273?text=" +
+encodeURIComponent(message);
+
+
+window.open(
+url,
+"_blank",
+"noopener,noreferrer"
+);
+
+
+showMessage(
+"Your job requirement is ready. WhatsApp has been opened for VELORA HELP."
+);
+
+}
+);
+
+}
+
+
+/* =====================================================
+   EMPLOYER FORM
+===================================================== */
+
+const employerForm =
+document.getElementById(
+"employerForm"
+);
+
+
+if(employerForm){
+
+employerForm.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const name =
+document.getElementById(
+"employerName"
+).value.trim();
+
+
+const business =
+document.getElementById(
+"employerBusiness"
+).value.trim();
+
+
+const phone =
+document.getElementById(
+"employerPhone"
+).value.trim();
+
+
+const title =
+document.getElementById(
+"employerJobTitle"
+).value.trim();
+
+
+const jobType =
+document.getElementById(
+"employerJobType"
+).value;
+
+
+const location =
+document.getElementById(
+"employerLocation"
+).value.trim();
+
+
+const experience =
+document.getElementById(
+"employerExperience"
+).value.trim();
+
+
+const salary =
+document.getElementById(
+"employerSalary"
+).value.trim();
+
+
+const eligibility =
+document.getElementById(
+"employerEligibility"
+).value.trim();
+
+
+const description =
+document.getElementById(
+"employerDescription"
+).value.trim();
+
+
+const deadline =
+document.getElementById(
+"employerDeadline"
+).value;
+
+
+const message =
+`Hello VELORA HELP,
+
+I want to SUBMIT A JOB VACANCY.
+
+EMPLOYER DETAILS
+
+Contact Name: ${name}
+Business / Organisation: ${business}
+Contact Number: ${phone}
+
+JOB DETAILS
+
+Job Title: ${title}
+Job Type: ${jobType}
+Work Location: ${location}
+
+Experience Required:
+${experience || "Not specified"}
+
+Salary / Compensation:
+${salary || "Not specified"}
+
+Eligibility / Qualification:
+${eligibility || "Not specified"}
+
+JOB DESCRIPTION
+
+${description}
+
+Application Deadline:
+${deadline || "Not specified"}
+
+Please review this vacancy before publishing it on VELORA HELP.
+
+Thank you.
+
+VELORA HELP
+Your Problem. Our Direction.`;
+
+
+const url =
+"https://wa.me/918088590273?text=" +
+encodeURIComponent(message);
+
+
+window.open(
+url,
+"_blank",
+"noopener,noreferrer"
+);
+
+
+showMessage(
+"Your vacancy submission is ready. WhatsApp has been opened for VELORA HELP."
+);
+
+}
+);
+
+}
+
+}
+);
+
+
+/* =====================================================
+   HTML ESCAPE
+===================================================== */
+
+function escapeHTML(value){
+
+return String(value)
+.replaceAll("&","&amp;")
+.replaceAll("<","&lt;")
+.replaceAll(">","&gt;")
+.replaceAll('"',"&quot;")
+.replaceAll("'","&#039;");
+
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function showMessage(text){
+
+const message =
+document.getElementById(
+"message"
+);
+
+
+if(!message){
+
+return;
+
+}
+
+
+message.textContent =
+text;
+
+
+message.style.display =
+"block";
+
+
+setTimeout(
+function(){
+
+message.style.display =
+"none";
+
+},
+4500
+);
+
+}
+
+</script>
+
+
+</body>
+
+</html>
