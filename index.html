@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>VELORA HELP — Your Problem. Our Direction.</title>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="VELORA HELP helps people across Dakshina Kannada find the right direction for healthcare, government services, education, jobs, housing, local services, transport, civic problems and more.">
+<meta name="theme-color"
+content="#071b41">
 
-<meta name="theme-color" content="#071d49">
+<meta name="description"
+content="VELORA HELP — Your Problem. Our Direction. A people-first guidance platform starting with Dakshina Kannada.">
 
-<link rel="icon" type="image/png" href="velora-help-logo.png">
+<title>VELORA HELP | Your Problem. Our Direction.</title>
+
+<link rel="icon"
+type="image/png"
+href="velora-help-logo.png">
 
 <style>
+
+/* =========================================================
+VELORA HELP
+ONE-FILE WEBSITE
+========================================================= */
+
 :root{
---navy:#071d49;
---navy2:#123b7a;
+--navy:#071b41;
+--navy2:#0e326e;
+--blue:#174c96;
 --red:#a20d2d;
---red2:#c51c43;
---white:#fff;
---bg:#f6f8fc;
---text:#17233c;
---muted:#64748b;
---border:#e3e8f0;
---green:#16834a;
---gold:#a87812;
---shadow:0 18px 50px rgba(7,29,73,.10);
+--red2:#c61d45;
+--white:#ffffff;
+--black:#111827;
+--text:#17233b;
+--muted:#66748a;
+--light:#f5f7fb;
+--line:#e3e8f1;
+--green:#16824a;
+--gold:#a16d0a;
+--shadow:0 20px 55px rgba(7,27,65,.10);
 --radius:20px;
 }
 
@@ -40,13 +55,19 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:Inter,Arial,Helvetica,sans-serif;
-color:var(--text);
+font-family:
+Inter,
+-apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Arial,
+sans-serif;
 background:#fff;
+color:var(--text);
 line-height:1.6;
 }
 
-body.modal-open{
+body.lock{
 overflow:hidden;
 }
 
@@ -57,14 +78,13 @@ textarea{
 font:inherit;
 }
 
-button,
-a{
--webkit-tap-highlight-color:transparent;
+button{
+cursor:pointer;
 }
 
 a{
-color:inherit;
 text-decoration:none;
+color:inherit;
 }
 
 img{
@@ -77,38 +97,322 @@ margin:auto;
 }
 
 section{
-padding:85px 0;
+padding:90px 0;
 }
 
-.light{
-background:var(--bg);
+.section-light{
+background:var(--light);
 }
 
 .section-head{
-max-width:760px;
-margin:0 auto 42px;
+max-width:800px;
+margin:0 auto 45px;
 text-align:center;
 }
 
 .eyebrow{
 color:var(--red);
-font-size:12px;
-font-weight:900;
-letter-spacing:2px;
 text-transform:uppercase;
-margin-bottom:9px;
+letter-spacing:2.4px;
+font-size:11px;
+font-weight:900;
+margin-bottom:10px;
 }
 
 .section-head h2{
 color:var(--navy);
-font-size:clamp(30px,4vw,46px);
-line-height:1.12;
-margin-bottom:13px;
+font-size:clamp(30px,4vw,48px);
+line-height:1.1;
+margin-bottom:14px;
 }
 
 .section-head p{
 color:var(--muted);
+font-size:16px;
 }
+
+
+/* =========================================================
+BUTTONS
+========================================================= */
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+min-height:46px;
+padding:12px 19px;
+border:0;
+border-radius:12px;
+font-weight:900;
+font-size:13px;
+transition:.22s ease;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.btn-primary{
+background:var(--red);
+color:#fff;
+box-shadow:0 10px 25px rgba(162,13,45,.20);
+}
+
+.btn-primary:hover{
+background:var(--red2);
+}
+
+.btn-navy{
+background:var(--navy);
+color:#fff;
+}
+
+.btn-white{
+background:#fff;
+color:var(--navy);
+}
+
+.btn-outline{
+background:#fff;
+color:var(--navy);
+border:1px solid var(--line);
+}
+
+.btn-outline:hover{
+border-color:var(--red);
+color:var(--red);
+}
+
+.btn-danger{
+background:#fff1f4;
+color:#9d1732;
+border:1px solid #f2d2db;
+}
+
+.btn-green{
+background:var(--green);
+color:#fff;
+}
+
+
+/* =========================================================
+HEADER
+========================================================= */
+
+header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:2000;
+background:rgba(255,255,255,.96);
+backdrop-filter:blur(18px);
+border-bottom:1px solid var(--line);
+}
+
+.nav{
+min-height:78px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.brand img{
+width:52px;
+height:52px;
+object-fit:contain;
+}
+
+.brand-name{
+color:var(--navy);
+font-size:19px;
+font-weight:950;
+line-height:1;
+}
+
+.brand-tag{
+color:var(--red);
+font-size:8px;
+letter-spacing:1.1px;
+text-transform:uppercase;
+font-weight:900;
+margin-top:5px;
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:17px;
+}
+
+.nav-links a{
+color:#34435c;
+font-size:12px;
+font-weight:850;
+}
+
+.nav-links a:hover{
+color:var(--red);
+}
+
+.nav-cta{
+background:var(--red);
+color:#fff!important;
+padding:10px 15px;
+border-radius:999px;
+}
+
+.menu{
+display:none;
+border:0;
+background:none;
+font-size:28px;
+color:var(--navy);
+}
+
+
+/* =========================================================
+HERO
+========================================================= */
+
+.hero{
+min-height:780px;
+padding-top:78px;
+display:flex;
+align-items:center;
+position:relative;
+overflow:hidden;
+
+background-image:
+linear-gradient(
+90deg,
+rgba(4,16,42,.94),
+rgba(4,16,42,.68),
+rgba(4,16,42,.20)
+),
+url("velora-help-homepage-bg.jpg");
+
+background-size:cover;
+background-position:center;
+}
+
+.hero-content{
+max-width:820px;
+padding:80px 0;
+color:#fff;
+}
+
+.hero-badge{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:9px 15px;
+border-radius:999px;
+border:1px solid rgba(255,255,255,.30);
+background:rgba(255,255,255,.09);
+backdrop-filter:blur(12px);
+font-size:11px;
+font-weight:850;
+margin-bottom:24px;
+}
+
+.hero h1{
+font-size:clamp(48px,8vw,90px);
+line-height:.94;
+letter-spacing:-4px;
+margin-bottom:18px;
+}
+
+.hero h1 span{
+color:#efb6c4;
+}
+
+.hero h2{
+font-size:clamp(22px,3vw,35px);
+margin-bottom:13px;
+}
+
+.hero p{
+max-width:730px;
+color:#edf4ff;
+font-size:18px;
+margin-bottom:30px;
+}
+
+.hero-actions{
+display:flex;
+flex-wrap:wrap;
+gap:11px;
+}
+
+
+/* =========================================================
+SEARCH
+========================================================= */
+
+.search-area{
+position:relative;
+margin-top:-46px;
+z-index:100;
+}
+
+.search-box{
+background:#fff;
+border:1px solid var(--line);
+border-radius:22px;
+padding:21px;
+box-shadow:var(--shadow);
+}
+
+.search-row{
+display:flex;
+gap:10px;
+}
+
+.search-input{
+flex:1;
+border:1px solid var(--line);
+border-radius:12px;
+padding:14px 16px;
+outline:none;
+}
+
+.search-input:focus{
+border-color:var(--red);
+}
+
+.search-results{
+margin-top:12px;
+}
+
+.search-item{
+border:1px solid var(--line);
+border-radius:12px;
+padding:13px 15px;
+margin-top:7px;
+background:#fafbfe;
+cursor:pointer;
+font-weight:850;
+color:var(--navy);
+}
+
+.search-item:hover{
+border-color:var(--red);
+}
+
+
+/* =========================================================
+CARDS
+========================================================= */
 
 .grid{
 display:grid;
@@ -127,344 +431,159 @@ grid-template-columns:repeat(3,1fr);
 grid-template-columns:repeat(4,1fr);
 }
 
-/* HEADER */
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-z-index:1000;
-background:rgba(255,255,255,.95);
-backdrop-filter:blur(16px);
-border-bottom:1px solid var(--border);
+.card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:19px;
+padding:23px;
+transition:.22s ease;
 }
 
-.nav{
-min-height:78px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
+.card:hover{
+transform:translateY(-4px);
+box-shadow:var(--shadow);
 }
 
-.brand{
-display:flex;
-align-items:center;
-gap:11px;
-}
-
-.brand img{
-width:54px;
-height:54px;
-object-fit:contain;
-}
-
-.brand-title{
-font-size:19px;
-font-weight:900;
+.card h3{
 color:var(--navy);
-}
-
-.brand-sub{
-font-size:9px;
-font-weight:800;
-color:var(--red);
-letter-spacing:1.2px;
-text-transform:uppercase;
-}
-
-.nav-links{
-display:flex;
-align-items:center;
-gap:20px;
-}
-
-.nav-links a{
-font-size:13px;
-font-weight:800;
-color:#334155;
-}
-
-.nav-links a:hover{
-color:var(--red);
-}
-
-.nav-help{
-background:var(--red);
-color:#fff!important;
-padding:11px 17px;
-border-radius:999px;
-}
-
-.menu{
-display:none;
-border:0;
-background:none;
-font-size:29px;
-cursor:pointer;
-color:var(--navy);
-}
-
-/* HERO */
-
-.hero{
-min-height:780px;
-padding-top:78px;
-display:flex;
-align-items:center;
-position:relative;
-background-image:
-linear-gradient(90deg,rgba(3,16,43,.91),rgba(3,16,43,.55),rgba(3,16,43,.12)),
-url("velora-help-homepage-bg.jpg");
-background-size:cover;
-background-position:center;
-}
-
-.hero-content{
-max-width:790px;
-padding:80px 0;
-color:#fff;
-}
-
-.hero-badge{
-display:inline-flex;
-align-items:center;
-gap:8px;
-border:1px solid rgba(255,255,255,.35);
-background:rgba(255,255,255,.10);
-backdrop-filter:blur(10px);
-padding:9px 15px;
-border-radius:999px;
-font-size:12px;
-font-weight:800;
-margin-bottom:22px;
-}
-
-.hero h1{
-font-size:clamp(48px,8vw,88px);
-line-height:.98;
-letter-spacing:-4px;
-margin-bottom:16px;
-}
-
-.hero h1 span{
-color:#f1bec9;
-}
-
-.hero h2{
-font-size:clamp(22px,3vw,34px);
-margin-bottom:15px;
-}
-
-.hero p{
-max-width:720px;
+margin-bottom:7px;
 font-size:18px;
-color:#eef4ff;
-margin-bottom:30px;
 }
 
-.actions{
-display:flex;
-flex-wrap:wrap;
-gap:12px;
+.card p{
+color:var(--muted);
+font-size:13px;
 }
 
-.btn{
-border:0;
-border-radius:12px;
-padding:14px 20px;
-cursor:pointer;
-font-weight:900;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:8px;
-transition:.22s;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-}
-
-.btn-primary{
-background:var(--red);
-color:#fff;
-box-shadow:0 10px 25px rgba(162,13,45,.24);
-}
-
-.btn-light{
-background:#fff;
-color:var(--navy);
-}
-
-.btn-outline{
-background:#fff;
-color:var(--navy);
-border:1px solid var(--border);
-}
-
-.btn-dark-outline{
-background:transparent;
-color:#fff;
-border:1px solid rgba(255,255,255,.55);
-}
-
-/* SEARCH */
-
-.search-wrap{
-margin-top:-46px;
-position:relative;
-z-index:20;
-}
-
-.search-card{
-background:#fff;
-border:1px solid var(--border);
-border-radius:22px;
-padding:22px;
-box-shadow:var(--shadow);
-}
-
-.search-row{
-display:flex;
-gap:10px;
-}
-
-.search-row input{
-flex:1;
-border:1px solid var(--border);
-border-radius:12px;
-padding:15px;
-outline:none;
-}
-
-.search-row input:focus{
-border-color:var(--red);
-}
-
-.search-results{
-margin-top:15px;
-}
-
-.search-result{
-padding:14px;
-border:1px solid var(--border);
-border-radius:12px;
-margin-top:8px;
-cursor:pointer;
-font-weight:800;
-color:var(--navy);
-background:#fafbfe;
-}
-
-.search-result:hover{
-border-color:var(--red);
-}
-
-/* CATEGORY */
-
-.category{
-background:#fff;
-border:1px solid var(--border);
-border-radius:18px;
-padding:23px 20px;
-cursor:pointer;
-transition:.25s;
-box-shadow:0 7px 24px rgba(7,29,73,.04);
-}
-
-.category:hover{
-transform:translateY(-5px);
-box-shadow:var(--shadow);
-}
-
-.icon{
-width:55px;
-height:55px;
-border-radius:15px;
-background:#f0f3f9;
+.card-icon{
+width:53px;
+height:53px;
 display:grid;
 place-items:center;
-font-size:27px;
+background:#f0f3f8;
+border-radius:15px;
+font-size:25px;
 margin-bottom:15px;
 }
 
-.category h3{
-color:var(--navy);
-font-size:17px;
-margin-bottom:5px;
+.card-action{
+margin-top:17px;
 }
 
-.category p{
-color:var(--muted);
-font-size:13px;
+
+/* =========================================================
+INFORMATION PAGE / SECTION
+========================================================= */
+
+.info-hero{
+background:
+linear-gradient(
+135deg,
+var(--navy),
+#123d7d
+);
+color:#fff;
+padding:60px;
+border-radius:28px;
+box-shadow:var(--shadow);
 }
 
-/* PANELS */
+.info-hero h2{
+font-size:40px;
+line-height:1.12;
+margin-bottom:13px;
+}
 
-.panel{
+.info-hero p{
+color:#dce7f8;
+max-width:800px;
+}
+
+.info-box{
 background:#fff;
-border:1px solid var(--border);
-border-radius:22px;
-padding:30px;
-box-shadow:0 10px 35px rgba(7,29,73,.05);
+border:1px solid var(--line);
+border-radius:19px;
+padding:25px;
 }
 
-.panel h3{
+.info-box h3{
 color:var(--navy);
-font-size:25px;
-margin-bottom:8px;
+margin-bottom:9px;
 }
 
-.panel p{
+.info-box p{
 color:var(--muted);
+font-size:14px;
 }
 
-.service-panel{
+.info-box ul{
+padding-left:19px;
+color:var(--muted);
+font-size:14px;
+}
+
+.info-box li{
+margin:7px 0;
+}
+
+
+/* =========================================================
+SERVICE WORKSPACE
+========================================================= */
+
+.workspace{
 display:none;
+margin-top:35px;
 }
 
-.service-panel.show{
+.workspace.show{
 display:block;
-animation:up .3s ease;
 }
 
-@keyframes up{
-from{
-opacity:0;
-transform:translateY(12px);
+.workspace-inner{
+background:#fff;
+border:1px solid var(--line);
+border-radius:23px;
+padding:30px;
+box-shadow:var(--shadow);
 }
-to{
-opacity:1;
-transform:translateY(0);
+
+.workspace-inner h3{
+color:var(--navy);
+font-size:26px;
+margin-bottom:7px;
 }
+
+.workspace-inner > p{
+color:var(--muted);
 }
 
 .options{
 display:grid;
 grid-template-columns:repeat(3,1fr);
-gap:12px;
-margin:24px 0;
+gap:11px;
+margin:25px 0;
 }
 
-.option{
-border:1px solid var(--border);
+.option-btn{
 background:#fff;
+border:1px solid var(--line);
 border-radius:12px;
-padding:15px;
-cursor:pointer;
+padding:14px;
 text-align:left;
-font-weight:800;
 color:var(--navy);
+font-weight:850;
 }
 
-.option:hover{
+.option-btn:hover{
 border-color:var(--red);
 color:var(--red);
 }
 
-/* FORM */
+
+/* =========================================================
+FORMS
+========================================================= */
 
 .form-grid{
 display:grid;
@@ -483,8 +602,8 @@ grid-column:1/-1;
 }
 
 .field label{
-font-size:12px;
-font-weight:900;
+font-size:11px;
+font-weight:950;
 color:var(--navy);
 }
 
@@ -492,16 +611,16 @@ color:var(--navy);
 .field select,
 .field textarea{
 width:100%;
-border:1px solid var(--border);
-border-radius:11px;
 padding:13px 14px;
+border:1px solid var(--line);
+border-radius:11px;
 outline:none;
-color:var(--text);
 background:#fff;
+color:var(--text);
 }
 
 .field textarea{
-min-height:125px;
+min-height:120px;
 resize:vertical;
 }
 
@@ -511,113 +630,113 @@ resize:vertical;
 border-color:var(--red);
 }
 
-/* LISTINGS */
-
-.listing{
-background:#fff;
-border:1px solid var(--border);
-border-radius:18px;
-padding:23px;
-}
-
-.listing h3{
-color:var(--navy);
-margin-bottom:7px;
-}
-
-.meta{
+.form-actions{
 display:flex;
 flex-wrap:wrap;
-gap:7px;
-margin:12px 0;
+gap:10px;
+margin-top:20px;
 }
 
-.tag{
-display:inline-block;
-padding:5px 9px;
-background:#f0f3f8;
-border-radius:999px;
-font-size:10px;
-font-weight:900;
-color:#45536a;
+
+/* =========================================================
+HEALTHCARE
+========================================================= */
+
+.health-note{
+background:#eef6ff;
+border:1px solid #d5e6fa;
+border-radius:14px;
+padding:15px;
+color:#315477;
+font-size:13px;
+margin-top:20px;
 }
 
-.tag.green{
-background:#e8f7ef;
-color:var(--green);
+.health-result{
+margin-top:20px;
 }
 
-/* TALUK */
 
-.taluk{
+/* =========================================================
+EMERGENCY
+========================================================= */
+
+.emergency-section{
+background:#fff5f7;
+}
+
+.emergency-card{
 background:#fff;
-border:1px solid var(--border);
-border-radius:16px;
+border:1px solid #efd7de;
+border-radius:19px;
+padding:25px;
+text-align:center;
+}
+
+.emergency-card .big-icon{
+font-size:36px;
+margin-bottom:8px;
+}
+
+.emergency-card h3{
+color:#85102c;
+margin-bottom:6px;
+}
+
+.emergency-card p{
+color:var(--muted);
+font-size:13px;
+margin-bottom:16px;
+}
+
+
+/* =========================================================
+TALUK
+========================================================= */
+
+.taluk-card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:17px;
 padding:21px;
 text-align:center;
-font-weight:900;
-color:var(--navy);
 cursor:pointer;
-transition:.2s;
+color:var(--navy);
+font-weight:900;
+transition:.22s;
 }
 
-.taluk:hover{
+.taluk-card:hover,
+.taluk-card.active{
 background:var(--navy);
 color:#fff;
-transform:translateY(-4px);
+transform:translateY(-3px);
 }
 
 .taluk-result{
 margin-top:25px;
 }
 
-/* EMERGENCY */
 
-.emergency{
-background:#fff5f7;
-}
+/* =========================================================
+PROBLEM REPORTS
+========================================================= */
 
-.emergency-card{
+.problem-card{
 background:#fff;
-border:1px solid #efd6dd;
+border:1px solid var(--line);
 border-radius:18px;
-padding:25px;
-text-align:center;
+padding:22px;
 }
 
-.emergency-icon{
-font-size:36px;
-margin-bottom:8px;
-}
-
-.emergency-card h3{
-color:#821029;
-margin-bottom:8px;
-}
-
-.emergency-card a,
-.emergency-card button{
-color:var(--red);
-font-weight:900;
-}
-
-/* PROBLEMS */
-
-.problem{
-background:#fff;
-border:1px solid var(--border);
-border-radius:18px;
-padding:23px;
-}
-
-.problem-top{
+.problem-head{
 display:flex;
 align-items:center;
 justify-content:space-between;
-margin-bottom:15px;
+margin-bottom:12px;
 }
 
-.problem-number{
+.problem-no{
 width:42px;
 height:42px;
 border-radius:50%;
@@ -625,33 +744,173 @@ display:grid;
 place-items:center;
 background:#f0f3f8;
 color:var(--navy);
-font-weight:900;
+font-weight:950;
 }
 
-.zero{
+.report-count{
 color:var(--muted);
 font-size:13px;
+font-weight:800;
 }
 
 .progress{
-height:8px;
-background:#edf1f6;
-border-radius:999px;
+height:7px;
+border-radius:99px;
 overflow:hidden;
+background:#edf1f6;
 }
 
 .progress span{
 display:block;
-width:0!important;
+width:0%;
 height:100%;
+background:var(--red);
 }
 
-/* BANNER */
 
-.banner{
-background:linear-gradient(135deg,var(--navy),#123d83);
+/* =========================================================
+GOVERNMENT
+========================================================= */
+
+.scheme-card{
+background:#fff;
+border:1px solid var(--line);
+border-radius:18px;
+padding:23px;
+position:relative;
+overflow:hidden;
+}
+
+.scheme-card:before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+bottom:0;
+width:5px;
+background:var(--red);
+}
+
+.scheme-status{
+display:inline-block;
+background:#e8f7ef;
+color:var(--green);
+padding:5px 9px;
+border-radius:999px;
+font-size:9px;
+font-weight:950;
+margin-bottom:11px;
+}
+
+.scheme-card h3{
+color:var(--navy);
+margin-bottom:8px;
+}
+
+.scheme-card p{
+color:var(--muted);
+font-size:13px;
+}
+
+.gov-warning{
+background:#fff8e9;
+border:1px solid #f0dfb2;
+border-radius:14px;
+padding:16px;
+color:#70571e;
+font-size:13px;
+}
+
+
+/* =========================================================
+LISTINGS
+========================================================= */
+
+.service-listing{
+background:#fff;
+border:1px solid var(--line);
+border-radius:18px;
+padding:23px;
+}
+
+.service-listing h3{
+color:var(--navy);
+}
+
+.service-listing p{
+color:var(--muted);
+font-size:13px;
+margin-top:6px;
+}
+
+.tags{
+display:flex;
+flex-wrap:wrap;
+gap:6px;
+margin:13px 0;
+}
+
+.tag{
+background:#f0f3f8;
+color:#526176;
+padding:5px 9px;
+border-radius:999px;
+font-size:9px;
+font-weight:900;
+}
+
+
+/* =========================================================
+FAQ
+========================================================= */
+
+.faq{
+border:1px solid var(--line);
+border-radius:15px;
+overflow:hidden;
+background:#fff;
+margin-bottom:10px;
+}
+
+.faq-question{
+width:100%;
+border:0;
+background:#fff;
+padding:18px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+text-align:left;
+color:var(--navy);
+font-weight:900;
+}
+
+.faq-answer{
+display:none;
+padding:0 18px 18px;
+color:var(--muted);
+font-size:13px;
+}
+
+.faq.open .faq-answer{
+display:block;
+}
+
+
+/* =========================================================
+CTA
+========================================================= */
+
+.cta{
+background:
+linear-gradient(
+135deg,
+var(--navy),
+#123d7d
+);
 color:#fff;
-border-radius:27px;
+border-radius:28px;
 padding:48px;
 display:flex;
 align-items:center;
@@ -659,95 +918,23 @@ justify-content:space-between;
 gap:25px;
 }
 
-.banner h2{
+.cta h2{
 font-size:34px;
 line-height:1.15;
-margin-bottom:10px;
+margin-bottom:9px;
 }
 
-.banner p{
-color:#d9e6fb;
+.cta p{
+color:#dbe6f7;
 }
 
-/* GOVERNMENT */
 
-.scheme{
-background:#fff;
-border:1px solid var(--border);
-border-radius:18px;
-padding:24px;
-position:relative;
-}
-
-.scheme:before{
-content:"";
-position:absolute;
-left:0;
-top:0;
-bottom:0;
-width:5px;
-background:var(--red);
-}
-
-.scheme h3{
-color:var(--navy);
-margin-bottom:8px;
-}
-
-.scheme p{
-color:var(--muted);
-font-size:14px;
-}
-
-.status{
-display:inline-block;
-padding:5px 9px;
-border-radius:999px;
-background:#e8f7ef;
-color:var(--green);
-font-size:10px;
-font-weight:900;
-margin-bottom:12px;
-}
-
-/* FAQ */
-
-.faq{
-border:1px solid var(--border);
-border-radius:15px;
-overflow:hidden;
-margin-bottom:10px;
-}
-
-.faq-question{
-width:100%;
-background:#fff;
-border:0;
-padding:18px;
-display:flex;
-justify-content:space-between;
-gap:20px;
-text-align:left;
-cursor:pointer;
-font-weight:900;
-color:var(--navy);
-}
-
-.faq-answer{
-display:none;
-padding:0 18px 18px;
-color:var(--muted);
-font-size:14px;
-}
-
-.faq.open .faq-answer{
-display:block;
-}
-
-/* FOOTER */
+/* =========================================================
+FOOTER
+========================================================= */
 
 footer{
-background:#061633;
+background:#06152f;
 color:#fff;
 padding:60px 0 25px;
 }
@@ -759,22 +946,19 @@ gap:35px;
 }
 
 .footer-logo{
-width:72px;
-margin-bottom:15px;
+width:75px;
+margin-bottom:14px;
 }
 
-footer h3{
-margin-bottom:8px;
-}
-
+footer h3,
 footer h4{
-margin-bottom:13px;
+margin-bottom:11px;
 }
 
 footer p,
 footer li{
-color:#afbed7;
-font-size:14px;
+color:#a9bad4;
+font-size:13px;
 }
 
 footer ul{
@@ -790,28 +974,31 @@ color:#fff;
 }
 
 .footer-bottom{
-border-top:1px solid rgba(255,255,255,.12);
-margin-top:45px;
+margin-top:42px;
 padding-top:20px;
+border-top:1px solid rgba(255,255,255,.12);
 display:flex;
 justify-content:space-between;
-gap:20px;
-color:#91a4c3;
-font-size:12px;
+gap:15px;
+color:#8ea3c3;
+font-size:11px;
 }
 
-/* MODAL */
+
+/* =========================================================
+MODALS
+========================================================= */
 
 .modal{
 position:fixed;
 inset:0;
-z-index:3000;
+z-index:5000;
 display:none;
 align-items:center;
 justify-content:center;
 padding:18px;
-background:rgba(2,11,29,.74);
-backdrop-filter:blur(7px);
+background:rgba(2,10,27,.78);
+backdrop-filter:blur(8px);
 }
 
 .modal.show{
@@ -820,100 +1007,105 @@ display:flex;
 
 .modal-box{
 position:relative;
-width:min(760px,100%);
+width:min(780px,100%);
 max-height:92vh;
 overflow:auto;
 background:#fff;
 border-radius:24px;
 padding:30px;
-animation:modal .25s ease;
+box-shadow:0 30px 90px rgba(0,0,0,.28);
 }
 
-@keyframes modal{
-from{
-opacity:0;
-transform:scale(.96);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
-}
-
-.close{
+.modal-close{
 position:absolute;
-right:17px;
 top:15px;
+right:15px;
 width:38px;
 height:38px;
 border:0;
 border-radius:50%;
 background:#f0f3f8;
-cursor:pointer;
-font-size:23px;
 color:var(--navy);
+font-size:23px;
 }
 
-/* TOAST */
+
+/* =========================================================
+TOAST
+========================================================= */
 
 .toast{
 position:fixed;
-right:20px;
-bottom:20px;
-z-index:6000;
-max-width:380px;
+left:50%;
+bottom:22px;
+transform:translate(-50%,120px);
+opacity:0;
+z-index:7000;
+max-width:430px;
+width:calc(100% - 30px);
+padding:15px 18px;
+border-radius:14px;
 background:var(--navy);
 color:#fff;
-padding:15px 18px;
-border-radius:13px;
 box-shadow:var(--shadow);
-transform:translateY(120px);
-opacity:0;
+text-align:center;
+font-size:13px;
 transition:.3s;
-font-size:14px;
 }
 
 .toast.show{
-transform:translateY(0);
+transform:translate(-50%,0);
 opacity:1;
 }
 
-/* WHATSAPP */
+
+/* =========================================================
+FLOATING WHATSAPP
+========================================================= */
 
 .whatsapp{
 position:fixed;
 right:20px;
-bottom:88px;
-z-index:900;
-width:57px;
-height:57px;
+bottom:20px;
+width:58px;
+height:58px;
 display:grid;
 place-items:center;
 border-radius:50%;
-background:#1fa855;
+background:#1da851;
 color:#fff;
 font-size:27px;
-box-shadow:0 12px 30px rgba(0,0,0,.2);
+z-index:1900;
+box-shadow:0 12px 30px rgba(0,0,0,.20);
 }
 
-/* RESPONSIVE */
 
-@media(max-width:980px){
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media(max-width:1050px){
 
 .nav-links{
 position:absolute;
 left:0;
+right:0;
 top:78px;
-width:100%;
-background:#fff;
 display:none;
 flex-direction:column;
+align-items:stretch;
+background:#fff;
 padding:20px;
+border-bottom:1px solid var(--line);
 box-shadow:0 15px 35px rgba(0,0,0,.08);
 }
 
 .nav-links.open{
 display:flex;
+}
+
+.nav-links a{
+padding:10px;
 }
 
 .menu{
@@ -930,7 +1122,7 @@ grid-template-columns:repeat(2,1fr);
 
 }
 
-@media(max-width:680px){
+@media(max-width:700px){
 
 section{
 padding:65px 0;
@@ -960,10 +1152,18 @@ grid-template-columns:1fr;
 grid-column:auto;
 }
 
-.banner{
+.info-hero{
+padding:30px 23px;
+}
+
+.info-hero h2{
+font-size:30px;
+}
+
+.cta{
+padding:30px 23px;
 flex-direction:column;
 align-items:flex-start;
-padding:32px 24px;
 }
 
 .footer-grid{
@@ -974,15 +1174,18 @@ grid-template-columns:1fr;
 flex-direction:column;
 }
 
-.whatsapp{
-bottom:18px;
+.modal-box{
+padding:23px 18px;
 }
 
 }
+
 </style>
+
 </head>
 
 <body>
+
 
 <!-- =========================================================
 HEADER
@@ -994,75 +1197,151 @@ HEADER
 
 <a href="#home" class="brand">
 
-<img src="velora-help-logo.png" alt="VELORA HELP">
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo">
 
 <div>
-<div class="brand-title">VELORA HELP</div>
-<div class="brand-sub">Your Problem. Our Direction.</div>
+
+<div class="brand-name">
+VELORA HELP
+</div>
+
+<div class="brand-tag">
+Your Problem. Our Direction.
+</div>
+
 </div>
 
 </a>
 
-<nav class="nav-links" id="navLinks">
 
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#dakshina">Dakshina Kannada</a>
-<a href="#problems">Problems</a>
-<a href="#government">Government</a>
-<a href="#about">About</a>
+<nav
+class="nav-links"
+id="navLinks">
 
-<a href="#contact" class="nav-help">Get Help</a>
+<a href="#home">
+Home
+</a>
+
+<a href="#information">
+Information
+</a>
+
+<a href="#services">
+Services
+</a>
+
+<a href="#dakshina">
+Dakshina Kannada
+</a>
+
+<a href="#problems">
+Problems
+</a>
+
+<a href="#government">
+Government
+</a>
+
+<a href="#faq">
+FAQ
+</a>
+
+<a
+href="#contact"
+class="nav-cta">
+
+Get Help
+
+</a>
 
 </nav>
 
-<button class="menu" onclick="toggleMenu()">☰</button>
+
+<button
+class="menu"
+onclick="toggleMenu()">
+
+☰
+
+</button>
 
 </div>
 
 </header>
 
 
+
 <!-- =========================================================
-HERO
+HOME
 ========================================================= -->
 
-<section class="hero" id="home">
+<section
+class="hero"
+id="home">
 
 <div class="container">
 
 <div class="hero-content">
 
 <div class="hero-badge">
-📍 Serving Dakshina Kannada
+
+📍 Starting with Dakshina Kannada
+
 </div>
 
+
 <h1>
-VELORA <span>HELP</span>
+
+VELORA
+<span>HELP</span>
+
 </h1>
 
-<h2>Your problem. Our direction.</h2>
+
+<h2>
+Your problem. Our direction.
+</h2>
+
 
 <p>
-Tell us what you need. Find the right service, place,
-opportunity, information or direction — all in one place.
+
+Tell us what you need.
+Find the right service, place,
+opportunity or information —
+all in one place.
+
 </p>
 
-<div class="actions">
 
-<button class="btn btn-primary"
+<div class="hero-actions">
+
+<button
+class="btn btn-primary"
 onclick="openHelp('General Help')">
+
 🆘 Get Help Now
+
 </button>
 
-<button class="btn btn-light"
+
+<button
+class="btn btn-white"
 onclick="goTo('services')">
+
 Explore Services
+
 </button>
 
-<button class="btn btn-dark-outline"
+
+<button
+class="btn"
+style="color:#fff;border:1px solid rgba(255,255,255,.45);background:transparent"
 onclick="openProblem()">
+
 📢 Report a Problem
+
 </button>
 
 </div>
@@ -1074,54 +1353,299 @@ onclick="openProblem()">
 </section>
 
 
+
 <!-- =========================================================
 SEARCH
 ========================================================= -->
 
-<div class="container search-wrap">
+<div class="container search-area">
 
-<div class="search-card">
+<div class="search-box">
 
 <div class="search-row">
 
 <input
 id="searchInput"
+class="search-input"
 type="search"
-placeholder="Search healthcare, jobs, rentals, government services..."
-oninput="performSearch()">
+placeholder="Search healthcare, jobs, rentals, scholarships, government services..."
+oninput="searchSite()">
 
 <button
 class="btn btn-primary"
-onclick="performSearch(true)">
+onclick="searchSite(true)">
+
 🔎 Search
+
 </button>
 
 </div>
 
-<div id="searchResults" class="search-results"></div>
+
+<div
+id="searchResults"
+class="search-results">
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =========================================================
+INFORMATION
+========================================================= -->
+
+<section
+id="information">
+
+<div class="container">
+
+
+<div class="info-hero">
+
+<div class="eyebrow"
+style="color:#efb4c3">
+
+INFORMATION
+
+</div>
+
+<h2>
+One place to find the right direction.
+</h2>
+
+<p>
+
+VELORA HELP is a people-first guidance platform
+designed to make it easier for people to explain
+their problem and find the appropriate next step.
+
+We start with Dakshina Kannada and can grow
+district by district.
+
+</p>
+
+</div>
+
+
+<br><br>
+
+
+<div class="grid grid-3">
+
+
+<div class="info-box">
+
+<h3>
+🤝 People First
+</h3>
+
+<p>
+
+You don't need to know which department,
+office, hospital, organisation or service
+you need.
+
+Tell VELORA HELP the problem in your own words.
+
+</p>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>
+📍 Local First
+</h3>
+
+<p>
+
+Our first service area is Dakshina Kannada.
+The platform is designed to understand
+the location of the person and guide them
+toward relevant local options.
+
+</p>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>
+🔎 Information First
+</h3>
+
+<p>
+
+We aim to provide useful direction,
+official sources, verified listings and
+clear next steps rather than simply giving
+people a long list of websites.
+
+</p>
 
 </div>
 
 </div>
+
+
+<br>
+
+
+<div class="grid grid-2">
+
+
+<div class="info-box">
+
+<h3>
+What VELORA HELP can help with
+</h3>
+
+<ul>
+
+<li>Healthcare direction</li>
+
+<li>Emergency contacts</li>
+
+<li>Local service guidance</li>
+
+<li>Rental and property enquiries</li>
+
+<li>Student opportunities</li>
+
+<li>Scholarships and courses</li>
+
+<li>Jobs and career direction</li>
+
+<li>Government services and schemes</li>
+
+<li>Waste and garbage problems</li>
+
+<li>Water problems</li>
+
+<li>Road and infrastructure problems</li>
+
+<li>Transport guidance</li>
+
+<li>Elderly support</li>
+
+<li>Digital-service guidance</li>
+
+<li>Community problems</li>
+
+</ul>
+
+</div>
+
+
+<div class="info-box">
+
+<h3>
+How VELORA HELP works
+</h3>
+
+<ul>
+
+<li>
+1. You tell us what you need.
+</li>
+
+<li>
+2. You provide your location and basic details.
+</li>
+
+<li>
+3. VELORA reviews the request.
+</li>
+
+<li>
+4. We identify the appropriate direction.
+</li>
+
+<li>
+5. We share relevant information or contacts.
+</li>
+
+<li>
+6. You decide the next step.
+</li>
+
+<li>
+7. Genuine community problems can be tracked
+as the platform grows.
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<br>
+
+
+<div class="info-box">
+
+<h3>
+⚠️ Important responsibility
+</h3>
+
+<p>
+
+VELORA HELP is not a government department,
+hospital, doctor, police service or emergency
+authority.
+
+VELORA HELP provides guidance and connects
+people with relevant information and services.
+
+For medical emergencies, call the appropriate
+emergency service immediately.
+
+Government scheme eligibility should always be
+confirmed through the official government source.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
 
 
 <!-- =========================================================
 SERVICES
 ========================================================= -->
 
-<section id="services">
+<section
+class="section-light"
+id="services">
 
 <div class="container">
 
+
 <div class="section-head">
 
-<div class="eyebrow">Start Here</div>
+<div class="eyebrow">
+SERVICES
+</div>
 
-<h2>What do you need help with?</h2>
+<h2>
+What do you need help with?
+</h2>
 
 <p>
-Choose a category. VELORA HELP will guide you toward
-the appropriate next step.
+
+Choose a category and VELORA HELP will
+show the next available direction.
+
 </p>
 
 </div>
@@ -1129,168 +1653,392 @@ the appropriate next step.
 
 <div class="grid grid-4">
 
-<div class="category" onclick="openService('Healthcare')">
-<div class="icon">🩺</div>
-<h3>Healthcare</h3>
-<p>Find the right healthcare direction.</p>
+
+<div
+class="card"
+onclick="openService('Healthcare')">
+
+<div class="card-icon">
+🩺
 </div>
 
-<div class="category" onclick="openService('Emergency Help')">
-<div class="icon">🚨</div>
-<h3>Emergency Help</h3>
-<p>Emergency contacts and guidance.</p>
-</div>
+<h3>
+Healthcare
+</h3>
 
-<div class="category" onclick="openService('Local Services')">
-<div class="icon">🔧</div>
-<h3>Local Services</h3>
-<p>Electricians, plumbers and repairs.</p>
-</div>
-
-<div class="category" onclick="openService('Rent & Property')">
-<div class="icon">🏠</div>
-<h3>Rent & Property</h3>
-<p>Rental and property guidance.</p>
-</div>
-
-<div class="category" onclick="openService('Students')">
-<div class="icon">🎓</div>
-<h3>Students</h3>
-<p>Scholarships, internships and courses.</p>
-</div>
-
-<div class="category" onclick="openService('Jobs & Careers')">
-<div class="icon">💼</div>
-<h3>Jobs & Careers</h3>
-<p>Jobs, skills and career guidance.</p>
-</div>
-
-<div class="category" onclick="openService('Transport')">
-<div class="icon">🚌</div>
-<h3>Transport</h3>
-<p>Routes and local mobility.</p>
-</div>
-
-<div class="category" onclick="openService('Waste & Garbage')">
-<div class="icon">🗑️</div>
-<h3>Waste & Garbage</h3>
-<p>Report garbage problems.</p>
-</div>
-
-<div class="category" onclick="openService('Water Problems')">
-<div class="icon">💧</div>
-<h3>Water Problems</h3>
-<p>Water supply and drainage issues.</p>
-</div>
-
-<div class="category" onclick="openService('Roads & Infrastructure')">
-<div class="icon">🛣️</div>
-<h3>Roads & Infrastructure</h3>
-<p>Roads, potholes and infrastructure.</p>
-</div>
-
-<div class="category" onclick="openService('Public Safety')">
-<div class="icon">🛡️</div>
-<h3>Public Safety</h3>
-<p>Non-emergency safety concerns.</p>
-</div>
-
-<div class="category" onclick="openService('Elderly Help')">
-<div class="icon">👴</div>
-<h3>Elderly Help</h3>
-<p>Support for elderly people.</p>
-</div>
-
-<div class="category" onclick="openService('Local Businesses')">
-<div class="icon">🏪</div>
-<h3>Local Businesses</h3>
-<p>Find or register businesses.</p>
-</div>
-
-<div class="category" onclick="openService('Government Services')">
-<div class="icon">🏛️</div>
-<h3>Government Services</h3>
-<p>Schemes and citizen services.</p>
-</div>
-
-<div class="category" onclick="openService('Digital Help')">
-<div class="icon">💻</div>
-<h3>Digital Help</h3>
-<p>Online and digital guidance.</p>
-</div>
-
-<div class="category" onclick="openService('Cost of Living')">
-<div class="icon">💰</div>
-<h3>Cost of Living</h3>
-<p>Affordable local resources.</p>
-</div>
-
-<div class="category" onclick="openService('Community Help')">
-<div class="icon">🤝</div>
-<h3>Community Help</h3>
-<p>Community support guidance.</p>
-</div>
-
-<div class="category" onclick="openProblem()">
-<div class="icon">📢</div>
-<h3>Report a Problem</h3>
-<p>Tell us about a local problem.</p>
-</div>
-
-<div class="category" onclick="openHelp('Something Else')">
-<div class="icon">➕</div>
-<h3>Something Else</h3>
-<p>Tell us what you need.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-SERVICE WORKSPACE
-========================================================= -->
-
-<section class="light" id="workspace">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">VELORA Guidance</div>
-
-<h2 id="serviceTitle">Choose a service</h2>
-
-<p id="serviceDescription">
-Select a service above to begin.
+<p>
+Find healthcare direction based on your requirement and location.
 </p>
 
 </div>
 
 
-<div id="servicePanel" class="service-panel">
+<div
+class="card"
+onclick="openService('Emergency Help')">
 
-<div class="panel">
+<div class="card-icon">
+🚨
+</div>
 
-<h3 id="serviceHeading"></h3>
+<h3>
+Emergency Help
+</h3>
 
-<p id="serviceText"></p>
+<p>
+Emergency numbers, location sharing and immediate guidance.
+</p>
 
-<div id="serviceOptions" class="options"></div>
+</div>
 
-<div class="actions">
 
-<button class="btn btn-primary"
+<div
+class="card"
+onclick="openService('Local Services')">
+
+<div class="card-icon">
+🔧
+</div>
+
+<h3>
+Local Services
+</h3>
+
+<p>
+Electrician, plumber, repair, cleaning and other local help.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Rent & Property')">
+
+<div class="card-icon">
+🏠
+</div>
+
+<h3>
+Rent & Property
+</h3>
+
+<p>
+Rental, property search, listing and fake-listing reporting.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Students')">
+
+<div class="card-icon">
+🎓
+</div>
+
+<h3>
+Students
+</h3>
+
+<p>
+Internships, scholarships, courses and student opportunities.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Jobs & Careers')">
+
+<div class="card-icon">
+💼
+</div>
+
+<h3>
+Jobs & Careers
+</h3>
+
+<p>
+Jobs, internships, skills and career guidance.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Transport')">
+
+<div class="card-icon">
+🚌
+</div>
+
+<h3>
+Transport
+</h3>
+
+<p>
+Routes, buses, trains, airport and local transport direction.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Waste & Garbage')">
+
+<div class="card-icon">
+🗑️
+</div>
+
+<h3>
+Waste & Garbage
+</h3>
+
+<p>
+Report garbage, dumping and cleanliness problems.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Water')">
+
+<div class="card-icon">
+💧
+</div>
+
+<h3>
+Water
+</h3>
+
+<p>
+Water supply, leakage, drainage and related problems.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Roads & Infrastructure')">
+
+<div class="card-icon">
+🛣️
+</div>
+
+<h3>
+Roads & Infrastructure
+</h3>
+
+<p>
+Potholes, damaged roads, streetlights and infrastructure.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Public Safety')">
+
+<div class="card-icon">
+🛡️
+</div>
+
+<h3>
+Public Safety
+</h3>
+
+<p>
+Non-emergency public safety concerns.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Elderly Help')">
+
+<div class="card-icon">
+👴
+</div>
+
+<h3>
+Elderly Help
+</h3>
+
+<p>
+Medicine, hospital, transport and digital assistance.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Government Services')">
+
+<div class="card-icon">
+🏛️
+</div>
+
+<h3>
+Government Services
+</h3>
+
+<p>
+Government schemes, documents and official service guidance.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Digital Help')">
+
+<div class="card-icon">
+💻
+</div>
+
+<h3>
+Digital Help
+</h3>
+
+<p>
+Online forms, websites, documents and digital guidance.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Cost of Living')">
+
+<div class="card-icon">
+💰
+</div>
+
+<h3>
+Cost of Living
+</h3>
+
+<p>
+Affordable housing, services and local resources.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openService('Community Help')">
+
+<div class="card-icon">
+🤝
+</div>
+
+<h3>
+Community Help
+</h3>
+
+<p>
+Community support, volunteers and local assistance.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openProblem()">
+
+<div class="card-icon">
+📢
+</div>
+
+<h3>
+Report a Problem
+</h3>
+
+<p>
+Tell us what is happening in your area.
+</p>
+
+</div>
+
+
+<div
+class="card"
+onclick="openHelp('Something Else')">
+
+<div class="card-icon">
+➕
+</div>
+
+<h3>
+Something Else
+</h3>
+
+<p>
+If your problem is not listed, tell us directly.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div
+id="workspace"
+class="workspace">
+
+<div class="workspace-inner">
+
+<h3
+id="workspaceTitle">
+Service
+</h3>
+
+<p
+id="workspaceText">
+Choose an option below.
+</p>
+
+
+<div
+id="workspaceOptions"
+class="options">
+</div>
+
+
+<div class="form-actions">
+
+<button
+class="btn btn-primary"
 onclick="openHelp(currentService)">
+
 💬 Ask VELORA
+
 </button>
 
-<button class="btn btn-outline"
-onclick="closeService()">
+
+<button
+class="btn btn-outline"
+onclick="closeWorkspace()">
+
 Close
+
 </button>
 
 </div>
@@ -1302,52 +2050,100 @@ Close
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
 HEALTHCARE
 ========================================================= -->
 
-<section id="healthcare">
+<section
+id="healthcare">
 
 <div class="container">
 
+
 <div class="section-head">
 
-<div class="eyebrow">Healthcare</div>
+<div class="eyebrow">
+HEALTHCARE
+</div>
 
-<h2>Find the right healthcare direction</h2>
+<h2>
+Find the right healthcare direction
+</h2>
 
 <p>
+
 Tell us what you need and where you are.
-We can guide you toward the appropriate next step.
+VELORA HELP can guide you toward nearby
+healthcare options.
+
 </p>
 
 </div>
 
 
-<div class="panel">
+<div class="card">
 
 <div class="form-grid">
 
+
 <div class="field">
 
-<label>What are you looking for?</label>
+<label>
+What are you looking for?
+</label>
 
 <select id="healthNeed">
 
-<option>General consultation</option>
-<option>Fever / common illness</option>
-<option>Child care</option>
-<option>Dental</option>
-<option>Eye care</option>
-<option>ENT</option>
-<option>Skin care</option>
-<option>Orthopedic</option>
-<option>Women's health</option>
-<option>Specialist consultation</option>
-<option>Emergency</option>
-<option>Other</option>
+<option>
+General consultation
+</option>
+
+<option>
+Fever / common illness
+</option>
+
+<option>
+Child care
+</option>
+
+<option>
+Dental
+</option>
+
+<option>
+Eye care
+</option>
+
+<option>
+ENT
+</option>
+
+<option>
+Skin care
+</option>
+
+<option>
+Orthopedic
+</option>
+
+<option>
+Women's health
+</option>
+
+<option>
+Specialist consultation
+</option>
+
+<option>
+Emergency
+</option>
+
+<option>
+Other
+</option>
 
 </select>
 
@@ -1356,7 +2152,9 @@ We can guide you toward the appropriate next step.
 
 <div class="field">
 
-<label>Your Taluk</label>
+<label>
+Your Taluk
+</label>
 
 <select id="healthTaluk">
 
@@ -1377,520 +2175,73 @@ We can guide you toward the appropriate next step.
 </div>
 
 
-<br>
+<div class="form-actions">
 
-<div class="actions">
-
-<button class="btn btn-primary"
+<button
+class="btn btn-primary"
 onclick="findHealthcare()">
-🩺 Find Healthcare Options
+
+🩺 Find Nearby Healthcare
+
 </button>
 
-<button class="btn btn-outline"
-onclick="openHelp('Healthcare')">
+
+<button
+class="btn btn-outline"
+onclick="openHelp('Healthcare Guidance')">
+
 💬 I Need VELORA Guidance
+
 </button>
 
 </div>
 
 
-<div id="healthResults" style="margin-top:25px"></div>
+<div
+id="healthResult"
+class="health-result">
+</div>
+
+
+<div class="health-note">
+
+<strong>Important:</strong>
+VELORA HELP does not diagnose illness or prescribe medicine.
+For a serious or life-threatening emergency, use emergency services.
+
+</div>
 
 </div>
 
 </div>
 
 </section>
+
 
 
 <!-- =========================================================
 EMERGENCY
 ========================================================= -->
 
-<section class="emergency" id="emergency">
+<section
+class="emergency-section"
+id="emergency">
 
 <div class="container">
 
-<div class="section-head">
-
-<div class="eyebrow">Emergency</div>
-
-<h2>Emergency Help</h2>
-
-<p>
-For immediate danger, contact the appropriate emergency service directly.
-</p>
-
-</div>
-
-
-<div class="grid grid-4">
-
-
-<div class="emergency-card">
-
-<div class="emergency-icon">🚑</div>
-
-<h3>Ambulance</h3>
-
-<p>Immediate medical emergency.</p>
-
-<br>
-
-<a class="btn btn-primary"
-href="tel:108">
-📞 Call 108
-</a>
-
-</div>
-
-
-<div class="emergency-card">
-
-<div class="emergency-icon">🚓</div>
-
-<h3>Police</h3>
-
-<p>Emergency police assistance.</p>
-
-<br>
-
-<a class="btn btn-primary"
-href="tel:112">
-📞 Call 112
-</a>
-
-</div>
-
-
-<div class="emergency-card">
-
-<div class="emergency-icon">🚒</div>
-
-<h3>Fire & Rescue</h3>
-
-<p>Fire and rescue emergency.</p>
-
-<br>
-
-<a class="btn btn-primary"
-href="tel:101">
-📞 Call 101
-</a>
-
-</div>
-
-
-<div class="emergency-card">
-
-<div class="emergency-icon">💬</div>
-
-<h3>VELORA HELP</h3>
-
-<p>For guidance and non-emergency assistance.</p>
-
-<br>
-
-<button class="btn btn-primary"
-onclick="openHelp('Emergency Help')">
-Contact VELORA
-</button>
-
-</div>
-
-</div>
-
-
-<div class="panel" style="margin-top:25px">
-
-<h3>📍 Share My Location</h3>
-
-<p>
-Allow location access to create a Google Maps location link
-that you can share with your family, emergency service or VELORA.
-</p>
-
-<br>
-
-<button class="btn btn-primary"
-onclick="shareLocation()">
-📍 Share My Location
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-DAKSHINA KANNADA
-========================================================= -->
-
-<section class="light" id="dakshina">
-
-<div class="container">
 
 <div class="section-head">
 
-<div class="eyebrow">Local Coverage</div>
-
-<h2>Explore Dakshina Kannada</h2>
-
-<p>
-VELORA HELP starts with Dakshina Kannada and covers
-its nine taluks.
-</p>
-
+<div class="eyebrow">
+EMERGENCY
 </div>
 
-
-<div class="grid grid-3">
-
-<div class="taluk" onclick="selectTaluk('Mangaluru')">
-📍 Mangaluru
-</div>
-
-<div class="taluk" onclick="selectTaluk('Moodabidri')">
-📍 Moodabidri
-</div>
-
-<div class="taluk" onclick="selectTaluk('Mulki')">
-📍 Mulki
-</div>
-
-<div class="taluk" onclick="selectTaluk('Ullal')">
-📍 Ullal
-</div>
-
-<div class="taluk" onclick="selectTaluk('Bantwal')">
-📍 Bantwal
-</div>
-
-<div class="taluk" onclick="selectTaluk('Belthangady')">
-📍 Belthangady
-</div>
-
-<div class="taluk" onclick="selectTaluk('Puttur')">
-📍 Puttur
-</div>
-
-<div class="taluk" onclick="selectTaluk('Sullia')">
-📍 Sullia
-</div>
-
-<div class="taluk" onclick="selectTaluk('Kadaba')">
-📍 Kadaba
-</div>
-
-</div>
-
-
-<div id="talukResult" class="taluk-result"></div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-TOP PROBLEMS
-========================================================= -->
-
-<section id="problems">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">Community Intelligence</div>
-
-<h2>🔥 Top Problems Reported This Month</h2>
-
-<p>
-VELORA HELP is starting from zero. These counters will increase
-only when genuine reports are received through the platform.
-</p>
-
-</div>
-
-
-<div class="grid grid-3">
-
-<div class="problem">
-<div class="problem-top">
-<div>
-<strong>Garbage & Waste</strong>
-<div class="zero">0 reports</div>
-</div>
-<div class="problem-number">01</div>
-</div>
-<div class="progress"><span></span></div>
-</div>
-
-
-<div class="problem">
-<div class="problem-top">
-<div>
-<strong>Road Problems</strong>
-<div class="zero">0 reports</div>
-</div>
-<div class="problem-number">02</div>
-</div>
-<div class="progress"><span></span></div>
-</div>
-
-
-<div class="problem">
-<div class="problem-top">
-<div>
-<strong>Water Problems</strong>
-<div class="zero">0 reports</div>
-</div>
-<div class="problem-number">03</div>
-</div>
-<div class="progress"><span></span></div>
-</div>
-
-
-<div class="problem">
-<div class="problem-top">
-<div>
-<strong>Healthcare Access</strong>
-<div class="zero">0 reports</div>
-</div>
-<div class="problem-number">04</div>
-</div>
-<div class="progress"><span></span></div>
-</div>
-
-
-<div class="problem">
-<div class="problem-top">
-<div>
-<strong>Rental Problems</strong>
-<div class="zero">0 reports</div>
-</div>
-<div class="problem-number">05</div>
-</div>
-<div class="progress"><span></span></div>
-</div>
-
-
-<div class="problem">
-<div class="problem-top">
-<div>
-<strong>Transport</strong>
-<div class="zero">0 reports</div>
-</div>
-<div class="problem-number">06</div>
-</div>
-<div class="progress"><span></span></div>
-</div>
-
-</div>
-
-
-<div style="text-align:center;margin-top:30px">
-
-<button class="btn btn-primary"
-onclick="openProblem()">
-📢 Report Your Problem
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-GOVERNMENT
-========================================================= -->
-
-<section class="light" id="government">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">For The People</div>
-
-<h2>🏛️ Government Services & Schemes</h2>
-
-<p>
-Understand what a service or scheme is, who may be eligible,
-what documents may be required, where to apply and where to
-verify the information officially.
-</p>
-
-</div>
-
-
-<div class="banner" style="margin-bottom:35px">
-
-<div>
-
-<h2>🔎 Find possible schemes for me</h2>
-
-<p>
-Tell us your basic profile and VELORA HELP can guide you
-toward relevant categories.
-</p>
-
-</div>
-
-<button class="btn btn-light"
-onclick="openSchemeFinder()">
-Check Eligibility Guidance
-</button>
-
-</div>
-
-
-<div class="grid grid-3">
-
-
-<div class="scheme">
-
-<span class="status">KARNATAKA</span>
-
-<h3>Gruha Lakshmi</h3>
-
-<p>
-Women and family welfare support. Check the latest official
-eligibility before applying.
-</p>
-
-<br>
-
-<button class="btn btn-primary"
-onclick="schemeDetails('Gruha Lakshmi')">
-View Guidance
-</button>
-
-</div>
-
-
-<div class="scheme">
-
-<span class="status">KARNATAKA</span>
-
-<h3>Gruha Jyothi</h3>
-
-<p>
-Electricity-related support programme. Verify current conditions
-through the official source.
-</p>
-
-<br>
-
-<button class="btn btn-primary"
-onclick="schemeDetails('Gruha Jyothi')">
-View Guidance
-</button>
-
-</div>
-
-
-<div class="scheme">
-
-<span class="status">KARNATAKA</span>
-
-<h3>Shakti</h3>
-
-<p>
-Karnataka public-transport related programme. Check current
-rules and eligible services.
-</p>
-
-<br>
-
-<button class="btn btn-primary"
-onclick="schemeDetails('Shakti')">
-View Guidance
-</button>
-
-</div>
-
-
-<div class="scheme">
-
-<span class="status">KARNATAKA</span>
-
-<h3>Anna Bhagya</h3>
-
-<p>
-Food-security related programme. Verify current benefits and
-implementation conditions.
-</p>
-
-<br>
-
-<button class="btn btn-primary"
-onclick="schemeDetails('Anna Bhagya')">
-View Guidance
-</button>
-
-</div>
-
-
-<div class="scheme">
-
-<span class="status">KARNATAKA</span>
-
-<h3>Yuva Nidhi</h3>
-
-<p>
-Youth-focused support. Check current eligibility and application
-requirements officially.
-</p>
-
-<br>
-
-<button class="btn btn-primary"
-onclick="schemeDetails('Yuva Nidhi')">
-View Guidance
-</button>
-
-</div>
-
-
-<div class="scheme">
-
-<span class="status">CENTRAL + STATE</span>
-
-<h3>Healthcare Schemes</h3>
-
-<p>
-Find healthcare assistance categories and official information.
-</p>
-
-<br>
-
-<button class="btn btn-primary"
-onclick="schemeDetails('Healthcare Schemes')">
-View Guidance
-</button>
-
-</div>
-
-</div>
-
-
-<br><br>
-
-
-<div class="section-head" style="margin-bottom:25px">
-
-<h2 style="font-size:30px">
-Government Service Categories
+<h2>
+Emergency Help
 </h2>
 
 <p>
-Tap any category to ask VELORA HELP for guidance.
+For immediate danger, contact emergency services directly.
 </p>
 
 </div>
@@ -1898,168 +2249,65 @@ Tap any category to ask VELORA HELP for guidance.
 
 <div class="grid grid-4">
 
-<div class="category" onclick="governmentCategory('Women & Family')">
-<div class="icon">👩</div>
-<h3>Women & Family</h3>
-<p>Welfare and family support.</p>
+
+<div class="emergency-card">
+
+<div class="big-icon">
+🚑
 </div>
 
-<div class="category" onclick="governmentCategory('Students & Youth')">
-<div class="icon">🎓</div>
-<h3>Students & Youth</h3>
-<p>Education and youth programmes.</p>
-</div>
-
-<div class="category" onclick="governmentCategory('Senior Citizens')">
-<div class="icon">👴</div>
-<h3>Senior Citizens</h3>
-<p>Senior welfare guidance.</p>
-</div>
-
-<div class="category" onclick="governmentCategory('Persons with Disabilities')">
-<div class="icon">♿</div>
-<h3>Persons with Disabilities</h3>
-<p>Support and welfare services.</p>
-</div>
-
-<div class="category" onclick="governmentCategory('Farmers & Agriculture')">
-<div class="icon">🌾</div>
-<h3>Farmers & Agriculture</h3>
-<p>Agriculture support programmes.</p>
-</div>
-
-<div class="category" onclick="governmentCategory('Housing')">
-<div class="icon">🏠</div>
-<h3>Housing</h3>
-<p>Housing-related services.</p>
-</div>
-
-<div class="category" onclick="governmentCategory('Jobs & Employment')">
-<div class="icon">💼</div>
-<h3>Jobs & Employment</h3>
-<p>Employment and skill programmes.</p>
-</div>
-
-<div class="category" onclick="governmentCategory('Business & Entrepreneurship')">
-<div class="icon">🚀</div>
-<h3>Business & Entrepreneurship</h3>
-<p>Business support.</p>
-</div>
-
-<div class="category" onclick="governmentCategory('Labour & Workers')">
-<div class="icon">👷</div>
-<h3>Labour & Workers</h3>
-<p>Worker welfare services.</p>
-</div>
-
-<div class="category" onclick="governmentCategory('Rural Development')">
-<div class="icon">🏘️</div>
-<h3>Rural Development</h3>
-<p>Rural development services.</p>
-</div>
-
-<div class="category" onclick="governmentCategory('Urban Services')">
-<div class="icon">🏙️</div>
-<h3>Urban Services</h3>
-<p>Urban citizen services.</p>
-</div>
-
-<div class="category" onclick="governmentCategory('Citizen Documents')">
-<div class="icon">🪪</div>
-<h3>Citizen Documents</h3>
-<p>Certificates and documents.</p>
-</div>
-
-</div>
-
-
-<div style="text-align:center;margin-top:35px">
-
-<a
-class="btn btn-primary"
-href="https://sevasindhu.karnataka.gov.in/"
-target="_blank"
-rel="noopener">
-🌐 Open Karnataka Seva Sindhu
-</a>
-
-<a
-class="btn btn-outline"
-href="https://www.karnataka.gov.in/"
-target="_blank"
-rel="noopener">
-🌐 Karnataka Government
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-LOCAL SERVICES
-========================================================= -->
-
-<section id="local">
-
-<div class="container">
-
-<div class="section-head">
-
-<div class="eyebrow">Local Network</div>
-
-<h2>🔧 Local Services</h2>
+<h3>
+Ambulance
+</h3>
 
 <p>
-Request help finding a suitable local service provider.
-Provider listings will be added only after verification.
+Medical emergency.
 </p>
 
+<a
+href="tel:108"
+class="btn btn-primary">
+
+📞 Call 108
+
+</a>
+
 </div>
 
 
-<div class="grid grid-3">
+<div class="emergency-card">
 
-
-<div class="listing">
-<h3>🔌 Electrician</h3>
-<p>Electrical repair and installation assistance.</p>
-<div class="meta">
-<span class="tag">Home Service</span>
-<span class="tag">Local</span>
-</div>
-<button class="btn btn-primary"
-onclick="openHelp('Electrician Service')">
-Find Help
-</button>
+<div class="big-icon">
+🚓
 </div>
 
+<h3>
+Police
+</h3>
 
-<div class="listing">
-<h3>🚰 Plumber</h3>
-<p>Pipe, tap, water and plumbing assistance.</p>
-<div class="meta">
-<span class="tag">Home Service</span>
-</div>
-<button class="btn btn-primary"
-onclick="openHelp('Plumber Service')">
-Find Help
-</button>
+<p>
+Police emergency assistance.
+</p>
+
+<a
+href="tel:112"
+class="btn btn-primary">
+
+📞 Call 112
+
+</a>
+
 </div>
 
 
-<div class="listing">
-<h3>❄️ AC Repair</h3>
-<p>AC repair and maintenance assistance.</p>
-<div class="meta">
-<span class="tag">Repair</span>
+<div class="emergency-card">
+
+<div class="big-icon">
+🚒
 </div>
-<button class="btn btn-primary"
-onclick="openHelp('AC Repair Service')">
-Find Help
-</button>
+
+<h3>
+Fire & Rescue
 ...
 
 [Message clipped]  View entire message
