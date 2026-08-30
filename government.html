@@ -1,1 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+name="theme-color"
+content="#071a3d"
+>
+
+<meta
+name="description"
+content="VELORA HELP Government Services — Karnataka government schemes, services, eligibility, documents, official links and citizen guidance."
+>
+
+<title>Government Services | VELORA HELP</title>
+
+<link
+rel="stylesheet"
+href="css/style.css"
+>
+
+<style>
+
+* {
+box-sizing: border-box;
+}
+
+body {
+margin: 0;
+font-family: Arial, Helvetica, sans-serif;
+color: #17243d;
+background: #f6f8fb;
+}
+
+a {
+text-decoration: none;
+}
+
+.vh-container {
+width: min(1180px, 92%);
+margin: auto;
+}
+
+/* ================= HEADER ================= */
+
+.vh-header {
+position: sticky;
+top: 0;
+z-index: 999;
+background: rgba(255,255,255,.97);
+backdrop-filter: blur(15px);
+border-bottom: 1px solid #e5e9f0;
+}
+
+.vh-nav {
+min-height: 76px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 20px;
+}
+
+.vh-brand {
+display: flex;
+align-items: center;
+gap: 12px;
+color: #071a3d;
+}
+
+.vh-brand img {
+width: 52px;
+height: 52px;
+object-fit: contain;
+border-radius: 50%;
+}
+
+.vh-brand-name {
+font-size: 1.15rem;
+font-weight: 800;
+}
+
+.vh-brand-sub {
+font-size: .7rem;
+opacity: .7;
+margin-top: 3px;
+}
+
+.vh-nav-links {
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
+.vh-nav-links a {
+color: #17243d;
+padding: 10px 11px;
+border-radius: 9px;
+font-size: .88rem;
+font-weight: 600;
+}
+
+.vh-nav-links a:hover {
+background: #eef2f8;
+}
+
+.vh-menu {
+display: none;
+background: #071a3d;
+color: white;
+border: 0;
+padding: 10px 13px;
+border-radius: 10px;
+font-size: 20px;
+cursor: pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+padding: 85px 0;
+color: white;
+
+background:
+linear-gradient(
+105deg,
+#071a3d 0%,
+#12315e 58%,
+#8a172d 100%
+);
+}
+
+.hero small {
+color: #e8b7bf;
+font-weight: 800;
+letter-spacing: .14em;
+}
+
+.hero h1 {
+font-size: clamp(2.7rem, 6vw, 5rem);
+line-height: 1;
+margin: 12px 0 20px;
+letter-spacing: -.04em;
+}
+
+.hero p {
+max-width: 760px;
+line-height: 1.75;
+color: rgba(255,255,255,.88);
+font-size: 1.06rem;
+}
+
+.actions {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+margin-top: 28px;
+}
+
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+min-height: 46px;
+padding: 11px 17px;
+border-radius: 11px;
+border: 0;
+cursor: pointer;
+font: inherit;
+font-weight: 750;
+}
+
+.btn-white {
+background: white;
+color: #071a3d;
+}
+
+.btn-red {
+background: #a3132d;
+color: white;
+}
+
+.btn-blue {
+background: #071a3d;
+color: white;
+}
+
+.btn-outline {
+background: transparent;
+color: #071a3d;
+border: 1px solid #d5dce8;
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+padding: 72px 0;
+}
+
+.alt {
+background: #f0f3f8;
+}
+
+.heading {
+max-width: 760px;
+margin-bottom: 30px;
+}
+
+.heading small {
+color: #a3132d;
+font-weight: 800;
+letter-spacing: .12em;
+}
+
+.heading h2 {
+color: #071a3d;
+font-size: clamp(2rem, 4vw, 3.1rem);
+margin: 8px 0 12px;
+}
+
+.heading p {
+color: #667085;
+line-height: 1.7;
+}
+
+/* ================= SEARCH ================= */
+
+.search-wrap {
+margin-top: -38px;
+position: relative;
+z-index: 5;
+}
+
+.search-box {
+background: white;
+padding: 25px;
+border-radius: 20px;
+box-shadow: 0 20px 60px rgba(7,26,61,.14);
+}
+
+.search-grid {
+display: grid;
+grid-template-columns: 1.5fr 1fr 1fr auto;
+gap: 12px;
+}
+
+input,
+select,
+textarea {
+width: 100%;
+padding: 13px 14px;
+border: 1px solid #d7deea;
+border-radius: 10px;
+font: inherit;
+color: #17243d;
+background: white;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+outline: none;
+border-color: #a3132d;
+box-shadow: 0 0 0 3px rgba(163,19,45,.08);
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 15px;
+}
+
+.category {
+background: white;
+border: 1px solid #e2e7ef;
+border-radius: 17px;
+padding: 21px;
+cursor: pointer;
+transition: .2s ease;
+}
+
+.category:hover {
+transform: translateY(-3px);
+box-shadow: 0 15px 35px rgba(7,26,61,.08);
+}
+
+.category-icon {
+font-size: 28px;
+margin-bottom: 13px;
+}
+
+.category h3 {
+margin: 0 0 7px;
+color: #071a3d;
+}
+
+.category p {
+margin: 0;
+color: #667085;
+font-size: .88rem;
+line-height: 1.55;
+}
+
+/* ================= SCHEME CARDS ================= */
+
+.scheme-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 20px;
+}
+
+.scheme-card {
+background: white;
+border: 1px solid #e0e5ed;
+border-radius: 19px;
+padding: 25px;
+box-shadow: 0 7px 24px rgba(7,26,61,.04);
+}
+
+.scheme-top {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+gap: 15px;
+}
+
+.scheme-icon {
+width: 54px;
+height: 54px;
+display: grid;
+place-items: center;
+background: #eef2f8;
+border-radius: 14px;
+font-size: 25px;
+flex-shrink: 0;
+}
+
+.scheme-card h3 {
+margin: 0 0 8px;
+color: #071a3d;
+font-size: 1.25rem;
+}
+
+.scheme-card p {
+color: #667085;
+line-height: 1.65;
+font-size: .92rem;
+}
+
+.tag {
+display: inline-block;
+padding: 6px 9px;
+background: #f7e8eb;
+color: #8a172d;
+border-radius: 20px;
+font-size: .72rem;
+font-weight: 800;
+white-space: nowrap;
+}
+
+.scheme-info {
+margin-top: 17px;
+border-top: 1px solid #edf0f4;
+padding-top: 17px;
+}
+
+.info-row {
+display: grid;
+grid-template-columns: 125px 1fr;
+gap: 10px;
+margin: 8px 0;
+font-size: .88rem;
+}
+
+.info-label {
+font-weight: 800;
+color: #071a3d;
+}
+
+.info-value {
+color: #667085;
+line-height: 1.5;
+}
+
+.scheme-buttons {
+display: flex;
+flex-wrap: wrap;
+gap: 9px;
+margin-top: 19px;
+}
+
+.scheme-buttons .btn {
+min-height: 40px;
+padding: 9px 13px;
+font-size: .82rem;
+}
+
+/* ================= RESULTS ================= */
+
+.results {
+display: none;
+margin-top: 22px;
+background: #f7f9fc;
+border: 1px solid #dce2eb;
+border-radius: 15px;
+padding: 20px;
+}
+
+.results.active {
+display: block;
+}
+
+.result-item {
+padding: 15px 0;
+border-bottom: 1px solid #e2e6ec;
+}
+
+.result-item:last-child {
+border-bottom: 0;
+}
+
+.result-item strong {
+display: block;
+color: #071a3d;
+margin-bottom: 6px;
+}
+
+.result-item span {
+color: #667085;
+font-size: .9rem;
+line-height: 1.55;
+}
+
+/* ================= DOCUMENTS ================= */
+
+.documents {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 15px;
+}
+
+.document {
+background: white;
+border: 1px solid #e1e6ee;
+border-radius: 16px;
+padding: 20px;
+}
+
+.document strong {
+display: block;
+margin-bottom: 8px;
+color: #071a3d;
+}
+
+.document span {
+color: #667085;
+font-size: .88rem;
+line-height: 1.5;
+}
+
+/* ================= OFFICIAL SOURCES ================= */
+
+.official-box {
+background: #071a3d;
+color: white;
+border-radius: 23px;
+padding: 35px;
+}
+
+.official-box h2 {
+margin-top: 0;
+font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.official-box p {
+color: rgba(255,255,255,.82);
+line-height: 1.7;
+max-width: 760px;
+}
+
+.official-links {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 13px;
+margin-top: 25px;
+}
+
+.official-link {
+background: rgba(255,255,255,.08);
+border: 1px solid rgba(255,255,255,.13);
+color: white;
+padding: 17px;
+border-radius: 13px;
+transition: .2s;
+}
+
+.official-link:hover {
+background: rgba(255,255,255,.15);
+}
+
+.official-link strong {
+display: block;
+margin-bottom: 5px;
+}
+
+.official-link span {
+color: rgba(255,255,255,.68);
+font-size: .82rem;
+}
+
+/* ================= ENQUIRY ================= */
+
+.enquiry {
+background: #8a172d;
+color: white;
+border-radius: 23px;
+padding: 35px;
+}
+
+.enquiry h2 {
+font-size: clamp(2rem, 4vw, 3rem);
+margin: 8px 0 12px;
+}
+
+.enquiry p {
+color: rgba(255,255,255,.84);
+line-height: 1.7;
+}
+
+.form-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 16px;
+margin-top: 25px;
+}
+
+.full {
+grid-column: 1 / -1;
+}
+
+label {
+display: block;
+margin-bottom: 7px;
+font-size: .9rem;
+font-weight: 700;
+}
+
+/* ================= NOTICE ================= */
+
+.notice {
+background: #fff8e6;
+border: 1px solid #f2dfaa;
+border-radius: 16px;
+padding: 19px;
+color: #624f18;
+line-height: 1.65;
+font-size: .9rem;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+background: #06152f;
+color: white;
+padding: 55px 0 25px;
+}
+
+.footer-grid {
+display: grid;
+grid-template-columns: 2fr 1fr 1fr 1fr;
+gap: 35px;
+}
+
+footer h3,
+footer h4 {
+color: white;
+}
+
+footer a {
+display: block;
+color: rgba(255,255,255,.72);
+margin: 9px 0;
+}
+
+footer a:hover {
+color: white;
+}
+
+.footer-bottom {
+border-top: 1px solid rgba(255,255,255,.12);
+margin-top: 35px;
+padding-top: 20px;
+color: rgba(255,255,255,.55);
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 15px;
+}
+
+/* ================= MESSAGE ================= */
+
+.message {
+position: fixed;
+right: 20px;
+bottom: 20px;
+z-index: 9999;
+display: none;
+max-width: 390px;
+background: white;
+color: #071a3d;
+padding: 17px 20px;
+border-radius: 13px;
+box-shadow: 0 15px 50px rgba(0,0,0,.2);
+border-left: 5px solid #a3132d;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width: 1000px) {
+
+.categories {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.documents {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.official-links {
+grid-template-columns: 1fr 1fr;
+}
+
+.search-grid {
+grid-template-columns: 1fr 1fr;
+}
+
+.vh-nav-links {
+display: none;
+position: absolute;
+top: 70px;
+left: 4%;
+right: 4%;
+background: white;
+padding: 12px;
+border-radius: 14px;
+box-shadow: 0 20px 50px rgba(0,0,0,.15);
+flex-direction: column;
+align-items: stretch;
+}
+
+.vh-nav-links.active {
+display: flex;
+}
+
+.vh-menu {
+display: block;
+}
+}
+
+@media(max-width: 700px) {
+
+.scheme-grid,
+.categories,
+.documents,
+.official-links,
+.form-grid,
+.footer-grid,
+.search-grid {
+grid-template-columns: 1fr;
+}
+
+.full {
+grid-column: auto;
+}
+
+.hero {
+padding: 65px 0;
+}
+
+.search-wrap {
+margin-top: -25px;
+}
+
+.official-box,
+.enquiry {
+padding: 25px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+HEADER
+===================================================== -->
+
+<header class="vh-header">
+
+<div class="vh-container vh-nav">
+
+<a
+href="index.html"
+class="vh-brand"
+>
+
+<img
+src="velora-help-logo.png"
+alt="VELORA HELP Logo"
+>
+
+<div>
+
+<div class="vh-brand-name">
+VELORA HELP
+</div>
+
+<div class="vh-brand-sub">
+Your Problem. Our Direction.
+</div>
+
+</div>
+
+</a>
+
+
+<button
+id="menuButton"
+class="vh-menu"
+type="button"
+>
+☰
+</button>
+
+
+<nav
+id="navigation"
+class="vh-nav-links"
+>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="healthcare.html">
+Healthcare
+</a>
+
+<a href="admissions.html">
+Admissions
+</a>
+
+<a href="government.html">
+Government
+</a>
+
+<a href="students.html">
+Students
+</a>
+
+<a href="jobs.html">
+Jobs
+</a>
+
+<a href="property.html">
+Housing
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="vh-container">
+
+<small>
+VELORA HELP • GOVERNMENT SERVICES
+</small>
+
+<h1>
+Government help,<br>
+made easier.
+</h1>
+
+<p>
+Find information about Karnataka government
+schemes and citizen services in one place.
+Understand who may qualify, what documents may
+be required, where to apply and where to find
+the official source.
+</p>
+
+
+<div class="actions">
+
+<a
+href="#scheme-search"
+class="btn btn-white"
+>
+🔎 Find a Scheme
+</a>
+
+<a
+href="#government-enquiry"
+class="btn btn-white"
+>
+💬 Ask VELORA HELP
+</a>
+
+<a
+href="#official"
+class="btn btn-red"
+>
+🏛️ Official Sources
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+SEARCH
+===================================================== -->
+
+<section
+class="search-wrap"
+id="scheme-search"
+>
+
+<div class="vh-container">
+
+<div class="search-box">
+
+<div class="heading">
+
+<small>
+SCHEME FINDER
+</small>
+
+<h2>
+What government help are you looking for?
+</h2>
+
+<p>
+Search by keyword, category or beneficiary type.
+</p>
+
+</div>
+
+
+<form id="schemeSearchForm">
+
+<div class="search-grid">
+
+<input
+id="schemeKeyword"
+type="search"
+placeholder="Example: electricity, women, student..."
+>
+
+
+<select id="schemeCategory">
+
+<option value="">
+All Categories
+</option>
+
+<option value="Women">
+Women
+</option>
+
+<option value="Students">
+Students
+</option>
+
+<option value="Youth">
+Youth
+</option>
+
+<option value="Food">
+Food & Welfare
+</option>
+
+<option value="Transport">
+Transport
+</option>
+
+<option value="Electricity">
+Electricity
+</option>
+
+<option value="Housing">
+Housing
+</option>
+
+<option value="Employment">
+Employment
+</option>
+
+</select>
+
+
+<select id="schemeLocation">
+
+<option value="">
+Location
+</option>
+
+<option>
+Mangaluru
+</option>
+
+<option>
+Bantwal
+</option>
+
+<option>
+Belthangady
+</option>
+
+<option>
+Puttur
+</option>
+
+<option>
+Sullia
+</option>
+
+<option>
+Moodbidri
+</option>
+
+<option>
+Kadaba
+</option>
+
+<option>
+Mulki
+</option>
+
+</select>
+
+
+<button
+class="btn btn-red"
+type="submit"
+>
+Search
+</button>
+
+</div>
+
+</form>
+
+
+<div
+id="searchResults"
+class="results"
+>
+
+<h3>
+Search Results
+</h3>
+
+<div id="resultContent"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+CATEGORIES
+===================================================== -->
+
+<section class="section">
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+GOVERNMENT HELP
+</small>
+
+<h2>
+Browse by your need
+</h2>
+
+<p>
+Select the type of help you are looking for.
+</p>
+
+</div>
+
+
+<div class="categories">
+
+
+<div
+class="category category-button"
+data-category="Women"
+>
+
+<div class="category-icon">
+👩
+</div>
+
+<h3>
+Women
+</h3>
+
+<p>
+Welfare, financial assistance,
+mobility and support.
+</p>
+
+</div>
+
+
+<div
+class="category category-button"
+data-category="Students"
+>
+
+<div class="category-icon">
+🎓
+</div>
+
+<h3>
+Students
+</h3>
+
+<p>
+Education, scholarships, training
+and youth opportunities.
+</p>
+
+</div>
+
+
+<div
+class="category category-button"
+data-category="Youth"
+>
+
+<div class="category-icon">
+🧑‍💼
+</div>
+
+<h3>
+Youth & Jobs
+</h3>
+
+<p>
+Employment, unemployment assistance
+and skill development.
+</p>
+
+</div>
+
+
+<div
+class="category category-button"
+data-category="Food"
+>
+
+<div class="category-icon">
+🍚
+</div>
+
+<h3>
+Food & Welfare
+</h3>
+
+<p>
+Food security and social welfare
+assistance.
+</p>
+
+</div>
+
+
+<div
+class="category category-button"
+data-category="Electricity"
+>
+
+<div class="category-icon">
+⚡
+</div>
+
+<h3>
+Electricity
+</h3>
+
+<p>
+Household electricity-related
+government support.
+</p>
+
+</div>
+
+
+<div
+class="category category-button"
+data-category="Transport"
+>
+
+<div class="category-icon">
+🚌
+</div>
+
+<h3>
+Transport
+</h3>
+
+<p>
+Public transport and mobility
+related support.
+</p>
+
+</div>
+
+
+<div
+class="category category-button"
+data-category="Housing"
+>
+
+<div class="category-icon">
+🏠
+</div>
+
+<h3>
+Housing
+</h3>
+
+<p>
+Housing assistance and
+related government programmes.
+</p>
+
+</div>
+
+
+<div
+class="category category-button"
+data-category="Employment"
+>
+
+<div class="category-icon">
+🛠️
+</div>
+
+<h3>
+Employment
+</h3>
+
+<p>
+Employment, skills and livelihood
+opportunities.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+MAJOR KARNATAKA SCHEMES
+===================================================== -->
+
+<section
+class="section alt"
+id="schemes"
+>
+
+<div class="vh-container">
+
+<div class="heading">
+
+<small>
+KARNATAKA
+</small>
+
+<h2>
+Major welfare schemes
+</h2>
+
+<p>
+A simple starting point for understanding
+major Karnataka government programmes.
+Always verify current eligibility and application
+requirements through the official source before applying.
+</p>
+
+</div>
+
+
+<div class="scheme-grid">
+
+
+<!-- GRUHA LAKSHMI -->
+
+<article
+class="scheme-card"
+data-category="Women"
+data-keywords="women female family assistance gruhalakshmi gruha lakshmi"
+>
+
+<div class="scheme-top">
+
+<div class="scheme-icon">
+👩
+</div>
+
+<span class="tag">
+WOMEN / FAMILY
+</span>
+
+</div>
+
+<h3>
+Gruha Lakshmi
+</h3>
+
+<p>
+A Karnataka welfare programme focused on
+financial support for eligible women identified
+as heads of households.
+</p>
+
+
+<div class="scheme-info">
+
+<div class="info-row">
+
+<div class="info-label">
+Who can apply?
+</div>
+
+<div class="info-value">
+Eligibility depends on the current
+government rules and beneficiary criteria.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Documents
+</div>
+
+<div class="info-value">
+Identity, household and bank-related
+documents may be required.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Where?
+</div>
+
+<div class="info-value">
+Use the official Karnataka service
+platform or designated government channel.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="scheme-buttons">
+
+<a
+class="btn btn-blue"
+href="https://sevasindhu.karnataka.gov.in/"
+target="_blank"
+rel="noopener"
+>
+Official Service
+</a>
+
+<button
+class="btn btn-outline scheme-enquiry"
+type="button"
+data-scheme="Gruha Lakshmi"
+>
+Ask VELORA HELP
+</button>
+
+</div>
+
+</article>
+
+
+<!-- GRUHA JYOTHI -->
+
+<article
+class="scheme-card"
+data-category="Electricity"
+data-keywords="electricity power current free units gruha jyothi"
+>
+
+<div class="scheme-top">
+
+<div class="scheme-icon">
+⚡
+</div>
+
+<span class="tag">
+ELECTRICITY
+</span>
+
+</div>
+
+<h3>
+Gruha Jyothi
+</h3>
+
+<p>
+A Karnataka household electricity support
+programme associated with free electricity
+up to the applicable monthly limit under
+the scheme rules.
+</p>
+
+
+<div class="scheme-info">
+
+<div class="info-row">
+
+<div class="info-label">
+Who can apply?
+</div>
+
+<div class="info-value">
+Eligible residential electricity
+consumers subject to current rules.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Documents
+</div>
+
+<div class="info-value">
+Electricity account details and
+identity information may be required.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Where?
+</div>
+
+<div class="info-value">
+Apply/check through the official
+Karnataka electricity/service channels.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="scheme-buttons">
+
+<a
+class="btn btn-blue"
+href="https://sevasindhu.karnataka.gov.in/"
+target="_blank"
+rel="noopener"
+>
+Official Service
+</a>
+
+<button
+class="btn btn-outline scheme-enquiry"
+type="button"
+data-scheme="Gruha Jyothi"
+>
+Ask VELORA HELP
+</button>
+
+</div>
+
+</article>
+
+
+<!-- YUVA NIDHI -->
+
+<article
+class="scheme-card"
+data-category="Youth"
+data-keywords="youth graduate diploma unemployed job yuvanidhi yuva nidhi"
+>
+
+<div class="scheme-top">
+
+<div class="scheme-icon">
+🧑‍🎓
+</div>
+
+<span class="tag">
+YOUTH
+</span>
+
+</div>
+
+<h3>
+Yuva Nidhi
+</h3>
+
+<p>
+A Karnataka programme providing financial
+assistance to eligible unemployed graduates
+and diploma holders while they seek opportunities
+or pursue development.
+</p>
+
+
+<div class="scheme-info">
+
+<div class="info-row">
+
+<div class="info-label">
+Who?
+</div>
+
+<div class="info-value">
+Eligible unemployed graduates and
+diploma holders under the current rules.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Documents
+</div>
+
+<div class="info-value">
+Education, identity, bank and
+employment-related information may be required.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Guidance
+</div>
+
+<div class="info-value">
+Verify current eligibility and
+application requirements before applying.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="scheme-buttons">
+
+<a
+class="btn btn-blue"
+href="https://sevasindhu.karnataka.gov.in/"
+target="_blank"
+rel="noopener"
+>
+Official Service
+</a>
+
+<button
+class="btn btn-outline scheme-enquiry"
+type="button"
+data-scheme="Yuva Nidhi"
+>
+Ask VELORA HELP
+</button>
+
+</div>
+
+</article>
+
+
+<!-- SHAKTI -->
+
+<article
+class="scheme-card"
+data-category="Transport"
+data-keywords="bus women transgender transport shakti free travel"
+>
+
+<div class="scheme-top">
+
+<div class="scheme-icon">
+🚌
+</div>
+
+<span class="tag">
+TRANSPORT
+</span>
+
+</div>
+
+<h3>
+Shakti Scheme
+</h3>
+
+<p>
+A Karnataka public transport welfare initiative
+providing eligible beneficiaries access to
+free travel on applicable state-run bus services.
+</p>
+
+
+<div class="scheme-info">
+
+<div class="info-row">
+
+<div class="info-label">
+Who?
+</div>
+
+<div class="info-value">
+Eligibility is based on the current
+government rules and domicile requirements.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Documents
+</div>
+
+<div class="info-value">
+Appropriate identity and domicile
+documentation may be required.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Where?
+</div>
+
+<div class="info-value">
+Check the applicable state transport
+corporation guidance.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="scheme-buttons">
+
+<a
+class="btn btn-blue"
+href="https://sevasindhu.karnataka.gov.in/"
+target="_blank"
+rel="noopener"
+>
+Official Service
+</a>
+
+<button
+class="btn btn-outline scheme-enquiry"
+type="button"
+data-scheme="Shakti Scheme"
+>
+Ask VELORA HELP
+</button>
+
+</div>
+
+</article>
+
+
+<!-- ANNA BHAGYA -->
+
+<article
+class="scheme-card"
+data-category="Food"
+data-keywords="food rice ration anna bhagya food security welfare"
+>
+
+<div class="scheme-top">
+
+<div class="scheme-icon">
+🍚
+</div>
+
+<span class="tag">
+FOOD / WELFARE
+</span>
+
+</div>
+
+<h3>
+Anna Bhagya
+</h3>
+
+<p>
+Karnataka food-security support for eligible
+beneficiaries through the public distribution
+and welfare system.
+</p>
+
+
+<div class="scheme-info">
+
+<div class="info-row">
+
+<div class="info-label">
+Who?
+</div>
+
+<div class="info-value">
+Eligible beneficiaries under the
+applicable food and ration rules.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Documents
+</div>
+
+<div class="info-value">
+Ration card and identity-related
+information may be required.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Where?
+</div>
+
+<div class="info-value">
+Use the official food department
+and Karnataka service channels.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="scheme-buttons">
+
+<a
+class="btn btn-blue"
+href="https://sevasindhu.karnataka.gov.in/"
+target="_blank"
+rel="noopener"
+>
+Official Service
+</a>
+
+<button
+class="btn btn-outline scheme-enquiry"
+type="button"
+data-scheme="Anna Bhagya"
+>
+Ask VELORA HELP
+</button>
+
+</div>
+
+</article>
+
+
+<!-- 2026 / NEW PROGRAMMES -->
+
+<article
+class="scheme-card"
+data-category="Employment"
+data-keywords="skill employment training youth 2026 government scheme"
+>
+
+<div class="scheme-top">
+
+<div class="scheme-icon">
+🛠️
+</div>
+
+<span class="tag">
+2026 UPDATES
+</span>
+
+</div>
+
+<h3>
+Skill & Employment Support
+</h3>
+
+<p>
+Karnataka continues to announce skill,
+employment and youth-development initiatives.
+VELORA HELP will use this section for verified
+current opportunities.
+</p>
+
+
+<div class="scheme-info">
+
+<div class="info-row">
+
+<div class="info-label">
+Who?
+</div>
+
+<div class="info-value">
+Eligibility depends on the specific
+programme.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Documents
+</div>
+
+<div class="info-value">
+Varies by programme.
+</div>
+
+</div>
+
+
+<div class="info-row">
+
+<div class="info-label">
+Important
+</div>
+
+<div class="info-value">
+Check official notifications before
+submitting any application.
+</div>
+
+</div>
+
+</div>
+
+
+<div class="scheme-buttons">
+
+<a
+class="btn btn-blue"
+...
+
+[Message clipped]  View entire message
