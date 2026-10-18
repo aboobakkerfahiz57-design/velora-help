@@ -1,0 +1,632 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#103c32">
+<title>Admin Portal | VELORA HELP</title>
+<meta name="description" content="VELORA HELP secure administration portal.">
+<style>
+:root {
+  --green:#145746;
+  --green-dark:#103c32;
+  --green-light:#e8f4ee;
+  --ink:#182722;
+  --muted:#738079;
+  --line:#e7ece8;
+  --surface:#ffffff;
+  --page:#f5f7f5;
+  --red:#b42318;
+  --shadow:0 12px 40px rgba(24,54,42,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--page);color:var(--ink);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-size:14px;line-height:1.5;
+}
+button,input{font:inherit}
+button{cursor:pointer}
+button:focus-visible,input:focus-visible{
+  outline:3px solid #8bc8ad;outline-offset:2px
+}
+.hidden{display:none!important}
+a{color:inherit}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{
+  width:45px;height:45px;display:grid;place-items:center;
+  border-radius:13px;background:var(--green);color:white;
+  font-size:22px;font-weight:800;letter-spacing:-2px;
+}
+.brand-name{font-size:17px;font-weight:800;letter-spacing:-.5px}
+.brand-sub{font-size:10px;letter-spacing:2px;color:var(--muted);font-weight:700}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;color:var(--green)}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.btn{
+  border:1px solid var(--line);border-radius:9px;background:white;
+  padding:10px 15px;font-weight:700;color:var(--ink);
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  transition:background .2s,border-color .2s;
+}
+.btn:hover{background:#f3f7f4;border-color:#cad8cf}
+.btn-primary{background:var(--green);color:white;border-color:var(--green)}
+.btn-primary:hover{background:var(--green-dark);color:white}
+.btn:disabled{opacity:.6;cursor:not-allowed}
+.field{display:grid;gap:7px;margin-bottom:17px}
+.field label{font-size:12px;font-weight:750}
+.field input{
+  width:100%;padding:13px 14px;border:1px solid #dce5de;
+  background:#fff;border-radius:9px;color:var(--ink);min-height:46px;
+}
+.field input:focus{border-color:var(--green);outline:3px solid #14574618}
+.status{
+  padding:11px 13px;border-radius:9px;margin:12px 0;
+  background:#f1f5f2;color:#33463b;font-size:13px;
+  overflow-wrap:anywhere;
+}
+.status.error{background:#fff0ef;color:var(--red)}
+.status.success{background:#e9f7ef;color:#17633e}
+.divider{height:1px;background:var(--line);margin:23px 0}
+footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
+
+/* Login */
+#loginView{min-height:100vh;display:flex;flex-direction:column}
+.login-top{
+  padding:27px clamp(20px,6vw,80px);display:flex;
+  justify-content:space-between;align-items:center;gap:18px;
+}
+.secure-note{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:7px}
+.login-layout{
+  flex:1;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);
+  max-width:1160px;width:calc(100% - 48px);margin:28px auto 55px;
+  border:1px solid var(--line);border-radius:20px;overflow:hidden;
+  background:white;box-shadow:var(--shadow);min-height:570px;
+}
+.login-intro{
+  padding:clamp(32px,5vw,65px);background:#edf4ef;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.login-intro h1{
+  font-size:clamp(35px,4vw,53px);line-height:1.09;
+  letter-spacing:-2.5px;margin:20px 0 16px;max-width:470px;
+}
+.login-intro p{font-size:15px;line-height:1.9;color:#63736a;max-width:420px}
+.intro-bottom{display:grid;gap:12px;margin-top:45px}
+.feature{display:flex;align-items:center;gap:11px;color:#3e5548;font-size:13px}
+.feature-icon{
+  width:31px;height:31px;border-radius:9px;background:white;
+  display:grid;place-items:center;color:var(--green);font-weight:800;
+}
+.login-form-wrap{
+  padding:clamp(30px,5vw,66px);display:flex;flex-direction:column;justify-content:center;
+}
+.login-form-wrap h2{font-size:28px;letter-spacing:-1px;margin:12px 0 7px}
+.login-form-wrap>p{margin:0 0 28px;color:var(--muted);font-size:13px}
+.login-form-wrap form{width:100%;max-width:400px}
+.input-wrap{position:relative}
+.input-wrap input{padding-right:76px}
+.show-password{
+  position:absolute;right:10px;top:50%;transform:translateY(-50%);
+  border:0;background:transparent;color:var(--green);font-weight:750;font-size:12px;
+}
+.full{width:100%;min-height:47px}
+.login-note{font-size:11px;color:var(--muted);line-height:1.7;margin-top:19px}
+#loginStatus:empty{display:none}
+
+/* Dashboard */
+#dashboardView{min-height:100vh}
+.topbar{
+  height:72px;background:white;border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 30px;gap:20px;position:sticky;top:0;z-index:10;
+}
+.topbar-right{display:flex;align-items:center;gap:14px}
+.avatar{
+  width:35px;height:35px;border-radius:50%;display:grid;place-items:center;
+  background:var(--green-light);color:var(--green);font-weight:800;
+}
+.admin-layout{display:grid;grid-template-columns:235px minmax(0,1fr);min-height:calc(100vh - 72px)}
+.sidebar{
+  background:white;border-right:1px solid var(--line);padding:23px 14px;
+}
+.nav-caption{font-size:10px;letter-spacing:1.5px;font-weight:800;color:#9aa59d;padding:10px 12px}
+.nav-link{
+  display:flex;align-items:center;gap:11px;padding:12px;border-radius:9px;
+  color:#647168;text-decoration:none;font-weight:650;margin:3px 0;
+}
+.nav-link:hover,.nav-link.active{background:var(--green-light);color:var(--green)}
+.nav-symbol{width:22px;text-align:center;font-size:16px}
+.sidebar-bottom{
+  margin-top:40px;border-top:1px solid var(--line);padding:18px 10px;
+  font-size:12px;color:var(--muted);line-height:1.8;
+}
+.main{padding:32px clamp(18px,3vw,42px);min-width:0}
+.page-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;flex-wrap:wrap}
+.page-heading h1{font-size:28px;letter-spacing:-1px;margin:4px 0}
+.page-heading p{margin:0;color:var(--muted)}
+.grid-stats{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:28px 0;
+}
+.stat-card,.panel{
+  background:white;border:1px solid var(--line);border-radius:13px;
+}
+.stat-card{padding:21px}
+.stat-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.stat-label{font-size:12px;color:var(--muted);font-weight:700}
+.stat-icon{
+  width:35px;height:35px;border-radius:10px;background:var(--green-light);
+  display:grid;place-items:center;color:var(--green);font-size:17px;
+}
+.stat-value{font-size:29px;font-weight:800;letter-spacing:-1px;margin-top:17px}
+.stat-foot{font-size:11px;color:var(--muted);margin-top:3px}
+.panel{margin-bottom:20px;overflow:hidden}
+.panel-head{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:19px 21px;border-bottom:1px solid var(--line);flex-wrap:wrap;
+}
+.panel-head h2{font-size:15px;margin:0}
+.panel-body{padding:21px}
+.connection-row{display:flex;align-items:flex-start;gap:13px}
+.connection-dot{width:10px;height:10px;border-radius:50%;background:#9aa59d;margin-top:6px;flex-shrink:0}
+.connection-dot.ok{background:#24935e}
+.connection-dot.bad{background:#c93d32}
+.quick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.quick-card{
+  padding:17px;border:1px solid var(--line);border-radius:11px;background:white;
+}
+.quick-card strong{display:block;margin-bottom:5px}
+.quick-card p{font-size:12px;color:var(--muted);line-height:1.7;margin:0}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;border-radius:20px;
+  padding:5px 9px;font-size:11px;font-weight:750;background:#f0f3f1;color:#617068;
+}
+.badge.green{background:#e8f6ed;color:#197344}
+.notice{
+  border:1px solid #eadfbd;background:#fffaf0;color:#705b28;
+  border-radius:10px;padding:13px 15px;font-size:12px;line-height:1.8;margin-bottom:20px;
+}
+.mobile-menu{display:none}
+#dashboardStatus:empty{display:none}
+@media(max-width:850px){
+  .login-layout{grid-template-columns:1fr;width:calc(100% - 28px);margin:12px auto 25px}
+  .login-intro{padding:30px}
+  .login-intro h1{font-size:38px}
+  .intro-bottom{margin-top:25px}
+  .login-form-wrap{padding:30px}
+  .admin-layout{grid-template-columns:1fr}
+  .sidebar{display:none;border-right:0;border-bottom:1px solid var(--line)}
+  .sidebar.open{display:block}
+  .mobile-menu{display:inline-flex}
+  .grid-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .quick-grid{grid-template-columns:1fr}
+  .topbar{padding:0 16px}
+  .main{padding:24px 16px}
+}
+@media(max-width:480px){
+  .login-top{padding:18px}
+  .secure-note{font-size:10px}
+  .brand-name{font-size:15px}
+  .brand-sub{font-size:9px}
+  .grid-stats{grid-template-columns:1fr}
+  .stat-card{padding:17px}
+  .page-heading h1{font-size:24px}
+  .topbar{height:64px}
+  .admin-layout{min-height:calc(100vh - 64px)}
+  .topbar-right .user-email{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<section id="loginView">
+  <header class="login-top">
+    <div class="brand">
+      <div class="brand-mark">V.</div>
+      <div>
+        <div class="brand-name">VELORA HELP</div>
+        <div class="brand-sub">ADMINISTRATION</div>
+      </div>
+    </div>
+    <div class="secure-note"><span aria-hidden="true">●</span> Secure access portal</div>
+  </header>
+
+  <main class="login-layout">
+    <section class="login-intro">
+      <div>
+        <div class="eyebrow">YOUR PROBLEM. OUR DIRECTION.</div>
+        <h1>One platform.<br>Better local help.</h1>
+        <p>
+          Manage community services, provider listings and enquiries
+          through the VELORA HELP administration portal.
+        </p>
+      </div>
+      <div class="intro-bottom">
+        <div class="feature"><span class="feature-icon">✓</span> Centralised service administration</div>
+        <div class="feature"><span class="feature-icon">✓</span> Provider and community coordination</div>
+        <div class="feature"><span class="feature-icon">✓</span> Access controlled through your account</div>
+      </div>
+    </section>
+
+    <section class="login-form-wrap">
+      <div class="eyebrow">ADMIN PORTAL</div>
+      <h2>Welcome back.</h2>
+      <p>Sign in with your authorised administrator account.</p>
+
+      <form id="loginForm">
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email"
+            autocomplete="username" placeholder="admin@example.com"
+            required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input id="password" name="password" type="password"
+              autocomplete="current-password" placeholder="Enter your password"
+              required>
+            <button class="show-password" id="togglePassword" type="button">Show</button>
+          </div>
+        </div>
+        <button class="btn btn-primary full" id="loginButton" type="submit">
+          Sign in securely <span aria-hidden="true">→</span>
+        </button>
+        <div id="loginStatus" class="status" role="status" aria-live="polite"></div>
+      </form>
+
+      <div class="divider"></div>
+      <div class="login-note">
+        Access is restricted to authorised accounts. If you do not have
+        an administrator account, contact the platform owner.
+        Do not share your password with anyone.
+      </div>
+    </section>
+  </main>
+  <footer>© <span class="year"></span> VELORA HELP · Powered by VELORA DIGITAL</footer>
+</section>
+
+<!-- ADMIN DASHBOARD -->
+<section id="dashboardView" class="hidden">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">V.</div>
+      <div>
+        <div class="brand-name">VELORA HELP</div>
+        <div class="brand-sub">ADMINISTRATION</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <button class="btn mobile-menu" id="mobileMenu" type="button">☰ Menu</button>
+      <span class="user-email muted small" id="adminEmail"></span>
+      <div class="avatar" id="adminAvatar">A</div>
+      <button class="btn" id="logoutButton" type="button">Sign out</button>
+    </div>
+  </header>
+
+  <div class="admin-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="nav-caption">WORKSPACE</div>
+      <a class="nav-link active" href="#overview"><span class="nav-symbol">▦</span> Overview</a>
+      <a class="nav-link" href="#providers"><span class="nav-symbol">♙</span> Providers</a>
+      <a class="nav-link" href="#enquiries"><span class="nav-symbol">✉</span> Enquiries</a>
+      <a class="nav-link" href="#services"><span class="nav-symbol">◇</span> Services</a>
+      <div class="nav-caption">SYSTEM</div>
+      <a class="nav-link" href="#security"><span class="nav-symbol">♧</span> Account & security</a>
+      <a class="nav-link" href="../index.html"><span class="nav-symbol">↗</span> Public website</a>
+      <div class="sidebar-bottom">
+        <strong>VELORA HELP</strong><br>
+        Your Problem. Our Direction.<br>
+        <span id="sidebarConnection">Checking connection…</span>
+      </div>
+    </aside>
+
+    <main class="main" id="overview">
+      <div class="page-heading">
+        <div>
+          <div class="eyebrow">WORKSPACE OVERVIEW</div>
+          <h1>Good to see you.</h1>
+          <p>Manage your platform from one place.</p>
+        </div>
+        <span class="badge"><span>●</span> Administrator session</span>
+      </div>
+
+      <div class="notice">
+        <strong>Setup information:</strong> Your login uses Supabase Authentication.
+        Provider and enquiry management must be connected to your actual database
+        tables and secured with Row Level Security before records can be managed here.
+      </div>
+
+      <div id="dashboardStatus" class="status" role="status" aria-live="polite"></div>
+
+      <section class="grid-stats" aria-label="Platform summary">
+        <article class="stat-card">
+          <div class="stat-top">
+            <span class="stat-label">Providers</span>
+            <span class="stat-icon">♙</span>
+          </div>
+          <div class="stat-value">—</div>
+          <div class="stat-foot">Database integration pending</div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top">
+            <span class="stat-label">Enquiries</span>
+            <span class="stat-icon">✉</span>
+          </div>
+          <div class="stat-value">—</div>
+          <div class="stat-foot">Database integration pending</div>
+        </article>
+        <article class="stat-card">
+          <div class="stat-top">
+            <span class="stat-label">Services</span>
+            <span class="stat-icon">◇</span>
+          </div>
+          <div class="stat-value">—</div>
+          <div class="stat-foot">Database integration pending</div>
+        </article>
+      </section>
+
+      <section class="panel" id="providers">
+        <div class="panel-head">
+          <h2>Provider management</h2>
+          <span class="badge">Integration pending</span>
+        </div>
+        <div class="panel-body">
+          <div class="connection-row">
+            <span class="connection-dot"></span>
+            <div>
+              <strong>Provider records are not loaded</strong>
+              <p class="muted small">
+                The provider table and its exact columns must be connected
+                before this portal can safely add, edit, approve or deactivate providers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="enquiries">
+        <div class="panel-head">
+          <h2>Community enquiries</h2>
+          <span class="badge">Integration pending</span>
+        </div>
+        <div class="panel-body">
+          <div class="connection-row">
+            <span class="connection-dot"></span>
+            <div>
+              <strong>Enquiry management is not connected yet</strong>
+              <p class="muted small">
+                Enquiry records should remain private and accessible only to
+                authorised staff through database policies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="services">
+        <div class="panel-head"><h2>Platform modules</h2></div>
+        <div class="panel-body">
+          <div class="quick-grid">
+            <div class="quick-card">
+              <strong>Provider directory</strong>
+              <p>Review and manage eligible local service providers after database integration.</p>
+            </div>
+            <div class="quick-card">
+              <strong>Enquiry coordination</strong>
+              <p>Review community requests using restricted, authorised access.</p>
+            </div>
+            <div class="quick-card">
+              <strong>Services and locations</strong>
+              <p>Organise services and supported areas once the data structure is connected.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="security">
+        <div class="panel-head"><h2>Account & security</h2></div>
+        <div class="panel-body">
+          <p class="muted small">Currently signed-in account</p>
+          <strong id="securityEmail">—</strong>
+          <p class="muted small">
+            Keep your password private. Database permissions, not this page's
+            appearance, determine what your account can access.
+          </p>
+          <button class="btn" id="securityLogout" type="button">Sign out securely</button>
+        </div>
+      </section>
+      <footer>© <span class="year"></span> VELORA HELP · Powered by VELORA DIGITAL</footer>
+    </main>
+  </div>
+</section>
+
+<!-- Existing shared configuration -->
+<script src="../js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function () {
+  "use strict";
+
+  document.querySelectorAll(".year").forEach(function (el) {
+    el.textContent = new Date().getFullYear();
+  });
+
+  const loginView = document.getElementById("loginView");
+  const dashboardView = document.getElementById("dashboardView");
+  const loginForm = document.getElementById("loginForm");
+  const loginButton = document.getElementById("loginButton");
+  const loginStatus = document.getElementById("loginStatus");
+  const dashboardStatus = document.getElementById("dashboardStatus");
+  const passwordInput = document.getElementById("password");
+
+  let client = null;
+  let currentUser = null;
+
+  function showStatus(element, message, type) {
+    element.textContent = message || "";
+    element.className = "status" + (type ? " " + type : "");
+  }
+
+  function showLogin(message, type) {
+    dashboardView.classList.add("hidden");
+    loginView.classList.remove("hidden");
+    if (message) showStatus(loginStatus, message, type);
+  }
+
+  function showDashboard(user) {
+    currentUser = user;
+    loginView.classList.add("hidden");
+    dashboardView.classList.remove("hidden");
+
+    const email = user.email || "Authorised user";
+    document.getElementById("adminEmail").textContent = email;
+    document.getElementById("securityEmail").textContent = email;
+    document.getElementById("adminAvatar").textContent =
+      (email.charAt(0) || "A").toUpperCase();
+
+    showStatus(
+      dashboardStatus,
+      "Signed in successfully. Database modules still need to be connected.",
+      "success"
+    );
+
+    const dot = document.querySelector(".connection-dot");
+    if (dot) dot.classList.remove("ok", "bad");
+    document.getElementById("sidebarConnection").textContent =
+      "Authentication connected";
+  }
+
+  function init() {
+    const url = window.VELORA_SUPABASE_URL;
+    const key = window.VELORA_SUPABASE_PUBLISHABLE_KEY;
+
+    if (!window.supabase || !url || !key) {
+      loginButton.disabled = true;
+      showStatus(
+        loginStatus,
+        "Supabase configuration was not found. Check that ../js/supabase-config.js contains your project URL and publishable key, and that the Supabase library loads.",
+        "error"
+      );
+      return;
+    }
+
+    client = window.supabase.createClient(url, key);
+
+    client.auth.getSession().then(function (result) {
+      if (result.error) {
+        showStatus(loginStatus, result.error.message, "error");
+        return;
+      }
+      if (result.data.session) {
+        showDashboard(result.data.session.user);
+      }
+    }).catch(function () {
+      showStatus(loginStatus, "Could not check your session. Please try again.", "error");
+    });
+
+    client.auth.onAuthStateChange(function (event, session) {
+      if (event === "SIGNED_OUT" || !session) {
+        currentUser = null;
+        showLogin();
+      }
+    });
+  }
+
+  document.getElementById("togglePassword").addEventListener("click", function () {
+    const hidden = passwordInput.type === "password";
+    passwordInput.type = hidden ? "text" : "password";
+    this.textContent = hidden ? "Hide" : "Show";
+  });
+
+  loginForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    if (!client) {
+      showStatus(loginStatus, "Supabase is not configured yet. Check the shared configuration file.", "error");
+      return;
+    }
+
+    loginButton.disabled = true;
+    loginButton.textContent = "Signing in…";
+    showStatus(loginStatus, "", "");
+
+    try {
+      const email = document.getElementById("email").value.trim();
+      const password = passwordInput.value;
+
+      const result = await client.auth.signInWithPassword({
+        email: email,
+        password: password
+      });
+
+      if (result.error) {
+        showStatus(
+          loginStatus,
+          "Sign-in failed: " + result.error.message,
+          "error"
+        );
+        return;
+      }
+
+      if (!result.data.user) {
+        showStatus(loginStatus, "No user account was returned. Please try again.", "error");
+        return;
+      }
+
+      showDashboard(result.data.user);
+      loginForm.reset();
+      passwordInput.type = "password";
+      document.getElementById("togglePassword").textContent = "Show";
+    } catch (error) {
+      showStatus(loginStatus, "Unable to sign in. Check your internet connection and try again.", "error");
+    } finally {
+      loginButton.disabled = false;
+      loginButton.innerHTML = 'Sign in securely <span aria-hidden="true">→</span>';
+    }
+  });
+
+  async function signOut() {
+    if (!client) return;
+    const button = document.getElementById("logoutButton");
+    button.disabled = true;
+
+    try {
+      const result = await client.auth.signOut();
+      if (result.error) {
+        showStatus(dashboardStatus, "Sign-out failed: " + result.error.message, "error");
+        return;
+      }
+      showLogin("You have signed out.", "success");
+    } catch (error) {
+      showStatus(dashboardStatus, "Could not sign out. Please try again.", "error");
+    } finally {
+      button.disabled = false;
+    }
+  }
+
+  document.getElementById("logoutButton").addEventListener("click", signOut);
+  document.getElementById("securityLogout").addEventListener("click", signOut);
+
+  document.getElementById("mobileMenu").addEventListener("click", function () {
+    document.getElementById("sidebar").classList.toggle("open");
+  });
+
+  document.querySelectorAll(".nav-link[href^='#']").forEach(function (link) {
+    link.addEventListener("click", function () {
+      document.querySelectorAll(".nav-link").forEach(function (item) {
+        item.classList.remove("active");
+      });
+      this.classList.add("active");
+      document.getElementById("sidebar").classList.remove("open");
+    });
+  });
+
+  init();
+})();
+</script>
+</body>
+</html>
