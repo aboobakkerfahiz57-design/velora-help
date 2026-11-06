@@ -7,6 +7,7 @@
 <meta name="theme-color" content="#103c32">
 <title>Admin Portal | VELORA HELP</title>
 <meta name="description" content="VELORA HELP secure administration portal.">
+
 <style>
 :root {
   --green:#145746;
@@ -15,7 +16,7 @@
   --ink:#182722;
   --muted:#738079;
   --line:#e7ece8;
-  --surface:#ffffff;
+  --surface:#fff;
   --page:#f5f7f5;
   --red:#b42318;
   --shadow:0 12px 40px rgba(24,54,42,.07);
@@ -190,6 +191,7 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
 }
 .mobile-menu{display:none}
 #dashboardStatus:empty{display:none}
+
 @media(max-width:850px){
   .login-layout{grid-template-columns:1fr;width:calc(100% - 28px);margin:12px auto 25px}
   .login-intro{padding:30px}
@@ -219,6 +221,7 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
 }
 </style>
 </head>
+
 <body>
 
 <!-- LOGIN SCREEN -->
@@ -260,15 +263,13 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
         <div class="field">
           <label for="email">Email address</label>
           <input id="email" name="email" type="email"
-            autocomplete="username" placeholder="admin@example.com"
-            required>
+            autocomplete="username" placeholder="admin@example.com" required>
         </div>
         <div class="field">
           <label for="password">Password</label>
           <div class="input-wrap">
             <input id="password" name="password" type="password"
-              autocomplete="current-password" placeholder="Enter your password"
-              required>
+              autocomplete="current-password" placeholder="Enter your password" required>
             <button class="show-password" id="togglePassword" type="button">Show</button>
           </div>
         </div>
@@ -280,8 +281,7 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
 
       <div class="divider"></div>
       <div class="login-note">
-        Access is restricted to authorised accounts. If you do not have
-        an administrator account, contact the platform owner.
+        Access is restricted to authorised administrator accounts.
         Do not share your password with anyone.
       </div>
     </section>
@@ -331,13 +331,13 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
           <h1>Good to see you.</h1>
           <p>Manage your platform from one place.</p>
         </div>
-        <span class="badge"><span>●</span> Administrator session</span>
+        <span class="badge green"><span>●</span> Verified administrator</span>
       </div>
 
       <div class="notice">
-        <strong>Setup information:</strong> Your login uses Supabase Authentication.
-        Provider and enquiry management must be connected to your actual database
-        tables and secured with Row Level Security before records can be managed here.
+        <strong>Setup information:</strong> Your account is verified through
+        Supabase Authentication and the administrator role stored in your database.
+        Provider and enquiry management still require their dashboard integrations.
       </div>
 
       <div id="dashboardStatus" class="status" role="status" aria-live="polite"></div>
@@ -380,8 +380,8 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
             <div>
               <strong>Provider records are not loaded</strong>
               <p class="muted small">
-                The provider table and its exact columns must be connected
-                before this portal can safely add, edit, approve or deactivate providers.
+                Provider listing, approval, editing and activation controls
+                will be connected to the providers database in the next development stage.
               </p>
             </div>
           </div>
@@ -399,8 +399,8 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
             <div>
               <strong>Enquiry management is not connected yet</strong>
               <p class="muted small">
-                Enquiry records should remain private and accessible only to
-                authorised staff through database policies.
+                Enquiry records will be loaded through authorised database
+                access and the existing Row Level Security policies.
               </p>
             </div>
           </div>
@@ -413,7 +413,7 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
           <div class="quick-grid">
             <div class="quick-card">
               <strong>Provider directory</strong>
-              <p>Review and manage eligible local service providers after database integration.</p>
+              <p>Review and manage eligible local service providers.</p>
             </div>
             <div class="quick-card">
               <strong>Enquiry coordination</strong>
@@ -421,7 +421,7 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
             </div>
             <div class="quick-card">
               <strong>Services and locations</strong>
-              <p>Organise services and supported areas once the data structure is connected.</p>
+              <p>Organise services and supported areas after database integration.</p>
             </div>
           </div>
         </div>
@@ -430,29 +430,31 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
       <section class="panel" id="security">
         <div class="panel-head"><h2>Account & security</h2></div>
         <div class="panel-body">
-          <p class="muted small">Currently signed-in account</p>
+          <p class="muted small">Currently signed-in administrator</p>
           <strong id="securityEmail">—</strong>
           <p class="muted small">
-            Keep your password private. Database permissions, not this page's
-            appearance, determine what your account can access.
+            Your dashboard access is checked against your database role.
+            Keep your password private.
           </p>
           <button class="btn" id="securityLogout" type="button">Sign out securely</button>
         </div>
       </section>
+
       <footer>© <span class="year"></span> VELORA HELP · Powered by VELORA DIGITAL</footer>
     </main>
   </div>
 </section>
 
-<!-- Existing shared configuration -->
+<!-- SUPABASE CONFIGURATION -->
 <script src="../js/supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 (function () {
   "use strict";
 
-  document.querySelectorAll(".year").forEach(function (el) {
-    el.textContent = new Date().getFullYear();
+  document.querySelectorAll(".year").forEach(function (element) {
+    element.textContent = new Date().getFullYear();
   });
 
   const loginView = document.getElementById("loginView");
@@ -465,6 +467,8 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
 
   let client = null;
   let currentUser = null;
+  let authorizationInProgress = false;
+  let authCheckNumber = 0;
 
   function showStatus(element, message, type) {
     element.textContent = message || "";
@@ -472,9 +476,13 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
   }
 
   function showLogin(message, type) {
+    currentUser = null;
     dashboardView.classList.add("hidden");
     loginView.classList.remove("hidden");
-    if (message) showStatus(loginStatus, message, type);
+
+    if (message) {
+      showStatus(loginStatus, message, type || "");
+    }
   }
 
   function showDashboard(user) {
@@ -482,7 +490,8 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
     loginView.classList.add("hidden");
     dashboardView.classList.remove("hidden");
 
-    const email = user.email || "Authorised user";
+    const email = user.email || "Authorised administrator";
+
     document.getElementById("adminEmail").textContent = email;
     document.getElementById("securityEmail").textContent = email;
     document.getElementById("adminAvatar").textContent =
@@ -490,14 +499,95 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
 
     showStatus(
       dashboardStatus,
-      "Signed in successfully. Database modules still need to be connected.",
+      "Administrator access verified. Database modules still need integration.",
       "success"
     );
 
-    const dot = document.querySelector(".connection-dot");
-    if (dot) dot.classList.remove("ok", "bad");
     document.getElementById("sidebarConnection").textContent =
-      "Authentication connected";
+      "Authentication and role verification connected";
+  }
+
+  /*
+   * SECURITY CHECK:
+   * The dashboard is not shown until the signed-in user's
+   * staff_roles row confirms the exact role "admin".
+   *
+   * Existing database policy allows users to read their own role.
+   */
+  async function verifyAdministrator(user) {
+    const checkNumber = ++authCheckNumber;
+
+    if (!user || !user.id) {
+      showLogin("Please sign in to continue.", "error");
+      return false;
+    }
+
+    authorizationInProgress = true;
+    dashboardView.classList.add("hidden");
+    loginView.classList.remove("hidden");
+    loginButton.disabled = true;
+
+    showStatus(loginStatus, "Verifying administrator permissions…", "");
+
+    try {
+      const result = await client
+        .from("staff_roles")
+        .select("role")
+        .eq("user_id", user.id)
+        .maybeSingle();
+
+      if (checkNumber !== authCheckNumber) {
+        return false;
+      }
+
+      if (result.error) {
+        console.error("Administrator role verification error:", result.error);
+        throw new Error(
+          "We could not verify your administrator permissions. Please try again."
+        );
+      }
+
+      if (!result.data || result.data.role !== "admin") {
+        await client.auth.signOut();
+
+        if (checkNumber === authCheckNumber) {
+          showLogin(
+            "Access denied. This account does not have administrator permissions.",
+            "error"
+          );
+        }
+
+        return false;
+      }
+
+      if (checkNumber === authCheckNumber) {
+        showDashboard(user);
+      }
+
+      return true;
+
+    } catch (error) {
+      console.error("Administrator verification failed:", error);
+
+      if (checkNumber === authCheckNumber) {
+        try {
+          await client.auth.signOut();
+        } catch (signOutError) {
+          console.error("Sign-out after verification failure:", signOutError);
+        }
+
+        showLogin(
+          error.message || "Administrator verification failed. Please sign in again.",
+          "error"
+        );
+      }
+
+      return false;
+
+    } finally {
+      authorizationInProgress = false;
+      loginButton.disabled = false;
+    }
   }
 
   function init() {
@@ -506,30 +596,47 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
 
     if (!window.supabase || !url || !key) {
       loginButton.disabled = true;
+
       showStatus(
         loginStatus,
-        "Supabase configuration was not found. Check that ../js/supabase-config.js contains your project URL and publishable key, and that the Supabase library loads.",
+        "Supabase configuration was not found. Check ../js/supabase-config.js and confirm that the Supabase library loads.",
         "error"
       );
+
       return;
     }
 
     client = window.supabase.createClient(url, key);
 
-    client.auth.getSession().then(function (result) {
+    /*
+     * Restore an existing session, but verify the role
+     * before displaying any dashboard content.
+     */
+    client.auth.getSession().then(async function (result) {
       if (result.error) {
         showStatus(loginStatus, result.error.message, "error");
         return;
       }
-      if (result.data.session) {
-        showDashboard(result.data.session.user);
+
+      if (result.data.session && result.data.session.user) {
+        await verifyAdministrator(result.data.session.user);
       }
-    }).catch(function () {
-      showStatus(loginStatus, "Could not check your session. Please try again.", "error");
+    }).catch(function (error) {
+      console.error("Session restoration error:", error);
+      showStatus(
+        loginStatus,
+        "Could not check your session. Please sign in again.",
+        "error"
+      );
     });
 
-    client.auth.onAuthStateChange(function (event, session) {
-      if (event === "SIGNED_OUT" || !session) {
+    /*
+     * Never display the dashboard merely because an auth
+     * event occurs. Role verification is required separately.
+     */
+    client.auth.onAuthStateChange(function (event) {
+      if (event === "SIGNED_OUT") {
+        authCheckNumber++;
         currentUser = null;
         showLogin();
       }
@@ -546,9 +653,15 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
     event.preventDefault();
 
     if (!client) {
-      showStatus(loginStatus, "Supabase is not configured yet. Check the shared configuration file.", "error");
+      showStatus(
+        loginStatus,
+        "Supabase is not configured. Check the shared configuration file.",
+        "error"
+      );
       return;
     }
+
+    if (authorizationInProgress) return;
 
     loginButton.disabled = true;
     loginButton.textContent = "Signing in…";
@@ -573,53 +686,97 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
       }
 
       if (!result.data.user) {
-        showStatus(loginStatus, "No user account was returned. Please try again.", "error");
+        showStatus(
+          loginStatus,
+          "No user account was returned. Please try again.",
+          "error"
+        );
         return;
       }
 
-      showDashboard(result.data.user);
-      loginForm.reset();
-      passwordInput.type = "password";
-      document.getElementById("togglePassword").textContent = "Show";
+      /*
+       * Authentication alone is not enough.
+       * Verify the admin role before allowing dashboard access.
+       */
+      await verifyAdministrator(result.data.user);
+
+      if (currentUser) {
+        loginForm.reset();
+        passwordInput.type = "password";
+        document.getElementById("togglePassword").textContent = "Show";
+      }
+
     } catch (error) {
-      showStatus(loginStatus, "Unable to sign in. Check your internet connection and try again.", "error");
+      console.error("Login error:", error);
+
+      showStatus(
+        loginStatus,
+        "Unable to sign in. Please check your connection and try again.",
+        "error"
+      );
+
     } finally {
       loginButton.disabled = false;
-      loginButton.innerHTML = 'Sign in securely <span aria-hidden="true">→</span>';
+      loginButton.innerHTML =
+        'Sign in securely <span aria-hidden="true">→</span>';
     }
   });
 
   async function signOut() {
     if (!client) return;
-    const button = document.getElementById("logoutButton");
-    button.disabled = true;
+
+    const logoutButton = document.getElementById("logoutButton");
+    const securityLogout = document.getElementById("securityLogout");
+
+    logoutButton.disabled = true;
+    securityLogout.disabled = true;
 
     try {
       const result = await client.auth.signOut();
+
       if (result.error) {
-        showStatus(dashboardStatus, "Sign-out failed: " + result.error.message, "error");
+        showStatus(
+          dashboardStatus,
+          "Sign-out failed: " + result.error.message,
+          "error"
+        );
         return;
       }
-      showLogin("You have signed out.", "success");
+
+      showLogin("You have signed out successfully.", "success");
+
     } catch (error) {
-      showStatus(dashboardStatus, "Could not sign out. Please try again.", "error");
+      console.error("Sign-out error:", error);
+
+      showStatus(
+        dashboardStatus,
+        "Could not sign out. Please try again.",
+        "error"
+      );
+
     } finally {
-      button.disabled = false;
+      logoutButton.disabled = false;
+      securityLogout.disabled = false;
     }
   }
 
-  document.getElementById("logoutButton").addEventListener("click", signOut);
-  document.getElementById("securityLogout").addEventListener("click", signOut);
+  document.getElementById("logoutButton")
+    .addEventListener("click", signOut);
 
-  document.getElementById("mobileMenu").addEventListener("click", function () {
-    document.getElementById("sidebar").classList.toggle("open");
-  });
+  document.getElementById("securityLogout")
+    .addEventListener("click", signOut);
+
+  document.getElementById("mobileMenu")
+    .addEventListener("click", function () {
+      document.getElementById("sidebar").classList.toggle("open");
+    });
 
   document.querySelectorAll(".nav-link[href^='#']").forEach(function (link) {
     link.addEventListener("click", function () {
       document.querySelectorAll(".nav-link").forEach(function (item) {
         item.classList.remove("active");
       });
+
       this.classList.add("active");
       document.getElementById("sidebar").classList.remove("open");
     });
@@ -628,5 +785,6 @@ footer{color:var(--muted);font-size:11px;text-align:center;padding:22px}
   init();
 })();
 </script>
+
 </body>
 </html>
