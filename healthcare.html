@@ -360,6 +360,219 @@
             border-bottom: 0;
         }
 
+        .healthcare-directory {
+            margin-top: 28px;
+        }
+
+        .healthcare-directory-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .healthcare-directory-heading h3 {
+            margin: 0 0 6px;
+            color: #071a3d;
+            font-size: 1.45rem;
+        }
+
+        .healthcare-directory-heading p {
+            margin: 0;
+            color: #667085;
+            line-height: 1.6;
+        }
+
+        .provider-count {
+            color: #7f1722;
+            background: #fff1f2;
+            border: 1px solid #fecdd3;
+            border-radius: 999px;
+            padding: 7px 12px;
+            font-size: .85rem;
+            font-weight: 750;
+        }
+
+        .provider-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .provider-card {
+            overflow: hidden;
+            background: #fff;
+            border: 1px solid #e3e8ef;
+            border-radius: 18px;
+            box-shadow: 0 8px 25px rgba(7,26,61,.06);
+        }
+
+        .provider-card-top {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            padding: 20px 20px 12px;
+        }
+
+        .provider-photo {
+            width: 88px;
+            height: 88px;
+            flex: 0 0 88px;
+            border-radius: 15px;
+            object-fit: cover;
+            background: #eef2f8;
+        }
+
+        .provider-photo-placeholder {
+            display: grid;
+            place-items: center;
+            color: #7f1722;
+            font-size: 2rem;
+        }
+
+        .provider-title {
+            min-width: 0;
+        }
+
+        .provider-title h4 {
+            margin: 0 0 6px;
+            color: #071a3d;
+            font-size: 1.12rem;
+            overflow-wrap: anywhere;
+        }
+
+        .provider-title p {
+            margin: 0;
+            color: #667085;
+            line-height: 1.5;
+            font-size: .92rem;
+        }
+
+        .provider-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-top: 9px;
+        }
+
+        .provider-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 9px;
+            border-radius: 999px;
+            background: #ecfdf3;
+            color: #067647;
+            font-size: .75rem;
+            font-weight: 750;
+        }
+
+        .provider-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 0 20px 12px;
+            color: #667085;
+            font-size: .85rem;
+        }
+
+        .provider-logo {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            object-fit: contain;
+            border: 1px solid #e3e8ef;
+            background: #fff;
+        }
+
+        .provider-details {
+            padding: 0 20px 18px;
+            color: #475467;
+            font-size: .9rem;
+            line-height: 1.65;
+        }
+
+        .provider-details p {
+            margin: 7px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .provider-gallery {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 0 20px 16px;
+        }
+
+        .provider-gallery img {
+            width: 76px;
+            height: 62px;
+            flex: 0 0 76px;
+            border-radius: 9px;
+            object-fit: cover;
+            border: 1px solid #e3e8ef;
+        }
+
+        .provider-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            padding: 14px 20px 20px;
+            border-top: 1px solid #eef1f5;
+        }
+
+        .provider-actions .btn {
+            min-height: 40px;
+            font-size: .85rem;
+        }
+
+        .directory-empty,
+        .directory-status {
+            background: #fff;
+            border: 1px solid #e3e8ef;
+            border-radius: 16px;
+            padding: 24px;
+            color: #667085;
+            line-height: 1.7;
+        }
+
+        .directory-empty h4 {
+            margin: 0 0 8px;
+            color: #071a3d;
+            font-size: 1.1rem;
+        }
+
+        .directory-loading {
+            color: #667085;
+            padding: 18px 0;
+        }
+
+        .directory-error {
+            color: #9f1239;
+            background: #fff1f2;
+            border: 1px solid #fecdd3;
+            border-radius: 12px;
+            padding: 15px;
+            line-height: 1.6;
+        }
+
+        @media(max-width: 700px) {
+            .provider-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .provider-card-top {
+                align-items: flex-start;
+            }
+
+            .provider-photo {
+                width: 76px;
+                height: 76px;
+                flex-basis: 76px;
+            }
+        }
+
         .result-item strong {
             display: block;
             color: #071a3d;
@@ -619,17 +832,18 @@
 
             </div>
 
-            <form id="healthcareSearchForm">
+            <form id="healthcareSearchForm" data-healthcare-search-form>
 
                 <div class="search-grid">
 
                     <input
                         id="healthSearch"
+                        name="search"
                         type="search"
                         placeholder="Example: fever, dentist, hospital..."
                     >
 
-                    <select id="healthTaluk">
+                    <select id="healthTaluk" name="taluk">
 
                         <option value="">
                             Select Taluk
@@ -646,7 +860,7 @@
 
                     </select>
 
-                    <select id="healthType">
+                    <select id="healthType" name="type">
 
                         <option value="">
                             Healthcare Type
@@ -690,6 +904,22 @@
             </div>
 
         </div>
+
+        <section class="healthcare-directory" aria-labelledby="healthcareDirectoryTitle">
+            <div class="healthcare-directory-heading">
+                <div>
+                    <h3 id="healthcareDirectoryTitle">Verified Healthcare Providers</h3>
+                    <p>Profiles are shown only after VELORA HELP verification and activation.</p>
+                </div>
+                <span class="provider-count" id="healthcareProviderCount" aria-live="polite">Loading directory…</span>
+            </div>
+
+            <div id="healthcareProviderStatus" class="directory-status" role="status" aria-live="polite">
+                Connecting to the verified healthcare directory…
+            </div>
+
+            <div id="healthcareProviderGrid" class="provider-grid" aria-live="polite"></div>
+        </section>
 
     </div>
 
@@ -942,7 +1172,7 @@
             </p>
 
 
-            <form id="healthEnquiryForm">
+            <form id="healthEnquiryForm" data-healthcare-enquiry-form>
 
                 <div class="form-grid">
 
@@ -1337,417 +1567,32 @@
 <script src="js/data.js"></script>
 <script src="js/main.js"></script>
 <script src="js/forms.js"></script>
+<!-- Supabase browser client and the existing shared VELORA HELP configuration -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase-config.js"></script>
 <script src="js/healthcare.js"></script>
 
 
 <script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        /* ---------------------------------------------
-           MOBILE MENU
-        --------------------------------------------- */
-
-        const menu =
-            document.getElementById(
-                "menuButton"
-            );
-
-        const nav =
-            document.getElementById(
-                "navigation"
-            );
-
-        if (menu && nav) {
-
-            menu.addEventListener(
-                "click",
-                function () {
-
-                    nav.classList.toggle(
-                        "active"
-                    );
-
-                }
-            );
-
-        }
-
-
-        /* ---------------------------------------------
-           YEAR
-        --------------------------------------------- */
-
-        const year =
-            document.getElementById(
-                "year"
-            );
-
-        if (year) {
-
-            year.textContent =
-                new Date().getFullYear();
-
-        }
-
-
-        /* ---------------------------------------------
-           SEARCH
-        --------------------------------------------- */
-
-        const searchForm =
-            document.getElementById(
-                "healthcareSearchForm"
-            );
-
-        const results =
-            document.getElementById(
-                "healthResults"
-            );
-
-        const resultContent =
-            document.getElementById(
-                "healthResultContent"
-            );
-
-
-        if (searchForm) {
-
-            searchForm.addEventListener(
-                "submit",
-                function (event) {
-
-                    event.preventDefault();
-
-
-                    const search =
-                        document
-                            .getElementById(
-                                "healthSearch"
-                            )
-                            .value
-                            .trim();
-
-
-                    const taluk =
-                        document
-                            .getElementById(
-                                "healthTaluk"
-                            )
-                            .value;
-
-
-                    const type =
-                        document
-                            .getElementById(
-                                "healthType"
-                            )
-                            .value;
-
-
-                    let selected =
-                        type || "Healthcare";
-
-
-                    if (!search && !taluk && !type) {
-
-                        selected =
-                            "General Healthcare";
-
-                    }
-
-
-                    resultContent.innerHTML = `
-
-                        <div class="result-item">
-
-                            <strong>
-                                ${escapeHTML(selected)}
-                            </strong>
-
-                            <span>
-                                Location:
-                                ${escapeHTML(taluk || "Dakshina Kannada")}
-                            </span>
-
-                        </div>
-
-                        <div class="result-item">
-
-                            <strong>
-                                Need a specific doctor or hospital?
-                            </strong>
-
-                            <span>
-                                Send your requirement to VELORA HELP
-                                and our team can guide you toward
-                                the appropriate next step.
-                            </span>
-
-                        </div>
-
-                        <div class="result-item">
-
-                            <strong>
-                                Your search
-                            </strong>
-
-                            <span>
-                                ${escapeHTML(
-                                    search ||
-                                    "Healthcare guidance requested"
-                                )}
-                            </span>
-
-                        </div>
-
-                        <div style="margin-top:18px;">
-
-                            <a
-                                class="btn btn-red"
-                                href="#enquiry"
-                            >
-                                💬 Send Healthcare Enquiry
-                            </a>
-
-                        </div>
-                    `;
-
-
-                    results.classList.add(
-                        "active"
-                    );
-
-
-                    results.scrollIntoView({
-                        behavior: "smooth",
-                        block: "center"
-                    });
-
-                }
-            );
-
-        }
-
-
-        /* ---------------------------------------------
-           CATEGORY BUTTONS
-        --------------------------------------------- */
-
-        document
-            .querySelectorAll(
-                "[data-health-category]"
-            )
-            .forEach(
-                function (card) {
-
-                    card.addEventListener(
-                        "click",
-                        function () {
-
-                            const category =
-                                card.getAttribute(
-                                    "data-health-category"
-                                );
-
-
-                            const select =
-                                document.getElementById(
-                                    "consultation"
-                                );
-
-
-                            if (select) {
-
-                                const option =
-                                    Array.from(
-                                        select.options
-                                    ).find(
-                                        function (item) {
-                                            return item.text === category;
-                                        }
-                                    );
-
-
-                                if (option) {
-                                    select.value =
-                                        category;
-                                }
-
-                            }
-
-                        }
-                    );
-
-                }
-            );
-
-
-        /* ---------------------------------------------
-           ENQUIRY -> WHATSAPP
-        --------------------------------------------- */
-
-        const enquiryForm =
-            document.getElementById(
-                "healthEnquiryForm"
-            );
-
-
-        if (enquiryForm) {
-
-            enquiryForm.addEventListener(
-                "submit",
-                function (event) {
-
-                    event.preventDefault();
-
-
-                    const name =
-                        document
-                            .getElementById("name")
-                            .value
-                            .trim();
-
-
-                    const phone =
-                        document
-                            .getElementById("phone")
-                            .value
-                            .trim();
-
-
-                    const taluk =
-                        document
-                            .getElementById("taluk")
-                            .value;
-
-
-                    const area =
-                        document
-                            .getElementById("area")
-                            .value
-                            .trim();
-
-
-                    const consultation =
-                        document
-                            .getElementById("consultation")
-                            .value;
-
-
-                    const preferred =
-                        document
-                            .getElementById("preferred")
-                            .value
-                            .trim();
-
-
-                    const problem =
-                        document
-                            .getElementById("healthProblem")
-                            .value
-                            .trim();
-
-
-                    const message =
-`Hello VELORA HELP,
-
-I need healthcare guidance.
-
-Name: ${name}
-Phone: ${phone}
-Taluk: ${taluk}
-Area/Village: ${area || "Not provided"}
-Requirement: ${consultation}
-Preferred Location: ${preferred || "Not specified"}
-
-Problem / Requirement:
-${problem}
-
-Please guide me regarding the appropriate hospital, doctor, clinic or next step.
-
-Thank you.
-VELORA HELP`;
-
-
-                    const whatsappURL =
-                        "https://wa.me/918088590273?text=" +
-                        encodeURIComponent(
-                            message
-                        );
-
-
-                    window.open(
-                        whatsappURL,
-                        "_blank",
-                        "noopener,noreferrer"
-                    );
-
-
-                    showMessage(
-                        "Your enquiry is ready. WhatsApp has been opened for VELORA HELP."
-                    );
-
-                }
-            );
-
-        }
-
-    }
-);
-
-
-/* =====================================================
-   SECURITY / TEXT ESCAPING
-   ===================================================== */
-
-function escapeHTML(value) {
-
-    return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-
-}
-
-
-/* =====================================================
-   MESSAGE
-   ===================================================== */
-
-function showMessage(text) {
-
-    const box =
-        document.getElementById(
-            "message"
-        );
-
-    if (!box) {
-        return;
+document.addEventListener("DOMContentLoaded", function () {
+    const menu = document.getElementById("menuButton");
+    const nav = document.getElementById("navigation");
+
+    if (menu && nav) {
+        menu.addEventListener("click", function () {
+            nav.classList.toggle("active");
+        });
+
+        nav.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                nav.classList.remove("active");
+            });
+        });
     }
 
-    box.textContent = text;
-
-    box.style.display =
-        "block";
-
-
-    setTimeout(
-        function () {
-
-            box.style.display =
-                "none";
-
-        },
-        4500
-    );
-
-}
-
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
+});
 </script>
 
 </body>
